@@ -8,13 +8,13 @@ $message="";
 
     if (count($_POST)) 
     {
-
 	    echo "Found " . count($_POST) . " elements" . "<td>";
         var_dump($_POST);
         add_user ($_POST['User_name'], $_POST['User_password'], $_POST['User_email']);
         header ("Location: main.php");
     }
 ?>
+<!-- hey there here is a comment -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
