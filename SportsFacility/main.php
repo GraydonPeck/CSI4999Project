@@ -137,6 +137,5 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
     <script src="script.js"></script>
   </body>
-  </html>
 
 </html>
