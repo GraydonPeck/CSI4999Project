@@ -27,22 +27,19 @@
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
       </button>
     </div>
       <ul class="nav navbar-nav" id="login-dp" >
             <!-- Trigger Login Modal -->
               <li class="active" data-toggle="modal" data-target="#Login"> <a href="#">Login</a></li>
               <!-- End Trigger-->
+              <li><a href="home.php"><span class="glyphicon glyphicon-home"></span></a></li>
        </ul>
     </nav>
 
   <div class="intro-section">
     <div class="container info">
-      <h1>Hockety<strong>Plex</strong></h1>
-      <h1>We Hockey</h1>
+      <h1><big>Hockety<strong>Plex</strong></big></h1>
       <p><a class="btn btn-lg btn-success cta" href="#submitSection" role="button">Get started today</a></p>
     </div>
   </div>
