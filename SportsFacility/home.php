@@ -37,11 +37,8 @@
        </ul>
     </nav>
 
-  <div class="intro-section">
-    <div class="container info">
-      <h1><big>Hockety<strong>Plex</strong></big></h1>
-      <p><a class="btn btn-lg btn-success cta" href="#submitSection" role="button">Get started today</a></p>
-    </div>
+  <div class="Home-Page">
+    
   </div>
 
 </html>
