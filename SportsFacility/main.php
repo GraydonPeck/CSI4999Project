@@ -1,20 +1,5 @@
 <!DOCTYPE html>
-<?php    
-include('dbutils.php');
 
- session_start(); 
-
-$message="";
-
-    if (count($_POST)) 
-    {
-	    echo "Found " . count($_POST) . " elements" . "<td>";
-        var_dump($_POST);
-        add_user ($_POST['User_name'], $_POST['User_password'], $_POST['User_email']);
-        header ("Location: main.php");
-    }
-?>
-<!-- hey there here is a comment -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -24,7 +9,7 @@ $message="";
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Magic Theater</title>
+  <title>HockeyPlex</title>
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   
@@ -56,8 +41,8 @@ $message="";
 
   <div class="intro-section">
     <div class="container info">
-      <h1>Sports Facility</h1>
-      <h1>Holder<strong>text</strong> to change</h1>
+      <h1>Hockety<strong>Plex</strong></h1>
+      <h1>We Hockey</h1>
       <p><a class="btn btn-lg btn-success cta" href="#submitSection" role="button">Get started today</a></p>
     </div>
   </div>
