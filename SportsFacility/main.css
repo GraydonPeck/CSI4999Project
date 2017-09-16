@@ -17,7 +17,7 @@
 
 
 .intro-section {
-  background: url(img/home.png) no-repeat;
+  background: url(img/welcome.png) no-repeat;
   background-size: cover;
   height: 100vh;
   padding-top: 50px;
@@ -79,7 +79,7 @@ form{
 
 
 #signup-section {
-    background: url(img/sign-background.jpg) 0 no-repeat;; 
+    background: url(img/register.png) 0 no-repeat;; 
     padding-top: 15%;
     height: 110%;
     -webkit-background-size: cover;
