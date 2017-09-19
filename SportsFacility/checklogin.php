@@ -14,7 +14,7 @@
     {
 	echo "Success " . "<br>";
 	$_SESSION['login'] = $username;
-	$goto = "Location: main.php";
+	$goto = "Location: customerpage.php";
     } else {
         echo "Failure " . "<br>";
     	$ref = getenv("HTTP_REFERER");

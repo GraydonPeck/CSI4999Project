@@ -3,7 +3,7 @@
 	
     $servername = "127.0.0.1";
     $_SESSION['SERVER'] = $servername;
-    $username = "wardo48446";
+    $username = "gpeck2217";
     $_SESSION['USER'] = $username;
     $password = "";
     $_SESSION['PASS'] = $password;
@@ -32,7 +32,7 @@
 	{
 		global $conn;
 
-        $sql_i = "INSERT INTO user_login(User_name, User_password, User_email) VALUES " .
+        $sql_i = "INSERT INTO login_db(user_name, user_password, user_email) VALUES " .
                 "('$User_name', '$User_password', '$User_email')";
 	
         run_update($sql_i);
@@ -56,14 +56,14 @@
 		$msg = "Login Denied";
 		$retvalue = False;
 
-		$sql = "select User_password from user_login where User_name = '$user'";
+		$sql = "select user_password from login_db where user_name = '$user'";
 
     	
 		$result = $conn->query($sql);
 
     	if ($result->num_rows == 1) {
 			$row = $result->fetch_assoc();
-			$dbpass = $row["User_password"];
+			$dbpass = $row["user_password"];
 		
 			if ($dbpass == $pass)
 			{
