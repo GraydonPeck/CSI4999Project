@@ -40,6 +40,8 @@
   <div class="home-section">
     <div class="container info">
       <h1><big>Hockey<strong>Plex</strong></big></h1>
+      
+      <h2>This is the home page just so ya know</h2>
     </div>
   </div>
 
