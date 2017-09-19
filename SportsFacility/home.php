@@ -39,7 +39,7 @@
 
   <div class="home-section">
     <div class="container info">
-      <h1><big>Hockety<strong>Plex</strong></big></h1>
+      <h1><big>Hockey<strong>Plex</strong></big></h1>
     </div>
   </div>
 
