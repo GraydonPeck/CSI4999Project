@@ -73,5 +73,28 @@
 		}	
 		return  $retvalue;
 	}
+	function check_login_type($user)
+	{
+		global $conn;
+
+		$customer = False;
+
+		$sql = "select user_type from login_db where user_name = '$user'";
+
+    	
+		$result = $conn->query($sql);
+		if ($result->num_rows == 1) {
+			$row = $result->fetch_assoc();
+			$dbpass = $row["user_type"];
+		
+			if ($dbpass == "customer")
+			{
+				$customer = True;
+				$msg = "Customer";
+			}
+		}
+
+		return  $customer;
+	}
 
 ?>

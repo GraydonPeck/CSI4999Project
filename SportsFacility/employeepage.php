@@ -40,7 +40,8 @@
   <div class="EMP-section">
     <div class="container info">
       <h1><big>Hockey<strong>Plex</strong></big></h1>
-    </div>
+      <h2>This is employee page</h2>    
+      </div>
   </div>
 
   

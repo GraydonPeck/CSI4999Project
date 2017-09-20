@@ -1,21 +1,5 @@
 <!DOCTYPE html>
 <!-- Test -->
-<?php    
-include('dbutils.php');
-
- session_start(); 
-
-$message="";
-
-    if (count($_POST)) 
-    {
-
-	    echo "Found " . count($_POST) . " elements" . "<td>";
-        var_dump($_POST);
-        add_user ($_POST['User_name'], $_POST['User_password'], $_POST['User_email']);
-        header ("Location: main.php");
-    }
-?>
 <html lang="en">
 <head>
   <meta charset="utf-8">

@@ -14,7 +14,13 @@
     {
 	echo "Success " . "<br>";
 	$_SESSION['login'] = $username;
-	$goto = "Location: home.php";
+	$customer = check_login_type($username);
+	if ($customer)
+	{
+	$goto = "Location: customerpage.php";
+	} else{
+	$goto= "Location: employeepage.php";
+	}
     } else {
         echo "Failure " . "<br>";
     	$ref = getenv("HTTP_REFERER");
