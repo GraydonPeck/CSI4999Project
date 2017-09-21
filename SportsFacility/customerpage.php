@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-
+<?php
+ include("dbutils.php");
+ session_start();
+?>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -21,21 +24,25 @@
 
 </head>
 
-<<body>
- <div>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
       </button>
     </div>
-      <ul class="nav navbar-nav" id="login-dp" >
+    <ul class="nav navbar-nav" id="login-dp" >
             <!-- Trigger Login Modal -->
-              <li class="active" data-toggle="modal" data-target="#Login"> <a href="#">Logout</a></li>
+              <li class="active" data-toggle="modal" data-target="#Login"> <a href="logout.php">Logout</a></li>
               <!-- End Trigger-->
               <li><a href="home.php"><span class="glyphicon glyphicon-home"></span></a></li>
-       </ul>
-    </nav>
+    </ul>
+    <ul>
+          <!-- Username display -->
+         <?php echo '<li>' .$_SESSION["login"] ;'</li>'?>
+    </ul>
+</nav>
 
   <div class="EMP-section">
     <div class="container info">
@@ -43,6 +50,44 @@
       <h2>This is customer page</h2>
     </div>
   </div>
+  
+   <div class = "container info">
+      <center>
+      <table class = "">
+        
+        <tr>
+          <td>First Name</td> <td><input type="text" name="fname"></td>
+        </tr>
+        <tr>
+          <td>Last Name</td> <td><input type="text" name="lname"></td>
+        </tr>
+        <tr>
+          <td>Phone Number</td> <td><input type="text" name="phonenumber"></td>
+        </tr>
+        <tr>
+          <td>Email</td> <td><input type="email" name="email"></td>
+        </tr>
+        <tr>
+          <td>Address</td> <td><input type="text" name="address"></td>
+        </tr>
+        <tr>
+          <td>City</td> <td><input type="text" name="city"></td>
+        </tr>
+        <tr>
+          <td>State</td> <td><input type="text" name"state"></td>
+        </tr>
+        <tr>
+          <td>Country</td> <td><input type="text" name="country"</td>
+        </tr>
+        <tr>
+          <td>Zip</td> <td><input type="text" name="zip"></td>
+        </tr>
+        <tr>
+          <td>Credit Card</td> <td><input type="text" name="creditcard"></td>
+        </tr>
+        
+     </center>  
+      </table>
 
   
 
