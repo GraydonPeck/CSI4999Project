@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+<?php
+ include("dbutils.php");
+ session_start();
+     if (count($_POST)) 
+    {
+
+	    echo "Found " . count($_POST) . " elements" . "<td>";
+        var_dump($_POST);
+        add_user ($_POST['User_name'], $_POST['User_password'], $_POST['User_email']);
+        header ("Location: home.php");
+    }
+?>
+?>
 <!-- Test -->
 <html lang="en">
 <head>
@@ -22,8 +35,8 @@
 </head>
 
 <body>
- <div>
   <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
@@ -35,6 +48,7 @@
               <!-- End Trigger-->
               <li><a href="home.php"><span class="glyphicon glyphicon-home"></span></a></li>
        </ul>
+      </div>
     </nav>
 
   <div class="intro-section">

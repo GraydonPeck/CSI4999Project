@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-
+<?php
+ include("dbutils.php");
+ session_start();
+?>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -24,6 +27,7 @@
 <<body>
  <div>
   <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
@@ -31,10 +35,23 @@
     </div>
       <ul class="nav navbar-nav" id="login-dp" >
             <!-- Trigger Login Modal -->
+              <?php if(isset($_SESSION['loggedin'])){ ?>
+              <li class="active" data-toggle="modal"> <a href="logout.php">Logout</a></li>
+              <?php }else{ ?>
               <li class="active" data-toggle="modal" data-target="#Login"> <a href="#">Login</a></li>
+              <?php } ?>
               <!-- End Trigger-->
               <li><a href="home.php"><span class="glyphicon glyphicon-home"></span></a></li>
        </ul>
+       <ul class="nav navbar-nav navbar-right">
+          <!-- Username display -->
+          <?php if(isset($_SESSION['loggedin'])){
+          echo "<li><a>" .$_SESSION['login']."</a></li>";?>
+          <?php }else{ ?>
+          <li class="active" data-toggle="modal" data-target="#Login"> <a href="main.php">Create Account</a></li>
+           <?php } ?>
+      </ul>
+       </div>
     </nav>
 
   <div class="home-section">

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
+<html lang="en">
 <?php
  include("dbutils.php");
  session_start();
 ?>
-<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,6 +28,7 @@
 <body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
@@ -38,10 +40,13 @@
               <!-- End Trigger-->
               <li><a href="home.php"><span class="glyphicon glyphicon-home"></span></a></li>
     </ul>
-    <ul>
+    <ul class="nav navbar-nav navbar-right">
           <!-- Username display -->
-         <?php echo '<li>' .$_SESSION["login"] ;'</li>'?>
-    </ul>
+          <?php 
+          echo "<li><a>" .$_SESSION['login']."</a></li>"
+          ;?>
+      </ul>
+    </div>
 </nav>
 
   <div class="EMP-section">

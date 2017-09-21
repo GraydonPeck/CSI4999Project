@@ -41,7 +41,9 @@
        </ul>
        <ul class="nav navbar-nav navbar-right">
           <!-- Username display -->
-          <?php echo '<li>' .$_SESSION["login"]; '</li>'?>
+          <?php 
+          echo "<li><a>" .$_SESSION['login']."</a></li>"
+          ;?>
       </ul>
     </div>
     </nav>
