@@ -37,6 +37,15 @@
 	
         run_update($sql_i);
 	}
+	function edit_customer ($user_number, $customer_fname, $customer_lname, $customer_phone, $customer_email, $customer_address, $customer_city, $customer_state, $customer_country, $customer_zip, $customer_creditcard)
+	{
+		global $conn;
+
+        $sql_i = "INSERT INTO customer_db(user_number, customer_fname, customer_lname, customer_phone, customer_email, customer_address, customer_city, customer_state, customer_country, customer_zip, customer_creditcard) VALUES " .
+                "('$user_number', $customer_fname', '$customer_lname', '$customer_phone', '$customer_email', '$customer_address', '$customer_city', '$customer_state', '$customer_country', '$customer_zip', '$customer_creditcard')";
+	
+        run_update($sql_i);
+	}
 	function run_update ($sql)
 	{
 		global $conn;
@@ -96,5 +105,4 @@
 
 		return  $customer;
 	}
-
 ?>
