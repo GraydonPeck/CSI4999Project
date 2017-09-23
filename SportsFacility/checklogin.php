@@ -13,23 +13,30 @@
     echo "Return Status = " . $retstatus . "<br>";
     if ($retstatus)
     {
-	echo "Success " . "<br>";
-	$_SESSION['login'] = $username;
-	$_SESSION['loggedin'] = True;
-	$customer = check_login_type($username);
-	if ($customer)
-	{
-	$goto = "Location: customerpage.php";
-	} else{
-	$goto= "Location: employeepage.php";
-	}
+	   echo "Success " . "<br>";
+	   
+       $_SESSION['login'] = $username;
+	   $_SESSION['loggedin'] = True;
+	   
+       $customer = check_login_type($username);
+	   
+       if ($customer)
+	   {
+	       $goto = "Location: customerpage.php";
+	   } else{
+	       $goto= "Location: employeepage.php";
+	   }
     } else {
+        
         echo "Failure " . "<br>";
-    	$ref = getenv("HTTP_REFERER");
+    	
+        $ref = getenv("HTTP_REFERER");
         $_SESSION['login'] = '';
+        
         //echo "<script language='javascript'> alert('Incorrect Password'); </script>";
     	$goto = "Location: " . $ref;
     }	
-	header($goto);
+	
+    header($goto);
 
 ?>
