@@ -96,6 +96,7 @@ h1,h2,p{
 
 <body class="customer">
 
+<<<<<<< HEAD
 <nav class="navbar navbar-default " >
   <div class="container-fluid">
     <div class="navbar-header">
@@ -141,6 +142,34 @@ h1,h2,p{
           echo "<li><a>" .$_SESSION['login']."</a></li>"
         ;?>
       </ul>
+=======
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+      </div>
+      <ul class="nav navbar-nav" id="login-dp" >
+              <!-- Trigger Login Modal -->
+                <li class="active" data-toggle="modal" data-target="#Login"> <a href="logout.php">Logout</a></li>
+                <!-- End Trigger-->
+                <li><a href="home.php"><span class="glyphicon glyphicon-home"></span></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+            <!-- Username display -->
+            <?php 
+            echo "<li><a>" .$_SESSION['login']."</a></li>"
+            ;?>
+        </ul>
+      </div>
+  </nav>
+
+  <div class="EMP-section">
+    <div class="container info">
+      <h1><big>Hockey<strong>Plex</strong></big></h1>
+      <h2>This is customer page</h2>
+>>>>>>> 1fbdf2a2b92a25c6221c68e1b8510d665c34633b
     </div>
   </div>
 
