@@ -97,6 +97,7 @@ h1,h2,p{
 <body class="customer">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <nav class="navbar navbar-default " >
   <div class="container-fluid">
     <div class="navbar-header">
@@ -156,6 +157,21 @@ h1,h2,p{
                 <!-- End Trigger-->
                 <li><a href="home.php"><span class="glyphicon glyphicon-home"></span></a></li>
       </ul>
+=======
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+      </div>
+      <ul class="nav navbar-nav" id="login-dp" >
+              <!-- Trigger Login Modal -->
+                <li class="active" data-toggle="modal" data-target="#Login"> <a href="logout.php">Logout</a></li>
+                <!-- End Trigger-->
+                <li><a href="home.php"><span class="glyphicon glyphicon-home"></span></a></li>
+      </ul>
+>>>>>>> 1fbdf2a2b92a25c6221c68e1b8510d665c34633b
       <ul class="nav navbar-nav navbar-right">
             <!-- Username display -->
             <?php 
