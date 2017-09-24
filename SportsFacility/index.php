@@ -24,7 +24,7 @@
 
 </head>
 
-<<body>
+<body>
  <div>
   <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
@@ -41,7 +41,7 @@
               <li class="active" data-toggle="modal" data-target="#Login"> <a href="#">Login</a></li>
               <?php } ?>
               <!-- End Trigger-->
-              <li><a href="home.php"><span class="glyphicon glyphicon-home"></span></a></li>
+              <li><a href="index.php"><span class="glyphicon glyphicon-home"></span></a></li>
        </ul>
        <ul class="nav navbar-nav navbar-right">
           <!-- Username display -->
@@ -55,10 +55,59 @@
     </nav>
 
   <div class="home-section">
-    <div class="container info">
-      <h1><big>Hockey<strong>Plex</strong></big></h1>
+    <div class="jumbotron">
+      <h1><center><big>Hockey<strong>Plex</strong></big></center></h1>
+    </div>
+    <!-- Schedule Carousel -->
+    <div id="myCarousel" class="carousel fdi-Carousel slide">
+          <div class="carousel fdi-Carousel slide" id="eventCarousel" data-interval="0">
+              <div class="carousel-inner onebyone-carosel">
+                  <div class="item active">
+                      <div class="col-xs-3 subcard">
+                            <div class="panel panel-info">
+                              <div class="panel-heading">Ice 3 9:30</div>
+                              <div class="panel-body">Panel Content</div>
+                            </div>
+                      </div>
+                      <div class="col-xs-3">
+                          <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
+                          <div class="text-center">2</div>
+                      </div>
+                      <div class="col-xs-3">
+                          <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
+                          <div class="text-center">3</div>
+                      </div>
+                      <div class="col-xs-3">
+                          <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
+                          <div class="text-center">4</div>
+                      </div>
+                  </div>
+                  <div class="item">
+                      <div class="col-xs-3">
+                          <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
+                          <div class="text-center">5</div>
+                      </div>
+                      <div class="col-xs-3">
+                          <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
+                          <div class="text-center">6</div>
+                      </div>
+                      <div class="col-xs-3">
+                          <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
+                          <div class="text-center">7</div>
+                      </div>
+                      <div class="col-xs-3">
+                          <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
+                          <div class="text-center">8</div>
+                      </div>
+                  </div>
+
+              </div>
+              <a class="left carousel-control" href="#eventCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+              <a class="right carousel-control" href="#eventCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+          </div>
+          <!--/carousel-inner-->
+      </div><!--/schedulecarousel-->
       
-      <h2>This is the home page just so ya know</h2>
     </div>
   </div>
 
