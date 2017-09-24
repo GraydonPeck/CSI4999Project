@@ -27,71 +27,13 @@
   <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
   <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
   <script type = "text/javascript" src = "chk.js"></script>
-  <link rel="stylesheet" type="text/css" src="main.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
 
-  <style>
-    body{
-     background-color:#cae4db; 
-    }
-     .navbar-default {
-    background-color: #dcae1d;
-    border-color: #030033;
-}
-
- .dropdown-menu > li > a:hover,
-   .dropdown-menu > li > a:focus {
-    color: #262626;
-   text-decoration: none;
-  background-color: #7a9d96;  /*change color of links in drop down here*/
-   }
-   .dropdown-menu{
-     background-color:#dcae1d;
-   }
-   
-    .nav > li > a:hover,
- .nav > li > a:focus {
-    text-decoration: none;
-    background-color: #00303f; /*Change rollover cell color here*/
-  }
   
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 50%;
-    margin:auto;
-}
-
-td, th {
-    border: 1px solid #dcae1d;
-    text-align: left;
-    padding:8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-
-.btn-default{
-  
-  margin-top: 2px;
-  
-}
-.btn-primary{
-  margin-top: 2px;
-}
-.navbar{
-  margin:0;
-  
-}
-
-h1,h2,p{
-  text-align:center;
-}
-  </style>
 
 </head>
 
-<body class="customer">
+<body>
 
 <nav class="navbar navbar-default " >
   <div class="container-fluid">
@@ -122,21 +64,59 @@ h1,h2,p{
           <li><a href="#">Searched Items</a></li>
         </ul>
         <li><a href="#">Video's</a></li>
+        <li><a href="employeepage.php">Employee Page</a></li>
         <li><a href="#">About</a></li>
          <li><a href="#"><span class="glyphicon glyphicon-mail"></span></a></li>
         
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-trash"></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-envelope"></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-wrench"></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-bell"></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+         <ul class="nav navbar-nav navbar-right">
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"></span><span class="caret"></span> <span class="glyphicon glyphicon-user pull-right"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"> Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+            <li class="divider"></li>
+            <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
+            <li class="divider"></li>
+            <li><a href="#">Messages <span class="badge pull-right"> 42 </span></a></li>
+            <li class="divider"></li>
+            
+            
+            <!-- Trigger Login Modal -->
+              <?php if(isset($_SESSION['loggedin'])){ ?>
+              <li class="active" data-toggle="modal"> <a href="logout.php">Logout</a></li>
+              <?php }else{ ?>
+              <li class="active" data-toggle="modal" data-target="#Login"> <a href="#">Login</a></li>
+              <?php } ?>
+              <!-- End Trigger-->
+             <li class="divider"></li>
+            <li><a href="#">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+           
+          </ul>
+        </li>
+      <!-- This addes a dropdown menu for the important icons -->
+       <ul class="nav navbar-nav navbar-right">
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"></span><span class="caret"></span> <span class="glyphicon glyphicon-bell pull-right"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"> Notification1 </a></li>
+            <li class="divider"></li>
+            <li><a href="#">Notification2 </a></li>
+            <li class="divider"></li>
+            <li><a href="#">Notification3 </a></li>
+            <li class="divider"></li>
+            
+          </ul>
+        </li>
+       <!-- End of adding dropdown menu --> 
   
-        <?php
-          echo "<li><a>" .$_SESSION['login']."</a></li>"
-        ;?>
+      <!-- Username display -->
+       <?php if(isset($_SESSION['loggedin'])){
+          echo "<li><a>" .$_SESSION['login']."</a></li>";?>
+          <?php }else{ ?>
+          <li  data-toggle="modal" data-target="#Login"> <a href="main.php">Create Account</a></li>
+           <?php } ?>
+      
+      <!--End of username display -->
       </ul>
     </div>
   </div>

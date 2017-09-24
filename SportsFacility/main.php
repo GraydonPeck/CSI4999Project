@@ -11,7 +11,7 @@
         header ("Location: home.php");
     }
 ?>
-?>
+
 <!-- Test -->
 <html lang="en">
 <head>
@@ -35,21 +35,57 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
+ <nav class="navbar navbar-default " >
+  <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
       </button>
+      <a class="navbar-brand" href="main.php">SportPlex</a>
     </div>
-      <ul class="nav navbar-nav" id="login-dp" >
-            <!-- Trigger Login Modal -->
-              <li class="active" data-toggle="modal" data-target="#Login"> <a href="#">Login</a></li>
-              <!-- End Trigger-->
-              <li><a href="home.php"><span class="glyphicon glyphicon-home"></span></a></li>
-       </ul>
-      </div>
-    </nav>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+      <li><a href="index.php"><span class="glyphicon glyphicon-home"></span></a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Schedule<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Times/Dates</a></li>
+            <li><a href="#">Your Schedule</a></li>
+          </ul>
+        </li>
+         <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pro Shop<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Viewed Items</a></li>
+          <li><a href="#">Items in Cart</a></li>
+          <li><a href="#">Searched Items</a></li>
+        </ul>
+        <li><a href="#">Video's</a></li>
+        <li><a href="customerpage.php">Customer Page</a></li>
+        <li><a href="employeepage.php">Employee Page</a></li>
+        <li><a href="#">About</a></li>
+         <li><a href="#"><span class="glyphicon glyphicon-mail"></span></a></li>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-trash"></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-envelope"></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-wrench"></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-bell"></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+  
+        <?php
+          echo "<li><a>" .$_SESSION['login']."</a></li>"
+        ;?>
+      </ul>
+    </div>
+  </div>
+
+</nav>
 
   <div class="intro-section">
     <div class="container info">
