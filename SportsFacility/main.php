@@ -87,7 +87,7 @@
 
           <center>
           <form action = "checklogin.php" method="post">
-                                <input type="hidden" name="User_number">
+                                <input type="hidden" name="user_number">
           <table>
           <tr>
           <td>Username:</td>     <td><input type="text" name="username"></td>

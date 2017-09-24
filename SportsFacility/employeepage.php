@@ -37,7 +37,7 @@
             <!-- Trigger Login Modal -->
               <li class="active" data-toggle="modal" data-target="#Login"> <a href="logout.php">Logout</a></li>
               <!-- End Trigger-->
-              <li><a href="home.php"><span class="glyphicon glyphicon-home"></span></a></li>
+              <li><a href="index.php"><span class="glyphicon glyphicon-home"></span></a></li>
        </ul>
        <ul class="nav navbar-nav navbar-right">
           <!-- Username display -->
