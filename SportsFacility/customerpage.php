@@ -83,10 +83,7 @@ tr:nth-child(even) {
   margin:0;
   
 }
-.jumbotron{
-  background-color:#00303f;
-  color:white;
-}
+
 h1,h2,p{
   text-align:center;
 }
@@ -108,7 +105,7 @@ h1,h2,p{
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-      <li><a href="home.php"><span class="glyphicon glyphicon-home"></span></a></li>
+      <li><a href="index.php"><span class="glyphicon glyphicon-home"></span></a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Schedule<span class="caret"></span></a>
           <ul class="dropdown-menu">
