@@ -54,8 +54,6 @@
           <li><a href="#">Searched Items</a></li>
         </ul>
         <li><a href="#">Video's</a></li>
-        <li><a href="customerpage.php">Customer Page</a></li>
-        <li><a href="employeepage.php">Employee Page</a></li>
         <li><a href="#">About</a></li>
          
         
@@ -76,11 +74,10 @@
               <?php if(isset($_SESSION['loggedin'])){ ?>
               <li class="active" data-toggle="modal"> <a href="logout.php">Logout</a></li>
               <?php }else{ ?>
-              <li class="active" data-toggle="modal" data-target="#Login"> <a href="#">Login</a></li>
+              <li class="active" data-toggle="modal" data-target="#Login"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-right"></span></a></li>
               <?php } ?>
               <!-- End Trigger-->
-             <li class="divider"></li>
-            <li><a href="#">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+            
            
           </ul>
         </li>

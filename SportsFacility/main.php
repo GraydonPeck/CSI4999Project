@@ -35,6 +35,7 @@
 </head>
 
 <body>
+<!-- This is the creation of the navbar on the page for signing up or loging in -->
  <nav class="navbar navbar-default " >
   <div class="container-fluid">
     <div class="navbar-header">
@@ -47,36 +48,21 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
+      <!-- This is the home icon bringing users to our index.php page -->
       <li><a href="index.php"><span class="glyphicon glyphicon-home"></span></a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Schedule<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Times/Dates</a></li>
-            <li><a href="#">Your Schedule</a></li>
-          </ul>
-        </li>
-         <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pro Shop<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Viewed Items</a></li>
-          <li><a href="#">Items in Cart</a></li>
-          <li><a href="#">Searched Items</a></li>
-        </ul>
-        <li><a href="#">Video's</a></li>
-        <li><a href="customerpage.php">Customer Page</a></li>
-        <li><a href="employeepage.php">Employee Page</a></li>
-        <li><a href="#">About</a></li>
-         <li><a href="#"><span class="glyphicon glyphicon-mail"></span></a></li>
+       
+      
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-trash"></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-envelope"></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-wrench"></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-bell"></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+        <!-- php that checks our database for signing users into their accounts. -->
+          <?php if(isset($_SESSION['loggedin'])){ ?>
+              <li class="active" data-toggle="modal"> <a href="logout.php">Logout</a></li>
+              <?php }else{ ?>
+              <li class="active" data-toggle="modal" data-target="#Login"> <a href="#">Login</a></li>
+              <?php } ?>
+              <!-- End Trigger-->
+             
   
         <?php
           echo "<li><a>" .$_SESSION['login']."</a></li>"
@@ -86,7 +72,7 @@
   </div>
 
 </nav>
-
+<!--end of the creation of the nav bar element -->
   <div class="intro-section">
     <div class="container info">
       <h1><big>Hockey<strong>Plex</strong></big></h1>

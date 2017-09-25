@@ -54,36 +54,13 @@
           <li><a href="#">Searched Items</a></li>
         </ul>
         <li><a href="#">Video's</a></li>
-        <li><a href="customerpage.php">Customer Page</a></li>
+       
         <li><a href="#">About</a></li>
          <li><a href="#"><span class="glyphicon glyphicon-mail"></span></a></li>
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
-         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"></span><span class="caret"></span> <span class="glyphicon glyphicon-user pull-right"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#"> Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
-            <li class="divider"></li>
-            <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
-            <li class="divider"></li>
-            <li><a href="#">Messages <span class="badge pull-right"> 42 </span></a></li>
-            <li class="divider"></li>
-            
-            
-            <!-- Trigger Login Modal -->
-              <?php if(isset($_SESSION['loggedin'])){ ?>
-              <li class="active" data-toggle="modal"> <a href="logout.php">Logout</a></li>
-              <?php }else{ ?>
-              <li class="active" data-toggle="modal" data-target="#Login"> <a href="#">Login</a></li>
-              <?php } ?>
-              <!-- End Trigger-->
-             <li class="divider"></li>
-            <li><a href="#">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
-           
-          </ul>
-        </li>
-      <!-- This addes a dropdown menu for the important icons -->
+         <!-- This addes a dropdown menu for the important icons -->
        <ul class="nav navbar-nav navbar-right">
          <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"></span><span class="caret"></span> <span class="glyphicon glyphicon-bell pull-right"></span></a>
@@ -98,8 +75,32 @@
           </ul>
         </li>
        <!-- End of adding dropdown menu --> 
-  
-      <!-- Username display -->
+       
+        <!--Dropdown for the user icon for differnt options -->
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"></span><span class="caret"></span> <span class="glyphicon glyphicon-user pull-right"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"> Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+            <li class="divider"></li>
+            <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
+            <li class="divider"></li>
+            <li><a href="#">Messages <span class="badge pull-right"> 42 </span></a></li>
+            <li class="divider"></li>
+          <!-- End of drop down for users -->  
+            
+            <!-- Trigger Login Modal -->
+              <?php if(isset($_SESSION['loggedin'])){ ?>
+              <li class="active" data-toggle="modal"> <a href="logout.php">Logout</a></li>
+              <?php }else{ ?>
+              <li class="active" data-toggle="modal" data-target="#Login"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-right"></span></a></li>
+              <?php } ?>
+              <!-- End Trigger-->
+            
+           
+          </ul>
+        </li>
+     
+      <!-- Username display. Displays the username in the upper right corner of the screen. -->
        <?php if(isset($_SESSION['loggedin'])){
           echo "<li><a>" .$_SESSION['login']."</a></li>";?>
           <?php }else{ ?>
@@ -121,6 +122,8 @@
   
   
   <div>
+    
+    <!-- This is where the customer enters added information to their accounts. -->
     <div class = "container info">
       <center>
       <table class = "">
@@ -149,6 +152,7 @@
       </table>
       
     </div>
+    <!-- End of area for adding additional information -->
     <div class="modal-footer">
      <center>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

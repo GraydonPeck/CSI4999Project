@@ -64,11 +64,23 @@
           <li><a href="#">Searched Items</a></li>
         </ul>
         <li><a href="#">Video's</a></li>
-        <li><a href="employeepage.php">Employee Page</a></li>
         <li><a href="#">About</a></li>
          <li><a href="#"><span class="glyphicon glyphicon-mail"></span></a></li>
         
       </ul>
+       <ul class="nav navbar-nav navbar-right">
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"></span><span class="caret"></span> <span class="glyphicon glyphicon-bell pull-right"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"> Notification1 </a></li>
+            <li class="divider"></li>
+            <li><a href="#">Notification2 </a></li>
+            <li class="divider"></li>
+            <li><a href="#">Notification3 </a></li>
+            <li class="divider"></li>
+            
+          </ul>
+        </li>
          <ul class="nav navbar-nav navbar-right">
          <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"></span><span class="caret"></span> <span class="glyphicon glyphicon-user pull-right"></span></a>
@@ -85,29 +97,14 @@
               <?php if(isset($_SESSION['loggedin'])){ ?>
               <li class="active" data-toggle="modal"> <a href="logout.php">Logout</a></li>
               <?php }else{ ?>
-              <li class="active" data-toggle="modal" data-target="#Login"> <a href="#">Login</a></li>
+              <li class="active" data-toggle="modal" data-target="#Login"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-right"></span></a></li>
               <?php } ?>
               <!-- End Trigger-->
-             <li class="divider"></li>
-            <li><a href="#">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+            
            
           </ul>
         </li>
-      <!-- This addes a dropdown menu for the important icons -->
-       <ul class="nav navbar-nav navbar-right">
-         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"></span><span class="caret"></span> <span class="glyphicon glyphicon-bell pull-right"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#"> Notification1 </a></li>
-            <li class="divider"></li>
-            <li><a href="#">Notification2 </a></li>
-            <li class="divider"></li>
-            <li><a href="#">Notification3 </a></li>
-            <li class="divider"></li>
-            
-          </ul>
-        </li>
-       <!-- End of adding dropdown menu --> 
+       
   
       <!-- Username display -->
        <?php if(isset($_SESSION['loggedin'])){
