@@ -8,7 +8,7 @@
 	    echo "Found " . count($_POST) . " elements" . "<td>";
         var_dump($_POST);
         add_user ($_POST['User_name'], $_POST['User_password'], $_POST['User_email']);
-        header ("Location: home.php");
+        header ("Location: main.php");
     }
 ?>
 

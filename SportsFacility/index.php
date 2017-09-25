@@ -2,6 +2,8 @@
 <?php
  include("dbutils.php");
  session_start();
+ $username = $_POST['username'];
+ $customer = check_login_type($username);
 ?>
 <html lang="en">
 <head>
@@ -99,9 +101,14 @@
   
       <!-- Username display -->
        <?php if(isset($_SESSION['loggedin'])){
-          echo "<li><a>" .$_SESSION['login']."</a></li>";?>
+          if ($customer){
+          echo "<li><a href='customerpage.php'>" .$_SESSION['login']. "</a> </li>";?>
+          <?php } else { ?>
+          <?php
+           echo "<li><a href='employeepage.php'>" .$_SESSION['login']. "</a> </li>";?>
+          <?php } ?>
           <?php }else{ ?>
-          <li  data-toggle="modal" data-target="#Login"> <a href="main.php">Create Account</a></li>
+          <li  data-toggle="modal" data-target=""> <a href="main.php">Create Account</a></li>
            <?php } ?>
       
       <!--End of username display -->
