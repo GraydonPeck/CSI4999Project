@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+<?php
+ include("dbutils.php");
+ session_start();
+     if (count($_POST)) 
+    {
+
+	    echo "Found " . count($_POST) . " elements" . "<td>";
+        var_dump($_POST);
+        add_user ($_POST['User_name'], $_POST['User_password'], $_POST['User_email']);
+        header ("Location: main.php");
+    }
+?>
+
 <!-- Test -->
 <html lang="en">
 <head>
@@ -22,21 +35,44 @@
 </head>
 
 <body>
- <div>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+<!-- This is the creation of the navbar on the page for signing up or loging in -->
+ <nav class="navbar navbar-default " >
+  <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
       </button>
+      <a class="navbar-brand" href="main.php">SportPlex</a>
     </div>
-      <ul class="nav navbar-nav" id="login-dp" >
-            <!-- Trigger Login Modal -->
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+      <!-- This is the home icon bringing users to our index.php page -->
+      <li><a href="index.php"><span class="glyphicon glyphicon-home"></span></a></li>
+       
+      
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <!-- php that checks our database for signing users into their accounts. -->
+          <?php if(isset($_SESSION['loggedin'])){ ?>
+              <li class="active" data-toggle="modal"> <a href="logout.php">Logout</a></li>
+              <?php }else{ ?>
               <li class="active" data-toggle="modal" data-target="#Login"> <a href="#">Login</a></li>
+              <?php } ?>
               <!-- End Trigger-->
-              <li><a href="home.php"><span class="glyphicon glyphicon-home"></span></a></li>
-       </ul>
-    </nav>
+             
+  
+        <?php
+          echo "<li><a>" .$_SESSION['login']."</a></li>"
+        ;?>
+      </ul>
+    </div>
+  </div>
 
+</nav>
+<!--end of the creation of the nav bar element -->
   <div class="intro-section">
     <div class="container info">
       <h1><big>Hockey<strong>Plex</strong></big></h1>
@@ -73,7 +109,7 @@
 
           <center>
           <form action = "checklogin.php" method="post">
-                                <input type="hidden" name="User_number">
+                                <input type="hidden" name="user_number">
           <table>
           <tr>
           <td>Username:</td>     <td><input type="text" name="username"></td>

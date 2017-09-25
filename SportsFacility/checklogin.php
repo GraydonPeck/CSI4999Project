@@ -1,6 +1,7 @@
 <?php
     include "dbutils.php";
     session_start();
+    $_SESSION['loggedin'] = False;
  
 	$username = $_POST['username'];
 	$passwd = $_POST['passwd'];
@@ -14,6 +15,7 @@
     {
 	echo "Success " . "<br>";
 	$_SESSION['login'] = $username;
+	$_SESSION['loggedin'] = True;
 	$customer = check_login_type($username);
 	if ($customer)
 	{

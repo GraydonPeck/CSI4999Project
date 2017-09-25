@@ -1,5 +1,16 @@
 <!DOCTYPE html>
+<?php
+ include("dbutils.php");
+ session_start();
+      if (count($_POST)) 
+    {
 
+	    echo "Found " . count($_POST) . " elements" . "<td>";
+        var_dump($_POST);
+        edit_customer ($_POST['user_number'], $_POST['customer_fname'], $_POST['customer_lname'], $_POST['customer_phone'], $_POST['customer_email'],  $_POST['customer_address'], $_POST['customer_city'],  $_POST['customer_state'],  $_POST['customer_country'],  $_POST['customer_zip'],  $_POST['customer_creditcard']);
+        header ("Location: customerpage.php");
+    }
+?>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -18,34 +29,158 @@
   <script type = "text/javascript" src = "chk.js"></script>
   <link rel="stylesheet" type="text/css" href="main.css">
 
+  
 
 </head>
 
-<<body>
- <div>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-      </button>
-    </div>
-      <ul class="nav navbar-nav" id="login-dp" >
-            <!-- Trigger Login Modal -->
-              <li class="active" data-toggle="modal" data-target="#Login"> <a href="#">Logout</a></li>
-              <!-- End Trigger-->
-              <li><a href="home.php"><span class="glyphicon glyphicon-home"></span></a></li>
-       </ul>
-    </nav>
+<body>
 
-  <div class="EMP-section">
-    <div class="container info">
-      <h1><big>Hockey<strong>Plex</strong></big></h1>
-      <h2>This is customer page</h2>
+<nav class="navbar navbar-default " >
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="main.php">SportPlex</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+      <li><a href="index.php"><span class="glyphicon glyphicon-home"></span></a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Schedule<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Times/Dates</a></li>
+            <li><a href="#">Your Schedule</a></li>
+          </ul>
+        </li>
+         <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pro Shop<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Viewed Items</a></li>
+          <li><a href="#">Items in Cart</a></li>
+          <li><a href="#">Searched Items</a></li>
+        </ul>
+        <li><a href="#">Video's</a></li>
+        <li><a href="#">About</a></li>
+         <li><a href="#"><span class="glyphicon glyphicon-mail"></span></a></li>
+        
+      </ul>
+       <ul class="nav navbar-nav navbar-right">
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"></span><span class="caret"></span> <span class="glyphicon glyphicon-bell pull-right"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"> Notification1 </a></li>
+            <li class="divider"></li>
+            <li><a href="#">Notification2 </a></li>
+            <li class="divider"></li>
+            <li><a href="#">Notification3 </a></li>
+            <li class="divider"></li>
+            
+          </ul>
+        </li>
+         <ul class="nav navbar-nav navbar-right">
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"></span><span class="caret"></span> <span class="glyphicon glyphicon-user pull-right"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"> Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+            <li class="divider"></li>
+            <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
+            <li class="divider"></li>
+            <li><a href="#">Messages <span class="badge pull-right"> 42 </span></a></li>
+            <li class="divider"></li>
+            
+            
+            <!-- Trigger Login Modal -->
+              <?php if(isset($_SESSION['loggedin'])){ ?>
+              <li class="active" data-toggle="modal"> <a href="logout.php">Logout</a></li>
+              <?php }else{ ?>
+              <li class="active" data-toggle="modal" data-target="#Login"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-right"></span></a></li>
+              <?php } ?>
+              <!-- End Trigger-->
+            
+           
+          </ul>
+        </li>
+       
+  
+      <!-- Username display -->
+       <?php if(isset($_SESSION['loggedin'])){
+          echo "<li><a>" .$_SESSION['login']."</a></li>";?>
+          <?php }else{ ?>
+          <li  data-toggle="modal" data-target="#Login"> <a href="main.php">Create Account</a></li>
+           <?php } ?>
+      
+      <!--End of username display -->
+      </ul>
     </div>
   </div>
 
+</nav>
+<div class="jumbotron">
+  <h1><big>Hockey<strong>Plex</strong></big></h1>
+  <h2>This is customer page</h2>
+  <p>This is where the Customer enters extra information to their account.</p>
+</div>
   
-
+  
+      
+   <div class = "container info">
+     <div class = "container-fluid">
+       <center>
+      <form id="#formSection" method="post" class="customeredit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
+      <input type ="hidden" name= "user_number" value="1">
+      <table class = "">
+         <tr>
+           <th>Information</th>
+           <th>Input</th>
+         </tr>
+        <tr>
+          <td>First Name</td> <td><input type="text" name="customer_fname"></td>
+        </tr>
+        <tr>
+          <td>Last Name</td> <td><input type="text" name="customer_lname"></td>
+        </tr>
+        <tr>
+          <td>Phone Number</td> <td><input type="text" name="customer_phone"></td>
+        </tr>
+        <tr>
+          <td>Email</td> <td><input type="email" name="customer_email"></td>
+        </tr>
+        <tr>
+          <td>Address</td> <td><input type="text" name="customer_address"></td>
+        </tr>
+        <tr>
+          <td>City</td> <td><input type="text" name="customer_city"></td>
+        </tr>
+        <tr>
+          <td>State</td> <td><input type="text" name="customer_state"></td>
+        </tr>
+        <tr>
+          <td>Country</td> <td><input type="text" name="customer_country"</td>
+        </tr>
+        <tr>
+          <td>Zip</td> <td><input type="text" name="customer_zip"></td>
+        </tr>
+        <tr>
+          <td>Credit Card</td> <td><input type="text" name="customer_creditcard"></td>
+        </tr>
+      </table>
+  
+     
+     <center>
+         <hr>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
+     <center>
+    </div>
+</form>
+</div>
+</div>
+   </center> 
+</body>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
