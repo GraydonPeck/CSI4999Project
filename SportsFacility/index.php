@@ -51,7 +51,7 @@
          <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pro Shop<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Viewed Items</a></li>
+          <li><a href="proshop.php">Pro Shop</a></li>
           <li><a href="#">Items in Cart</a></li>
           <li><a href="#">Searched Items</a></li>
         </ul>
@@ -130,7 +130,7 @@
                       <div class="col-xs-3 subcard">
                             <div class="panel panel-info">
                               <div class="panel-heading">Ice 3 9:30</div>
-                              <div class="panel-body">Panel Content</div>
+                              <div class="panel-body">Vipers Vs Tropics</div>
                             </div>
                       </div>
                       <div class="col-xs-3">

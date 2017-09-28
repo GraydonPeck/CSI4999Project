@@ -49,7 +49,7 @@
          <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pro Shop<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Viewed Items</a></li>
+          <li><a href="proshop.php">Pro Shop</a></li>
           <li><a href="#">Items in Cart</a></li>
           <li><a href="#">Searched Items</a></li>
         </ul>

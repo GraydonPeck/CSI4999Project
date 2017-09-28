@@ -199,7 +199,6 @@ form {
 
 #signup-section {
     background: url(img/register.png) 0 no-repeat;
-    ;
     padding-top: 15%;
     height: 110%;
     -webkit-background-size: cover;
@@ -216,7 +215,7 @@ form {
     color: #fff;
 }
 
-.signup-form input#submitSection {
+.signup-form input #submitSection {
     margin: 0 auto;
     max-width: 185px;
     background-color: #4cae4c;
