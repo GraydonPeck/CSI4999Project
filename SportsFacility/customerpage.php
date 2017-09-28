@@ -2,7 +2,7 @@
 <?php
  include("dbutils.php");
  session_start();
-      if (count($_POST)) 
+     if (count($_POST)) 
     {
 
 	    echo "Found " . count($_POST) . " elements" . "<td>";
@@ -124,18 +124,28 @@
   <h2>This is customer page</h2>
   <p>This is where the Customer enters extra information to their account.</p>
 </div>
-  
-  
-      
+        			
    <div class = "container info">
      <div class = "container-fluid">
        <center>
       <form id="#formSection" method="post" class="customeredit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
-      <input type ="hidden" name= "user_number" value="1">
       <table class = "">
          <tr>
            <th>Information</th>
            <th>Input</th>
+         </tr>
+         <tr>
+             <?php
+  $db = mysqli_connect("localhost","gpeck2217","","c9");
+  $username = $_SESSION['login'];
+  $sql = "SELECT user_number FROM login_db WHERE user_name= $username";
+  $result = mysqli_query($db, $sql);
+  	while ($row = mysqli_fetch_array($result)){
+              			?>
+      <td>User Number</td> <td><input type='hidden' name='user_number' value="<?php echo $row['user_number']?>"></td>
+               	<?php
+              		}
+              	?> 
          </tr>
         <tr>
           <td>First Name</td> <td><input type="text" name="customer_fname"></td>
@@ -168,15 +178,11 @@
           <td>Credit Card</td> <td><input type="text" name="customer_creditcard"></td>
         </tr>
       </table>
-  
-     
      <center>
-         <hr>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-          <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
-     <center>
-    </div>
+        <input type="submit" id="submitSection" class="btn btn-primary" value="Submit">
 </form>
+</div>
 </div>
 </div>
    </center> 

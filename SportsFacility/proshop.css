@@ -35,7 +35,7 @@ a.btnRemoveAction:visited {
 }
 
 #btnEmpty {
-    background-color: #444444;
+    background-color: #ffffff;
     border: #FFF 1px solid;
     padding: 1px 10px;
     color: #ff0000;
@@ -46,7 +46,7 @@ a.btnRemoveAction:visited {
 }
 
 .btnAddAction {
-    background-color: #444444;
+    background-color: #1ad1ff;
     border: 0;
     padding: 3px 10px;
     color: #ffffff;
@@ -59,7 +59,7 @@ a.btnRemoveAction:visited {
 }
 
 .cart-item {
-    border-bottom: #79b946 1px dotted;
+    border-bottom: #d6d4d4 1px dotted;
     padding: 10px;
 }
 
@@ -73,7 +73,7 @@ a.btnRemoveAction:visited {
     margin: 15px 10px;
     padding: 5px;
     border: #CCC 1px solid;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .product-item div {

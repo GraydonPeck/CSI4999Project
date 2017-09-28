@@ -3,11 +3,11 @@
 session_start();
 class DBController {
 	
-	private	$host = "127.0.0.1";
-	private $user = "gpeck2217";
-	private $password = "";
-	private $database = "c9";
-	private $conn;
+	public	$host = "127.0.0.1";
+	public $user = "gpeck2217";
+	public $password = "";
+	public $database = "c9";
+	public $conn;
 	
 	function __construct() {
 		$this->conn = $this->connectDB();

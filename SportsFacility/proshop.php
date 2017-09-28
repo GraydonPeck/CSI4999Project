@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <?php
-session_start();
 include("dbutils.php");
-require_once("dbcontroller.php");
+include("dbcontroller.php");
 
 $db_handle = new DBController();
 if(!empty($_GET["action"])) {
@@ -16,7 +15,7 @@ switch($_GET["action"]) {
 				if(in_array($productByCode[0]["product_code"],array_keys($_SESSION["cart_item"]))) {
 					foreach($_SESSION["cart_item"] as $k => $v) {
 							if($productByCode[0]["product_code"] == $k) {
-								if(empty($_SESSION["cart_item"][$k]["product_quantity"])) {
+								if(empty($_SESSION["cart_item"][$k]["product_stock"])) {
 									$_SESSION["cart_item"][$k]["product_quantity"] = 0;
 								}
 								$_SESSION["cart_item"][$k]["product_quantity"] += $_POST["product_quantity"];
@@ -53,9 +52,9 @@ switch($_GET["action"]) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>ProShop</title>
-<link rel="stylesheet" type="text/css" href="proshop.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="proshop.css">
 <script type = "text/javascript" src = "chk.js"></script>
 
 </head>
@@ -157,13 +156,12 @@ switch($_GET["action"]) {
 if(isset($_SESSION["cart_item"])){
     $item_total = 0;
 ?>	
-<table cellpadding="10" cellspacing="1">
+<table cellpadding="5" cellspacing="1">
 <tbody>
 <tr>
 <th style="text-align:left;"><strong>Name</strong></th>
 <th style="text-align:left;"><strong>Price</strong></th>
 <th style="text-align:right;"><strong>Code</strong></th>
-<th style="text-align:right;"><strong>Quantity</strong></th>
 <th style="text-align:right;"><strong>Quantity</strong></th>
 <th style="text-align:center;"><strong>Description</strong></th>
 </tr>	
@@ -196,15 +194,16 @@ if(isset($_SESSION["cart_item"])){
 <div id="product-grid">
 	<div class="txt-heading">Products</div>
 	<?php
-	$product_array = $db_handle->runQuery("SELECT * FROM product_db ORDER BY product_name ASC");
+	$product_array = $db_handle->runQuery("SELECT * FROM product_db ORDER BY product_code ASC");
 	if (!empty($product_array)) { 
 		foreach($product_array as $key=>$value){
 	?>
 		<div class="product-item">
-			<form method="post" action="proshop.php?action=add&code=<?php echo $product_array[$key]["product_name"]; ?>">
-			<div class="product-image"><img src="<?php echo $product_array[$key]["product_image"]; ?>"></div>
-			<div><strong><?php echo $product_array[$key]["product_name"]; ?></strong></div>
+			<form method="post" action="proshop.php?action=add&code=<?php echo $product_array[$key]["product_code"]; ?>">
+			<div class="product-image"><img src="<?php echo $product_array[$key]["product_image"]; ?>" style="height:100px;width:auto;"></div>
+			<div style="color:#adadad;"><strong><?php echo $product_array[$key]["product_name"]; ?></strong></div>
 			<div class="product-price"><?php echo "$".$product_array[$key]["product_price"]; ?></div>
+			<div class="product-description"><?php echo $product_array[$key]["product_description"]; ?></div>
 			<div><input type="text" name="quantity" value="1" size="2" /><input type="submit" value="Add to cart" class="btnAddAction" /></div>
 			</form>
 		</div>
