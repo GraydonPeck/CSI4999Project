@@ -127,41 +127,79 @@
           <div class="carousel fdi-Carousel slide" id="eventCarousel" data-interval="0">
               <div class="carousel-inner onebyone-carosel">
                   <div class="item active">
-                      <div class="col-xs-3 subcard">
+                      <div class="col-xs-2 subcard">
                             <div class="panel panel-primary">
                               <div class="panel-heading">Ice 3 9:30</div>
                               <div class="panel-body">Vipers Vs<br> Tropics</div>
                             </div>
                       </div>
-                      <div class="col-xs-3">
-                          <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
-                          <div class="text-center">2</div>
+                      <div class="col-xs-2 subcard">
+                            <div class="panel panel-primary">
+                              <div class="panel-heading">Ice 3 9:30</div>
+                              <div class="panel-body">Vipers Vs<br> Tropics</div>
+                            </div>
                       </div>
-                      <div class="col-xs-3">
-                          <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
-                          <div class="text-center">3</div>
+                      <div class="col-xs-2 subcard">
+                            <div class="panel panel-primary">
+                              <div class="panel-heading">Ice 3 9:30</div>
+                              <div class="panel-body">Vipers Vs<br> Tropics</div>
+                            </div>
                       </div>
-                      <div class="col-xs-3">
-                          <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
-                          <div class="text-center">4</div>
+                      <div class="col-xs-2 subcard">
+                            <div class="panel panel-primary">
+                              <div class="panel-heading">Ice 3 9:30</div>
+                              <div class="panel-body">Vipers Vs<br> Tropics</div>
+                            </div>
+                      </div>
+                      <div class="col-xs-2 subcard">
+                            <div class="panel panel-primary">
+                              <div class="panel-heading">Ice 3 9:30</div>
+                              <div class="panel-body">Vipers Vs<br> Tropics</div>
+                            </div>
+                      </div>
+                      <div class="col-xs-2 subcard">
+                            <div class="panel panel-primary">
+                              <div class="panel-heading">Ice 3 9:30</div>
+                              <div class="panel-body">Vipers Vs<br> Tropics</div>
+                            </div>
                       </div>
                   </div>
                   <div class="item">
-                      <div class="col-xs-3">
-                          <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
-                          <div class="text-center">5</div>
+                      <div class="col-xs-2 subcard">
+                            <div class="panel panel-primary">
+                              <div class="panel-heading">Ice 3 9:30</div>
+                              <div class="panel-body">Vipers Vs<br> Tropics</div>
+                            </div>
                       </div>
-                      <div class="col-xs-3">
-                          <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
-                          <div class="text-center">6</div>
+                      <div class="col-xs-2 subcard">
+                            <div class="panel panel-primary">
+                              <div class="panel-heading">Ice 3 9:30</div>
+                              <div class="panel-body">Vipers Vs<br> Tropics</div>
+                            </div>
                       </div>
-                      <div class="col-xs-3">
-                          <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
-                          <div class="text-center">7</div>
+                      <div class="col-xs-2 subcard">
+                            <div class="panel panel-primary">
+                              <div class="panel-heading">Ice 3 9:30</div>
+                              <div class="panel-body">Vipers Vs<br> Tropics</div>
+                            </div>
                       </div>
-                      <div class="col-xs-3">
-                          <a href="#"><img src="http://placehold.it/250x250" class="img-responsive center-block"></a>
-                          <div class="text-center">8</div>
+                      <div class="col-xs-2 subcard">
+                            <div class="panel panel-primary">
+                              <div class="panel-heading">Ice 3 9:30</div>
+                              <div class="panel-body">Vipers Vs<br> Tropics</div>
+                            </div>
+                      </div>
+                      <div class="col-xs-2 subcard">
+                            <div class="panel panel-primary">
+                              <div class="panel-heading">Ice 3 9:30</div>
+                              <div class="panel-body">Vipers Vs<br> Tropics</div>
+                            </div>
+                      </div>
+                      <div class="col-xs-2 subcard">
+                            <div class="panel panel-primary">
+                              <div class="panel-heading">Ice 3 9:30</div>
+                              <div class="panel-body">Vipers Vs<br> Tropics</div>
+                            </div>
                       </div>
                   </div>
 

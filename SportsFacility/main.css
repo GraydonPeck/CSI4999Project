@@ -152,8 +152,8 @@ HOME PAGE
 .item {
     padding-top: 15px;
     padding-bottom: 10px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 220px;
+    padding-right: 220px;
 }
 
 .carousel-control {
@@ -162,8 +162,12 @@ HOME PAGE
 
 
 .subcard .panel {
-    height: 250px;
-    width: 250px;
+    height: 120px;
+    width: 150px;
+}
+
+.carousel-inner {
+    max-height: 150px !important;
 }
 
 /****************************************************
