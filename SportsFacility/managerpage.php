@@ -117,8 +117,187 @@
   <h1><big>Hockey<strong>Plex</strong></big></h1>
   <h2>This is the Manger page</h2>
 </div>
-
-  
+<!--Timesheet table -->
+<div class="container">
+  <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h1 class="panel-title"><big>Timesheet</big></h1>
+                
+                <button class="btn btn-default pull-right">Submit Changes</button>
+                <div class="clearfix"></div>
+            </div>
+            <table class="table">
+              <tr>
+                        <th></th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Saturday</th>
+                        <th>Sunday</th>
+                    </tr>
+                <tbody>
+                    <tr>
+                        <th>Concessions</th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Pro Shop</th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Service Center</th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                        <th><select class="form-control">
+                          <option disabled selected value>- select an employee -</option>
+                          <option>Colin</option>
+                          <option>Eddie</option>
+                          <option>Matt</option>
+                          <option>Peter</option></select>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+  </div>
 
 
     <!-- Bootstrap core JavaScript
