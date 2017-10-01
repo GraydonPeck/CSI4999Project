@@ -158,6 +158,7 @@ HOME PAGE
 
 .carousel-control {
     background-color: #dcae1d;
+    padding-bottom: 50px;
 }
 
 
@@ -169,6 +170,7 @@ HOME PAGE
 .carousel-inner {
     max-height: 150px !important;
 }
+
 
 /****************************************************
 REGISTER PAGE

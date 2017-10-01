@@ -118,7 +118,7 @@
 
 </nav>
 
-  <div class="home-section">
+  <div>
     <div class="jumbotron">
       <h1><center><big>Hockey<strong>Plex</strong></big></center></h1>
     </div>
@@ -210,6 +210,10 @@
           <!--/carousel-inner-->
       </div><!--/schedulecarousel-->
       
+    </div>
+    <!--/Floorplan-->
+    <div class="col-md-12" style="padding-top:15px">
+      <img src="img/floorplan.jpg" alt="Floor Plan" class="center-block img-rounded"  style="width: 50%; height: 50%">
     </div>
   </div>
 
