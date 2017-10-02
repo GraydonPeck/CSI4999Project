@@ -134,19 +134,17 @@
            <th>Information</th>
            <th>Input</th>
          </tr>
-         <tr>
              <?php
   $db = mysqli_connect("localhost","gpeck2217","","c9");
   $username = $_SESSION['login'];
-  $sql = "SELECT user_number FROM login_db WHERE user_name= $username";
+  $sql = "SELECT * FROM login_db WHERE user_name= '$username'";
   $result = mysqli_query($db, $sql);
-  	while ($row = mysqli_fetch_array($result)){
+  while ($row = mysqli_fetch_array($result)){
               			?>
-      <td>User Number</td> <td><input type='hidden' name='user_number' value="<?php echo $row['user_number']?>"></td>
+<input type='hidden' name='user_number' value="<?php echo $row['user_number']?>">
                	<?php
               		}
               	?> 
-         </tr>
         <tr>
           <td>First Name</td> <td><input type="text" name="customer_fname"></td>
         </tr>
