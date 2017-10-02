@@ -3,7 +3,6 @@
  include("dbutils.php");
  session_start();
  $username = $_POST['username'];
- $customer = check_login_type($username);
 ?>
 <html lang="en">
 <head>
@@ -100,14 +99,16 @@
        <!-- End of adding dropdown menu --> 
   
       <!-- Username display -->
-       <?php if(isset($_SESSION['loggedin'])){
-          if ($customer){
-          echo "<li><a href='customerpage.php'>" .$_SESSION['login']. "</a> </li>";?>
-          <?php } else { ?>
-          <?php
-           echo "<li><a href='employeepage.php'>" .$_SESSION['login']. "</a> </li>";?>
-          <?php } ?>
-          <?php }else{ ?>
+       <?php 
+       $username= $_SESSION['login'];
+      $customer = check_login_type($username);
+       if(isset($_SESSION['loggedin'])){
+          if ($customer)
+          {
+          echo "<li><a href='customerpage.php'>" .$_SESSION['login']. "</a> </li>";
+          } else {
+          echo "<li><a href='employeepage.php'>" .$_SESSION['login']. "</a> </li>";
+           } }else{ ?>
           <li  data-toggle="modal" data-target=""> <a href="main.php">Create Account</a></li>
            <?php } ?>
       

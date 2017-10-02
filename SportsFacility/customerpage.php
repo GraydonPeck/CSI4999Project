@@ -167,7 +167,7 @@
           <td>State</td> <td><input type="text" name="customer_state"></td>
         </tr>
         <tr>
-          <td>Country</td> <td><input type="text" name="customer_country"</td>
+          <td>Country</td> <td><input type="text" name="customer_country"></td>
         </tr>
         <tr>
           <td>Zip</td> <td><input type="text" name="customer_zip"></td>

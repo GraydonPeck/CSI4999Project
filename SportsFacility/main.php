@@ -7,7 +7,7 @@
 
 	    echo "Found " . count($_POST) . " elements" . "<td>";
         var_dump($_POST);
-        add_user ($_POST['User_name'], $_POST['User_password'], $_POST['User_email']);
+        add_user ($_POST['User_name'], $_POST['User_password'], $_POST['User_email'], $_POST['user_type']);
         header ("Location: main.php");
     }
 ?>
@@ -88,6 +88,7 @@
         <input type="text" name="User_name" id="username" placeholder="Username:">
         <input type="password" name="User_password" id="inputPassword" placeholder="Password">
         <input type="email" name="User_email" id="email-address" placeholder="Email address">
+                  <input type="hidden" name="user_type" value="customer">
         <center>
         <input type="submit" id="submitSection" class="btn btn-primary" value="Submit">
         </center>

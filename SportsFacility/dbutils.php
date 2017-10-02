@@ -28,12 +28,12 @@
     //echo "Connection Successful <br>";
 
 	// Runs Insert, Update, or Delete Commands
-    function add_user ($User_name, $User_password, $User_email)
+    function add_user ($User_name, $User_password, $User_email, $user_type)
 	{
 		global $conn;
 
-        $sql_i = "INSERT INTO login_db(user_name, user_password, user_email) VALUES " .
-                "('$User_name', '$User_password', '$User_email')";
+        $sql_i = "INSERT INTO login_db(user_name, user_password, user_email, user_type) VALUES " .
+                "('$User_name', '$User_password', '$User_email', '$user_type')";
 	
         run_update($sql_i);
 	}
@@ -43,6 +43,15 @@
 
         $sql_i = "INSERT INTO customer_db(user_number, customer_fname, customer_lname, customer_phone, customer_email, customer_address, customer_city, customer_state, customer_country, customer_zip, customer_creditcard) VALUES " .
                 "('$user_number', '$customer_fname', '$customer_lname', '$customer_phone', '$customer_email', '$customer_address', '$customer_city', '$customer_state', '$customer_country', '$customer_zip', '$customer_creditcard')";
+	
+        run_update($sql_i);
+	}
+	function edit_employee ($user_number, $employee_fname, $employee_lname, $employee_type, $employee_phone)
+	{
+		global $conn;
+
+        $sql_i = "INSERT INTO employee_db(user_number, employee_fname, employee_lname, employee_type, employee_phone) VALUES " .
+                "('$user_number', '$employee_fname', '$employee_lname', '$employee_type', '$employee_phone')";
 	
         run_update($sql_i);
 	}
