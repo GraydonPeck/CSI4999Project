@@ -102,12 +102,18 @@
        <?php 
        $username= $_SESSION['login'];
       $customer = check_login_type($username);
+      $admin = check_admin($username);
        if(isset($_SESSION['loggedin'])){
           if ($customer)
           {
           echo "<li><a href='customerpage.php'>" .$_SESSION['login']. "</a> </li>";
           } else {
+            if($admin)
+            {
+          echo "<li><a href='managerpage.php'>" .$_SESSION['login']. "</a> </li>";
+           } else { 
           echo "<li><a href='employeepage.php'>" .$_SESSION['login']. "</a> </li>";
+           }
            } }else{ ?>
           <li  data-toggle="modal" data-target=""> <a href="main.php">Create Account</a></li>
            <?php } ?>

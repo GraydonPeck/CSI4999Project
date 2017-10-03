@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <?php
-include("dbutils.php");
 include("dbcontroller.php");
+include("dbutils.php");
+?>
+<html lang=en>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>ProShop</title>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="proshop.css">
+<script type = "text/javascript" src = "chk.js"></script>
+
+</head>
+<?php
 $db_handle = new DBController();
 if(!empty($_GET["action"])) {
 switch($_GET["action"]) {
@@ -44,21 +58,8 @@ switch($_GET["action"]) {
 	break;	
 }
 }
+
 ?>
-<html lang=en>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>ProShop</title>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="proshop.css">
-<script type = "text/javascript" src = "chk.js"></script>
-
-</head>
-
 <body>
   <nav class="navbar navbar-default " >
   <div class="container-fluid">
@@ -203,13 +204,11 @@ if(isset($_SESSION["cart_item"])){
 			<div class="product-image"><img src="<?php echo $product_array[$key]["product_image"]; ?>" style="height:100px;width:auto;"></div>
 			<div style="color:#adadad;"><strong><?php echo $product_array[$key]["product_name"]; ?></strong></div>
 			<div class="product-price"><?php echo "$".$product_array[$key]["product_price"]; ?></div>
-			<div class="product-description"><?php echo $product_array[$key]["product_description"]; ?></div>
 			<div><input type="text" name="quantity" value="1" size="2" /><input type="submit" value="Add to cart" class="btnAddAction" /></div>
 			</form>
 		</div>
 	<?php
-			}
-	}
+	}}
 	?>
 </div>
 </body>

@@ -46,12 +46,13 @@
 	
         run_update($sql_i);
 	}
-	function edit_employee ($user_number, $employee_fname, $employee_lname, $employee_type, $employee_phone)
+	function edit_employee ($user_name, $employee_fname, $employee_lname, $employee_type, $employee_phone)
 	{
 		global $conn;
 
-        $sql_i = "INSERT INTO employee_db(user_number, employee_fname, employee_lname, employee_type, employee_phone) VALUES " .
-                "('$user_number', '$employee_fname', '$employee_lname', '$employee_type', '$employee_phone')";
+		
+        $sql_i = "INSERT INTO employee_db(user_name, employee_fname, employee_lname, employee_type, employee_phone) VALUES " .
+                "('$user_name', '$employee_fname', '$employee_lname', '$employee_type', '$employee_phone')";
 	
         run_update($sql_i);
 	}
@@ -114,21 +115,29 @@
 
 		return  $customer;
 	}
-	
-function runQuery($query) {
-		$result = mysqli_query($this->conn,$query);
-		while($row=mysqli_fetch_assoc($result)) {
-			$resultset[] = $row;
-		}		
-		if(!empty($resultset))
-			return $resultset;
-	}
-	
-function numRows($query) {
-		$result  = mysqli_query($this->conn,$query);
-		$rowcount = mysqli_num_rows($result);
-		return $rowcount;	
-	}
+	function check_admin($user)
+	{
+		global $conn;
 
+		$admin = False;
+
+		$sql = "select employee_type from employee_db where user_name = '$user'";
+
+    	
+		$result = $conn->query($sql);
+		if ($result->num_rows == 1) {
+			$row = $result->fetch_assoc();
+			$dbpass = $row["employee_type"];
+		
+			if ($dbpass == "admin")
+			{
+				$admin = True;
+				$msg = "Customer";
+			}
+		}
+
+		return  $admin;
+	}
+	
 	
 ?>

@@ -17,15 +17,19 @@
 	echo "Success " . "<br>";
 	$_SESSION['login'] = $username;
 	$_SESSION['loggedin'] = True;
-	$_SESSION['user_number'] = $number;
 	$customer = check_login_type($username);
 	if ($customer)
 	{
 	$goto = "Location: customerpage.php";
 	} else{
+	$admin = check_admin($username);
+	if ($admin)
+	{
+	$goto= "Location: managerpage.php";
+	}else {
 	$goto= "Location: employeepage.php";
 	}
-    } else {
+    }} else {
         echo "Failure " . "<br>";
     	$ref = getenv("HTTP_REFERER");
         $_SESSION['login'] = '';
