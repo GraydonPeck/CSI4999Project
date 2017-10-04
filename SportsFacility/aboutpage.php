@@ -103,11 +103,31 @@
 
 </nav>
         <h1>About Us</h1>
-            <p>Information about what we offer to our customers and what they can do on our site.</p>
-        <h1>Contact Us</h1>
-            <p>Our contact information will be displayed here. We will list our address, phone number, and hours of opperation.</p>
-        <h1>Other information</h1>
-            <p>other information here</p>
-        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Here is a little about us ...</h2>
+                    <p></p>
+                </div>
+            </div>
+             <div class="row">
+            <div class="col-md-6">
+                <h2>Contact Us</h2>
+            <p>We are located at 318 Meadow Brook Rd, Rochester MI 48309</p>
+            <p>Our phone number is (248) 370-2100</p>
+
+            </div>
+                <div class="col-md-6">
+                <h2>Hours of Operation</h2>
+                <p>Sunday 6AM-12AM</p>
+                <p>Monday 6AM-12AM</p>
+                <p>Tuesday 6AM-12AM</p>
+                <p>Wednesday 6AM-12AM</p>
+                <p>Thurday 6AM-12AM</p>
+                <p>Friday 6AM-12AM</p>
+                <p>Saturday 6AM-12AM</p>
+                </div>
+                </div>
+        </div>
     </body>
 </html>
