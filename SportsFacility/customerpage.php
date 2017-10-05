@@ -23,61 +23,68 @@
   <title>HockeyPlex Customer</title>
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
-  <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
   
-  <!--
+  <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
   <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-  -->
   <script type = "text/javascript" src = "chk.js"></script>
-  <link rel="stylesheet" type="text/css" href="NavbarStyle.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+
+  
 
 </head>
 
 <body>
 
-<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
-   <div class="container-fluid">
+<nav class="navbar navbar-default " >
+  <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="main.php">HockeyPlex</a>
+      <a class="navbar-brand" href="main.php">SportPlex</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-      <li><button  class="button button1 navbar-btn" href="index.php"><span class="glyphicon glyphicon-home">Home</span></button></li> 
-      <li><button  class="button button2 navbar-btn dropdown-toggle" href="#">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></button></li>
-      <li><button onclick="myFunction" class="button button3 navbar-btn dropdown-toggle" href="#">Pro Shop<span class="glyphicon glyphicon-piggy-bank pull-left"></span></button><li>
-      <li><button class="button button4 navbar-btn dropdown-toggle" href="#">Video's<span class="glyphicon glyphicon-facetime-video pull-left"></span></button></li>
-      <li><button onclick="myFunction" class="button button5 navbar-btn dropdown-toggle" href="#">About<span class="glyphicon glyphicon-apple pull-left"></span></button><li>
-         
-      </ul>
-	    <ul class="nav navbar-nav navbar-right">
-		     <li class="dropdown">
-		 
-          <button onclick="myFunction" class="button button6 navbar-btn dropdown-toggle" data-toggle="dropdown" href="#">Notifications<span class="caret"></span><span class="glyphicon glyphicon-bell pull-left"></span></button>
-		  
+      <li><a href="index.php"><span class="glyphicon glyphicon-home"></span></a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Schedule<span class="caret"></span></a>
           <ul class="dropdown-menu">
-			<li class="dropdown-header">Important</li>
-            <li><a href="#"> Security Breach </a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Times/Dates</a></li>
+            <li><a href="#">Your Schedule</a></li>
+          </ul>
+        </li>
+         <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pro Shop<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="proshop.php">Pro Shop</a></li>
+          <li><a href="#">Items in Cart</a></li>
+          <li><a href="#">Searched Items</a></li>
+        </ul>
+        <li><a href="#">Video's</a></li>
+        <li><a href="aboutpage.php">About</a></li>
+         <li><a href="#"><span class="glyphicon glyphicon-mail"></span></a></li>
+        
+      </ul>
+       <ul class="nav navbar-nav navbar-right">
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"></span><span class="caret"></span> <span class="glyphicon glyphicon-bell pull-right"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"> Notification1 </a></li>
             <li class="divider"></li>
-            <li><a href="#">DDOS Attack </a></li>
+            <li><a href="#">Notification2 </a></li>
             <li class="divider"></li>
-			<li class="dropdown-header">Doesn't need attention</li>
-            <li><a href="#"> Skater </a></li>
+            <li><a href="#">Notification3 </a></li>
             <li class="divider"></li>
             
           </ul>
         </li>
-       
-         
-         <li class="dropdown1">
-             <button onclick="myFunction" class="button button7 navbar-btn dropdown-toggle" data-toggle="dropdown" href="#">Menu<span class="caret"></span><span class="glyphicon glyphicon-globe pull-left"></span></button>
-		      <ul class="dropdown-menu">
-			      <li class="dropdown-header">Options</li>
+         <ul class="nav navbar-nav navbar-right">
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"></span><span class="caret"></span> <span class="glyphicon glyphicon-user pull-right"></span></a>
+          <ul class="dropdown-menu">
             <li><a href="#"> Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
             <li class="divider"></li>
             <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
@@ -85,8 +92,8 @@
             <li><a href="#">Messages <span class="badge pull-right"> 42 </span></a></li>
             <li class="divider"></li>
             
-             
-           <!-- Trigger Login Modal -->
+            
+            <!-- Trigger Login Modal -->
               <?php if(isset($_SESSION['loggedin'])){ ?>
               <li class="active" data-toggle="modal"> <a href="logout.php">Logout</a></li>
               <?php }else{ ?>
@@ -103,16 +110,20 @@
        <?php if(isset($_SESSION['loggedin'])){
           echo "<li><a>" .$_SESSION['login']."</a></li>";?>
           <?php }else{ ?>
-         
+          <li  data-toggle="modal" data-target="#Login"> <a href="main.php">Create Account</a></li>
            <?php } ?>
       
       <!--End of username display -->
       </ul>
     </div>
   </div>
+
 </nav>
-
-
+<div class="jumbotron">
+  <h1><big>Hockey<strong>Plex</strong></big></h1>
+  <h2>This is customer page</h2>
+  <p>This is where the Customer enters extra information to their account.</p>
+</div>
         			
    <div class = "container info">
      <div class = "container-fluid">
@@ -173,87 +184,17 @@
 </div>
 </div>
    </center> 
-  
-
-   
 </body>
-
-    <script>
-function hourglass() {
-  var a;
-  a = document.getElementById("div1");
-  a.innerHTML = "&#xf251;";
-  setTimeout(function () {
-      a.innerHTML = "&#xf252;";
-    }, 1000);
-  setTimeout(function () {
-      a.innerHTML = "&#xf253;";
-    }, 2000);
-}
-hourglass();
-setInterval(hourglass, 3000);
-
-
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
-
-
-
-<script>
-
-$(document).ready(function(){
-	$(".dropdown").on("hide.bs.dropdown", function(){
-  $(".button6").html('Notifications<span class="caret"></span><span class="glyphicon glyphicon-bell pull-left"></span>');
-	
-  });
-	$(".dropdown").on("show.bs.dropdown", function(){
-    $(".button6").html('Notifications<span class="caret caret-up"></span><span class="glyphicon glyphicon-bell pull-left"></span>');
-	
-  });
-});
-
-$(document).ready(function(){
-	$(".dropdown1").on("hide.bs.dropdown", function(){
-    $(".button7").html('Sign In<span class="caret"></span><span class="glyphicon glyphicon-user pull-left"></span>');
-	
-  });
-	$(".dropdown1").on("show.bs.dropdown", function(){
-    $(".button7").html('Sign In<span class="caret caret-up"></span><span class="glyphicon glyphicon-user pull-left"></span>');
-	
-  });
-});
-</script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    
-   <!-- <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="../../dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-    <script src="script.js"></script>  
+    <script src="script.js"></script>  </body>
 
 </html>
