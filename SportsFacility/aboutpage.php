@@ -33,7 +33,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="main.php">HockeyPlex</a>
+      <a class="navbar-brand" href="#">HockeyPlex</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -71,9 +71,9 @@
 
 
 
-             <!-- Trigger Login Modal -->
+            <!-- Trigger Login Modal -->
               <?php if(isset($_SESSION['loggedin'])){ ?>
-              <li  data-toggle="modal"> <a href="logout.php">Logout</a></li>
+              <li  data-toggle="modal"> <a href="logout.php">Logout<span class="glyphicon glyphicon-user pull-left"></span></a></li>
               <?php }else{ ?>
               <li  data-toggle="modal" data-target="#Login"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-left"></span></a></li>
               <?php } ?>
@@ -94,6 +94,46 @@
     </div>
   </div>
 </nav>
+
+<!--Login Modal -->
+
+  <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Login</h4>
+        </div>
+        <div class="modal-body">
+
+          <center>
+          <form action = "checklogin.php" method="post">
+                                <input type="hidden" name="User_number">
+          <table>
+          <tr>
+          <td>Username:</td>     <td><input type="text" name="username"></td>
+          </tr>
+          <tr>
+          <td>Password:</td>     <td><input type="password" name="passwd"></td>
+          </tr>
+          </table>
+
+          </center>
+        </div>
+        <div class="modal-footer">
+          <center>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- End Login Modal -->
 
 <h1>About Us</h1>
 
