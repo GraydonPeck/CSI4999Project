@@ -22,13 +22,11 @@
 
   <title>HockeyPlex Customer</title>
 
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
   <!--<script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
   <script type="text/javascript" src="chk.js"></script>
   <link rel="stylesheet" type="text/css" href="main.css">
-
-
 
 </head>
 
@@ -46,30 +44,29 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-      <li><a href="index.php">Home<span class="glyphicon glyphicon-home pull-left"></span></button></a></li>
-      <li><a href="schedulepage.php">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
-      <li><a href="proshop.php">Pro Shop<span class="glyphicon glyphicon-piggy-bank pull-left"></span></a><li>
-      <li><a href="videopage.php">Video's<span class="glyphicon glyphicon-facetime-video pull-left"></span></a></li>
-      <li><a href="aboutpage.php">About<span class="glyphicon glyphicon-apple pull-left"></span></a><li>
+        <li><a href="index.php">Home<span class="glyphicon glyphicon-home pull-left"></span></button></a></li>
+        <li><a href="schedulepage.php">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
+        <li><a href="proshop.php">Pro Shop<span class="glyphicon glyphicon-piggy-bank pull-left"></span></a><li>
+        <li><a href="videopage.php">Video's<span class="glyphicon glyphicon-facetime-video pull-left"></span></a></li>
+        <li><a href="aboutpage.php">About<span class="glyphicon glyphicon-apple pull-left"></span></a><li>
 
       </ul>
-
-         <ul class="nav navbar-nav navbar-right">
+      <!-- This is a dropdown menu that contains the settings for our site. Add additional information here later -->
+        <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings</span><span class="caret"></span> <span class="glyphicon glyphicon-cog pull-left"></span></a>
            <ul class="dropdown-menu">
-			<li class="dropdown-header">Options</li>
-            <li><a href="#"> Help <span class="glyphicon glyphicon-search pull-right"></span></a></li>
-            <li class="divider"></li>
-            <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
-            <li class="divider"></li>
-            <li><a href="#">Messages <span class="badge pull-right"> 42 </span></a></li>
-            <li class="divider"></li>
+			       <li class="dropdown-header">Options</li>
+			       <li><a href="#">Messages <span class="badge pull-left"> 42 </span></a></li>
+             <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-left"></span></a></li>
+             <li><a href="#"> Help <span class="glyphicon glyphicon-flag pull-left"></span></a></li>
+             <li class="divider"></li>
+             <li class="dropdown-header">Navigation</li>
+             <li><a href="#">Profile<span class="glyphicon glyphicon-user pull-left"></span></a></li>
+            </ul>
+          </li>
 
-
-
-          </ul>
-        </li>
+      <!-- End of settings dropdown -->
 
         <!-- Trigger Login Modal -->
               <?php if(isset($_SESSION['loggedin'])){ ?>
@@ -79,15 +76,16 @@
               <?php } ?>
               <!-- End Trigger-->
 
-      <!-- Username display -->
-       <?php if(isset($_SESSION['loggedin'])){
-          echo "<li><a>" .$_SESSION['login']."</a></li>";?>
-          <?php }else{ ?>
+        <!-- Username display -->
+              <?php if(isset($_SESSION['loggedin'])){
+              echo "<li><a>" .$_SESSION['login']."</a></li>";?>
+              <?php }else{ ?>
 
-           <?php } ?>
+              <?php } ?>
 
-      <!--End of username display -->
-      </ul>
+        <!--End of username display -->
+
+        </ul>
     </div>
   </div>
 </nav>
@@ -96,12 +94,16 @@
 <div class = "container info">
      <div class = "container-fluid">
        <center>
+
+      <!-- This is where the customer form is located for entering additional information.  -->
       <form id="#formSection" method="post" class="customeredit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
-      <table class = "">
+        <!-- This is a table style that adds a black border to the table and colors each element in the table -->
+      <table class = "tablestyle">
          <tr>
            <th>Information</th>
            <th>Input</th>
          </tr>
+         <!-- Links to our database with the information each customer enter into the following fields -->
              <?php
   $db = mysqli_connect("localhost","gpeck2217","","c9");
   $username = $_SESSION['login'];
@@ -109,6 +111,8 @@
   $result = mysqli_query($db, $sql);
   while ($row = mysqli_fetch_array($result)){
               			?>
+
+          <!-- End of selecting the username from the database -->
 <input type='hidden' name='user_number' value="<?php echo $row['user_number']?>">
                	<?php
               		}
@@ -177,6 +181,8 @@ function myFunction() {
   }
 }
 */
+
+/* This script makes the caret move up and down, currently our JavaScript isn't working*/
 $(document).ready(function(){
 	$(".dropdown").on("hide.bs.dropdown", function(){
     $(".button6").html('Notifications<span class="caret"></span><span class="glyphicon glyphicon-bell pull-left"></span>');
@@ -198,6 +204,8 @@ $(document).ready(function(){
 
   });
 });
+
+/* End of code that makes the caret ulter based on click */
 </script>
 </body>
 
