@@ -57,19 +57,13 @@
 </ul>
 
 <!--Start of form where users can search -->
-          <form class="navbar-form navbar-left">
-      <div class="input-group">
+       <form class="navbar-form navbar-left">
+      <div class="form-group">
         <input type="text" class="form-control" placeholder="Search">
-        <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
       </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
 <!-- End of users search form -->
-
-</form>
-
 
 	    <ul class="nav navbar-nav navbar-right">
 	      <ul class="nav navbar-nav">
@@ -99,8 +93,6 @@
               <li  data-toggle="modal" data-target="#Login"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-left"></span></a></li>
               <?php } ?>
               <!-- End Trigger-->
-
-
 
 
       <!-- Username display -->
