@@ -45,7 +45,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="main.php">HockeyPlex</a>
+      <a class="navbar-brand" href="#">HockeyPlex</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -56,31 +56,12 @@
       <li><a href="aboutpage.php">About<span class="glyphicon glyphicon-apple pull-left"></span></a><li>
 
       </ul>
-	    <ul class="nav navbar-nav navbar-right">
-	      <ul class="nav navbar-nav">
-    <!--Styled the navbar drop down so it has different sections. -->
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Notifications <span class="caret"></span><span class="glyphicon glyphicon-bell pull-left"></span></a>
-        <ul class="dropdown-menu">
-			<li class="dropdown-header">Important</li>
-            <li><a href="#"> Security Breach </a></li>
-            <li class="divider"></li>
-            <li><a href="#">DDOS Attack </a></li>
-            <li class="divider"></li>
-			<li class="dropdown-header">Doesn't need attention</li>
-            <li><a href="#"> Skater </a></li>
-            <li class="divider"></li>
-
-          </ul>
-      </li>
-
 
          <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu</span><span class="caret"></span> <span class="glyphicon glyphicon-globe pull-left"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings</span><span class="caret"></span> <span class="glyphicon glyphicon-cog pull-left"></span></a>
            <ul class="dropdown-menu">
 			<li class="dropdown-header">Options</li>
-            <li><a href="#"> Settings <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
             <li class="divider"></li>
             <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
             <li class="divider"></li>
@@ -88,17 +69,16 @@
             <li class="divider"></li>
 
 
-            <!-- Trigger Login Modal -->
-              <?php if(isset($_SESSION['loggedin'])){ ?>
-              <li class="active" data-toggle="modal"> <a href="logout.php">Logout</a></li>
-              <?php }else{ ?>
-              <li class="active" data-toggle="modal" data-target="#Login"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-right"></span></a></li>
-              <?php } ?>
-              <!-- End Trigger-->
-
           </ul>
         </li>
 
+             <!-- Trigger Login Modal -->
+              <?php if(isset($_SESSION['loggedin'])){ ?>
+              <li  data-toggle="modal"> <a href="logout.php">Logout<span class="glyphicon glyphicon-user pull-left"></span></a></li>
+              <?php }else{ ?>
+              <li  data-toggle="modal" data-target="#Login"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-left"></span></a></li>
+              <?php } ?>
+              <!-- End Trigger-->
 
       <!-- Username display -->
        <?php if(isset($_SESSION['loggedin'])){
