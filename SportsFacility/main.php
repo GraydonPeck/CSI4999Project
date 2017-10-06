@@ -36,8 +36,8 @@
 
 <body>
 <!-- This is the creation of the navbar on the page for signing up or loging in -->
- <nav class="navbar navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="197">
-   <div class="container-fluid">
+<nav class="navbar navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="197">
+  <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -46,36 +46,36 @@
       </button>
       <a class="navbar-brand" href="#">HockeyPlex</a>
     </div>
+
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-      <li><a href="index.php">Home<span class="glyphicon glyphicon-home pull-left"></span></button></a></li>
-      <li><a href="aboutpage.php">About<span class="glyphicon glyphicon-apple pull-left"></span></a><li>
-</ul>
+        <li><a href="index.php">Home<span class="glyphicon glyphicon-home pull-left"></span></button></a></li>
+        <li><a href="aboutpage.php">About<span class="glyphicon glyphicon-apple pull-left"></span></a><li>
+      </ul>
 
 
-	    <ul class="nav navbar-nav navbar-right">
-	      <ul class="nav navbar-nav">
-    <!--Styled the navbar drop down so it has different sections. Settings drop down -->
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Settings <span class="caret"></span><span class="glyphicon glyphicon-cog pull-left"></span></a>
-        <ul class="dropdown-menu">
-			<li class="dropdown-header">Settings</li>
-            <li><a href="#"> Help <span class="glyphicon glyphicon-search"></span></a></li>
-            <li class="divider"></li>
-             <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
-            <li class="divider"></li>
-            <li><a href="#">Messages <span class="badge pull-right"> 42 </span></a></li>
-            <li class="divider"></li>
+	    <!-- This is a dropdown menu that contains the settings for our site. Add additional information here later -->
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings</span><span class="caret"></span> <span class="glyphicon glyphicon-cog pull-left"></span></a>
+           <ul class="dropdown-menu">
+			       <li class="dropdown-header">Options</li>
+			         <li><a href="#">Messages <span class="badge pull-left"> 42 </span></a></li>
+               <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-left"></span></a></li>
+               <li><a href="#"> Help <span class="glyphicon glyphicon-flag pull-left"></span></a></li>
+               <li class="divider"></li>
+               <li class="dropdown-header">Navigation</li>
+               <li><a href="#">Profile<span class="glyphicon glyphicon-user pull-left"></span></a></li>
+            </ul>
+          </li>
 
-          </ul>
-      </li>
-    <!--End of setting dropdown menu -->
+      <!-- End of settings dropdown -->
 
          <ul class="nav navbar-nav navbar-right">
 
 
 
-            <!-- Trigger Login Modal -->
+              <!-- Trigger Login Modal -->
               <?php if(isset($_SESSION['loggedin'])){ ?>
               <li  data-toggle="modal"> <a href="logout.php">Logout<span class="glyphicon glyphicon-user pull-left"></span></a></li>
               <?php }else{ ?>
@@ -86,14 +86,14 @@
 
 
 
-      <!-- Username display -->
-       <?php if(isset($_SESSION['loggedin'])){
-          echo "<li><a>" .$_SESSION['login']."</a></li>";?>
-          <?php }else{ ?>
-          <li data-toggle="modal" data-target="#Login"><a href="main.php"></a></li>
-           <?php } ?>
+            <!-- Username display -->
+            <?php if(isset($_SESSION['loggedin'])){
+            echo "<li><a>" .$_SESSION['login']."</a></li>";?>
+            <?php }else{ ?>
+            <li data-toggle="modal" data-target="#Login"><a href="main.php"></a></li>
+            <?php } ?>
 
-      <!--End of username display -->
+            <!--End of username display -->
       </ul>
     </div>
   </div>

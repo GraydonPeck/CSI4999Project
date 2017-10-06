@@ -567,6 +567,10 @@ DropDown & list items
     margin-right: 5px;
 }
 
+.glyphicon-book:before {
+    margin-right: 5px;
+}
+
 
 .caret.caret-up {
     border-top-width: 0;
