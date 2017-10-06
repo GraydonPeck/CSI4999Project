@@ -28,15 +28,12 @@
   <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
   <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
   <script type = "text/javascript" src = "chk.js"></script>
-  <!-- referencing an external style sheet. -->
   <link rel="stylesheet" type="text/css" href="main.css">
 
 
 </head>
 
 <body>
-
-  <!-- This allows the navbar to stay positioned at the top of the screen on scroll -->
  <nav class="navbar navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="197">
    <div class="container-fluid">
     <div class="navbar-header">
@@ -49,30 +46,31 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-      <li><a href="index.php">Home<span class="glyphicon glyphicon-home pull-left"></span></button></a></li>
-      <li><a href="schedulepage.php">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
-      <li><a href="proshop.php">Pro Shop<span class="glyphicon glyphicon-piggy-bank pull-left"></span></a><li>
-      <li><a href="videopage.php">Video's<span class="glyphicon glyphicon-facetime-video pull-left"></span></a></li>
-      <li><a href="aboutpage.php">About<span class="glyphicon glyphicon-apple pull-left"></span></a><li>
+        <li><a href="index.php">Home<span class="glyphicon glyphicon-home pull-left"></span></button></a></li>
+        <li><a href="schedulepage.php">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
+        <li><a href="proshop.php">Pro Shop<span class="glyphicon glyphicon-piggy-bank pull-left"></span></a><li>
+        <li><a href="videopage.php">Video's<span class="glyphicon glyphicon-facetime-video pull-left"></span></a></li>
+        <li><a href="aboutpage.php">About<span class="glyphicon glyphicon-apple pull-left"></span></a><li>
 
       </ul>
-
-         <ul class="nav navbar-nav navbar-right">
+      <!-- This is a dropdown menu that contains the settings for our site. Add additional information here later -->
+        <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings</span><span class="caret"></span> <span class="glyphicon glyphicon-cog pull-left"></span></a>
            <ul class="dropdown-menu">
-			<li class="dropdown-header">Options</li>
-            <li class="divider"></li>
-            <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
-            <li class="divider"></li>
-            <li><a href="#">Messages <span class="badge pull-right"> 42 </span></a></li>
-            <li class="divider"></li>
+			       <li class="dropdown-header">Options</li>
+			       <li><a href="#">Messages <span class="badge pull-left"> 42 </span></a></li>
+             <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-left"></span></a></li>
+             <li><a href="#"> Help <span class="glyphicon glyphicon-flag pull-left"></span></a></li>
+             <li class="divider"></li>
+             <li class="dropdown-header">Navigation</li>
+             <li><a href="#">Profile<span class="glyphicon glyphicon-user pull-left"></span></a></li>
+            </ul>
+          </li>
 
+      <!-- End of settings dropdown -->
 
-          </ul>
-        </li>
-
-             <!-- Trigger Login Modal -->
+        <!-- Trigger Login Modal -->
               <?php if(isset($_SESSION['loggedin'])){ ?>
               <li  data-toggle="modal"> <a href="logout.php">Logout<span class="glyphicon glyphicon-user pull-left"></span></a></li>
               <?php }else{ ?>
@@ -80,15 +78,16 @@
               <?php } ?>
               <!-- End Trigger-->
 
-      <!-- Username display -->
-       <?php if(isset($_SESSION['loggedin'])){
-          echo "<li><a>" .$_SESSION['login']."</a></li>";?>
-          <?php }else{ ?>
-          <li data-toggle="modal" data-target="#Login"><a href="main.php"></a></li>
-           <?php } ?>
+        <!-- Username display -->
+              <?php if(isset($_SESSION['loggedin'])){
+              echo "<li><a>" .$_SESSION['login']."</a></li>";?>
+              <?php }else{ ?>
 
-      <!--End of username display -->
-      </ul>
+              <?php } ?>
+
+        <!--End of username display -->
+
+        </ul>
     </div>
   </div>
 </nav>

@@ -62,17 +62,18 @@ switch($_GET["action"]) {
 
 ?>
 <body>
-  <!-- This allows the navbar to stay positioned at the top of the screen on scroll -->
- <nav class="navbar navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="197">
-   <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">HockeyPlex</a>
-    </div>
+   <!-- This allows the navbar to stay positioned at the top of the screen on scroll -->
+<nav class="navbar navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="197">
+ <div class="container-fluid">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a class="navbar-brand" href="#">HockeyPlex</a>
+  </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home<span class="glyphicon glyphicon-home pull-left"></span></button></a></li>
@@ -82,35 +83,34 @@ switch($_GET["action"]) {
         <li><a href="aboutpage.php">About<span class="glyphicon glyphicon-apple pull-left"></span></a><li>
       </ul>
 
-    <!--Start of form where users can search -->
-       <form class="navbar-form navbar-left">
+<!--Start of form where users can search -->
+      <form class="navbar-form navbar-left">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-       </form>
-    <!-- End of users search form -->
+          <button type="submit" class="button1 btn btn-default">Submit</button>
+      </form>
+<!-- End of users search form -->
 
 
-	     <!-- This is a dropdown menu that contains the settings for our site. Add additional information here later -->
+    <!-- This is a dropdown menu that contains the settings for our site. Add additional information here later -->
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings</span><span class="caret"></span> <span class="glyphicon glyphicon-cog pull-left"></span></a>
-           <ul class="dropdown-menu">
-			       <li class="dropdown-header">Options</li>
-			         <li><a href="#">Messages <span class="badge pull-left"> 42 </span></a></li>
-               <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-left"></span></a></li>
-               <li><a href="#"> Help <span class="glyphicon glyphicon-flag pull-left"></span></a></li>
-               <li class="divider"></li>
-               <li class="dropdown-header">Navigation</li>
-               <li><a href="#">Profile<span class="glyphicon glyphicon-user pull-left"></span></a></li>
+             <ul class="dropdown-menu">
+			         <li class="dropdown-header">Options</li>
+			           <li><a href="#">Messages <span class="badge pull-left"> 42 </span></a></li>
+                 <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-left"></span></a></li>
+                 <li><a href="#"> Help <span class="glyphicon glyphicon-flag pull-left"></span></a></li>
+                 <li class="divider"></li>
+                 <li class="dropdown-header">Navigation</li>
+                 <li><a href="#">Profile<span class="glyphicon glyphicon-user pull-left"></span></a></li>
             </ul>
           </li>
 
-      <!-- End of settings dropdown -->
+          <!-- End of settings dropdown -->
 
          <ul class="nav navbar-nav navbar-right">
-
 
 
             <!-- Trigger Login Modal -->
@@ -122,16 +122,14 @@ switch($_GET["action"]) {
               <!-- End Trigger-->
 
 
+            <!-- Username display -->
+              <?php if(isset($_SESSION['loggedin'])){
+              echo "<li><a>" .$_SESSION['login']."</a></li>";?>
+              <?php }else{ ?>
+              <li data-toggle="modal" data-target="#Login"><a href="main.php"></a></li>
+              <?php } ?>
 
-
-      <!-- Username display -->
-       <?php if(isset($_SESSION['loggedin'])){
-          echo "<li><a>" .$_SESSION['login']."</a></li>";?>
-          <?php }else{ ?>
-          <li data-toggle="modal" data-target="#Login"><a href="main.php"></a></li>
-           <?php } ?>
-
-      <!--End of username display -->
+            <!--End of username display -->
       </ul>
     </div>
   </div>
