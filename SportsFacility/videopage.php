@@ -45,7 +45,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="main.php">HockeyPlex</a>
+      <a class="navbar-brand" href="#">HockeyPlex</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -75,7 +75,7 @@
 	      <ul class="nav navbar-nav">
     <!--Styled the navbar drop down so it has different sections. Settings drop down -->
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="caret"></span><span class="glyphicon glyphicon-cog pull-left"></span></a>
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Settings <span class="caret"></span><span class="glyphicon glyphicon-cog pull-left"></span></a>
         <ul class="dropdown-menu">
 			<li class="dropdown-header">Settings</li>
             <li><a href="#"> Help <span class="glyphicon glyphicon-search"></span></a></li>
@@ -92,10 +92,9 @@
          <ul class="nav navbar-nav navbar-right">
 
 
-
-             <!-- Trigger Login Modal -->
+            <!-- Trigger Login Modal -->
               <?php if(isset($_SESSION['loggedin'])){ ?>
-              <li  data-toggle="modal"> <a href="logout.php">Logout</a></li>
+              <li  data-toggle="modal"> <a href="logout.php">Logout<span class="glyphicon glyphicon-user pull-left"></span></a></li>
               <?php }else{ ?>
               <li  data-toggle="modal" data-target="#Login"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-left"></span></a></li>
               <?php } ?>
@@ -178,6 +177,6 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-    <script src="script.js"></script>  </body>
+    <script src="script.js"></script>
 
 </html>

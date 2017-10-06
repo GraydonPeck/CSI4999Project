@@ -37,7 +37,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="main.php">HockeyPlex</a>
+      <a class="navbar-brand" href="#">HockeyPlex</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -96,9 +96,9 @@
 
 
 
-             <!-- Trigger Login Modal -->
+            <!-- Trigger Login Modal -->
               <?php if(isset($_SESSION['loggedin'])){ ?>
-              <li  data-toggle="modal"> <a href="logout.php">Logout</a></li>
+              <li  data-toggle="modal"> <a href="logout.php">Logout<span class="glyphicon glyphicon-user pull-left"></span></a></li>
               <?php }else{ ?>
               <li  data-toggle="modal" data-target="#Login"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-left"></span></a></li>
               <?php } ?>
