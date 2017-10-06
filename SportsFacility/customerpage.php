@@ -98,7 +98,7 @@
       <!-- This is where the customer form is located for entering additional information.  -->
       <form id="#formSection" method="post" class="customeredit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
         <!-- This is a table style that adds a black border to the table and colors each element in the table -->
-      <table class = "tablestyle">
+      <table class = "table table-bordered">
          <tr>
            <th>Information</th>
            <th>Input</th>
@@ -117,32 +117,32 @@
                	<?php
               		}
               	?>
-        <tr>
+        <tr class="tablestyle">
           <td>First Name</td> <td><input type="text" name="customer_fname"></td>
         </tr>
         <tr>
           <td>Last Name</td> <td><input type="text" name="customer_lname"></td>
         </tr>
         <tr>
-          <td>Phone Number</td> <td><input type="text" name="customer_phone"></td>
+          <td class="tablestyle">Phone Number</td> <td><input type="text" name="customer_phone"></td>
         </tr>
         <tr>
           <td>Email</td> <td><input type="email" name="customer_email"></td>
         </tr>
         <tr>
-          <td>Address</td> <td><input type="text" name="customer_address"></td>
+          <td class="tablestyle">Address</td> <td><input type="text" name="customer_address"></td>
         </tr>
         <tr>
           <td>City</td> <td><input type="text" name="customer_city"></td>
         </tr>
         <tr>
-          <td>State</td> <td><input type="text" name="customer_state"></td>
+          <td class="tablestyle">State</td> <td><input type="text" name="customer_state"></td>
         </tr>
         <tr>
           <td>Country</td> <td><input type="text" name="customer_country"></td>
         </tr>
         <tr>
-          <td>Zip</td> <td><input type="text" name="customer_zip"></td>
+          <td class="tablestyle">Zip</td> <td><input type="text" name="customer_zip"></td>
         </tr>
         <tr>
           <td>Credit Card</td> <td><input type="text" name="customer_creditcard"></td>
