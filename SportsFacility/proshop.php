@@ -75,42 +75,39 @@ switch($_GET["action"]) {
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-      <li><a href="index.php">Home<span class="glyphicon glyphicon-home pull-left"></span></button></a></li>
-      <li><a href="schedulepage.php">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
-      <li><a href="proshop.php">Pro Shop<span class="glyphicon glyphicon-piggy-bank pull-left"></span></a><li>
-      <li><a href="videopage.php">Video's<span class="glyphicon glyphicon-facetime-video pull-left"></span></a></li>
-      <li><a href="aboutpage.php">About<span class="glyphicon glyphicon-apple pull-left"></span></a><li>
-</ul>
-<!--Start of form where users can search -->
+        <li><a href="index.php">Home<span class="glyphicon glyphicon-home pull-left"></span></button></a></li>
+        <li><a href="schedulepage.php">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
+        <li><a href="proshop.php">Pro Shop<span class="glyphicon glyphicon-piggy-bank pull-left"></span></a><li>
+        <li><a href="videopage.php">Video's<span class="glyphicon glyphicon-facetime-video pull-left"></span></a></li>
+        <li><a href="aboutpage.php">About<span class="glyphicon glyphicon-apple pull-left"></span></a><li>
+      </ul>
+
+    <!--Start of form where users can search -->
        <form class="navbar-form navbar-left">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
-      </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-<!-- End of users search form -->
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+       </form>
+    <!-- End of users search form -->
 
 
+	     <!-- This is a dropdown menu that contains the settings for our site. Add additional information here later -->
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings</span><span class="caret"></span> <span class="glyphicon glyphicon-cog pull-left"></span></a>
+           <ul class="dropdown-menu">
+			       <li class="dropdown-header">Options</li>
+			         <li><a href="#">Messages <span class="badge pull-left"> 42 </span></a></li>
+               <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-left"></span></a></li>
+               <li><a href="#"> Help <span class="glyphicon glyphicon-flag pull-left"></span></a></li>
+               <li class="divider"></li>
+               <li class="dropdown-header">Navigation</li>
+               <li><a href="#">Profile<span class="glyphicon glyphicon-user pull-left"></span></a></li>
+            </ul>
+          </li>
 
-
-
-	    <ul class="nav navbar-nav navbar-right">
-	      <ul class="nav navbar-nav">
-    <!--Styled the navbar drop down so it has different sections. Settings drop down -->
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Settings <span class="caret"></span><span class="glyphicon glyphicon-cog pull-left"></span></a>
-        <ul class="dropdown-menu">
-			<li class="dropdown-header">Settings</li>
-            <li><a href="#"> Help <span class="glyphicon glyphicon-search"></span></a></li>
-            <li class="divider"></li>
-             <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
-            <li class="divider"></li>
-            <li><a href="#">Messages <span class="badge pull-right"> 42 </span></a></li>
-            <li class="divider"></li>
-
-          </ul>
-      </li>
-    <!--End of setting dropdown menu -->
+      <!-- End of settings dropdown -->
 
          <ul class="nav navbar-nav navbar-right">
 
