@@ -98,7 +98,7 @@ body {
     color: #262626;
     text-decoration: none;
     background-color: #7a9d96;
-    
+
 }
 
 .dropdown-menu {
@@ -109,7 +109,7 @@ body {
 .nav>li>a:focus {
     text-decoration: none;
     background-color: #00303f;
-    
+
 }
 */
 
@@ -180,7 +180,7 @@ DropDown & list items
 .dropdown-menu>li>a:focus {
     text-decoration: none;
     color: black;
-   
+
 }
 
 .dropdown-menu {
@@ -215,9 +215,11 @@ HOME PAGE
     max-height: 150px !important;
 }
 
-img.map,map area{
+img.map,
+map area {
     outline: none;
 }
+
 /****************************************************
 REGISTER PAGE
 ****************************************************/
@@ -385,8 +387,8 @@ p.thicker {
     text-decoration: none;
     background-color: #766151;
 	color:#FFFFFF;
-	
-    
+
+
 }
 */
 
@@ -525,6 +527,10 @@ DropDown & list items
     margin-right: 5px;
 }
 
+.glyphicon-lock:before {
+    margin-right: 5px;
+}
+
 .caret.caret-up {
     border-top-width: 0;
     border-bottom: 4px solid #fff;
@@ -571,7 +577,7 @@ Buttons
 ****************************************************/
 
 .button {
-    background-color: #B6B6B6;
+    background-color: red;
     /* Green */
     border: none;
     color: white;
@@ -589,79 +595,79 @@ Buttons
 
 
 .button1 {
-    background-color: #766151;
+    background-color: #514947;
     color: #FFFFFF;
     border: 1px solid #48372F;
 }
 
 .button1:hover {
-    background-color: #514947;
+    background-color: #766151;
     color: white;
 }
 
 .button2 {
-    background-color: #766151;
+    background-color: #514947;
     color: #FFFFFF;
     border: 1px solid #48372F;
 }
 
 .button2:hover {
-    background-color: #514947;
+    background-color: #766151;
     color: white;
 }
 
 .button3 {
-    background-color: #766151;
+    background-color: #514947;
     color: #FFFFFF;
     border: 1px solid #48372F;
 }
 
 .button3:hover {
-    background-color: #514947;
+    background-color: #766151;
     color: white;
 }
 
 .button4 {
-    background-color: #766151;
+    background-color: #514947;
     color: #FFFFFF;
     border: 1px solid #48372F;
 }
 
 .button4:hover {
-    background-color: #514947;
+    background-color: #766151;
     color: white;
 }
 
 .button5 {
-    background-color: #766151;
+    background-color: #514947;
     color: #FFFFFF;
     border: 1px solid #48372F;
 }
 
 .button5:hover {
-    background-color: #514947;
+    background-color: #766151;
     color: white;
 }
 
 .button6 {
-    background-color: #766151;
+    background-color: #514947;
     color: #FFFFFF;
     border: 1px solid #48372F;
 }
 
 .button6:hover {
-    background-color: #514947;
+    background-color: #766151;
     color: white;
 }
 
 .button7 {
-    background-color: #766151;
+    background-color: #514947;
     color: #FFFFFF;
     border: 1px solid #48372F;
 }
 
 .button7:hover {
-    background-color: #514947;
+    background-color: #766151;
     color: white;
 }
 
@@ -675,4 +681,50 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
+}
+
+/******************************
+Drop down button for settings
+******************************/
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
 }
