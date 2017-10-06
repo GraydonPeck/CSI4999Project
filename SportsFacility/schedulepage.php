@@ -106,6 +106,14 @@
   </div>
 </nav>
 
+
+<div class="jumbotron">
+  <h1><big>Hockey<strong>Plex</strong></big></h1>
+  <h2>This is the schedule page</h2>
+  <p>This is where user will have the ability to schedule events</p>
+
+
+</div>
 <!--Login Modal -->
 
   <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -142,11 +150,7 @@
       </div>
     </div>
   </div>
-<div class="jumbotron">
-  <h1><big>Hockey<strong>Plex</strong></big></h1>
-  <h2>This is the Employee page</h2>
-  <p>This is where the employee enters other information.</p>
-</div>
+
   </div>
 
 

@@ -134,7 +134,13 @@
 
 
   <!-- End Login Modal -->
+<div class="jumbotron">
+  <h1><big>Hockey<strong>Plex</strong></big></h1>
+  <h2>This is the about page</h2>
+  <p>Where you will learn information about our company</p>
 
+
+</div>
 <h1>About Us</h1>
 
         <div class="container">

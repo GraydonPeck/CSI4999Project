@@ -144,7 +144,13 @@ switch($_GET["action"]) {
     </div>
   </div>
 </nav>
+<div class="jumbotron">
+  <h1><big>Hockey<strong>Plex</strong></big></h1>
+  <h2>This is the Pro Shop page</h2>
+  <p>Customers will have the ability to purchase goods</p>
 
+
+</div>
 <!--Login Modal -->
 
   <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
