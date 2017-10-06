@@ -64,7 +64,7 @@
 }
 
 
-table,
+/*table,
 th,
 td {
     border: 1px solid black;
@@ -77,6 +77,7 @@ td {
     color: white;
 
 }
+*/
 
 body {
     background: #ffb347;
@@ -307,6 +308,10 @@ Body, Text, and page styling
 
 }
 
+a {
+    color: #FFFFFF;
+}
+
 body {
     background: #ffb347;
     /* fallback for old browsers */
@@ -413,33 +418,24 @@ Carousel
 Table & Container
 *******************************/
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 50%;
-    margin: auto;
-}
+table {}
 
-td,
-th {
-    border: 1px solid #dcae1d;
-    text-align: left;
-    padding: 8px;
-}
 
 tr:nth-child(even) {
     background-color: #dddddd;
 }
 
-table,
-th,
-td {
+.tablestyle {
     border: 1px solid black;
     border-collapse: collapse;
     text-align: center;
     padding-bottom: 5px;
     padding-top: 5px;
     margin-bottom: 5px;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    margin: auto;
 
 }
 
@@ -456,35 +452,38 @@ DropDown & list items
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: black;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     padding: 12px 16px;
     z-index: 1;
 }
 
-.dropdown:hover .dropdown-content {
+/*.dropdown:hover .dropdown-content {
     display: block;
 }
+*/
 
-.dropdown-menu>li>a:hover,
+/*.dropdown-menu>li>a:hover,
 .dropdown-menu>li>a:focus {
     text-decoration: none;
     color: black;
-    /*change color of links in drop down here*/
-}
 
-.dropdown-menu {
-    background-color: #FFFFFF;
-    color: blue;
-    opacity: 0.7;
 }
+*/
 
 .navbar-inverse {
     background-color: #514947;
 
 
 }
+
+/*.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+    background-color: transparent;
+    color: #FFFFFF;
+}
+*/
 
 .navbar-brand {
     font-size: 25px;
@@ -530,6 +529,23 @@ DropDown & list items
 .glyphicon-lock:before {
     margin-right: 5px;
 }
+
+.glyphicon-cog:before {
+    margin-right: 5px;
+}
+
+.badge:before {
+    margin-right: 5px;
+}
+
+.glyphicon-search {
+    margin-right: 5px;
+}
+
+.glyphicon-flag {
+    margin-right: 5px;
+}
+
 
 .caret.caret-up {
     border-top-width: 0;
@@ -671,7 +687,9 @@ Buttons
     color: white;
 }
 
-.dropdown1 {}
+.dropdown {
+    left: 0;
+}
 
 .dropdown2 {}
 
@@ -688,7 +706,7 @@ Drop down button for settings
 ******************************/
 
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: #FFFFFF;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -696,15 +714,16 @@ Drop down button for settings
     cursor: pointer;
 }
 
+
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
-.dropdown-content {
+.dropdown-toggle {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #766151;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -717,14 +736,16 @@ Drop down button for settings
     display: block;
 }
 
+
 .dropdown-content a:hover {
     background-color: #f1f1f1
 }
+
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    background-color: #766151;
 }
