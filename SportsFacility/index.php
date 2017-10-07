@@ -218,7 +218,7 @@
     <div class="col-md-12" style="padding-top:15px">
       <img src="img/floorplan.jpg" alt="Floor Plan" class="center-block img-rounded map" hidefocus="true" usemap="#FloorMap">
       <map name="FloorMap" id="Map">
-        <area alt="" title="" href="#" shape="poly" coords="381,36,378,323,563,323,565,35" />
+        <area alt="" title="" data-toggle="modal" data-target="#ScheduleModal" shape="poly" coords="381,36,378,323,563,323,565,35" />
         <area alt="" title="" href="#" shape="poly" coords="270,178,270,46,33,46,33,146,42,154,45,180" />
         <area alt="" title="" href="#" shape="poly" coords="45,183,273,183,270,315,34,314,31,215" />
       </map>
@@ -291,7 +291,29 @@
     </div>
 
   <!-- End Invalid Password Modal -->
+ <!--Floor Plan Modal -->
+   <div class="modal fade" id="ScheduleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Schedule</h4>
+        </div>
+        <div class="modal-body">
 
+        </div>
+        <div class="modal-footer">
+          <center>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Login Modal -->
   </body>
     <!-- Bootstrap core JavaScript
     ================================================== -->

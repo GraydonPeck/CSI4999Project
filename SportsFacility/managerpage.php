@@ -96,8 +96,8 @@
   <h2>This is the Manger page</h2>
 </div>
 <!--Timesheet table -->
-<div class="container">
-  <div class="panel panel-primary">
+<div class="container" style="padding-top:10px;">
+  <div class="panel panel-primary" >
             <div class="panel-heading">
                 <h1 class="panel-title"><big>Timesheet</big></h1>
 
