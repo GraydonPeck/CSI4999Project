@@ -2,7 +2,7 @@
     include "dbutils.php";
     session_start();
     $_SESSION['loggedin'] = False;
- 
+
 	$username = $_POST['username'];
 	$passwd = $_POST['passwd'];
 	$number = $_POST['user_number'];
@@ -33,9 +33,10 @@
         echo "Failure " . "<br>";
     	$ref = getenv("HTTP_REFERER");
         $_SESSION['login'] = '';
+        $_SESSION['loggedin'] = NULL;
         //echo "<script language='javascript'> alert('Incorrect Password'); </script>";
     	$goto = "Location: " . $ref;
-    }	
+    }
 	header($goto);
 
 ?>
