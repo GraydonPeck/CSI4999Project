@@ -64,7 +64,25 @@
 
       <!-- End of settings dropdown -->
 
-      <!-- Username display -->
+
+
+          </ul>
+      </li>
+    <!--End of setting dropdown menu -->
+
+         <ul class="nav navbar-nav navbar-right">
+
+
+
+            <!-- Trigger Login Modal -->
+              <?php if(isset($_SESSION['loggedin'])){ ?>
+              <li  data-toggle="modal"> <a href="logout.php">Logout<span class="glyphicon glyphicon-user pull-left"></span></a></li>
+              <?php }else{ ?>
+              <li  data-toggle="modal" data-target="#Login"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-left"></span></a></li>
+              <?php } ?>
+            <!-- End Trigger-->
+
+           <!-- Username display -->
        <?php
        $username= $_SESSION['login'];
       $customer = check_login_type($username);
@@ -85,36 +103,6 @@
            <?php } ?>
 
       <!--End of username display -->
-
-          </ul>
-      </li>
-    <!--End of setting dropdown menu -->
-
-         <ul class="nav navbar-nav navbar-right">
-
-
-
-            <!-- Trigger Login Modal -->
-              <?php if(isset($_SESSION['loggedin'])){ ?>
-              <li  data-toggle="modal"> <a href="logout.php">Logout<span class="glyphicon glyphicon-user pull-left"></span></a></li>
-              <?php }else{ ?>
-              <li  data-toggle="modal" data-target="#Login"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-left"></span></a></li>
-              <?php } ?>
-            <!-- End Trigger-->
-
-
-
-
-            <!-- Username display -->
-              <?php if(isset($_SESSION['loggedin'])){
-              echo "<li><a>" .$_SESSION['login']."</a></li>";?>
-              <?php }else{ ?>
-              <li data-toggle="modal" data-target="#Login"><a href="index.php"></a></li>
-              <?php } ?>
-
-            <!--End of username display -->
-
-
 
       </ul>
     </div>
