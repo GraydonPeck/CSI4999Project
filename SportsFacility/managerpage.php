@@ -8,7 +8,7 @@
 	    echo "Found " . count($_POST) . " elements" . "<td>";
         var_dump($_POST);
         add_user ($_POST['User_name'], $_POST['User_password'], $_POST['User_email'], $_POST['user_type']);
-        edit_employee ($_POST['User_name'], $_POST['employee_fname'], $_POST['employee_lname'], $_POST['employee_type'], $_POST['employee_phone']);
+        add_employee ($_POST['User_name'], $_POST['employee_fname'], $_POST['employee_lname'], $_POST['employee_type'], $_POST['employee_phone']);
         header ("Location: managerpage.php");
     }
 ?>
@@ -28,7 +28,7 @@
   <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
   <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
   <script type = "text/javascript" src = "chk.js"></script>
-  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="NavbarStyle.css">
 
 
 </head>
@@ -127,7 +127,7 @@
                           $result = mysqli_query($db, $sql);
                            while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?>
@@ -142,7 +142,7 @@
                           $result = mysqli_query($db, $sql);
                           while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?>
@@ -157,7 +157,7 @@
                           $result = mysqli_query($db, $sql);
                           while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?>
@@ -171,7 +171,7 @@
                           $result = mysqli_query($db, $sql);
                           while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?>
@@ -186,7 +186,7 @@
                           $result = mysqli_query($db, $sql);
                          while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?></select>
@@ -200,7 +200,7 @@
                           $result = mysqli_query($db, $sql);
                          while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?></select>
@@ -214,7 +214,7 @@
                           $result = mysqli_query($db, $sql);
                           while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?></select>
@@ -231,7 +231,7 @@
                           $result = mysqli_query($db, $sql);
                           while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?></select>
@@ -245,7 +245,7 @@
                           $result = mysqli_query($db, $sql);
                          while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?></select>
@@ -259,7 +259,7 @@
                           $result = mysqli_query($db, $sql);
                           while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?></select>
@@ -273,7 +273,7 @@
                           $result = mysqli_query($db, $sql);
                           while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?></select>
@@ -287,7 +287,7 @@
                           $result = mysqli_query($db, $sql);
                           while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?></select>
@@ -301,7 +301,7 @@
                           $result = mysqli_query($db, $sql);
                           while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?></select>
@@ -315,7 +315,7 @@
                           $result = mysqli_query($db, $sql);
                           while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?></select>
@@ -332,7 +332,7 @@
                           $result = mysqli_query($db, $sql);
                           while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?></select>
@@ -346,7 +346,7 @@
                           $result = mysqli_query($db, $sql);
                           while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?></select>
@@ -360,7 +360,7 @@
                           $result = mysqli_query($db, $sql);
                           while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?></select>
@@ -374,7 +374,7 @@
                           $result = mysqli_query($db, $sql);
                           while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?></select>
@@ -388,7 +388,7 @@
                           $result = mysqli_query($db, $sql);
                           while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?></select>
@@ -402,7 +402,7 @@
                           $result = mysqli_query($db, $sql);
                           while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?></select>
@@ -416,7 +416,7 @@
                           $result = mysqli_query($db, $sql);
                           while ($row = mysqli_fetch_array($result)){
               		        	?>
-                          <option><?php echo $row['user_name']?></option>
+                          <option><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
                          	<?php
                         		}
                         	?></select>

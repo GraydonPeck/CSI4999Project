@@ -21,8 +21,7 @@
   <!--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
   <!-- <script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
   <script type = "text/javascript" src = "chk.js"></script>
-  <link rel="stylesheet" type="text/css" href="main.css">
-
+  <link rel="stylesheet" type="text/css" href="NavbarStyle.css">
 
 
 </head>
@@ -206,7 +205,7 @@
     <div class="col-md-12" style="padding-top:15px">
       <img src="img/floorplan.jpg" alt="Floor Plan" class="center-block img-rounded map" hidefocus="true" usemap="#FloorMap">
       <map name="FloorMap" id="Map">
-        <area alt="" title="" data-toggle="modal" data-target="#ScheduleModal" shape="poly" coords="381,36,378,323,563,323,565,35" />
+        <area alt="" title="" data-toggle="modal" a href="#" data-target="#ScheduleModal" shape="poly" coords="381,36,378,323,563,323,565,35" />
         <area alt="" title="" href="#" shape="poly" coords="270,178,270,46,33,46,33,146,42,154,45,180" />
         <area alt="" title="" href="#" shape="poly" coords="45,183,273,183,270,315,34,314,31,215" />
       </map>
@@ -246,10 +245,11 @@
           <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
           </center>
         </div>
+        </form>
       </div>
     </div>
   </div>
-          </form>
+
 
   <!-- End Login Modal -->
 
@@ -277,6 +277,8 @@
             </form>
 
     </div>
+    </div>
+    </div>
 
   <!-- End Invalid Password Modal -->
  <!--Floor Plan Modal -->
@@ -303,6 +305,7 @@
   </div>
   <!-- End Login Modal -->
   </body>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

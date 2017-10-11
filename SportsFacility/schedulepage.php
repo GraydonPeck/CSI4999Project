@@ -29,7 +29,7 @@
   <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
   <script type = "text/javascript" src = "chk.js"></script>
   <!-- referencing an external style sheet. -->
-  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="NavbarStyle.css">
 
 
 </head>

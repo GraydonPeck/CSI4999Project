@@ -35,7 +35,7 @@
         $_SESSION['login'] = '';
         $_SESSION['loggedin'] = NULL;
         //echo "<script language='javascript'> alert('Incorrect Password'); </script>";
-    	$goto = "Location: " . $ref;
+    	$goto = "Location: index.php#invalidPassword";
     }
 	header($goto);
 
