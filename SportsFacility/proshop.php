@@ -15,7 +15,7 @@ include("dbutils.php");
 <link rel="stylesheet" type="text/css" href="proshop.css">
 <script type = "text/javascript" src = "chk.js"></script>
 <!-- referencing an external style sheet. -->
-  <link rel="stylesheet" type="text/css" href="NavbarStyle.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <?php
 $db_handle = new DBController();

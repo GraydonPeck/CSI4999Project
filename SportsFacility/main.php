@@ -8,6 +8,7 @@
 	    echo "Found " . count($_POST) . " elements" . "<td>";
         var_dump($_POST);
         add_user ($_POST['User_name'], $_POST['User_password'], $_POST['User_email'], $_POST['user_type']);
+        add_customer($_POST['User_name']);
         header ("Location: main.php");
     }
 ?>
@@ -136,7 +137,7 @@
 
           <center>
           <form action = "checklogin.php" method="post">
-                                <input type="hidden" name="user_number">
+                                <input type="hidden" name="User_number">
           <table>
           <tr>
           <td>Username:</td>     <td><input type="text" name="username"></td>

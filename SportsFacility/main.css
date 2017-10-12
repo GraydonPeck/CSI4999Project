@@ -490,7 +490,7 @@ DropDown & list items
 
 
 .navbar-inverse {
-    background-color: red;
+    background-color: #514947;
 
 
 }
@@ -784,6 +784,7 @@ Drop down button for settings
 /*************************************
 Dropdown toggle function
 *************************************/
+
 @media (max-width: 1050px) {
     .navbar-header {
         float: none;
@@ -793,7 +794,7 @@ Dropdown toggle function
     }
     .navbar-collapse {
         border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
     .navbar-collapse.collapse {
         display: none!important;

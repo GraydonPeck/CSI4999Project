@@ -5,7 +5,7 @@
 
 	$username = $_POST['username'];
 	$passwd = $_POST['passwd'];
-	$number = $_POST['user_number'];
+	$number = $_POST['User_number'];
 
     $retstatus = check_login ($username, $passwd, $msg);
     echo $username . "<br>";
@@ -16,6 +16,7 @@
     {
 	echo "Success " . "<br>";
 	$_SESSION['login'] = $username;
+	$_SESSION['user_number'] = $number;
 	$_SESSION['loggedin'] = True;
 	$customer = check_login_type($username);
 	if ($customer)

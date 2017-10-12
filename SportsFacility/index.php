@@ -21,7 +21,7 @@
   <!--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
   <!-- <script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
   <script type = "text/javascript" src = "chk.js"></script>
-  <link rel="stylesheet" type="text/css" href="NavbarStyle.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
 
 
 </head>

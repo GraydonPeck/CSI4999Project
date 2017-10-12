@@ -28,7 +28,7 @@
   <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
   <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
   <script type = "text/javascript" src = "chk.js"></script>
-  <link rel="stylesheet" type="text/css" href="NavbarStyle.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
 
 
 </head>
@@ -97,6 +97,9 @@
   <p>This is where the employee enters other information.</p>
 </div>
 <!--Edit model -->
+<div class="col-md-8">
+</div>
+<div class = "col-md-4">
 <div class="modal fade" id="Edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -193,6 +196,7 @@
        <a class= "button" data-toggle="modal" data-target="#Edit" href="#">EDIT INFORMATION</a>
      <center>
 </form>
+  </div>
   </div>
 
 

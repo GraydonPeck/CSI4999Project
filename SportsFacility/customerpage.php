@@ -7,7 +7,7 @@
 
 	    echo "Found " . count($_POST) . " elements" . "<td>";
         var_dump($_POST);
-        edit_customer ($_POST['user_number'], $_POST['customer_fname'], $_POST['customer_lname'], $_POST['customer_phone'], $_POST['customer_email'],  $_POST['customer_address'], $_POST['customer_city'],  $_POST['customer_state'],  $_POST['customer_country'],  $_POST['customer_zip'],  $_POST['customer_creditcard']);
+        edit_customer ($_POST['customer_fname'], $_POST['customer_lname'], $_POST['customer_phone'], $_POST['customer_email'],  $_POST['customer_address'], $_POST['customer_city'],  $_POST['customer_state'],  $_POST['customer_country'],  $_POST['customer_zip'],  $_POST['customer_creditcard'], $_POST['user_name']);
         header ("Location: customerpage.php");
     }
 ?>
@@ -26,7 +26,7 @@
   <!--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
   <!--<script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
   <script type="text/javascript" src="chk.js"></script>
-  <link rel="stylesheet" type="text/css" href="NavbarStyle.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
 
 </head>
 
@@ -94,14 +94,23 @@
 <div class = "container info">
      <div class = "container-fluid">
        <center>
-
+<div class="modal fade" id="EditCust" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Edit User Information</h4>
+        </div>
+        <div class="modal-body">
+          <center>
       <!-- This is where the customer form is located for entering additional information.  -->
       <form id="#formSection" method="post" class="customeredit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
         <!-- This is a table style that adds a black border to the table and colors each element in the table -->
-      <table class = "table table-bordered">
+      <table>
          <tr>
-           <th>Information</th>
-           <th>Input</th>
+           <th colspan="2">Information Input</th>
          </tr>
          <!-- Links to our database with the information each customer enter into the following fields -->
              <?php
@@ -110,43 +119,52 @@
   $sql = "SELECT * FROM login_db WHERE user_name= '$username'";
   $result = mysqli_query($db, $sql);
   while ($row = mysqli_fetch_array($result)){
+    $name = $row['user_name'];
               			?>
-
           <!-- End of selecting the username from the database -->
-<input type='hidden' name='user_number' value="<?php echo $row['user_number']?>">
-               	<?php
+<input type='hidden' name='user_name' value="<?php echo $row['user_name']?>">
+                       	<?php
+              		}
+            $db = mysqli_connect("localhost","gpeck2217","","c9");
+  $username = $_SESSION['login'];
+  $sql = "SELECT * FROM customer_db WHERE user_name = '$name'";
+  $result = mysqli_query($db, $sql);
+  while ($row = mysqli_fetch_array($result)){
+    $number = $row['user_name'];
+              			?>
+        <tr class="tablestyle">
+          <td>First Name</td> <td><input type="text" name="customer_fname" value="<?php echo $row['customer_fname']?>"></td>
+        </tr>
+        <tr>
+          <td>Last Name</td> <td><input type="text" name="customer_lname" value="<?php echo $row['customer_lname']?>"></td>
+        </tr>
+        <tr>
+          <td class="tablestyle">Phone Number</td> <td><input type="text" name="customer_phone" value="<?php echo $row['customer_phone']?>"></td>
+        </tr>
+        <tr>
+          <td>Email</td> <td><input type="email" name="customer_email" value="<?php echo $row['customer_email']?>"></td>
+        </tr>
+        <tr>
+          <td class="tablestyle">Address</td> <td><input type="text" name="customer_address" value="<?php echo $row['customer_address']?>"></td>
+        </tr>
+        <tr>
+          <td>City</td> <td><input type="text" name="customer_city" value="<?php echo $row['customer_city']?>"></td>
+        </tr>
+        <tr>
+          <td class="tablestyle">State</td> <td><input type="text" name="customer_state" value="<?php echo $row['customer_state']?>"></td>
+        </tr>
+        <tr>
+          <td>Country</td> <td><input type="text" name="customer_country" value="<?php echo $row['customer_country']?>"></td>
+        </tr>
+        <tr>
+          <td class="tablestyle">Zip</td> <td><input type="text" name="customer_zip" value="<?php echo $row['customer_zip']?>"></td>
+        </tr>
+        <tr>
+          <td>Credit Card</td> <td><input type="text" name="customer_creditcard" value="<?php echo $row['customer_creditcard']?>"></td>
+        </tr>
+                       	<?php
               		}
               	?>
-        <tr class="tablestyle">
-          <td>First Name</td> <td><input type="text" name="customer_fname"></td>
-        </tr>
-        <tr>
-          <td>Last Name</td> <td><input type="text" name="customer_lname"></td>
-        </tr>
-        <tr>
-          <td class="tablestyle">Phone Number</td> <td><input type="text" name="customer_phone"></td>
-        </tr>
-        <tr>
-          <td>Email</td> <td><input type="email" name="customer_email"></td>
-        </tr>
-        <tr>
-          <td class="tablestyle">Address</td> <td><input type="text" name="customer_address"></td>
-        </tr>
-        <tr>
-          <td>City</td> <td><input type="text" name="customer_city"></td>
-        </tr>
-        <tr>
-          <td class="tablestyle">State</td> <td><input type="text" name="customer_state"></td>
-        </tr>
-        <tr>
-          <td>Country</td> <td><input type="text" name="customer_country"></td>
-        </tr>
-        <tr>
-          <td class="tablestyle">Zip</td> <td><input type="text" name="customer_zip"></td>
-        </tr>
-        <tr>
-          <td>Credit Card</td> <td><input type="text" name="customer_creditcard"></td>
-        </tr>
       </table>
      <center>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -156,6 +174,44 @@
 </div>
    </center>
 
+<form id="#formSection" method="post" class="customereedit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
+        <!-- This is a table style that adds a black border to the table and colors each element in the table -->
+      <table class = "table table-bordered">
+         <tr>
+           <th colspan = "2">Your INFORMATION</th>
+         </tr>
+         <!-- Links to our database with the information each customer enter into the following fields -->
+             <?php
+  $db = mysqli_connect("localhost","gpeck2217","","c9");
+  $sql = "SELECT * FROM customer_db WHERE user_name = '$name'";
+  $result = mysqli_query($db, $sql);
+  while ($row = mysqli_fetch_array($result)){
+?>
+        <tr class="tablestyle">
+           <tr class="tablestyle">
+          <td>First Name</td> <td><?php echo $row['customer_fname']?></td>
+        </tr>
+        <tr>
+          <td>Last Name</td> <td><?php echo $row['customer_lname']?></td>
+        </tr>
+        <tr>
+          <td class="tablestyle">Phone Number</td> <td><?php echo $row['customer_phone']?></td>
+        </tr>
+        <tr>
+          <td>Email</td> <td><?php echo $row['customer_email']?></td>
+        </tr>
+        <tr>
+          <td class="tablestyle">Address</td> <td><?php echo $row['customer_address']. " " . $row['customer_city'] . ", " . $row['customer_state'] . ", " . $row['customer_country'] . ", " . $row['customer_zip']  ?></td>
+        </tr>
+        <tr>
+          <td>Credit Card</td> <td><?php echo $row['customer_creditcard']?></td>
+        </tr>
+        <?php } ?>
+         </table>
+       <a class= "button" data-toggle="modal" data-target="#EditCust" href="#">EDIT INFORMATION</a>
+     <center>
+</form>
+  </div>
 
 
 <script>

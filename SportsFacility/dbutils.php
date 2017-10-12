@@ -37,12 +37,21 @@
 
         run_update($sql_i);
 	}
-	function edit_customer ($user_number, $customer_fname, $customer_lname, $customer_phone, $customer_email, $customer_address, $customer_city, $customer_state, $customer_country, $customer_zip, $customer_creditcard)
+	function add_customer ($User_name)
 	{
 		global $conn;
 
-        $sql_i = "INSERT INTO customer_db(user_number, customer_fname, customer_lname, customer_phone, customer_email, customer_address, customer_city, customer_state, customer_country, customer_zip, customer_creditcard) VALUES " .
-                "('$user_number', '$customer_fname', '$customer_lname', '$customer_phone', '$customer_email', '$customer_address', '$customer_city', '$customer_state', '$customer_country', '$customer_zip', '$customer_creditcard')";
+        $sql_i = "INSERT INTO customer_db(user_name) VALUES " .
+                "('$User_name')";
+
+        run_update($sql_i);
+	}
+	function edit_customer ($customer_fname, $customer_lname, $customer_phone, $customer_email, $customer_address, $customer_city, $customer_state, $customer_country, $customer_zip, $customer_creditcard, $user_name)
+	{
+		global $conn;
+
+        $sql_i = "UPDATE customer_db SET customer_fname = '$customer_fname', customer_lname = '$customer_lname', customer_phone = '$customer_phone', customer_email = '$customer_email', customer_address = '$customer_address',
+        customer_city = '$customer_city', customer_state = '$customer_state', customer_country = '$customer_country', customer_zip = '$customer_zip', customer_creditcard = '$customer_creditcard' WHERE user_name = '$user_name'";
 
         run_update($sql_i);
 	}
