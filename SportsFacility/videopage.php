@@ -29,8 +29,49 @@
   <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
   <script type = "text/javascript" src = "chk.js"></script>
   <!-- referencing an external style sheet. -->
+  <script src="https://cdn.alloyui.com/3.0.1/aui/aui-min.js"></script>
+<link href="https://cdn.alloyui.com/3.0.1/aui-css/css/bootstrap.min.css" rel="stylesheet"></link>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" type="text/css" href="main.css">
 
+<style>
+  .w3-bar {
+    background-color:#766151;
+    color:white;
+    font-size: 14px;
+
+  }
+
+  .w3-container{
+    background-color:#00303f;
+  }
+
+  .containertext{
+    color:white;
+  }
+
+  .center {
+    text-align: center;
+}
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: white;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+}
+
+
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+</style>
 
 </head>
 
@@ -60,9 +101,9 @@
 <!--Start of form where users can search -->
       <form class="navbar-form navbar-left">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input id="demo"type="text" class="form-control" placeholder="Search">
         </div>
-          <button type="submit" class="button1 btn btn-default">Submit</button>
+          <button onclick="pagesezarch" type="submit" class="button1 btn btn-default">Submit</button>
       </form>
 <!-- End of users search form -->
 
@@ -70,7 +111,7 @@
     <!-- This is a dropdown menu that contains the settings for our site. Add additional information here later -->
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings</span><span class="caret"></span> <span class="glyphicon glyphicon-cog pull-left"></span></a>
+            <a id="myTrigger" href="#" class="dropdown-toggle" data-toggle="dropdown">Settings</span><span class="caret"></span> <span class="glyphicon glyphicon-cog pull-left"></span></a>
              <ul class="dropdown-menu">
 			         <li class="dropdown-header">Options</li>
 			           <li><a href="#">Messages <span class="badge pull-left"> 42 </span></a></li>
@@ -111,12 +152,113 @@
 
 <div class="jumbotron">
   <h1><big>Hockey<strong>Plex</strong></big></h1>
-  <h2>This is the video page</h2>
-  <p>This is where the Customer/Employee learn's how to complete each task assigned.</p>
+  <h2 class="center">This is the video page</h2>
+  <p class="center">This is where the Customer/Employee learn's how to complete each task assigned.</p>
 
 
 </div>
   </div>
+<div class="container-fluid">
+<div>
+  <h2>Welcome to the viewing of each of the containers</h2>
+  <p>This is where users will find helpful information</p>
+  <p><strong>Happy navigation:</strong> Hope you have a great time looking at our videos.</p>
+</div>
+
+<div class="w3-bar">
+ <button class="w3-bar-item w3-button tablink w3-red" onclick="videotab(event,'Highlights')">Highlights</button>
+    <button class="w3-bar-item w3-button tablink" onclick="videotab(event,'Training')">Training</button>
+
+</div>
+
+<div id="Highlights" class="w3-container w3-display-container videos">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-large w3-display-topright">&times;</span>
+
+
+
+<div class="content ">
+
+  <div class=" col-sm-4">
+    <h3 class="containertext">Video 1</h3>
+
+     <iframe  height="300" width="400" src="https://www.youtube.com/embed/Zf1Xc5da2cs" frameborder="1" allowfullscreen></iframe>
+  </iframe>
+
+
+  </div>
+  <div class="col-sm-4">
+    <h3 class="containertext">Video 2</h3>
+    <iframe  height="300" width="400" src="https://www.youtube.com/embed/OycZ6KLWjQo" frameborder="1" allowfullscreen></iframe>
+  </iframe>
+  </div>
+  <div class="col-sm-4">
+    <h3 class="containertext">Video 3</h3>
+    <iframe height="300" width="400" src="https://www.youtube.com/embed/aerrlifU_UE" frameborder="1" allowfullscreen></iframe>
+  </iframe>
+  </div>
+</div>
+
+
+
+<div class="col-sm-12">
+<div id="pagination">
+  <ul class="pagination pagination-content">
+    <li><a href="#">Prev</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
+</div>
+</div>
+
+</div>
+
+
+<div id="Training" class="w3-container w3-display-container videos" style="display:none">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-large w3-display-topright">&times;</span>
+  <div class="container-fluid">
+  <div class="col-sm-4">
+   <h2 class="containertext">Video 1</h2>
+  <div class=" fluidMedia">
+  <iframe src="https://www.youtube.com/embed/Zf1Xc5da2cs" frameborder="1" allowfullscreen></iframe>
+  </iframe>
+  </div>
+   <p class="sansserif">This is the container where all the training videos will be located.</p>
+  </div>
+
+  <div class="col-sm-4">
+  <h2 class="containertext">Video 1</h2>
+  <div class="fluidMedia">
+  <iframe src="https://www.youtube.com/embed/Zf1Xc5da2cs" frameborder="1" allowfullscreen></iframe>
+  </iframe>
+  </div>
+    <p class="sansserif">This is where there will be another video</p>
+
+  </div>
+
+  <div class="col-sm-4">
+   <h2 class="containertext">Video 1</h2>
+  <div class="fluidMedia">
+  <iframe src="https://www.youtube.com/embed/Zf1Xc5da2cs" frameborder="1" allowfullscreen></iframe>
+  </iframe>
+  </div>
+    <p class="sanserrif">This is where there will be another video</p>
+  </div>
+
+</div>
+</div>
+
+
+
+
+</div>
+</div>
+<div class="container">
+  <p>This is temporary</p>
+</div>
 
 
 <!--Login Modal -->
@@ -158,7 +300,71 @@
 
 
   <!-- End Login Modal -->
+<script>
+function videotab(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("videos");
+  for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
 
+function pagesearch(){
+  var str = "video"
+  var n = str.search("video");
+  document.getElementById("demo").innerHTML = n;
+}
+
+YUI().use(
+  'aui-pagination',
+  function(Y) {
+    var pages = Y.all('.content div');
+
+    new Y.Pagination(
+      {
+        boundingBox: '#pagination',
+        circular: false,
+        contentBox: '#pagination .pagination-content',
+        on: {
+          changeRequest: function(event) {
+            var instance = this,
+                state = event.state,
+                lastState = event.lastState;
+
+            if (lastState) {
+                pages.item(lastState.page - 1).setStyle('display', 'none');
+            }
+
+            pages.item(state.page - 1).setStyle('display', 'block');
+          }
+        },
+        page: 1
+      }
+    ).render();
+  }
+);
+
+
+YUI().use(
+  'aui-dropdown',
+  function(Y) {
+    new Y.Dropdown(
+      {
+        boundingBox: '#myDropdown',
+        trigger: '#myTrigger'
+      }
+    ).render();
+  }
+);
+
+
+</script>
 
 
 
