@@ -148,11 +148,11 @@ tr:nth-child(even) {
 
 }
 
-h1,
+/*h1,
 h2,
 p {
     text-align: center;
-}
+}*/
 
 /****************************************************
 DropDown & list items
@@ -310,6 +310,10 @@ Body, Text, and page styling
 
 a {
     color: #FFFFFF;
+}
+
+.center {
+    text-align: center;
 }
 
 body {
@@ -785,7 +789,7 @@ Drop down button for settings
 Dropdown toggle function
 *************************************/
 
-@media (max-width: 1050px) {
+@media (max-width: 1300px) {
     .navbar-header {
         float: none;
     }
@@ -821,4 +825,25 @@ Dropdown toggle function
     .collapsing {
         overflow: hidden!important;
     }
+}
+
+/*************************************
+Fluid IFram
+*************************************/
+
+.fluidMedia {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.fluidMedia iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
