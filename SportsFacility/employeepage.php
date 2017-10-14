@@ -96,109 +96,123 @@
   <h2>This is the Employee page</h2>
   <p>This is where the employee enters other information.</p>
 </div>
-<!--Edit model -->
-<div class="col-md-8">
-</div>
-<div class = "col-md-4">
-<div class="modal fade" id="Edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h4 class="modal-title" id="myModalLabel">Edit User Information</h4>
-        </div>
-        <div class="modal-body">
-          <center>
-          <form action = "employeepage.php" method="post">
-          <table>
- <?php
-  $db = mysqli_connect("localhost","gpeck2217","","c9");
-  $username = $_SESSION['login'];
-  $sql = "SELECT * FROM employee_db WHERE user_name = '$username'";
-  $result = mysqli_query($db, $sql);
-  while ($row = mysqli_fetch_array($result)){
-?>
 
+  <div class="col-md-8"  style="padding-top:10px;">
+    <div class="panel panel-primary">
+      <table>
+      <th>This Weeks Schedule</th>
+      <?php
+    $db = mysqli_connect("localhost","gpeck2217","","c9");
+    $username = $_SESSION['login'];
+    $sql = "SELECT * FROM work_schedule WHERE user_name = '$username'";
+    $result = mysqli_query($db, $sql);
+    while ($row = mysqli_fetch_array($result)){
+      ?>
           <tr>
-          <td>First Name</td> <td><input type="text" name="employee_fname" value="<?php echo $row['employee_fname']?>"></td>
-        </tr>
-        <tr>
-          <td>Last Name</td> <td><input type="text" name="employee_lname" value="<?php echo $row['employee_lname']?>"></td>
-        </tr>
-        <input type="hidden" name= "employee_type" value="<?php echo $row['employee_type']?>">
-          <tr>
-          <td>Phone Number</td> <td><input type="text" name="employee_phone" value="<?php echo $row['employee_phone']?>"></td>
-        </tr>
-         <input type="hidden" name= "user_name" value="<?php echo $row['user_name']?>">
-         <?php }
-  $db = mysqli_connect("localhost","gpeck2217","","c9");
-  $username = $_SESSION['login'];
-  $sql = "SELECT * FROM login_db WHERE user_name = '$username'";
-  $result = mysqli_query($db, $sql);
-  while ($row = mysqli_fetch_array($result)){
-    ?>
-        <tr>
-          <td>Email</td> <td><input type="text" name="user_email" value="<?php echo $row['user_email']?>"</td>
-        </tr>
-          </table>
-          </center>
-        </div>
-        <div class="modal-footer">
-          <center>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-          <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
-          </center>
+            <td><?php echo $row['day']?></td> <td><?php echo $row['job']?></td>
+          </tr>
           <?php } ?>
-        </div>
-      </div>
+    </table>
     </div>
   </div>
-         </form>
   <!--end of Edit modal -->
- <form id="#formSection" method="post" class="employeeedit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
-        <!-- This is a table style that adds a black border to the table and colors each element in the table -->
-      <table class = "table table-bordered">
-         <tr>
-           <th>Employee</th>
-           <th>Information</th>
-         </tr>
-         <!-- Links to our database with the information each customer enter into the following fields -->
+   <div class= "col-md-4" style="padding-top:10px;">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Employee Information</div>
+         <form id="#formSection" method="post" class="employeeedit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
+              <table class = "table">
+               <!-- Links to our database with the information each customer enter into the following fields -->
+                   <?php
+                      $db = mysqli_connect("localhost","gpeck2217","","c9");
+                      $username = $_SESSION['login'];
+                      $sql = "SELECT * FROM employee_db WHERE user_name = '$username'";
+                      $result = mysqli_query($db, $sql);
+                      while ($row = mysqli_fetch_array($result)){
+                    ?>
+                            <tr>
+                              <td>First Name</td> <td><?php echo $row['employee_fname']?></td>
+                            </tr>
+                            <tr>
+                              <td>Last Name</td> <td><?php echo $row['employee_lname']?></td>
+                            </tr>
+                            <tr >
+                              <td>Phone Number</td> <td><?php echo $row['employee_phone']?></td>
+                            </tr>
+                            <?php }
+                      $db = mysqli_connect("localhost","gpeck2217","","c9");
+                      $username = $_SESSION['login'];
+                      $sql = "SELECT * FROM login_db WHERE user_name = '$username'";
+                      $result = mysqli_query($db, $sql);
+                      while ($row = mysqli_fetch_array($result)){
+                        ?>
+              <tr>
+                <td>Email</td> <td><?php echo $row['user_email']?></td>
+              </tr>
+              <?php } ?>
+            </table>
+            <a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Edit" href="#">EDIT INFORMATION</a>
+          </form>
+      </div>
+    </div>
+    <!--Edit model -->
+    <div class="modal fade" id="Edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Edit User Information</h4>
+            </div>
+            <div class="modal-body">
+              <center>
+              <form action ="managerpage.php" method="post">
+              <table>
              <?php
-  $db = mysqli_connect("localhost","gpeck2217","","c9");
-  $username = $_SESSION['login'];
-  $sql = "SELECT * FROM employee_db WHERE user_name = '$username'";
-  $result = mysqli_query($db, $sql);
-  while ($row = mysqli_fetch_array($result)){
-?>
-        <tr class="tablestyle">
-          <td>First Name</td> <td><?php echo $row['employee_fname']?></td>
-        </tr>
-        <tr>
-          <td>Last Name</td> <td><?php echo $row['employee_lname']?></td>
-        </tr>
-        <tr class="tablestyle">
-          <td>Phone Number</td> <td><?php echo $row['employee_phone']?></td>
-        </tr>
-        <?php }
-  $db = mysqli_connect("localhost","gpeck2217","","c9");
-  $username = $_SESSION['login'];
-  $sql = "SELECT * FROM login_db WHERE user_name = '$username'";
-  $result = mysqli_query($db, $sql);
-  while ($row = mysqli_fetch_array($result)){
-    ?>
-        <tr>
-          <td>Email</td> <td><?php echo $row['user_email']?></td>
-        </tr>
-        <?php } ?>
-      </table>
-       <a class= "button" data-toggle="modal" data-target="#Edit" href="#">EDIT INFORMATION</a>
-     <center>
-</form>
-  </div>
-  </div>
+              $db = mysqli_connect("localhost","gpeck2217","","c9");
+              $username = $_SESSION['login'];
+              $sql = "SELECT * FROM employee_db WHERE user_name = '$username'";
+              $result = mysqli_query($db, $sql);
+              while ($row = mysqli_fetch_array($result)){
+            ?>
 
+                      <tr>
+                      <td>First Name</td> <td><input type="text" name="employee_fname" value="<?php echo $row['employee_fname']?>"></td>
+                    </tr>
+                    <tr>
+                      <td>Last Name</td> <td><input type="text" name="employee_lname" value="<?php echo $row['employee_lname']?>"></td>
+                    </tr>
+                    <input type="hidden" name= "employee_type" value="<?php echo $row['employee_type']?>">
+                      <tr>
+                      <td>Phone Number</td> <td><input type="text" name="employee_phone" value="<?php echo $row['employee_phone']?>"></td>
+                    </tr>
+                     <input type="hidden" name= "user_name" value="<?php echo $row['user_name']?>">
+                     <?php }
+              $db = mysqli_connect("localhost","gpeck2217","","c9");
+              $username = $_SESSION['login'];
+              $sql = "SELECT * FROM login_db WHERE user_name = '$username'";
+              $result = mysqli_query($db, $sql);
+              while ($row = mysqli_fetch_array($result)){
+                ?>
+                    <tr>
+                      <td>Email</td> <td><input type="text" name="user_email" value="<?php echo $row['user_email']?>"</td>
+                    </tr>
+                    <input type = "hidden" name= "hidden" value= "2">
+                      </table>
+                      </center>
+                    </div>
+                    <div class="modal-footer">
+                      <center>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                      <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
+                      </center>
+                      <?php } ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      </form>
+  <!--end of Edit modal -->
 
 
 

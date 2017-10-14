@@ -24,6 +24,7 @@
 }
 
 
+
 .intro-section {
     background: url(img/welcome.png) no-repeat;
     background-size: cover;
@@ -114,13 +115,14 @@ body {
 }
 */
 
-/*table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 50%;
-    margin: auto;
+@media screen and (max-width: 640px) {
+    table {
+        overflow-x: auto;
+        display: block;
+    }
 }
 
+/*
 td,
 th {
     border: 1px solid #dcae1d;
