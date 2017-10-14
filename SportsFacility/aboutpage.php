@@ -138,37 +138,36 @@
 
 
 </div>
-<h1>About Us</h1>
+            <div class="container" style="padding-top:10px;">
+              <div class="panel panel-primary">
+                <h1>About Us</h1>
+                    <div class="col-md-12">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
+                        <h2>How we came to be ...</h2>
+                        <p>Twenty years ago, here in the middle of town, we looked forward to winter. That is when the low lying area in the back of our sub froze over and became our makeshift ice rink. It became our mission as winter approached that this area was to be as full of water as possible. We would spend hours skating, shooting, and even shared with the neighborhood kids so they could enjoy too! One of our dads got a job as a zamboni driver a few towns over. He let us take a ride when was working once and our vision was sealed. We were going to create our own ice arena in our town for our community to enjoy and be proud of. Fast foward to today ... our dream is your reality: HockeyPlex</p>
+                        <h2>Here is what you can do on our site ...</h2>
+                        <p>You can reserve a rink on our website for a team practice or a game you can get your skates sharpened if needed, and you can check the schedule to see what days rinks are available for you to reserve. Get more information that will go here.</p>
+                    </div>
+                 <div class="row">
+                    <div class="col-md-6" style="padding-left:30px;">
+                        <h2>Contact Us</h2>
+                        <p>We are located at 318 Meadow Brook Rd, Rochester MI 48309</p>
+                        <p>Phone number: (248) 370-2100</p>
 
-                    <h2>How we came to be ...</h2>
-                    <p>Twenty years ago, here in the middle of town, we looked forward to winter. That is when the low lying area in the back of our sub froze over and became our makeshift ice rink. It became our mission as winter approached that this area was to be as full of water as possible. We would spend hours skating, shooting, and even shared with the neighborhood kids so they could enjoy too! One of our dads got a job as a zamboni driver a few towns over. He let us take a ride when was working once and our vision was sealed. We were going to create our own ice arena in our town for our community to enjoy and be proud of. Fast foward to today ... our dream is your reality: HockeyPlex</p>
-                    <h2>Here is what you can do on our site ...</h2>
-                    <p>You can reserve a rink on our website for a team practice or a game you can get your skates sharpened if needed, and you can check the schedule to see what days rinks are available for you to reserve. Get more information that will go here.</p>
-                </div>
+                    </div>
+                    <div class="col-md-6">
+                      <h2>Hours of Operation</h2>
+                      <p>Sunday 6AM-12AM</p>
+                      <p>Monday 6AM-12AM</p>
+                      <p>Tuesday 6AM-12AM</p>
+                      <p>Wednesday 6AM-12AM</p>
+                      <p>Thurday 6AM-12AM</p>
+                      <p>Friday 6AM-12AM</p>
+                      <p>Saturday 6AM-12AM</p>
+                    </div>
+                  </div>
             </div>
-             <div class="row">
-            <div class="col-md-6">
-                <h2>Contact Us</h2>
-            <p>We are located at 318 Meadow Brook Rd, Rochester MI 48309</p>
-            <p>Phone number: (248) 370-2100</p>
-
-            </div>
-                <div class="col-md-6">
-                <h2>Hours of Operation</h2>
-                <p>Sunday 6AM-12AM</p>
-                <p>Monday 6AM-12AM</p>
-                <p>Tuesday 6AM-12AM</p>
-                <p>Wednesday 6AM-12AM</p>
-                <p>Thurday 6AM-12AM</p>
-                <p>Friday 6AM-12AM</p>
-                <p>Saturday 6AM-12AM</p>
-                </div>
-                </div>
-        </div>
+      </div>
     </body>
 
 

@@ -38,7 +38,7 @@
   <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
   <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
   <script type = "text/javascript" src = "chk.js"></script>
-  <link rel="stylesheet" type="text/css" href="NavbarStyle.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
 
 
 </head>
@@ -103,7 +103,7 @@
 </nav>
 <div class="jumbotron">
   <h1><big>Hockey<strong>Plex</strong></big></h1>
-  <h2>This is the Manger page</h2>
+  <center><h2>This is the Manger page</h2></center>
 </div>
 <div class="container" style="padding-top:10px;">
 <div class = "col-md-12">

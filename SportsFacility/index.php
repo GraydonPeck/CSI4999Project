@@ -205,9 +205,9 @@
     <div class="col-md-12" style="padding-top:15px">
       <img src="img/floorplan.jpg" alt="Floor Plan" class="center-block img-rounded map" hidefocus="true" usemap="#FloorMap">
       <map name="FloorMap" id="Map">
-        <area alt="" title="" data-toggle="modal" a href="#" data-target="#ScheduleModal" shape="poly" coords="381,36,378,323,563,323,565,35" />
-        <area alt="" title="" href="#" shape="poly" coords="270,178,270,46,33,46,33,146,42,154,45,180" />
-        <area alt="" title="" href="#" shape="poly" coords="45,183,273,183,270,315,34,314,31,215" />
+        <area alt="" title="" data-toggle="modal" href="#" data-target="#ScheduleModal" shape="poly" coords="381,36,378,323,563,323,565,35" />
+        <area alt="" title="" data-toggle="modal" href="#" data-target="#ScheduleModal" shape="poly" coords="270,178,270,46,33,46,33,146,42,154,45,180" />
+        <area alt="" title="" data-toggle="modal" href="#" data-target="#ScheduleModal" shape="poly" coords="45,183,273,183,270,315,34,314,31,215" />
       </map>
     </div>
   </div>
