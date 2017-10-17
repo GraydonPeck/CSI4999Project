@@ -181,169 +181,90 @@ footer{
   <h2 class="center">This is the video page</h2>
   <p class="center">This is where the Customer/Employee learn's how to complete each task assigned.</p>
 </div>
-<div class="container">
-  <div class="col-sm-4">
-    <h2>This is some text</h2>
-    <p class="sansserif">Where is this inforamtion going to go for the future bllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllaaaaaaaaaa</p>
+<div class="container-fluid">
+  <div>
+    <h2>Welcome to the viewing of each of the containers</h2>
+    <p>This is where users will find helpful information</p>
+    <p><strong>Happy navigation:</strong> Hope you have a great time looking at our videos.</p>
   </div>
 
-  <div class="col-sm-4">
-    <h2>This is some more text</h2>
+  <div class="w3-bar">
+    <button class="w3-bar-item w3-button tablink w3-red" onclick="videotab(event,'Highlights')">Highlights</button>
+    <button class="w3-bar-item w3-button tablink" onclick="videotab(event,'Training')">Training</button>
   </div>
 
-  <div class="col-sm-4">
-    <h2>This is some other text</h2>
-  </div>
-</div>
+  <div id="Highlights" class="w3-container w3-display-container videos">
+    <span onclick="this.parentElement.style.display='none'"
+    class="w3-button w3-large w3-display-topright">&times;</span>
 
-<div class="container">
-  <div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Employee Training</a>
-        </h4>
-      </div>
-      <div id="collapse1" class="panel-collapse collapse in">
-        <div class="panel-body">
+    <div class="content ">
 
-            <div class="row">
-              <div class="col-sm-4">
-                <div class="content">
-                  <div class="fluidMedia">
-                    <iframe height="300" width="400" src="https://www.youtube.com/embed/aerrlifU_UE" frameborder="1" allowfullscreen></iframe>
-                    </iframe>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-sm-4">
-                <div class="content">
-                  <div class="fluidMedia">
-                    <iframe src="https://www.youtube.com/embed/Zf1Xc5da2cs" frameborder="1" allowfullscreen></iframe>
-                    </iframe>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class ="row">
-              <div class="col-sm-4">
-                <div class="content">
-                  <div class="fluidMedia">
-                    <iframe  height="150" width="200" src="https://www.youtube.com/embed/OycZ6KLWjQo" frameborder="1" allowfullscreen></iframe>
-                    </iframe>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-
-            <div class="col-sm-4" >
-              <div id="pagination">
-              <ul class="pagination pagination-content">
-                <li><a href="#">Prev</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">Next</a></li>
-              </ul>
-              </div>
-            </div>
-
-          </div>
-        </div>
+      <div class=" col-sm-4">
+        <h3 class="containertext">Video 1</h3>
+        <iframe  height="300" width="400" src="https://www.youtube.com/embed/Zf1Xc5da2cs" frameborder="1" allowfullscreen></iframe>
+        </iframe>
       </div>
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Highlights</a>
-        </h4>
+      <div class="col-sm-4">
+        <h3 class="containertext">Video 2</h3>
+        <iframe  height="300" width="400" src="https://www.youtube.com/embed/OycZ6KLWjQo" frameborder="1" allowfullscreen></iframe>
+        </iframe>
       </div>
-      <div id="collapse2" class="panel-collapse collapse">
-        <div class=" container1 panel-body">
 
-        <!--Start of form where users can search -->
-        <div class="col-sm-12">
-          <fieldset >
-            <input type="text" id="searchInput">
-            <button id="performSearch">search</button>
-          </fieldset>
-        </div>
-        <!-- End of users search form -->
-
-        <div class="col-sm-4">
-          <div class="fluidMedia">
-             <iframe height="300" width="400" src="https://www.youtube.com/embed/aerrlifU_UE" frameborder="1" allowfullscreen></iframe>
-            </iframe>
-          </div>
-        </div>
-
-        <div class="col-sm-4">
-          <div class="fluidMedia">
-            <iframe height="300" width="400" src="https://www.youtube.com/embed/aerrlifU_UE" frameborder="1" allowfullscreen></iframe>
-            </iframe>
-          </div>
-        </div>
-
-        <div class="col-sm-4">
-          <div class="fluidMedia">
-            <iframe height="300" width="400" src="https://www.youtube.com/embed/aerrlifU_UE" frameborder="1" allowfullscreen></iframe>
-            </iframe>
-          </div>
-        </div>
-
-        <div class="col-sm-4">
-          <div class="fluidMedia">
-            <iframe height="300" width="400" src="https://www.youtube.com/embed/aerrlifU_UE" frameborder="1" allowfullscreen></iframe>
-            </iframe>
-          </div>
-        </div>
-
-        <div class="col-sm-4">
-          <div class="fluidMedia">
-            <iframe height="300" width="400" src="https://www.youtube.com/embed/aerrlifU_UE" frameborder="1" allowfullscreen></iframe>
-            </iframe>
-          </div>
-        </div>
-
-        <div class="col-sm-4">
-          <div class="fluidMedia">
-            <iframe height="300" width="400" src="https://www.youtube.com/embed/aerrlifU_UE" frameborder="1" allowfullscreen></iframe>
-            </iframe>
-          </div>
-        </div>
+      <div class="col-sm-4">
+        <h3 class="containertext">Video 3</h3>
+        <iframe height="300" width="400" src="https://www.youtube.com/embed/aerrlifU_UE" frameborder="1" allowfullscreen></iframe>
+        </iframe>
       </div>
     </div>
-  </div>
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Uploaded video</a>
-        </h4>
-      </div>
-      <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">
-          <p class="sansserif">This is where the I will add a form for the user to enter a video they want to add to the website.</p>
+      <div class="col-sm-12">
+        <div id="pagination">
+          <ul class="pagination pagination-content">
+            <li><a href="#">Prev</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">Next</a></li>
+          </ul>
         </div>
       </div>
+  </div>
+
+
+    <div id="Training" class="w3-container w3-display-container videos" style="display:none">
+      <span onclick="this.parentElement.style.display='none'"
+      class="w3-button w3-large w3-display-topright">&times;</span>
+
+    <div class="col-sm-4">
+      <h2 class="containertext">Video 1</h2>
+      <div class=" fluidMedia">
+        <iframe src="https://www.youtube.com/embed/Zf1Xc5da2cs" frameborder="1" allowfullscreen></iframe>
+        </iframe>
+      </div>
+        <p class="sansserif">This is the container where all the training videos will be located.</p>
+    </div>
+
+    <div class="col-sm-4">
+      <h2 class="containertext">Video 1</h2>
+      <div class="fluidMedia">
+        <iframe src="https://www.youtube.com/embed/Zf1Xc5da2cs" frameborder="1" allowfullscreen></iframe>
+        </iframe>
+      </div>
+        <p class="sansserif">This is where there will be another video</p>
+    </div>
+
+    <div class="col-sm-4">
+      <h2 class="containertext">Video 1</h2>
+      <div class="fluidMedia">
+        <iframe src="https://www.youtube.com/embed/Zf1Xc5da2cs" frameborder="1" allowfullscreen></iframe>
+        </iframe>
+      </div>
+        <p class="sanserrif">This is where there will be another video</p>
+      </div>
+
     </div>
   </div>
-</div>
-
-
-
-
-
-
-
-
-
 
 <!--Login Modal -->
 
@@ -454,7 +375,6 @@ YUI().use(
     ).render();
   }
 );
-
 
 
 
