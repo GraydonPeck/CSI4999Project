@@ -1,39 +1,23 @@
-<!DOCTYPE html>
 <?php
-include("dbcontroller.php");
+session_start();
+require_once("dbcontroller.php");
 include("dbutils.php");
-?>
-<html lang=en>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>ProShop</title>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="proshop.css">
-<script type = "text/javascript" src = "chk.js"></script>
-<!-- referencing an external style sheet. -->
-  <link rel="stylesheet" type="text/css" href="main.css">
-</head>
-<?php
 $db_handle = new DBController();
 if(!empty($_GET["action"])) {
 switch($_GET["action"]) {
 	case "add":
-		if(!empty($_POST["product_stock"])) {
-			$productByCode = $db_handle->runQuery("SELECT * FROM product_db WHERE product_code='" . $_GET["product_code"] . "'");
-			$itemArray = array($productByCode[0]["product_code"]=>array('product_name'=>$productByCode[0]["product_name"], 'product_code'=>$productByCode[0]["product_code"], 'product_quantity'=>$_POST["product_quantity"], 'product_price'=>$productByCode[0]["product_price"]));
+		if(!empty($_POST["quantity"])) {
+			$productByCode = $db_handle->runQuery("SELECT * FROM tblproduct WHERE code='" . $_GET["code"] . "'");
+			$itemArray = array($productByCode[0]["code"]=>array('name'=>$productByCode[0]["name"], 'code'=>$productByCode[0]["code"], 'quantity'=>$_POST["quantity"], 'price'=>$productByCode[0]["price"]));
 
 			if(!empty($_SESSION["cart_item"])) {
-				if(in_array($productByCode[0]["product_code"],array_keys($_SESSION["cart_item"]))) {
+				if(in_array($productByCode[0]["code"],array_keys($_SESSION["cart_item"]))) {
 					foreach($_SESSION["cart_item"] as $k => $v) {
-							if($productByCode[0]["product_code"] == $k) {
-								if(empty($_SESSION["cart_item"][$k]["product_stock"])) {
-									$_SESSION["cart_item"][$k]["product_quantity"] = 0;
+							if($productByCode[0]["code"] == $k) {
+								if(empty($_SESSION["cart_item"][$k]["quantity"])) {
+									$_SESSION["cart_item"][$k]["quantity"] = 0;
 								}
-								$_SESSION["cart_item"][$k]["product_quantity"] += $_POST["product_quantity"];
+								$_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
 							}
 					}
 				} else {
@@ -47,7 +31,7 @@ switch($_GET["action"]) {
 	case "remove":
 		if(!empty($_SESSION["cart_item"])) {
 			foreach($_SESSION["cart_item"] as $k => $v) {
-					if($_GET["product_code"] == $k)
+					if($_GET["code"] == $k)
 						unset($_SESSION["cart_item"][$k]);
 					if(empty($_SESSION["cart_item"]))
 						unset($_SESSION["cart_item"]);
@@ -59,10 +43,19 @@ switch($_GET["action"]) {
 	break;
 }
 }
-
 ?>
-<body>
-   <!-- This allows the navbar to stay positioned at the top of the screen on scroll -->
+<HTML>
+<HEAD>
+<TITLE>HockeyPlex Pro Shop</TITLE>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!--<link href="style.css" type="text/css" rel="stylesheet" />-->
+    <link href="main.css" type="text/css" rel="stylesheet" />
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <script type = "text/javascript" src = "chk.js"></script>
+</HEAD>
+<BODY>
+
 <nav class="navbar navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="197">
  <div class="container-fluid">
   <div class="navbar-header">
@@ -134,14 +127,7 @@ switch($_GET["action"]) {
     </div>
   </div>
 </nav>
-<div class="jumbotron">
-  <h1><big>Hockey<strong>Plex</strong></big></h1>
-  <h2>This is the Pro Shop page</h2>
-  <p>Customers will have the ability to purchase goods</p>
-
-
-</div>
-<!--Login Modal -->
+  <!--Login Modal -->
 
   <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -180,34 +166,34 @@ switch($_GET["action"]) {
           </form>
 
   <!-- End Login Modal -->
+
 <div id="shopping-cart">
-<div class="txt-heading">Shopping Cart <a id="btnEmpty" href="proshop.php?action=empty">Empty Cart</a></div>
+<div class="cart-top">Shopping Cart <a id="btnEmpty" href="proshop.php?action=empty">Empty Cart</a></div>
 <?php
 if(isset($_SESSION["cart_item"])){
     $item_total = 0;
 ?>
-<table cellpadding="5" cellspacing="1">
+<table cellpadding="10" cellspacing="1">
 <tbody>
 <tr>
 <th style="text-align:left;"><strong>Name</strong></th>
-<th style="text-align:left;"><strong>Price</strong></th>
-<th style="text-align:right;"><strong>Code</strong></th>
-<th style="text-align:right;"><strong>Quantity</strong></th>
-<th style="text-align:center;"><strong>Description</strong></th>
+<th style="text-align:left;"><strong>Code</strong></th>
+<th style="text-align:center;"><strong>Quantity</strong></th>
+<th style="text-align:center;"><strong>Price</strong></th>
+<th style="text-align:center;"><strong>Action</strong></th>
 </tr>
 <?php
     foreach ($_SESSION["cart_item"] as $item){
 		?>
 				<tr>
-				<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><strong><?php echo $item["product_name"]; ?></strong></td>
-				<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo "$".$item["product_price"]; ?></td>
-				<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["product_code"]; ?></td>
-				<td style="text-align:right;border-bottom:##444444 1px solid;"><?php echo $item["product_stock"]; ?></td>
-				<td style="text-align:right;border-bottom:#444444 1px solid;"><?php echo "$".$item["product_description"]; ?></td>
-				<td style="text-align:center;border-bottom:#F0F0F0 1px solid;"><a href="proshop.php?action=remove&code=<?php echo $item["product_code"]; ?>" class="btnRemoveAction">Remove Item</a></td>
+				<td style="text-align:left;border-bottom: 1px solid black;"><strong><?php echo $item["name"]; ?></strong></td>
+				<td style="text-align:left;border-bottom:1px solid black;"><?php echo $item["code"]; ?></td>
+				<td style="text-align:center;border-bottom:1px solid black;"><?php echo $item["quantity"]; ?></td>
+				<td style="text-align:center;border-bottom:1px solid black;"><?php echo "$".$item["price"]; ?></td>
+				<td style="text-align:center;border-bottom:1px solid black;"><a href="proshop.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction">Remove Item</a></td>
 				</tr>
 				<?php
-        $item_total += ($item["product_price"]*$item["product_stock"]);
+        $item_total += ($item["price"]*$item["quantity"]);
 		}
 		?>
 
@@ -224,25 +210,26 @@ if(isset($_SESSION["cart_item"])){
 <div id="product-grid">
 	<div class="txt-heading">Products</div>
 	<?php
-	$product_array = $db_handle->runQuery("SELECT * FROM product_db ORDER BY product_code ASC");
+	$product_array = $db_handle->runQuery("SELECT * FROM tblproduct ORDER BY id ASC");
 	if (!empty($product_array)) {
 		foreach($product_array as $key=>$value){
 	?>
 		<div class="product-item">
-			<form method="post" action="proshop.php?action=add&code=<?php echo $product_array[$key]["product_code"]; ?>">
-			<div class="product-image"><img src="<?php echo $product_array[$key]["product_image"]; ?>" style="height:100px;width:auto;"></div>
-			<div style="color:#adadad;"><strong><?php echo $product_array[$key]["product_name"]; ?></strong></div>
-			<div class="product-price"><?php echo "$".$product_array[$key]["product_price"]; ?></div>
+			<form class = "product-item" method="post" action="proshop.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
+			<div class="product-image"><img id= "proimage"src="<?php echo $product_array[$key]["image"]; ?>"></div>
+			<div class="product-name" id="productnames"><strong><?php echo $product_array[$key]["name"]; ?></strong></div>
+			<div class="product-price"><?php echo "$".$product_array[$key]["price"]; ?></div>
 			<div><input type="text" name="quantity" value="1" size="2" /><input type="submit" value="Add to cart" class="btnAddAction" /></div>
 			</form>
 		</div>
 	<?php
-	}}
+			}
+	}
 	?>
 </div>
-</body>
+</BODY>
 
- <!-- Bootstrap core JavaScript
+<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -252,4 +239,5 @@ if(isset($_SESSION["cart_item"])){
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
     <script src="script.js"></script>
-</html>
+
+</HTML>

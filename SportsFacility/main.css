@@ -799,7 +799,7 @@ Drop down button for settings
 Dropdown toggle function
 *************************************/
 
-@media (max-width: 1300px) {
+@media (max-width: 1150px) {
     .navbar-header {
         float: none;
     }
@@ -856,4 +856,139 @@ Fluid IFram
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+/******************************
+Proshop Styling
+******************************/
+
+#shopping-cart table {
+    width: 100%;
+    background-color: #00303f;
+    color: #FFFFFF;
+}
+
+#shopping-cart table td {
+    background-color: #00303f;
+    color: #FFFFFF;
+    border: 2px black;
+}
+
+#shopping-cart th {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+.txt-heading {
+    padding: 10px 10px;
+    border-radius: 2px;
+    color: #FFF;
+    background: #514947;
+    margin-bottom: 10px;
+}
+
+.cart-top {
+    padding: 10px 10px;
+    border-radius: 2px;
+    color: #FFF;
+    background: #514947;
+    margin-top: 50px;
+}
+
+a.btnRemoveAction {
+    color: #D60202;
+    border: 0;
+    padding: 2px 10px;
+    font-size: 0.9em;
+}
+
+a.btnRemoveAction:visited {
+    color: #D60202;
+    border: 0;
+    padding: 2px 10px;
+    font-size: 0.9em;
+}
+
+#btnEmpty {
+    background-color: #ffffff;
+    border: #FFF 1px solid;
+    padding: 1px 10px;
+    color: #ff0000;
+    font-size: 0.8em;
+    float: right;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btnAddAction {
+    background-color: #FEE202;
+    border: 0;
+    padding: 3px 10px;
+    color: #48372F;
+    margin-left: 2px;
+    border-radius: 2px;
+}
+
+#shopping-cart {
+    margin-bottom: 30px;
+}
+
+.cart-item {
+    border-bottom: #79b946 1px dotted;
+    padding: 10px;
+}
+
+#product-grid {
+    margin-bottom: 30px;
+}
+
+#proimage {
+    height: auto;
+    width: 100%;
+
+}
+
+#productnames {
+    word-wrap: break-word;
+    width: 150px;
+}
+
+.product-item {
+    float: left;
+    min-height: 285px;
+    background: #00303f;
+    margin: 10px 5px;
+    border-radius: 5px;
+    padding: 0px;
+}
+
+.product-item div {
+    text-align: center;
+    margin: 10px;
+}
+
+.product-name {
+    color: #FEE202;
+}
+
+.product-price {
+    color: #FFFFFF;
+    font-weight: 300;
+}
+
+
+.product-image {
+    height: 150px;
+    width: 150px;
+    background-color: #FFF;
+}
+
+.clear-float {
+    clear: both;
+}
+
+.demo-input-box {
+    border-radius: 2px;
+    border: #CCC 1px solid;
+    padding: 2px 1px;
 }

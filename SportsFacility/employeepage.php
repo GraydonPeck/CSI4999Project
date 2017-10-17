@@ -166,7 +166,7 @@
             </div>
             <div class="modal-body">
               <center>
-              <form action ="managerpage.php" method="post">
+              <form action ="employeepage.php" method="post">
               <table>
              <?php
               $db = mysqli_connect("localhost","gpeck2217","","c9");

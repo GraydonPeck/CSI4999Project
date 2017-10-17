@@ -1,8 +1,3 @@
-body {
-    width: 100%;
-    font-family: calibri;
-}
-
 #shopping-cart table {
     width: 100%;
     background-color: #444444;
@@ -69,7 +64,7 @@ a.btnRemoveAction:visited {
 
 .product-item {
     float: left;
-    background: #444444;
+    background: #00303f;
     margin: 15px 10px;
     padding: 5px;
     border: #CCC 1px solid;
