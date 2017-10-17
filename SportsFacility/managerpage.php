@@ -2,33 +2,15 @@
 <?php
  include("dbutils.php");
  session_start();
-  if($_POST['hidden']==1){
-    $i = 0;
-    while(isset($_POST['row_'.$i.'_id'])) {
-      $row_id  = $_POST['row_'.$i.'_id'];
-      echo $row_id;
-      $sql= "UPDATE work_schedule SET user_name = '$user_name' WHERE entry_id = '$entry_id'";
-         mysqli_query($db, $sql);
-      $i++;
-    }
-  }
-       if ($_POST['hidden']==6)
+       if ($_POST['hidden']==1)
     {
-        $db = mysqli_connect("localhost","gpeck2217","","c9");
-	      foreach($_POST['entry_id'] as $entry_id)
-	      {
-	       foreach($_POST['user_name'] as $user_name)
-	       {
-         $sql= "UPDATE work_schedule SET user_name = '$user_name' WHERE entry_id = '$entry_id'";
-         mysqli_query($db, $sql);
-	      }
-	      }
-	       run_update($sql_i);
+       echo "Found " . count($_POST) . " elements" . "<td>";
+        var_dump($_POST);
+        add_calendar ($_POST['day'], $_POST['job'], $_POST['username']);
         header ("Location: managerpage.php");
     }
     if ($_POST['hidden2']==2)
     {
-
 	    echo "Found " . count($_POST) . " elements" . "<td>";
         var_dump($_POST);
         add_user ($_POST['User_name'], $_POST['User_password'], $_POST['User_email'], $_POST['user_type']);
@@ -479,7 +461,7 @@
                           <input type="hidden" name="entry_id[]" value="9">
                           </th>
                       </tr>
-                      <input type="hidden" name="hidden" value ="1">
+                      <input type="hidden" name="hidden" value ="5">
                   </tbody>
               </table>
               <input type="submit" id="submitSection" class="btn btn-primary" name= "submit" value="Submit">
@@ -518,28 +500,37 @@
               $result = mysqli_query($db, $sql);
               while ($row = mysqli_fetch_array($result)){
               ?>
-              <th><select name = "user_name[]" class="form-control">
-                            <option disabled selected value>- select an employee -</option>
-                             <?php
-                            $db = mysqli_connect("localhost","gpeck2217","","c9");
-                            $username = $_SESSION['login'];
-                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
-                            $result = mysqli_query($db, $sql);
-                             while ($row = mysqli_fetch_array($result)){
-                		        	?>
-                            <option value = "<?php echo $row['user_name']?>"><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
-                           	<?php
-                          		}
-                          	?>
-                          	</select>
-                          	<input type="hidden" name="entry_id[]" value="<?php echo $row['entry_id']?>">
-                          </th>
+              <th><?php echo $row['user_name']?></th>
+                          <?php }?>
+                          </tr>
+                          <tr>
+                      <th>Pro Shop</th>
+ <?php
+              $db = mysqli_connect("localhost","gpeck2217","","c9");
+              $username = $_SESSION['login'];
+              $sql = "SELECT * FROM work_schedule WHERE job = 'ProShop'";
+              $result = mysqli_query($db, $sql);
+              while ($row = mysqli_fetch_array($result)){
+              ?>
+              <th><?php echo $row['user_name']?></th>
+                          <?php }?>
+                          </tr>
+                          <tr>
+                      <th>Service Center</th>
+ <?php
+              $db = mysqli_connect("localhost","gpeck2217","","c9");
+              $username = $_SESSION['login'];
+              $sql = "SELECT * FROM work_schedule WHERE job = 'Service Center'";
+              $result = mysqli_query($db, $sql);
+              while ($row = mysqli_fetch_array($result)){
+              ?>
+              <th><?php echo $row['user_name']?></th>
                           <?php }?>
                           </tr>
              <input type="hidden" name="hidden" value ="1">
             </tbody>
 </table>
-              <input type="submit" id="submitSection" class="btn btn-primary" name= "submit" value="Submit">
+              <a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Schedule" href="#">EDIT INFORMATION</a>
             </div>
             </form>
           </div>
@@ -677,6 +668,78 @@
                       <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
                       </center>
                       <?php } ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      </form>
+  <!--end of Edit modal -->
+     <!--Schedule model -->
+    <div class="modal fade" id="Schedule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Edit Schedule</h4>
+            </div>
+            <div class="modal-body">
+              <center>
+              <form action ="managerpage.php" method="post">
+              <table>
+              <tr><th>Employee</th>
+                          <th><select name = "username" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                               <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+              <tr><th>Position</th>
+                          <th><select name = "job" class="form-control">
+                            <option disabled selected value>- select a position -</option>
+                               <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM work_schedule WHERE day = 'Monday'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['job']?>><?php echo $row['job']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+                          	<tr><th>Day</th>
+                          <th><select name = "day" class="form-control">
+                            <option disabled selected value>- select a day -</option>
+                               <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM work_schedule WHERE job = 'ProShop'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['day']?>><?php echo $row['day']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+
+                    <input type = "hidden" name= "hidden" value= "1">
+                      </table>
+                      </center>
+                    </div>
+                    <div class="modal-footer">
+                      <center>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                      <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
+                      </center>
                     </div>
                   </div>
                 </div>

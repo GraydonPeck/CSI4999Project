@@ -165,14 +165,10 @@
 
 		return  $admin;
 	}
-	function add_calendar ($user_name, $entry_id)
+	function add_calendar ($day, $job, $username)
 	{
 		global $conn;
-
-		foreach($_POST['entry_id'] as $entry_id)
-		{
-        $sql_i = "UPDATE work_schedule SET user_name = '$user_name' WHERE entry_id = '$entry_id'";
-		}
+        $sql_i = "UPDATE work_schedule SET user_name = '$username' WHERE day = '$day' AND job = '$job'";
         run_update($sql_i);
 	}
 

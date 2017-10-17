@@ -53,6 +53,7 @@ switch($_GET["action"]) {
     <link href="main.css" type="text/css" rel="stylesheet" />
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
     <script type = "text/javascript" src = "chk.js"></script>
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 </HEAD>
 <BODY>
 
@@ -167,6 +168,7 @@ switch($_GET["action"]) {
 
   <!-- End Login Modal -->
 
+
 <div id="shopping-cart">
 <div class="cart-top">Shopping Cart <a id="btnEmpty" href="proshop.php?action=empty">Empty Cart</a></div>
 <?php
@@ -206,9 +208,8 @@ if(isset($_SESSION["cart_item"])){
 }
 ?>
 </div>
-
 <div id="product-grid">
-	<div class="txt-heading">Products</div>
+	<div class="txt-heading">Products:<div id="paypal-button"style="float:right;"></div></div>
 	<?php
 	$product_array = $db_handle->runQuery("SELECT * FROM tblproduct ORDER BY id ASC");
 	if (!empty($product_array)) {
@@ -227,6 +228,49 @@ if(isset($_SESSION["cart_item"])){
 	}
 	?>
 </div>
+
+
+    <script>
+    paypal.Button.render({
+
+        env: 'sandbox', // Or 'sandbox'
+        style: {
+          color:'silver',
+          shape:'pill',
+          label:'checkout',
+          size:'small'
+        },
+
+        client: {
+            sandbox:    'AZ4ImKVyx-rYZ0NLwXn6b_S1cz2-qhafS2ilCHVaPHrsOAB-moyop6FHurJUARwz-3evXRLWsmMA3YSo',
+            production: 'xxxxxxxxx'
+        },
+
+        commit: true, // Show a 'Pay Now' button
+
+        payment: function(data, actions) {
+            return actions.payment.create({
+                payment: {
+                    transactions: [
+                        {
+                            amount: { total: '<?php echo $item_total?>', currency: 'USD' }
+                        }
+                    ]
+                }
+            });
+        },
+
+        onAuthorize: function(data, actions) {
+            return actions.payment.execute().then(function(payment) {
+
+                // The payment is complete!
+                // You can now show a confirmation message to the customer
+            });
+        }
+
+    }, '#paypal-button');
+</script>
+
 </BODY>
 
 <!-- Bootstrap core JavaScript
