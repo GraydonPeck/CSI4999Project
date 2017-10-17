@@ -1,8 +1,14 @@
-</<!DOCTYPE html>
+<!DOCTYPE html>
 <?php
  include("dbutils.php");
  session_start();
- $username = $_POST['username'];
+  if ($_POST['hidden']==1)
+    {
+	    echo "Found " . count($_POST) . " elements" . "<td>";
+        var_dump($_POST);
+         $username = $_POST['username'];
+         header ("Location: aboutpage.php");
+    }
 ?>
 <html>
     <head>
@@ -124,6 +130,7 @@
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
           <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
           </center>
+          </form>
         </div>
       </div>
     </div>
@@ -166,6 +173,15 @@
                       <p>Saturday 6AM-12AM</p>
                     </div>
                   </div>
+                  <form id="#formSection" method="post" class="customercomment-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
+                    Name: <input type="text" name="name"><br>
+                    E-mail: <input type="text" name="comment"><br>
+                    <input type="hidden" name ="hidden" value ="1">
+                    <button type="submit" class="btn btn-primary" value="comment">Submit</button>
+                    </form>
+                    <br>
+                    <?php echo $_POST["name"]; ?><br>
+                    <?php echo $_POST["comment"]; ?>
             </div>
       </div>
     </body>
