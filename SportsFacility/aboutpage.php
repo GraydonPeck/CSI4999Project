@@ -45,8 +45,16 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home<span class="glyphicon glyphicon-home pull-left"></span></button></a></li>
+        <?php if(isset($_SESSION['loggedin'])){ ?>
         <li><a href="schedulepage.php">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
+         <?php }else{ ?>
+         <li><a href="#">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
+         <?php }
+         if(isset($_SESSION['loggedin'])){ ?>
         <li><a href="proshop.php">Pro Shop<span class="glyphicon glyphicon-piggy-bank pull-left"></span></a><li>
+        <?php }else{ ?>
+        <li><a href="#">Pro Shop<span class="glyphicon glyphicon-piggy-bank pull-left"></span></a><li>
+         <?php } ?>
         <li><a href="videopage.php">Video's<span class="glyphicon glyphicon-facetime-video pull-left"></span></a></li>
         <li><a href="aboutpage.php">About<span class="glyphicon glyphicon-apple pull-left"></span></a><li>
       </ul>
@@ -65,10 +73,14 @@
                <li class="divider"></li>
                <li class="dropdown-header">Navigation</li>
                <li><a href="#">Profile<span class="glyphicon glyphicon-user pull-left"></span></a></li>
-            </ul>
-          </li>
 
       <!-- End of settings dropdown -->
+
+
+
+          </ul>
+      </li>
+    <!--End of setting dropdown menu -->
 
          <ul class="nav navbar-nav navbar-right">
 
@@ -80,19 +92,30 @@
               <?php }else{ ?>
               <li  data-toggle="modal" data-target="#Login"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-left"></span></a></li>
               <?php } ?>
-              <!-- End Trigger-->
+            <!-- End Trigger-->
 
+           <!-- Username display -->
+       <?php
+       $username= $_SESSION['login'];
+      $customer = check_login_type($username);
+      $admin = check_admin($username);
+       if(isset($_SESSION['loggedin'])){
+          if ($customer)
+          {
+          echo "<li><a href='customerpage.php'>" .$_SESSION['login']. "</a> </li>";
+          } else {
+            if($admin)
+            {
+          echo "<li><a href='managerpage.php'>" .$_SESSION['login']. "</a> </li>";
+           } else {
+          echo "<li><a href='employeepage.php'>" .$_SESSION['login']. "</a> </li>";
+           }
+           } }else{ ?>
+          <li  data-toggle="modal" data-target=""> <a href="main.php">Create Account<span class="glyphicon glyphicon-book pull-left"></span></a></li>
+           <?php } ?>
 
+      <!--End of username display -->
 
-
-            <!-- Username display -->
-              <?php if(isset($_SESSION['loggedin'])){
-              echo "<li><a>" .$_SESSION['login']."</a></li>";?>
-              <?php }else{ ?>
-              <li data-toggle="modal" data-target="#Login"><a href="main.php"></a></li>
-              <?php } ?>
-
-            <!--End of username display -->
       </ul>
     </div>
   </div>

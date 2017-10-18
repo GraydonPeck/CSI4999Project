@@ -99,12 +99,17 @@ switch($_GET["action"]) {
                  <li class="divider"></li>
                  <li class="dropdown-header">Navigation</li>
                  <li><a href="#">Profile<span class="glyphicon glyphicon-user pull-left"></span></a></li>
-            </ul>
-          </li>
 
-          <!-- End of settings dropdown -->
+      <!-- End of settings dropdown -->
+
+
+
+          </ul>
+      </li>
+    <!--End of setting dropdown menu -->
 
          <ul class="nav navbar-nav navbar-right">
+
 
 
             <!-- Trigger Login Modal -->
@@ -113,17 +118,30 @@ switch($_GET["action"]) {
               <?php }else{ ?>
               <li  data-toggle="modal" data-target="#Login"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-left"></span></a></li>
               <?php } ?>
-              <!-- End Trigger-->
+            <!-- End Trigger-->
 
+           <!-- Username display -->
+       <?php
+       $username= $_SESSION['login'];
+      $customer = check_login_type($username);
+      $admin = check_admin($username);
+       if(isset($_SESSION['loggedin'])){
+          if ($customer)
+          {
+          echo "<li><a href='customerpage.php'>" .$_SESSION['login']. "</a> </li>";
+          } else {
+            if($admin)
+            {
+          echo "<li><a href='managerpage.php'>" .$_SESSION['login']. "</a> </li>";
+           } else {
+          echo "<li><a href='employeepage.php'>" .$_SESSION['login']. "</a> </li>";
+           }
+           } }else{ ?>
+          <li  data-toggle="modal" data-target=""> <a href="main.php">Create Account<span class="glyphicon glyphicon-book pull-left"></span></a></li>
+           <?php } ?>
 
-            <!-- Username display -->
-              <?php if(isset($_SESSION['loggedin'])){
-              echo "<li><a>" .$_SESSION['login']."</a></li>";?>
-              <?php }else{ ?>
-              <li data-toggle="modal" data-target="#Login"><a href="main.php"></a></li>
-              <?php } ?>
+      <!--End of username display -->
 
-            <!--End of username display -->
       </ul>
     </div>
   </div>

@@ -41,8 +41,16 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home<span class="glyphicon glyphicon-home pull-left"></span></button></a></li>
+         <?php if(isset($_SESSION['loggedin'])){ ?>
         <li><a href="schedulepage.php">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
+         <?php }else{ ?>
+         <li><a href="main.php">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
+         <?php }
+         if(isset($_SESSION['loggedin'])){ ?>
         <li><a href="proshop.php">Pro Shop<span class="glyphicon glyphicon-piggy-bank pull-left"></span></a><li>
+        <?php }else{ ?>
+        <li><a href="main.php">Pro Shop<span class="glyphicon glyphicon-piggy-bank pull-left"></span></a><li>
+         <?php } ?>
         <li><a href="videopage.php">Video's<span class="glyphicon glyphicon-facetime-video pull-left"></span></a></li>
         <li><a href="aboutpage.php">About<span class="glyphicon glyphicon-apple pull-left"></span></a><li>
       </ul>
