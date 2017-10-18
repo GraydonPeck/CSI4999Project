@@ -174,14 +174,16 @@
                     </div>
                   </div>
                   <form id="#formSection" method="post" class="customercomment-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
-                    Name: <input type="text" name="name"><br>
-                    E-mail: <input type="text" name="comment"><br>
+                    Name: <input type="text" name="name" value="<?php echo $name;?>"><br>
+                    Comment: <input type="text" name="comment" value="<?php echo $comment;?>"><br>
                     <input type="hidden" name ="hidden" value ="1">
                     <button type="submit" class="btn btn-primary" value="comment">Submit</button>
                     </form>
                     <br>
-                    <?php echo $_POST["name"]; ?><br>
-                    <?php echo $_POST["comment"]; ?>
+                    <?php echo $name;
+                    echo "<br>";
+                    echo $email;
+                    echo "<br>"; ?>
             </div>
       </div>
     </body>
