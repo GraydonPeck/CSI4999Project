@@ -158,7 +158,7 @@ _END;
 						if (!$result) echo "UPDATE failed: $query<br>" . $conn->error . "<br><br>";
 					}
 
-					$query = "SELECT * FROM serv_que ORDER BY FIELD(serv_progress, 'Completed', 'In serv_progress', 'Waiting')";
+					$query = "SELECT * FROM serv_que ORDER BY FIELD(serv_progress, 'Completed', 'In Progress', 'Waiting')";
 					$result = $conn->query($query);
 					if (!$result) die($conn->error);
 
