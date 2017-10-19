@@ -224,6 +224,50 @@ map area {
 }
 
 /****************************************************
+SCHEDULE PAGE
+****************************************************/
+
+.day {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+#calendar table {
+    font-size: 18px;
+}
+
+#calendar td {
+    padding: 7px;
+    text-align: center;
+    line-height: 26px;
+}
+
+#calendar th {
+    padding-top: 15px;
+    padding-bottom: 10px;
+
+    text-align: center;
+    font-weight: normal;
+    color: #a8a8a8;
+}
+
+.header-days {
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.day .active {
+    color: #483272;
+    border: 1px solid #483272;
+    border-radius: 5px;
+}
+
+#ScheduleTimes td {
+    font-size: 20px;
+    background: #FFFFFF;
+}
+
+/****************************************************
 REGISTER PAGE
 ****************************************************/
 

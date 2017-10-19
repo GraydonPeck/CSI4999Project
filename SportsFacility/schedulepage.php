@@ -30,8 +30,6 @@
   <script type = "text/javascript" src = "chk.js"></script>
   <!-- referencing an external style sheet. -->
   <link rel="stylesheet" type="text/css" href="main.css">
-
-
 </head>
 
 <body>
@@ -131,7 +129,150 @@
       <div class="panel panel-primary">
           <div class="panel-heading">Ice One </div>
           <div class="panel-body">
-            <div id="calendar"></div>
+            <div id="calendar" class="col-md-6">
+              <table>
+      						<tr class="header-days">
+      							<td class="header-day">S</td>
+      							<td class="header-day">M</td>
+      							<td class="header-day">T</td>
+      							<td class="header-day">W</td>
+      							<td class="header-day">T</td>
+      							<td class="header-day">F</td>
+      							<td class="header-day">S</td>
+          				</tr>
+          				<tbody>
+      				    	<tr>
+      					    	<td class="day">
+      					    		<div class="day-contents">01</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">02</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">03</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">04</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">05</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">06</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">07</div>
+      					    	</td>
+      				    	</tr>
+      				    	<tr>
+      					    	<td class="day">
+      					    		<div class="day-contents">08</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">09</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">10</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">11</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">12</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">13</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">14</div>
+      					    	</td>
+      				    	</tr>
+      				    	<tr>
+      					    	<td class="day">
+      					    		<div class="day-contents">15</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">16</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">17</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">18</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">19</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">20</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">21</div>
+      					    	</td>
+      				    	</tr>
+      				    	<tr>
+      					    	<td class="day">
+      					    		<div class="day-contents">22</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">23</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents active">24</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">25</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">26</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">27</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">28</div>
+      					    	</td>
+      				    	</tr>
+      				    	<tr>
+      					    	<td class="day">
+      					    		<div class="day-contents">29</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">30</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">01</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">02</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">03</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">04</div>
+      					    	</td>
+      					    	<td class="day">
+      					    		<div class="day-contents">05</div>
+      					    	</td>
+      				    	</tr>
+          				</tbody>
+        			</table>
+        			</div>
+        			<div id="ScheduleTimes" class="col-md-4">
+                <table>
+                  <tr>
+                    <td><span class="glyphicon glyphicon-th-list"></span> 8:30 Vipers Vs Tropics</td>
+                  </tr>
+                  <tr>
+                    <td><span class="glyphicon glyphicon-th-list"></span> 9:30 Vipers Vs Tropics</td>
+                  </tr>
+                  <tr>
+                    <td><span class="glyphicon glyphicon-th-list"></span> 10:30 Vipers Vs Tropics</td>
+                  </tr>
+                </table>
+            </div>
+
           </div>
       </div>
   </div>
@@ -191,5 +332,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
     <script src="script.js"></script>
+
 
 </html>
