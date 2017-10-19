@@ -119,13 +119,26 @@
 </nav>
 
 
-<div class="jumbotron">
-  <h1><big>Hockey<strong>Plex</strong></big></h1>
-  <h2>This is the schedule page</h2>
-  <p>This is where user will have the ability to schedule events</p>
+  <div class="jumbotron">
+    <center><h1><big>Hockey<strong>Plex</strong></big></h1></center>
+   <center> <h2>This is the schedule page</h2></center>
+    <center><p>This is where user will have the ability to schedule events</p></center>
 
 
-</div>
+  </div>
+
+  <div class="col-md-6" style="padding-top:10px;">
+      <div class="panel panel-primary">
+          <div class="panel-heading">Ice One </div>
+          <div class="panel-body">
+            <div id="calendar"></div>
+          </div>
+      </div>
+  </div>
+
+
+
+
 <!--Login Modal -->
 
   <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

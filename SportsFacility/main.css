@@ -207,19 +207,11 @@ HOME PAGE
 .item {
     padding-top: 15px;
     padding-bottom: 10px;
-    padding-left: 220px;
-    padding-right: 220px;
 }
 
 .carousel-control {
     background-color: #dcae1d;
-    padding-bottom: 50px;
-}
-
-
-.subcard .panel {
-    height: 120px;
-    width: 150px;
+    max-width: 50px;
 }
 
 .carousel-inner {

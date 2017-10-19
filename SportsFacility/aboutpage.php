@@ -162,9 +162,9 @@
 
   <!-- End Login Modal -->
 <div class="jumbotron">
-  <h1><big>Hockey<strong>Plex</strong></big></h1>
-  <h2>This is the about page</h2>
-  <p>Where you will learn information about our company</p>
+  <center><h1><big>Hockey<strong>Plex</strong></big></h1></center>
+  <center><h2>This is the about page</h2></center>
+  <center><p>Where you will learn information about our company</p></center>
 
 
 </div>

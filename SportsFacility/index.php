@@ -125,37 +125,37 @@
           <div class="carousel fdi-Carousel slide" id="eventCarousel" data-interval="0">
               <div class="carousel-inner onebyone-carosel">
                   <div class="item active">
-                      <div class="col-xs-2 subcard">
+                      <div class="col-md-2 col-xs-2 subcard">
+                            <div class="panel panel-primary">
+                              <div class="panel-heading">Ice 3 9:30 </div>
+                              <div class="panel-body">Vipers Vs<br> Tropics</div>
+                            </div>
+                      </div>
+                      <div class="col-md-2 col-xs-2  subcard">
                             <div class="panel panel-primary">
                               <div class="panel-heading">Ice 3 9:30</div>
                               <div class="panel-body">Vipers Vs<br> Tropics</div>
                             </div>
                       </div>
-                      <div class="col-xs-2 subcard">
+                      <div class="col-md-2 col-xs-2 subcard">
                             <div class="panel panel-primary">
                               <div class="panel-heading">Ice 3 9:30</div>
                               <div class="panel-body">Vipers Vs<br> Tropics</div>
                             </div>
                       </div>
-                      <div class="col-xs-2 subcard">
+                      <div class="col-md-2 col-xs-2 subcard">
                             <div class="panel panel-primary">
                               <div class="panel-heading">Ice 3 9:30</div>
                               <div class="panel-body">Vipers Vs<br> Tropics</div>
                             </div>
                       </div>
-                      <div class="col-xs-2 subcard">
+                      <div class="col-md-2 col-xs-2 subcard">
                             <div class="panel panel-primary">
                               <div class="panel-heading">Ice 3 9:30</div>
                               <div class="panel-body">Vipers Vs<br> Tropics</div>
                             </div>
                       </div>
-                      <div class="col-xs-2 subcard">
-                            <div class="panel panel-primary">
-                              <div class="panel-heading">Ice 3 9:30</div>
-                              <div class="panel-body">Vipers Vs<br> Tropics</div>
-                            </div>
-                      </div>
-                      <div class="col-xs-2 subcard">
+                      <div class="col-md-2 col-xs-2 subcard">
                             <div class="panel panel-primary">
                               <div class="panel-heading">Ice 3 9:30</div>
                               <div class="panel-body">Vipers Vs<br> Tropics</div>
@@ -163,37 +163,37 @@
                       </div>
                   </div>
                   <div class="item">
-                      <div class="col-xs-2 subcard">
+                      <div class="col-md-2 col-xs-2 subcard">
                             <div class="panel panel-primary">
                               <div class="panel-heading">Ice 3 9:30</div>
                               <div class="panel-body">Vipers Vs<br> Tropics</div>
                             </div>
                       </div>
-                      <div class="col-xs-2 subcard">
+                      <div class="col-md-2 col-xs-2  subcard">
                             <div class="panel panel-primary">
                               <div class="panel-heading">Ice 3 9:30</div>
                               <div class="panel-body">Vipers Vs<br> Tropics</div>
                             </div>
                       </div>
-                      <div class="col-xs-2 subcard">
+                      <div class="col-md-2 col-xs-2 subcard">
                             <div class="panel panel-primary">
                               <div class="panel-heading">Ice 3 9:30</div>
                               <div class="panel-body">Vipers Vs<br> Tropics</div>
                             </div>
                       </div>
-                      <div class="col-xs-2 subcard">
+                      <div class="col-md-2 col-xs-2 subcard">
                             <div class="panel panel-primary">
                               <div class="panel-heading">Ice 3 9:30</div>
                               <div class="panel-body">Vipers Vs<br> Tropics</div>
                             </div>
                       </div>
-                      <div class="col-xs-2 subcard">
+                      <div class="col-md-2 col-xs-2 subcard">
                             <div class="panel panel-primary">
                               <div class="panel-heading">Ice 3 9:30</div>
                               <div class="panel-body">Vipers Vs<br> Tropics</div>
                             </div>
                       </div>
-                      <div class="col-xs-2 subcard">
+                      <div class="col-md-2 col-xs-2 subcard">
                             <div class="panel panel-primary">
                               <div class="panel-heading">Ice 3 9:30</div>
                               <div class="panel-body">Vipers Vs<br> Tropics</div>
