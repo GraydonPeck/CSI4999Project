@@ -20,6 +20,8 @@
 	<body>
 
 		<!-- BEGIN NAV BAR -->
+
+		
 		<div class="navbar navbar-inverse navbar-static-top">
 			<div class="container">
 				<div class="navbar-header">

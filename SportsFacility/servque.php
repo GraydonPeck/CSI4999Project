@@ -21,6 +21,11 @@
 	</head>
 
 	<body>
+
+
+		<!-- BEGIN NAV BAR -->
+
+
 		<div class="navbar navbar-inverse navbar-static-top">
 			<div class="container">
 				<div class="navbar-header">
@@ -42,6 +47,8 @@
 			</div>
 		</div>
 	
+		<!-- END NAV BAR -->
+
 		<div class="container">
 			<div class="row">
 				
