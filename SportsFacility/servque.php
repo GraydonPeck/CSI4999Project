@@ -130,7 +130,7 @@ _END;
 						$cust_lname    = get_post($conn, 'cust_lname');
 						$skate         = get_post($conn, 'skate');
 						$service       = get_post($conn, 'service');
-						$serv_progress      = get_post($conn, 'serv_progress');
+						$serv_progress = get_post($conn, 'serv_progress');
 
 						$query    = "INSERT INTO serv_que (cust_fname, cust_lname, skate, service, serv_progress) VALUES" . "('$cust_fname', '$cust_lname', '$skate', '$service', '$serv_progress')";
 
@@ -225,7 +225,7 @@ _END;
 													</select>
 
 													<input type="hidden" name="update" value="$row[0]">
-													<input type="hidden" name="serviceNum" value="$row[0]">
+													<input type="hidden" name="serv_ID" value="$row[0]">
 
 													<br><br>
 													<input type="submit" value="UPDATE">
