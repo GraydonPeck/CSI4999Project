@@ -64,7 +64,7 @@
 								<?php
 									echo <<<_END
 								<center>
-									<form action="servque.php" method="post">
+									<form action"servque.php" method="post">
 										<input type="hidden" name="serv_ID">
 										<table>
 											<tr>
@@ -82,7 +82,7 @@
 											<tr>
 												<td>Service:</td>
 												<td>
-													<select name="Service">
+													<select name="service">
 														<option value="eyelets">eyelets</option>
 														<option value="7/16">7/16</option>
 														<option value="1/2">1/2</option>
@@ -97,7 +97,7 @@
 							<div class="modal-footer">
 								<center>
 									<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-									<button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
+									<button type="submit" class="btn btn-primary" value="Submit">Submit</button>
 								</center>
 									</form>
 _END;
