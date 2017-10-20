@@ -135,7 +135,7 @@ _END;
 						$query    = "INSERT INTO serv_que (cust_fname, cust_lname, skate, service, serv_progress) VALUES" . "('$cust_fname', '$cust_lname', '$skate', '$service', '$serv_progress')";
 
 						$result   = $conn->query($query);
-						if (!$result) echo "INSERT faile: $query <br>" . $conn->error . "<br><br>";
+						if (!$result) echo "INSERT failed: $query <br>" . $conn->error . "<br><br>";
 					}
 
 					if (isset($_POST['delete'])    &&
