@@ -46,7 +46,14 @@
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home<span class="glyphicon glyphicon-home pull-left"></span></button></a></li>
         <li><a href="schedulepage.php">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
-        <li><a href="proshop.php">Pro Shop<span class="glyphicon glyphicon-piggy-bank pull-left"></span></a><li>
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">ProShop</span><span class="caret"></span> <span class="glyphicon glyphicon-piggy-bank pull-left"></span></a>
+        <ul class="dropdown-menu">
+			       <li class="dropdown-header">Proshop</li>
+			         <li><a href="proshop.php">Proshop <span class="badge pull-left"></span></a></li>
+               <li><a href="servlobby.php">Service Center<span class="badge pull-left"></span></a></li>
+                </ul>
+                </li>
         <li><a href="videopage.php">Video's<span class="glyphicon glyphicon-facetime-video pull-left"></span></a></li>
         <li><a href="aboutpage.php">About<span class="glyphicon glyphicon-apple pull-left"></span></a><li>
 
