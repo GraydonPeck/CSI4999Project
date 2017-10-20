@@ -36,7 +36,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="index.php">Home</a></li>
 						<li class="active"><a href="#">Admin</a></li>
-						<li><a href="lobby.php">Lobby</a></li>
+						<li><a href="servlobby.php">Lobby</a></li>
 					</ul>
 				</div>
 			</div>
