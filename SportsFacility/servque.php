@@ -22,6 +22,7 @@
 	</head>
 
 	<body>
+<<<<<<< HEAD
 		<nav class="navbar navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="197">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -126,6 +127,36 @@
 <br>
 <br>
 <br>
+=======
+
+
+		<!-- BEGIN NAV BAR -->
+
+
+		<div class="navbar navbar-inverse navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#"> HockeyPlex</a>
+					<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<div class="collapse navbar-collapse navHeaderCollapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.php">Home</a></li>
+						<li class="active"><a href="#">Admin</a></li>
+						<li><a href="servlobby.php">Lobby</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	
+		<!-- END NAV BAR -->
+
+>>>>>>> 7f5f2fb00f3073449da74041a59b325a0517f3e2
 		<div class="container">
 			<div class="row">
 
