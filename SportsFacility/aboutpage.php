@@ -12,6 +12,17 @@
 ?>
 <html>
     <head>
+    <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: #514947;
+            color: white;
+        }
+    </style>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,42 +52,30 @@
       </button>
       <a class="navbar-brand" href="#">HockeyPlex</a>
     </div>
+    <!-- All the links on the left side of navigation bar -->
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home<span class="glyphicon glyphicon-home pull-left"></span></button></a></li>
-         <?php if(isset($_SESSION['loggedin'])){ ?>
+        <?php if(isset($_SESSION['loggedin'])){ ?>
         <li><a href="schedulepage.php">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
          <?php }else{ ?>
-         <li><a href="main.php">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
+         <li><a href="#">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
          <?php }
          if(isset($_SESSION['loggedin'])){ ?>
-          <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">ProShop</span><span class="caret"></span> <span class="glyphicon glyphicon-piggy-bank pull-left"></span></a>
-        <ul class="dropdown-menu">
-			       <li class="dropdown-header">Proshop</li>
-			         <li><a href="proshop.php">Proshop <span class="badge pull-left"></span></a></li>
-               <li><a href="servlobby.php">Service Center<span class="badge pull-left"></span></a></li>
-                </ul>
-                </li>
+        <li><a href="proshop.php">Pro Shop<span class="glyphicon glyphicon-piggy-bank pull-left"></span></a><li>
         <?php }else{ ?>
-         <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">ProShop</span><span class="caret"></span> <span class="glyphicon glyphicon-piggy-bank pull-left"></span></a>
-        <ul class="dropdown-menu">
-			       <li class="dropdown-header">Proshop</li>
-			         <li><a href="main.php">Proshop <span class="badge pull-left"></span></a></li>
-               <li><a href="servlobby.php">Service Center<span class="glyphicon glyphicon-stats pull-left"></span></a></li>
-                </ul>
-                </li>
+        <li><a href="#">Pro Shop<span class="glyphicon glyphicon-piggy-bank pull-left"></span></a><li>
          <?php } ?>
         <li><a href="videopage.php">Video's<span class="glyphicon glyphicon-facetime-video pull-left"></span></a></li>
         <li><a href="aboutpage.php">About<span class="glyphicon glyphicon-apple pull-left"></span></a><li>
       </ul>
+    <!-- End of left side navigation -->
 
 
-	    <!-- This is a dropdown menu that contains the settings for our site. Add additional information here later -->
+	  <!-- This is a dropdown menu that contains the settings for our site. Add additional information here later -->
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings</span><span class="caret"></span> <span class="glyphicon glyphicon-cog pull-left"></span></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings</span><span class="caret"></span> <span class="glyphicon glyphicon-cog pull-left"></span></a>
            <ul class="dropdown-menu">
 			       <li class="dropdown-header">Options</li>
 			         <li><a href="#">Messages <span class="badge pull-left"> 42 </span></a></li>
@@ -192,20 +191,14 @@
                     </div>
                  <div class="row">
                     <div class="col-md-6" style="padding-left:30px;">
-                        <h2>Contact Us</h2>
-                        <p>We are located at 318 Meadow Brook Rd, Rochester MI 48309</p>
-                        <p>Phone number: (248) 370-2100</p>
-
-                    </div>
-                    <div class="col-md-6">
-                      <h2>Hours of Operation</h2>
-                      <p>Sunday 6AM-12AM</p>
-                      <p>Monday 6AM-12AM</p>
-                      <p>Tuesday 6AM-12AM</p>
-                      <p>Wednesday 6AM-12AM</p>
-                      <p>Thurday 6AM-12AM</p>
-                      <p>Friday 6AM-12AM</p>
-                      <p>Saturday 6AM-12AM</p>
+                        <h2>Hours of Operation</h2>
+                          <p>Sunday 6AM-12AM</p>
+                          <p>Monday 6AM-12AM</p>
+                          <p>Tuesday 6AM-12AM</p>
+                          <p>Wednesday 6AM-12AM</p>
+                          <p>Thurday 6AM-12AM</p>
+                          <p>Friday 6AM-12AM</p>
+                          <p>Saturday 6AM-12AM</p>
                     </div>
                   </div>
                   <form id="#formSection" method="post" class="customercomment-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -220,6 +213,12 @@
                     echo $email;
                     echo "<br>"; ?>
             </div>
+      </div>
+
+      <div class="footer">
+        <p>Contact us</p>
+          <p>We are located at 318 Meadow Brook Rd, Rochester MI 48309</p>
+          <p>Phone number: (248) 370-2100</p>
       </div>
     </body>
 
