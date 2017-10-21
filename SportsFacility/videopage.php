@@ -33,72 +33,9 @@
 <link href="https://cdn.alloyui.com/3.0.1/aui-css/css/bootstrap.min.css" rel="stylesheet"></link>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" type="text/css" href="main.css">
-
-<style>
-  .w3-bar {
-    background-color:#766151;
-    color:white;
-    font-size: 14px;
-
-  }
-
-  .w3-container{
-    background-color:#00303f;
-  }
-
-  .containertext{
-    color:white;
-  }
-
-  .center {
-    text-align: center;
-}
-
-.pagination {
-    display: inline-block;
-}
-
-.pagination a {
-    color: white;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
-    border: 1px solid #ddd;
-    margin: 0 4px;
-}
-
-.scroll {
-    width: 1200px;
-    height: 400px;
-    overflow: scroll;
-}
-
-.container1 {
-
-  height:300px;
-	position: relative;
-
-	border: 2px solid #ccc;
-	text-align:center;
-	margin-left:10px;
-	padding: 5px;
-	font-size: 20px;
-	border-radius: 2px;
-	overflow:auto;
-}
+   <link rel="stylesheet" href="https://alloyui.com/pagination/css/basic.css" />
 
 
-
-.pagination a:hover:not(.active) {background-color: #ddd;}
-
-
-
-footer{
-  height:100px;
-  background-color:black;
-}
-</style>
 
 </head>
 
@@ -132,14 +69,7 @@ footer{
         <li><a href="aboutpage.php">About<span class="glyphicon glyphicon-apple pull-left"></span></a><li>
       </ul>
 
-<!--Start of form where users can search -->
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input id="demo"type="text" class="form-control" placeholder="Search">
-        </div>
-          <button onclick="pagesezarch" type="submit" class="button1 btn btn-default">Submit</button>
-      </form>
-<!-- End of users search form -->
+
 
 
     <!-- This is a dropdown menu that contains the settings for our site. Add additional information here later -->
@@ -214,32 +144,45 @@ footer{
   </div>
 
   <div class="w3-bar">
-    <button class="w3-bar-item w3-button tablink w3-red" onclick="videotab(event,'Highlights')">Highlights</button>
-    <button class="w3-bar-item w3-button tablink" onclick="videotab(event,'Training')">Training</button>
+    <button class="w3-bar-item w3-button tablink w3-black" onclick="videotab(event,'Highlights')">Highlights</button>
+    <button class="w3-bar-item w3-button tablink" onclick="videotab(event,'Training')"> Skill Training</button>
+    <button class="w3-bar-item w3-button tablink" onclick="videotab(event,'Learning')">Employee Training</button>
+    <button class="w3-bar-item w3-button tablink" onclick="videotab(event,'Form')">Email Form</button>
   </div>
 
   <div id="Highlights" class="w3-container w3-display-container videos">
     <span onclick="this.parentElement.style.display='none'"
     class="w3-button w3-large w3-display-topright">&times;</span>
 
-    <div class="content ">
-
-      <div class=" col-sm-4">
-        <h3 class="containertext">Video 1</h3>
-        <iframe  height="300" width="400" src="https://www.youtube.com/embed/Zf1Xc5da2cs" frameborder="1" allowfullscreen></iframe>
-        </iframe>
+    <div class=" content ">
+      <div class=" col-sm-12">
+        <h3 class="containertext">Highlight Videos</h3>
+        <iframe  height="300px" width="45%"src="https://www.youtube.com/embed/Zf1Xc5da2cs"  frameborder="1" allowfullscreen></iframe>
       </div>
 
-      <div class="col-sm-4">
-        <h3 class="containertext">Video 2</h3>
-        <iframe  height="300" width="400" src="https://www.youtube.com/embed/OycZ6KLWjQo" frameborder="1" allowfullscreen></iframe>
-        </iframe>
+      <div class="col-sm-12">
+        <h3 class="containertext">Highlight Videos</h3>
+       <iframe  height="300px" width="45%" src="https://www.youtube.com/embed/4--iEOftLZ4" frameborder="1" allowfullscreen></iframe>
       </div>
 
-      <div class="col-sm-4">
-        <h3 class="containertext">Video 3</h3>
-        <iframe height="300" width="400" src="https://www.youtube.com/embed/aerrlifU_UE" frameborder="1" allowfullscreen></iframe>
-        </iframe>
+      <div class="col-sm-12">
+        <h3 class="containertext">Highlight Videos</h3>
+        <iframe  height="300px" width="45%" src="https://www.youtube.com/embed/K8rt8gYAQls" frameborder="1" allowfullscreen></iframe>
+      </div>
+
+       <div class=" col-sm-12">
+        <h3 class="containertext">Highlight Videos</h3>
+       <iframe  height="300" width="45%" src="https://www.youtube.com/embed/0otLHeiYeDA" frameborder="1" allowfullscreen></iframe>
+      </div>
+
+      <div class="col-sm-12">
+        <h3 class="containertext">Highlight Videos</h3>
+       <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/plna4yeuPLQ" frameborder="1" allowfullscreen></iframe>
+      </div>
+
+      <div class="col-sm-12">
+        <h3 class="containertext">Highlight Videos</h3>
+        <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/mosMkX_4Sok" frameborder="1" allowfullscreen></iframe>
       </div>
     </div>
 
@@ -250,6 +193,9 @@ footer{
             <li><a href="#">1</a></li>
             <li><a href="#">2</a></li>
             <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
             <li><a href="#">Next</a></li>
           </ul>
         </div>
@@ -262,34 +208,116 @@ footer{
       class="w3-button w3-large w3-display-topright">&times;</span>
 
     <div class="col-sm-4">
-      <h2 class="containertext">Video 1</h2>
+      <h2 class="containertext">Elite Skills</h2>
       <div class=" fluidMedia">
-        <iframe src="https://www.youtube.com/embed/Zf1Xc5da2cs" frameborder="1" allowfullscreen></iframe>
-        </iframe>
+        <iframe  src="https://www.youtube.com/embed/oFCxzEYGtBs" frameborder="1" allowfullscreen></iframe>
       </div>
-        <p class="sansserif">This is the container where all the training videos will be located.</p>
     </div>
 
     <div class="col-sm-4">
-      <h2 class="containertext">Video 1</h2>
+      <h2 class="containertext">Agility</h2>
       <div class="fluidMedia">
-        <iframe src="https://www.youtube.com/embed/Zf1Xc5da2cs" frameborder="1" allowfullscreen></iframe>
-        </iframe>
+        <iframe  src="https://www.youtube.com/embed/bUV18ftJXeY?list=PLyp8LF-3yz5AuhDDIbWrg3bhRexI3lGMX" frameborder="1" allowfullscreen></iframe>
       </div>
-        <p class="sansserif">This is where there will be another video</p>
     </div>
 
     <div class="col-sm-4">
-      <h2 class="containertext">Video 1</h2>
+      <h2 class="containertext">Balance</h2>
       <div class="fluidMedia">
-        <iframe src="https://www.youtube.com/embed/Zf1Xc5da2cs" frameborder="1" allowfullscreen></iframe>
-        </iframe>
+        <iframe  src="https://www.youtube.com/embed/mrLiOX6nIhM" frameborder="1" allowfullscreen></iframe>
       </div>
-        <p class="sanserrif">This is where there will be another video</p>
-      </div>
+    </div>
 
+    <div class="col-sm-4">
+      <h2 class="containertext">Quick Edge</h2>
+      <div class=" fluidMedia">
+        <iframe  src="https://www.youtube.com/embed/MPrerhyHllA" frameborder="1" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <h2 class="containertext">Double Quickness</h2>
+      <div class="fluidMedia">
+       <iframe  src="https://www.youtube.com/embed/2XsQxGJ3Zw4" frameborder="1" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <h2 class="containertext">Quick Feet</h2>
+      <div class="fluidMedia">
+        <iframe  src="https://www.youtube.com/embed/sWGRnPnj858" frameborder="1" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    </div>
+
+
+   <div id="Learning" class="w3-container w3-display-container videos" style="display:none">
+      <span onclick="this.parentElement.style.display='none'"
+      class="w3-button w3-large w3-display-topright">&times;</span>
+
+    <div class="col-sm-4">
+      <h2 class="containertext">Skate Sharpening #1</h2>
+      <div class=" fluidMedia">
+       <iframe  src="https://www.youtube.com/embed/ZaNEHE4UKxM" frameborder="1" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <h2 class="containertext">Skate Sharpening #2</h2>
+      <div class="fluidMedia">
+       <iframe  src="https://www.youtube.com/embed/G5BjMvvwYbs" frameborder="1" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <h2 class="containertext">Skate Sharpening #3</h2>
+      <div class="fluidMedia">
+        <iframe  src="https://www.youtube.com/embed/w3qutTbxw4E" frameborder="1" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    </div>
+
+
+   <div id="Form" class="w3-container w3-display-container videos" style="display:none">
+      <span onclick="this.parentElement.style.display='none'"
+      class="w3-button w3-large w3-display-topright">&times;</span>
+
+    <div class="col-sm-12">
+      <form>
+        <ul class="form-style-1">
+          <li><label>Full Name <span class="required">*</span></label><input type="text" name="field1" class="field-divided" placeholder="First" />&nbsp;<input type="text" name="field2" class="field-divided" placeholder="Last" /></li>
+          <li>
+            <label>Email <span class="required">*</span></label>
+            <input type="email" name="field3" placeholder="example@gmail.com" class="field-long" />
+          </li>
+          <li>
+            <label>Subject</label>
+            <select name="field4" class="field-select">
+            <option value="Feild1">Feild1</option>
+            <option value="Feild2">Feild2</option>
+            <option value="Questions">Questions</option>
+            </select>
+          </li>
+          <li>
+            <label>Your Message <span class="required">*</span></label>
+            <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+          </li>
+          <li>
+            <input type="submit" value="Submit" />
+          </li>
+        </ul>
+      </form>
     </div>
   </div>
+</div>
+
+  <div class="container" id="footer">
+    <p>this is the footer</p>
+  </div>
+
+
 
 <!--Login Modal -->
 
@@ -329,11 +357,10 @@ footer{
   </div>
 
 
-<footer class="site-footer">
-  I'm the Sticky Footer.
-</footer>
 
 
+
+</body>
   <!-- End Login Modal -->
 <script>
 function videotab(evt, cityName) {
@@ -344,10 +371,10 @@ function videotab(evt, cityName) {
   }
   tablinks = document.getElementsByClassName("tablink");
   for (i = 0; i < x.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+      tablinks[i].className = tablinks[i].className.replace(" w3-black", "");
   }
   document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " w3-red";
+  evt.currentTarget.className += " w3-black";
 }
 
 function pagesearch(){
