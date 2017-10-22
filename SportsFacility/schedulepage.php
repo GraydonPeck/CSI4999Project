@@ -27,7 +27,6 @@
 
   <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
   <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-  <script type = "text/javascript" src = "chk.js"></script>
   <!-- referencing an external style sheet. -->
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
@@ -137,134 +136,9 @@
           <div class="panel-heading">Ice One </div>
           <div class="panel-body">
             <div id="calendar" class="col-md-6">
-              <table>
-      						<tr class="header-days">
-      							<td class="header-day">S</td>
-      							<td class="header-day">M</td>
-      							<td class="header-day">T</td>
-      							<td class="header-day">W</td>
-      							<td class="header-day">T</td>
-      							<td class="header-day">F</td>
-      							<td class="header-day">S</td>
-          				</tr>
-          				<tbody>
-      				    	<tr>
-      					    	<td class="day">
-      					    		<div class="day-contents">01</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">02</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">03</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">04</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">05</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">06</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">07</div>
-      					    	</td>
-      				    	</tr>
-      				    	<tr>
-      					    	<td class="day">
-      					    		<div class="day-contents">08</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">09</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">10</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">11</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">12</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">13</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">14</div>
-      					    	</td>
-      				    	</tr>
-      				    	<tr>
-      					    	<td class="day">
-      					    		<div class="day-contents">15</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">16</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">17</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">18</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">19</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">20</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">21</div>
-      					    	</td>
-      				    	</tr>
-      				    	<tr>
-      					    	<td class="day">
-      					    		<div class="day-contents">22</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">23</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents active">24</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">25</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">26</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">27</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">28</div>
-      					    	</td>
-      				    	</tr>
-      				    	<tr>
-      					    	<td class="day">
-      					    		<div class="day-contents">29</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">30</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">01</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">02</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">03</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">04</div>
-      					    	</td>
-      					    	<td class="day">
-      					    		<div class="day-contents">05</div>
-      					    	</td>
-      				    	</tr>
-          				</tbody>
-        			</table>
+              <div class="calendar" class="col-md-6">
+              <div class="datepicker"></div>
+            </div>
         			</div>
         			<div id="ScheduleTimes" class="col-md-4">
                 <table>
@@ -284,47 +158,30 @@
       </div>
   </div>
 
-
-
-
-<!--Login Modal -->
-
-  <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h4 class="modal-title" id="myModalLabel">Login</h4>
+  <div class="col-md-6" style="padding-top:10px;">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Ice Two </div>
+            <div class="panel-body">
+              <div class="calendar" class="col-md-6">
+                <div class="datepicker"></div>
+              </div>
+            </div>
         </div>
-        <div class="modal-body">
-
-          <center>
-          <form action = "checklogin.php" method="post">
-                                <input type="hidden" name="User_number">
-          <table>
-          <tr>
-          <td>Username:</td>     <td><input type="text" name="username"></td>
-          </tr>
-          <tr>
-          <td>Password:</td>     <td><input type="password" name="passwd"></td>
-          </tr>
-          </table>
-
-          </center>
-        </div>
-        <div class="modal-footer">
-          <center>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-          <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
-          </center>
-        </div>
-      </div>
-    </div>
   </div>
 
+  <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Ice Three </div>
+            <div class="panel-body">
+              <div class="calendar" class="col-md-6">
+                <div class="datepicker"></div>
+              </div>
+            </div>
+        </div>
   </div>
+
+
+</div>
 
 
 
@@ -332,8 +189,13 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script>
+        $( function() {
+          $( ".datepicker" ).datepicker();
+        } );
+      </script>
     <script src="../../dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
