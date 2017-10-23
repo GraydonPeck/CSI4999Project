@@ -7,7 +7,7 @@
 
 	    echo "Found " . count($_POST) . " elements" . "<td>";
         var_dump($_POST);
-        edit_customer ($_POST['customer_fname'], $_POST['customer_lname'], $_POST['customer_phone'], $_POST['customer_email'],  $_POST['customer_address'], $_POST['customer_city'],  $_POST['customer_state'],  $_POST['customer_country'],  $_POST['customer_zip'],  $_POST['customer_creditcard'], $_POST['user_name']);
+        edit_customer ($_POST['customer_fname'], $_POST['customer_lname'], $_POST['customer_phone'], $_POST['customer_email'],  $_POST['customer_address'], $_POST['customer_city'],  $_POST['customer_state'],  $_POST['customer_country'],  $_POST['customer_zip'], $_POST['user_name']);
         header ("Location: customerpage.php");
     }
 ?>
@@ -166,9 +166,6 @@
         <tr>
           <td class="tablestyle">Zip</td> <td><input type="text" name="customer_zip" value="<?php echo $row['customer_zip']?>"></td>
         </tr>
-        <tr>
-          <td>Credit Card</td> <td><input type="text" name="customer_creditcard" value="<?php echo $row['customer_creditcard']?>"></td>
-        </tr>
                        	<?php
               		}
               	?>
@@ -209,9 +206,6 @@
         </tr>
         <tr>
           <td class="tablestyle">Address</td> <td><?php echo $row['customer_address']. " " . $row['customer_city'] . ", " . $row['customer_state'] . ", " . $row['customer_country'] . ", " . $row['customer_zip']  ?></td>
-        </tr>
-        <tr>
-          <td>Credit Card</td> <td><?php echo $row['customer_creditcard']?></td>
         </tr>
         <?php } ?>
          </table>
