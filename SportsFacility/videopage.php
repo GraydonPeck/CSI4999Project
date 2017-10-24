@@ -62,7 +62,7 @@
         <ul class="dropdown-menu">
 			       <li class="dropdown-header">Proshop</li>
 			         <li><a href="proshop.php">Proshop <span class="badge pull-left"></span></a></li>
-               <li><a href="servlobby.php">Service Center<span class="badge pull-left"></span></a></li>
+               <li><a href="servcust.php">Service Center<span class="badge pull-left"></span></a></li>
                 </ul>
                 </li>
         <li><a href="videopage.php">Video's<span class="glyphicon glyphicon-facetime-video pull-left"></span></a></li>
@@ -133,19 +133,29 @@
 </nav>
 <div class="jumbotron">
   <h1><big>Hockey<strong>Plex</strong></big></h1>
-  <h2 class="center">This is the video page</h2>
-  <p class="center">This is where the Customer/Employee learn's how to complete each task assigned.</p>
 </div>
 <div class="container-fluid">
   <div>
-    <h2>Welcome to the viewing of each of the containers</h2>
-    <p>This is where users will find helpful information</p>
-    <p><strong>Happy navigation:</strong> Hope you have a great time looking at our videos.</p>
+    <div class="double col-sm-4">
+      <h3 class="textcenter">Highlights</h3>
+      <hr>
+      <p>Customers or employees will be able to watch. This section is where you will watch the best highlights.</p>
+    </div>
+     <div class="double col-sm-4">
+      <h3 class="textcenter">Skills</h3>
+      <hr>
+      <p>Customers or employees will be able to learn new skills with some skating tips.</p>
+    </div>
+    <div class="double col-sm-4">
+    <h3 class="textcenter">Employee Training</h3>
+    <hr>
+    <p>Only for when employees are signed in. Will allow employees to touch up on skills for sharpen ice skates.</p>
+    </div>
   </div>
 
   <div class="w3-bar">
     <button class="w3-bar-item w3-button tablink w3-black" onclick="videotab(event,'Highlights')">Highlights</button>
-    <button class="w3-bar-item w3-button tablink" onclick="videotab(event,'Training')"> Skill Training</button>
+    <button class="w3-bar-item w3-button tablink" onclick="videotab(event,'Training')"> Skills Training</button>
     <button class="w3-bar-item w3-button tablink" onclick="videotab(event,'Learning')">Employee Training</button>
     <button class="w3-bar-item w3-button tablink" onclick="videotab(event,'Form')">Email Form</button>
   </div>
@@ -313,8 +323,9 @@
   </div>
 </div>
 
-  <div class="container" id="footer">
-    <p>this is the footer</p>
+
+  <div class="footer">
+    <p>Visit the About page for more information</p>
   </div>
 
 

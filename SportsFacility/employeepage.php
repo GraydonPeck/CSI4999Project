@@ -53,7 +53,7 @@
         <ul class="dropdown-menu">
 			       <li class="dropdown-header">Proshop</li>
 			         <li><a href="proshop.php">Proshop <span class="badge pull-left"></span></a></li>
-               <li><a href="servlobby.php">Service Center<span class="badge pull-left"></span></a></li>
+               <li><a href="servcust.php">Service Center<span class="badge pull-left"></span></a></li>
                 </ul>
                 </li>
         <li><a href="videopage.php">Video's<span class="glyphicon glyphicon-facetime-video pull-left"></span></a></li>

@@ -52,7 +52,7 @@
         <ul class="dropdown-menu">
 			       <li class="dropdown-header">Proshop</li>
 			         <li><a href="proshop.php">Proshop <span class="badge pull-left"></span></a></li>
-               <li><a href="servlobby.php">Service Center<span class="badge pull-left"></span></a></li>
+               <li><a href="servcust.php">Service Center<span class="badge pull-left"></span></a></li>
                 </ul>
                 </li>
         <?php }else{ ?>
@@ -61,7 +61,7 @@
         <ul class="dropdown-menu">
 			       <li class="dropdown-header">Proshop</li>
 			         <li><a href="main.php">Proshop <span class="badge pull-left"></span></a></li>
-               <li><a href="servlobby.php">Service Center<span class="glyphicon glyphicon-stats pull-left"></span></a></li>
+               <li><a href="servcust.php">Service Center<span class="glyphicon glyphicon-stats pull-left"></span></a></li>
                 </ul>
                 </li>
          <?php } ?>

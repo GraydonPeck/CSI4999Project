@@ -15,7 +15,7 @@
 }
 
 .panel-primary .panel-heading {
-    background-color: #303F9F;
+    background-color: #00303f;
 }
 
 
@@ -122,7 +122,8 @@ SCHEDULE PAGE
 
 .ui-datepicker {
     display: none;
-    width: 294px;
+    width: 320px;
+
     padding: 35px;
     cursor: default;
 
@@ -130,7 +131,7 @@ SCHEDULE PAGE
     font-family: Tahoma;
     font-size: 12px;
 
-    background: #141517;
+    background: #00303f;
 
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -154,12 +155,12 @@ SCHEDULE PAGE
 .ui-datepicker-month {
     position: relative;
     padding-right: 15px;
-    color: #565656;
+    color: #FFFFFF;
 }
 
 .ui-datepicker-year {
     padding-left: 8px;
-    color: #a8a8a8;
+    color: #FFFFFF;
 }
 
 .ui-datepicker-month:before {
@@ -172,12 +173,12 @@ SCHEDULE PAGE
     content: '';
 
     background: #a5cd4e;
-    background: -moz-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a5cd4e), color-stop(100%, #6b8f1a));
-    background: -webkit-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
-    background: -o-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
-    background: -ms-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
-    background: linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+    background: -moz-linear-gradient(top, #ffb347 0%, #6b8f1a 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffb34), color-stop(100%, #ffcc33));
+    background: -webkit-linear-gradient(top, #ffb347 0%, #ffcc33 100%);
+    background: -o-linear-gradient(top, #ffb347 0%, #ffcc33 100%);
+    background: -ms-linear-gradient(top, #ffb347 0%, #ffcc33 100%);
+    background: linear-gradient(top, #ffb347 0%, #ffcc33 100%);
 
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -232,7 +233,7 @@ SCHEDULE PAGE
     text-align: center;
     font-weight: normal;
 
-    color: #a8a8a8;
+    color: #FFFFFF;
 }
 
 .ui-datepicker-calendar td {
@@ -242,7 +243,7 @@ SCHEDULE PAGE
 }
 
 .ui-datepicker-calendar tr {
-    background-color: #141517;
+    background-color: #483272F !important;
 }
 
 
@@ -252,18 +253,18 @@ SCHEDULE PAGE
     outline: none;
 
     text-decoration: none;
-    color: #a8a8a8;
+    color: #FFFFFF;
 
     border: 1px solid transparent;
 }
 
 .ui-datepicker-calendar .ui-state-active {
-    color: #6a9113;
-    border: 1px solid #6a9113;
+    color: #ffb347;
+    border: 2px solid #ffb347;
 }
 
 .ui-datepicker-other-month .ui-state-default {
-    color: #565656;
+    color: #ffb347;
 }
 
 /****************************************************
@@ -1142,8 +1143,9 @@ Video Page Style
 
 .w3-container {
     background-color: #766151;
-    height: 450px;
+    height: 500px;
     overflow: scroll;
+
 }
 
 .containertext {
@@ -1197,15 +1199,44 @@ Video Page Style
 
 
 
-#footer {
+
+.footer {
     position: fixed;
-    background-color: black;
-    width: 100%;
-    bottom: 0;
     left: 0;
-    margin-top: 30px;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #514947;
+    color: white;
+    opacity: .9;
+}
+
+.textcenter {
+    text-align: center;
+}
+
+.double {
+    border-style: double;
+    border-color: #00303F;
+    margin-top: 2px;
+    padding: 5px;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #766151;
+    color: white;
+    text-align: center;
+    opacity: .8;
+    font-size: 14px;
+
 
 }
+
+hr {
+    width: 100%;
+    text-align: center;
+}
+
 
 .videoWrapper {
     position: relative;
