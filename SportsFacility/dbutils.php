@@ -171,7 +171,12 @@
         $sql_i = "UPDATE work_schedule SET user_name = '$username' WHERE day = '$day' AND job = '$job'";
         run_update($sql_i);
 	}
-
+	function choosedate ($ice, $date)
+	{
+		global $conn;
+		$sql_i = "SELECT date FROM rink_'$ice'_db WHERE date ='$date'";
+		run_update($sql_i);
+	}
 
 
 ?>

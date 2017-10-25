@@ -106,6 +106,7 @@
 
   <div class="col-md-8"  style="padding-top:10px;">
     <div class="panel panel-primary">
+      <center>
       <table>
       <th>This Weeks Schedule</th>
       <?php
@@ -120,6 +121,7 @@
           </tr>
           <?php } ?>
     </table>
+    </center>
     </div>
     <a class= "button btn-block btn-danger" href="servque.php">Service Queue Adminstration</a>
   </div>

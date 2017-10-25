@@ -2,15 +2,6 @@
 <?php
  include("dbutils.php");
  session_start();
-      if (count($_POST))
-    {
-
-	    echo "Found " . count($_POST) . " elements" . "<td>";
-        var_dump($_POST);
-        add_user ($_POST['User_name'], $_POST['User_password'], $_POST['User_email'], $_POST['user_type']);
-        edit_employee ($_POST['User_name'], $_POST['employee_fname'], $_POST['employee_lname'], $_POST['employee_type'], $_POST['employee_phone']);
-        header ("Location: employeepage.php");
-    }
 ?>
 <html lang="en">
 <head>
@@ -137,35 +128,69 @@
             <div id="calendar" class="col-md-6">
               <div class="calendar" class="col-md-6">
               <div class="datepicker"></div>
+              <form method="post" action="schedulepage.php">
+                <p>Select a day: <input type="text" name="date1" id="datepicker"></p>
+
+                <input type="submit" value="Load Times" name="submit"/>
+
+              </form>
             </div>
         			</div>
         			<div id="ScheduleTimes" class="col-md-4">
-                <table>
-                  <tr>
-                    <td><span class="glyphicon glyphicon-th-list"></span> 8:30 Vipers Vs Tropics</td>
-                  </tr>
-                  <tr>
-                    <td><span class="glyphicon glyphicon-th-list"></span> 9:30 Vipers Vs Tropics</td>
-                  </tr>
-                  <tr>
-                    <td><span class="glyphicon glyphicon-th-list"></span> 10:30 Vipers Vs Tropics</td>
-                  </tr>
+        			  <table>
+        			  <?php
+                $db = mysqli_connect("localhost","gpeck2217","","c9");
+                $username = $_SESSION['login'];
+                $date1 = $_POST['date1'];
+                echo $date1;
+                $sql = "SELECT * FROM rink_1_db WHERE date = '$date1'";
+                $result = mysqli_query($db, $sql);
+                while ($row = mysqli_fetch_array($result)){
+                 ?>
+                <tr>
+                  <td><span class="glyphicon glyphicon-th-list"></span><?php echo "Time: " . $row['time']. " Event: " . $row['event']. " Info: " . $row['info']; ?></td>
+                </tr>
+                <?php } ?>
                 </table>
             </div>
-
           </div>
       </div>
   </div>
 
   <div class="col-md-6" style="padding-top:10px;">
-        <div class="panel panel-primary">
-            <div class="panel-heading">Ice Two </div>
-            <div class="panel-body">
+      <div class="panel panel-primary">
+          <div class="panel-heading">Ice Two </div>
+          <div class="panel-body">
+            <div id="calendar" class="col-md-6">
               <div class="calendar" class="col-md-6">
-                <div class="datepicker"></div>
-              </div>
+              <div class="datepicker"></div>
+              <form method="post" action="schedulepage.php">
+                <p>Select a day: <input type="text" name="date2" id="datepicker2"></p>
+
+                <input type="submit" value="Load Times" name="submit"/>
+
+              </form>
             </div>
-        </div>
+        			</div>
+        			<div id="ScheduleTimes" class="col-md-4">
+        			  <table>
+        			  <?php
+                $db = mysqli_connect("localhost","gpeck2217","","c9");
+                $username = $_SESSION['login'];
+                $date2 = $_POST['date2'];
+                echo $date2;
+                $sql = "SELECT * FROM rink_2_db WHERE date = '$date2'";
+                $result = mysqli_query($db, $sql);
+                while ($row = mysqli_fetch_array($result)){
+                 ?>
+                <tr>
+                  <td><span class="glyphicon glyphicon-th-list"></span><?php echo "Time: " . $row['time']. " Event: " . $row['event']. " Info: " . $row['info']; ?></td>
+                </tr>
+                <?php } ?>
+                </table>
+            </div>
+          </div>
+      </div>
   </div>
 
   <div class="col-md-12">
@@ -174,9 +199,33 @@
             <div class="panel-body">
               <div class="calendar" class="col-md-6">
                 <div class="datepicker"></div>
-              </div>
+              <form method="post" action="schedulepage.php">
+                <p>Select a day: <input type="text" name="date3" id="datepicker3"></p>
+
+                <input type="submit" value="Load Times" name="submit"/>
+
+              </form>
             </div>
-        </div>
+        			</div>
+        			<div id="ScheduleTimes" class="col-md-4">
+        			  <table>
+        			  <?php
+                $db = mysqli_connect("localhost","gpeck2217","","c9");
+                $username = $_SESSION['login'];
+                $date3 = $_POST['date3'];
+                echo $date3;
+                $sql = "SELECT * FROM rink_3_db WHERE date = '$date3'";
+                $result = mysqli_query($db, $sql);
+                while ($row = mysqli_fetch_array($result)){
+                 ?>
+                <tr>
+                  <td><span class="glyphicon glyphicon-th-list"></span><?php echo "Time: " . $row['time']. " Event: " . $row['event']. " Info: " . $row['info']; ?></td>
+                </tr>
+                <?php } ?>
+                </table>
+            </div>
+          </div>
+      </div>
   </div>
 
 
@@ -192,7 +241,9 @@
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
       <script>
         $( function() {
-          $( ".datepicker" ).datepicker();
+          $( "#datepicker" ).datepicker();
+          $( "#datepicker2" ).datepicker();
+          $( "#datepicker3" ).datepicker();
         } );
       </script>
     <script src="../../dist/js/bootstrap.min.js"></script>
