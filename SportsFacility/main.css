@@ -1148,6 +1148,10 @@ Video Page Style
 
 }
 
+.w3-display-container mySlides {
+    height: 300px;
+}
+
 .containertext {
     color: white;
     text-align: left;
