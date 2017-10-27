@@ -35,7 +35,56 @@
   <link rel="stylesheet" type="text/css" href="main.css">
    <link rel="stylesheet" href="https://alloyui.com/pagination/css/basic.css" />
 
+<style>
+  #wrapper {
+	min-height:100%;
+	position:relative;
+}
+#header {
+	background:#766151;
+	padding:10px;
+	opacity:0.9;
+	text-align:center;
+}
+#content {
 
+	padding-bottom:100px; /* Height of the footer element */
+
+}
+#footer {
+	background:#766151;
+	width:100%;
+	height:100px;
+	position:absolute;
+	bottom:0;
+	left:0;
+  opacity:0.9;
+}
+.width{
+  width:100%;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  opacity: 0.5;
+  border-radius: 10px;
+}
+
+#myBtn:hover {
+  background-color: blue;
+}
+
+</style>
 
 </head>
 
@@ -131,8 +180,44 @@
     </div>
   </div>
 </nav>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
 <div class="jumbotron">
   <h1><big>Hockey<strong>Plex</strong></big></h1>
+</div>
+
+
+
+<div class="w3-content w3-display-container" style="max-width:1750px;" >
+
+
+<div class="w3-display-container mySlides">
+  <img src="./img/513607201.jpg" style="width:100%; height:300px;">
+
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="./img/standrew_spot.jpg" style="width:100%; height:300px;">
+
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="./img/maxresdefault.jpg" style="width:100%; height:300px;">
+
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="./img/shea-rink.jpg" style="width:100%; height:300px;">
+
+</div>
+
+
+<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+<button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+
+</div>
+
 </div>
 <div class="container-fluid">
   <div>
@@ -323,10 +408,26 @@
   </div>
 </div>
 
+<br>
 
-  <div class="footer">
-    <p>Visit the About page for more information</p>
-  </div>
+
+ <div id="wrapper">
+		<div id="header">
+		  <h2>Contact Infromation</h2>
+		  <hr>
+		</div>
+		<div id="content">
+		</div>
+		<div id="footer">
+		  <center>
+		  <button type="button" class="btn button1" data-toggle="collapse" data-target="#demo">More Info</button>
+		  </center>
+		  <div id="demo" class="collapse">
+		   <p class="sansserif" style="text-align:center;">We are located at 318 Meadow Brook Rd, Rochester MI 48309</p>
+          <p class="sansserif" style="text-align:center;">Phone number: (248) 370-2100</p>
+		  </div>
+		</div>
+	</div>
 
 
 
@@ -439,9 +540,57 @@ YUI().use(
   }
 );
 
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+
+}
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 10000); // Change image every 2 seconds
+}
 
 
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
 
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
 </script>
 
 
