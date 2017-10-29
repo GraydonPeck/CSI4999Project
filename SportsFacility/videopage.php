@@ -84,6 +84,99 @@
   background-color: blue;
 }
 
+#myInput {
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+	background-color: #00303f;
+	color:white;
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid ; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myTable {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    /* border: 1px solid #514947; */ /* Add a grey border */
+    font-size: 18px; /* Increase font-size */
+
+	margin-bottom:15px;
+}
+
+#myTable th, #myTable td {
+    text-align: left; /* Left-align text */
+    padding: 12px; /* Add padding */
+	background-color:#766151;
+}
+
+#myTable tr {
+    /* Add a bottom border to all table rows */
+     border-bottom: 1px solid #766151;
+
+
+}
+#myTable th{
+	border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+    /* Add a grey background color to the table header and on hover */
+
+}
+
+.header{
+
+	font-size:20px;
+	text-align:center;
+	color:white;
+}
+
+#HighlightsInput {
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+	background-color: #00303f;
+	color:white;
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid ; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
+
+#HighlightTable {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    /* border: 1px solid #514947; */ /* Add a grey border */
+    font-size: 18px; /* Increase font-size */
+
+	margin-bottom:15px;
+}
+
+#HighlightTable th, #HighlightTable td {
+    text-align: left; /* Left-align text */
+    padding: 12px; /* Add padding */
+	background-color:#766151;
+}
+
+#HighlightTable tr {
+    /* Add a bottom border to all table rows */
+     border-bottom: 1px solid #766151;
+
+
+}
+#HighlightTable th{
+	border-bottom: 1px solid #ddd;
+}
+
+#HighlightTable tr.header, #HighlightTable tr:hover {
+    /* Add a grey background color to the table header and on hover */
+
+}
+
 </style>
 
 </head>
@@ -248,37 +341,174 @@
   <div id="Highlights" class="w3-container w3-display-container videos">
     <span onclick="this.parentElement.style.display='none'"
     class="w3-button w3-large w3-display-topright">&times;</span>
+    <div style="margin-top:50px; width:100%;">
+	<input  type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+	</div>
+
+    <table id="myTable">
+  <tr class="header">
+    <th class="header" style="text-align:center;"><h1>Highlight Videos</h1></th>
+
+
+  </tr>
+  <tr>
+
+    <td>
+		<div class="col-sm-4">
+		<center>
+		<h3 class="containertext" style="text-align:center;">Alfreds Futterkiste</h3>
+        <iframe  height="300px" width="45%" src="https://www.youtube.com/embed/Zf1Xc5da2cs"  frameborder="1" allowfullscreen></iframe>
+		</center>
+		</div>
+
+		<div class="col-sm-4">
+		<center>
+		<h3 class="containertext" style="text-align:center;">videos</h3>
+		<iframe  height="300px" width="45%" src="https://www.youtube.com/embed/4--iEOftLZ4" frameborder="1" allowfullscreen></iframe>
+		</center>
+		</div>
+
+		<div class="col-sm-4">
+		<center>
+		<h3 class="containertext" style="text-align:center;">videos</h3>
+        <iframe  height="300px" width="45%" src="https://www.youtube.com/embed/K8rt8gYAQls" frameborder="1" allowfullscreen></iframe>
+		</center>
+		</div>
+	</td>
+
+	</tr>
+
+	<tr>
+
+    <td>
+		<div class="col-sm-4">
+		<center>
+		<h3 class="containertext" style="text-align:center;">Highlight</h3>
+		<iframe  height="300" width="45%" src="https://www.youtube.com/embed/0otLHeiYeDA" frameborder="1" allowfullscreen></iframe>
+		</center>
+		</div>
+
+		<div class="col-sm-4">
+		<center>
+		<h3 class="containertext" style="text-align:center;">Highlight Videos</h3>
+        <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/plna4yeuPLQ" frameborder="1" allowfullscreen></iframe>
+		</center>
+		</div>
+
+		<div class="col-sm-4">
+		<center>
+		<h3 class="containertext" style="text-align:center;">Highlight Videos</h3>
+        <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/mosMkX_4Sok" frameborder="1" allowfullscreen></iframe>
+		</center>
+		</div>
+	</td>
+
+	</tr>
+
+
+</table>
+</div>
+
+
+    <div id="Training" class="w3-container w3-display-container videos" style="display:none">
+      <span onclick="this.parentElement.style.display='none'"
+      class="w3-button w3-large w3-display-topright">&times;</span>
+
+    <div style="margin-top:50px; width:100%;">
+	<input  type="text" id="HighlightsInput" onkeyup="Highlights()" placeholder="Search for names..">
+	</div>
+
+	<table id="HighlightTable">
+  <tr class="header">
+    <th class="header" style="text-align:center;"><h1>Skills Training Videos</h1></th>
+
+
+  </tr>
+  <tr>
+
+    <td>
+		<div class="col-sm-4">
+		<center>
+		<h2 class="textcenter containertext">Elite Skills</h2>
+        <iframe  src="https://www.youtube.com/embed/oFCxzEYGtBs" frameborder="1" allowfullscreen></iframe>
+		</center>
+		</div>
+
+		<div class="col-sm-4">
+		<center>
+		<h2 class="textcenter containertext">Agility</h2>
+        <iframe  src="https://www.youtube.com/embed/bUV18ftJXeY?list=PLyp8LF-3yz5AuhDDIbWrg3bhRexI3lGMX" frameborder="1" allowfullscreen></iframe>
+		</center>
+		</div>
+
+		<div class="col-sm-4">
+		<center>
+		<h2 class="textcenter containertext">Balance</h2>
+        <iframe  src="https://www.youtube.com/embed/mrLiOX6nIhM" frameborder="1" allowfullscreen></iframe>
+		</center>
+		</div>
+	</td>
+
+	</tr>
+
+	<tr>
+
+    <td>
+		<div class="col-sm-4">
+		<center>
+		<h2 class=" textcenter containertext">Quick Edge</h2>
+        <iframe  src="https://www.youtube.com/embed/MPrerhyHllA" frameborder="1" allowfullscreen></iframe>
+		</center>
+		</div>
+
+		<div class="col-sm-4">
+		<center>
+		<h2 class="textcenter containertext">Double Quickness</h2>
+		<iframe  src="https://www.youtube.com/embed/2XsQxGJ3Zw4" frameborder="1" allowfullscreen></iframe>
+		</center>
+		</div>
+
+		<div class="col-sm-4">
+		<center>
+		<h2 class=" textcenter containertext">Quick Feet</h2>
+        <iframe  src="https://www.youtube.com/embed/sWGRnPnj858" frameborder="1" allowfullscreen></iframe>
+		</center>
+		</div>
+	</td>
+
+	</tr>
+
+
+</table>
+</div>
+
+
+   <div id="Learning" class="w3-container w3-display-container videos" style="display:none">
+      <span onclick="this.parentElement.style.display='none'"
+      class="w3-button w3-large w3-display-topright">&times;</span>
 
     <div class=" content ">
-      <div class=" col-sm-12">
-        <h3 class="containertext">Highlight Videos</h3>
-        <iframe  height="300px" width="45%"src="https://www.youtube.com/embed/Zf1Xc5da2cs"  frameborder="1" allowfullscreen></iframe>
-      </div>
 
-      <div class="col-sm-12">
-        <h3 class="containertext">Highlight Videos</h3>
-       <iframe  height="300px" width="45%" src="https://www.youtube.com/embed/4--iEOftLZ4" frameborder="1" allowfullscreen></iframe>
-      </div>
+       <div class="col-sm-12">
+      <h2 class="containertext">Skate Sharpening #1</h2>
 
-      <div class="col-sm-12">
-        <h3 class="containertext">Highlight Videos</h3>
-        <iframe  height="300px" width="45%" src="https://www.youtube.com/embed/K8rt8gYAQls" frameborder="1" allowfullscreen></iframe>
-      </div>
+       <iframe  src="https://www.youtube.com/embed/ZaNEHE4UKxM" frameborder="1" allowfullscreen></iframe>
 
-       <div class=" col-sm-12">
-        <h3 class="containertext">Highlight Videos</h3>
-       <iframe  height="300" width="45%" src="https://www.youtube.com/embed/0otLHeiYeDA" frameborder="1" allowfullscreen></iframe>
-      </div>
+    </div>
 
-      <div class="col-sm-12">
-        <h3 class="containertext">Highlight Videos</h3>
-       <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/plna4yeuPLQ" frameborder="1" allowfullscreen></iframe>
-      </div>
+    <div class="col-sm-12">
+      <h2 class="containertext">Skate Sharpening #2</h2>
 
-      <div class="col-sm-12">
-        <h3 class="containertext">Highlight Videos</h3>
-        <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/mosMkX_4Sok" frameborder="1" allowfullscreen></iframe>
-      </div>
+       <iframe  src="https://www.youtube.com/embed/G5BjMvvwYbs" frameborder="1" allowfullscreen></iframe>
+
+    </div>
+
+    <div class="col-sm-12">
+      <h2 class="containertext">Skate Sharpening #3</h2>
+
+        <iframe  src="https://www.youtube.com/embed/w3qutTbxw4E" frameborder="1" allowfullscreen></iframe>
+
+    </div>
     </div>
 
       <div class="col-sm-12">
@@ -288,9 +518,6 @@
             <li><a href="#">1</a></li>
             <li><a href="#">2</a></li>
             <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">6</a></li>
             <li><a href="#">Next</a></li>
           </ul>
         </div>
@@ -298,79 +525,6 @@
   </div>
 
 
-    <div id="Training" class="w3-container w3-display-container videos" style="display:none">
-      <span onclick="this.parentElement.style.display='none'"
-      class="w3-button w3-large w3-display-topright">&times;</span>
-
-    <div class="col-sm-4">
-      <h2 class="containertext">Elite Skills</h2>
-      <div class=" fluidMedia">
-        <iframe  src="https://www.youtube.com/embed/oFCxzEYGtBs" frameborder="1" allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <div class="col-sm-4">
-      <h2 class="containertext">Agility</h2>
-      <div class="fluidMedia">
-        <iframe  src="https://www.youtube.com/embed/bUV18ftJXeY?list=PLyp8LF-3yz5AuhDDIbWrg3bhRexI3lGMX" frameborder="1" allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <div class="col-sm-4">
-      <h2 class="containertext">Balance</h2>
-      <div class="fluidMedia">
-        <iframe  src="https://www.youtube.com/embed/mrLiOX6nIhM" frameborder="1" allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <div class="col-sm-4">
-      <h2 class="containertext">Quick Edge</h2>
-      <div class=" fluidMedia">
-        <iframe  src="https://www.youtube.com/embed/MPrerhyHllA" frameborder="1" allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <div class="col-sm-4">
-      <h2 class="containertext">Double Quickness</h2>
-      <div class="fluidMedia">
-       <iframe  src="https://www.youtube.com/embed/2XsQxGJ3Zw4" frameborder="1" allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <div class="col-sm-4">
-      <h2 class="containertext">Quick Feet</h2>
-      <div class="fluidMedia">
-        <iframe  src="https://www.youtube.com/embed/sWGRnPnj858" frameborder="1" allowfullscreen></iframe>
-      </div>
-    </div>
-
-    </div>
-
-
-   <div id="Learning" class="w3-container w3-display-container videos" style="display:none">
-      <span onclick="this.parentElement.style.display='none'"
-      class="w3-button w3-large w3-display-topright">&times;</span>
-
-    <div class="col-sm-4">
-      <h2 class="containertext">Skate Sharpening #1</h2>
-      <div class=" fluidMedia">
-       <iframe  src="https://www.youtube.com/embed/ZaNEHE4UKxM" frameborder="1" allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <div class="col-sm-4">
-      <h2 class="containertext">Skate Sharpening #2</h2>
-      <div class="fluidMedia">
-       <iframe  src="https://www.youtube.com/embed/G5BjMvvwYbs" frameborder="1" allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <div class="col-sm-4">
-      <h2 class="containertext">Skate Sharpening #3</h2>
-      <div class="fluidMedia">
-        <iframe  src="https://www.youtube.com/embed/w3qutTbxw4E" frameborder="1" allowfullscreen></iframe>
-      </div>
-    </div>
 
     </div>
 
@@ -590,6 +744,69 @@ function scrollFunction() {
 function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+
+
+
+
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+
+  }
+
+}
+
+function Highlights() {
+  // Declare variables
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("HighlightsInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("HighlightTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+
+
+
+
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+
+  }
+
+
+
+
 }
 </script>
 
