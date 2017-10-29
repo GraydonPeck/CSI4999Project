@@ -153,8 +153,9 @@ SCHEDULE PAGE
 }
 
 .ui-datepicker-month {
-    position: relative;
+
     padding-right: 15px;
+    position: relative;
     color: #FFFFFF;
 }
 
@@ -240,6 +241,7 @@ SCHEDULE PAGE
     padding: 0 5px;
     text-align: center;
     line-height: 26px;
+    background-color: #483272F !important;
 }
 
 .ui-datepicker-calendar tr {
@@ -466,9 +468,6 @@ Table & Container
 }
 
 
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
 
 .tablestyle {
     border: 1px solid black;

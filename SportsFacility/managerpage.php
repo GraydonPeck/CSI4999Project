@@ -127,8 +127,8 @@
             </div>
             <div class="panel-body"  style="overflow: auto;">
               <form id="#formSection" method="post" class="" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
-              <table class="table" style="overflow: hidden;">
-                 <tr>
+              <table class="table" id="DefaultTable" style="overflow: hidden;">
+                 <tr id="TableHeading">
                           <th></th>
                           <th>Monday</th>
                           <th>Tuesday</th>
@@ -141,43 +141,43 @@
                       <tbody>
                       <tr>
                       <th>Concessions</th>
- <?php
-              $db = mysqli_connect("localhost","gpeck2217","","c9");
-              $username = $_SESSION['login'];
-              $sql = "SELECT * FROM work_schedule WHERE job = 'concessions'";
-              $result = mysqli_query($db, $sql);
-              while ($row = mysqli_fetch_array($result)){
-              ?>
-              <th><?php echo $row['user_name']?></th>
-                          <?php }?>
-                          </tr>
-                          <tr>
-                      <th>Pro Shop</th>
- <?php
-              $db = mysqli_connect("localhost","gpeck2217","","c9");
-              $username = $_SESSION['login'];
-              $sql = "SELECT * FROM work_schedule WHERE job = 'ProShop'";
-              $result = mysqli_query($db, $sql);
-              while ($row = mysqli_fetch_array($result)){
-              ?>
-              <th><?php echo $row['user_name']?></th>
-                          <?php }?>
-                          </tr>
-                          <tr>
-                      <th>Service Center</th>
- <?php
-              $db = mysqli_connect("localhost","gpeck2217","","c9");
-              $username = $_SESSION['login'];
-              $sql = "SELECT * FROM work_schedule WHERE job = 'ServiceCenter'";
-              $result = mysqli_query($db, $sql);
-              while ($row = mysqli_fetch_array($result)){
-              ?>
-              <th><?php echo $row['user_name']?></th>
-                          <?php }?>
-                          </tr>
-             <input type="hidden" name="hidden" value ="1">
-            </tbody>
-</table>
+                         <?php
+                                      $db = mysqli_connect("localhost","gpeck2217","","c9");
+                                      $username = $_SESSION['login'];
+                                      $sql = "SELECT * FROM work_schedule WHERE job = 'concessions'";
+                                      $result = mysqli_query($db, $sql);
+                                      while ($row = mysqli_fetch_array($result)){
+                                      ?>
+                                      <th><?php echo $row['user_name']?></th>
+                                                  <?php }?>
+                                                  </tr>
+                                                  <tr>
+                                              <th>Pro Shop</th>
+                         <?php
+                                      $db = mysqli_connect("localhost","gpeck2217","","c9");
+                                      $username = $_SESSION['login'];
+                                      $sql = "SELECT * FROM work_schedule WHERE job = 'ProShop'";
+                                      $result = mysqli_query($db, $sql);
+                                      while ($row = mysqli_fetch_array($result)){
+                                      ?>
+                                      <th><?php echo $row['user_name']?></th>
+                                                  <?php }?>
+                                                  </tr>
+                                                  <tr>
+                                              <th>Service Center</th>
+                         <?php
+                                      $db = mysqli_connect("localhost","gpeck2217","","c9");
+                                      $username = $_SESSION['login'];
+                                      $sql = "SELECT * FROM work_schedule WHERE job = 'ServiceCenter'";
+                                      $result = mysqli_query($db, $sql);
+                                      while ($row = mysqli_fetch_array($result)){
+                                      ?>
+                                      <th><?php echo $row['user_name']?></th>
+                                                  <?php }?>
+                                                  </tr>
+                                     <input type="hidden" name="hidden" value ="1">
+                                    </tbody>
+                        </table>
               <a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Schedule" href="#">EDIT INFORMATION</a>
             </div>
             </form>

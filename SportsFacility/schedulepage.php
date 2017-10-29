@@ -126,15 +126,15 @@
           <div class="panel-heading">Ice One </div>
           <div class="panel-body">
             <div id="calendar" class="col-md-6">
-              <div class="calendar" class="col-md-6">
-              <div class="datepicker"></div>
-              <form method="post" action="schedulepage.php">
-                <p>Select a day: <input type="text" name="date1" id="datepicker"></p>
-
-                <input type="submit" value="Load Times" name="submit"/>
-
-              </form>
-            </div>
+                  <div class="calendar" class="col-md-6">
+                  <div class="datepicker"></div>
+                  <form method="post" action="schedulepage.php">
+                    <p>Select a day: <input type="text" name="date1" id="datepicker"></p>
+    
+                    <input type="submit" value="Load Times" name="submit"/>
+    
+                  </form>
+                </div>
         			</div>
         			<div id="ScheduleTimes" class="col-md-4">
         			  <table>
