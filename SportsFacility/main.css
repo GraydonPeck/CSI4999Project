@@ -241,11 +241,11 @@ SCHEDULE PAGE
     padding: 0 5px;
     text-align: center;
     line-height: 26px;
-    background-color: #483272F !important;
+    background-color: #00303F !important;
 }
 
 .ui-datepicker-calendar tr {
-    background-color: #483272F !important;
+    background-color: #00303F !important;
 }
 
 
@@ -342,7 +342,7 @@ Body, Text, and page styling
 *************************/
 
 .jumbotron {
-    background-color: #483272F;
+    background-color: #00303F;
     color: white;
     margin-bottom: 0;
 
@@ -469,15 +469,16 @@ Table & Container
 
 
 
-.TableHeadingt {
-    background-color: #514947;
+.TableHeading {
+    background-color: #00303F;
+    color: white;
 }
 
 .TableWrap {
     border: 1px solid;
     border-radius: 5px;
     background-color: white !important;
-    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+    overflow: auto;
 }
 
 .tablestyle {

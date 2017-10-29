@@ -196,7 +196,7 @@ _END;
 
 			<!-- Service Booth table -->
 
-			<div class="row">
+			<div class="row TableWrap">
 				<?php
 					require_once 'conn.php';
 					$conn = new mysqli($hn, $un, $pw, $db);
@@ -250,8 +250,8 @@ _END;
 
 					echo <<<_END
 
-					<table class="table table-striped">
-						<tr>
+					<table class="table DefaultTable">
+						<tr class="TableHeading">
 							<th>Service #</th>
 							<th>First Name</th>
 							<th>Last Name</th>

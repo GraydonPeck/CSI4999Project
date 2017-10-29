@@ -134,48 +134,56 @@
 	color:white;
 }
 
-#HighlightsInput {
-    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
-	background-color: #00303f;
-	color:white;
-    background-position: 10px 12px; /* Position the search icon */
-    background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 100%; /* Full-width */
-    font-size: 16px; /* Increase font-size */
-    padding: 12px 20px 12px 40px; /* Add some padding */
-    border: 1px solid ; /* Add a grey border */
-    margin-bottom: 12px; /* Add some space below the input */
+.text {
+   position:  absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   text-align: center;
+   font-size: 20px;
+   color: white;
 }
 
-#HighlightTable {
-    border-collapse: collapse; /* Collapse borders */
-    width: 100%; /* Full-width */
-    /* border: 1px solid #514947; */ /* Add a grey border */
-    font-size: 18px; /* Increase font-size */
-
-	margin-bottom:15px;
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-#HighlightTable th, #HighlightTable td {
-    text-align: left; /* Left-align text */
-    padding: 12px; /* Add padding */
-	background-color:#766151;
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
 }
 
-#HighlightTable tr {
-    /* Add a bottom border to all table rows */
-     border-bottom: 1px solid #766151;
-
-
-}
-#HighlightTable th{
-	border-bottom: 1px solid #ddd;
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
-#HighlightTable tr.header, #HighlightTable tr:hover {
-    /* Add a grey background color to the table header and on hover */
-
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
+
 
 </style>
 
@@ -774,9 +782,7 @@ function myFunction() {
         tr[i].style.display = "none";
       }
     }
-
   }
-
 }
 
 function Highlights() {
@@ -791,9 +797,6 @@ function Highlights() {
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];
 
-
-
-
     if (td) {
       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
@@ -801,12 +804,7 @@ function Highlights() {
         tr[i].style.display = "none";
       }
     }
-
   }
-
-
-
-
 }
 </script>
 

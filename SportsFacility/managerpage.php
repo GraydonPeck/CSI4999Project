@@ -125,62 +125,64 @@
                 <h1 class="panel-title"><big>Timesheet</big></h1>
                 <div class="clearfix"></div>
             </div>
-            <div class="panel-body"  style="overflow: auto;">
-              <form id="#formSection" method="post" class="" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
-              <table class="table" id="DefaultTable" style="overflow: hidden;">
-                 <tr id="TableHeading">
-                          <th></th>
-                          <th>Monday</th>
-                          <th>Tuesday</th>
-                          <th>Wednesday</th>
-                          <th>Thursday</th>
-                          <th>Friday</th>
-                          <th>Saturday</th>
-                          <th>Sunday</th>
-                      </tr>
-                      <tbody>
-                      <tr>
-                      <th>Concessions</th>
-                         <?php
-                                      $db = mysqli_connect("localhost","gpeck2217","","c9");
-                                      $username = $_SESSION['login'];
-                                      $sql = "SELECT * FROM work_schedule WHERE job = 'concessions'";
-                                      $result = mysqli_query($db, $sql);
-                                      while ($row = mysqli_fetch_array($result)){
-                                      ?>
-                                      <th><?php echo $row['user_name']?></th>
-                                                  <?php }?>
-                                                  </tr>
-                                                  <tr>
-                                              <th>Pro Shop</th>
-                         <?php
-                                      $db = mysqli_connect("localhost","gpeck2217","","c9");
-                                      $username = $_SESSION['login'];
-                                      $sql = "SELECT * FROM work_schedule WHERE job = 'ProShop'";
-                                      $result = mysqli_query($db, $sql);
-                                      while ($row = mysqli_fetch_array($result)){
-                                      ?>
-                                      <th><?php echo $row['user_name']?></th>
-                                                  <?php }?>
-                                                  </tr>
-                                                  <tr>
-                                              <th>Service Center</th>
-                         <?php
-                                      $db = mysqli_connect("localhost","gpeck2217","","c9");
-                                      $username = $_SESSION['login'];
-                                      $sql = "SELECT * FROM work_schedule WHERE job = 'ServiceCenter'";
-                                      $result = mysqli_query($db, $sql);
-                                      while ($row = mysqli_fetch_array($result)){
-                                      ?>
-                                      <th><?php echo $row['user_name']?></th>
-                                                  <?php }?>
-                                                  </tr>
-                                     <input type="hidden" name="hidden" value ="1">
-                                    </tbody>
-                        </table>
-              <a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Schedule" href="#">EDIT INFORMATION</a>
+            <div class="panel-body"  >
+              <form id="#formSection" method="post"  style="margin:15px; " data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
+                <div class="TableWrap" >
+                  <table class="table"  style="overflow: hidden;">
+                     <tr class="TableHeading">
+                              <th></th>
+                              <th>Monday</th>
+                              <th>Tuesday</th>
+                              <th>Wednesday</th>
+                              <th>Thursday</th>
+                              <th>Friday</th>
+                              <th>Saturday</th>
+                              <th>Sunday</th>
+                          </tr>
+                          <tbody>
+                          <tr>
+                          <th>Concessions</th>
+                             <?php
+                                          $db = mysqli_connect("localhost","gpeck2217","","c9");
+                                          $username = $_SESSION['login'];
+                                          $sql = "SELECT * FROM work_schedule WHERE job = 'concessions'";
+                                          $result = mysqli_query($db, $sql);
+                                          while ($row = mysqli_fetch_array($result)){
+                                          ?>
+                                          <th><?php echo $row['user_name']?></th>
+                                                      <?php }?>
+                                                      </tr>
+                                                      <tr>
+                                                  <th>Pro Shop</th>
+                             <?php
+                                          $db = mysqli_connect("localhost","gpeck2217","","c9");
+                                          $username = $_SESSION['login'];
+                                          $sql = "SELECT * FROM work_schedule WHERE job = 'ProShop'";
+                                          $result = mysqli_query($db, $sql);
+                                          while ($row = mysqli_fetch_array($result)){
+                                          ?>
+                                          <th><?php echo $row['user_name']?></th>
+                                                      <?php }?>
+                                                      </tr>
+                                                      <tr>
+                                                  <th>Service Center</th>
+                             <?php
+                                          $db = mysqli_connect("localhost","gpeck2217","","c9");
+                                          $username = $_SESSION['login'];
+                                          $sql = "SELECT * FROM work_schedule WHERE job = 'ServiceCenter'";
+                                          $result = mysqli_query($db, $sql);
+                                          while ($row = mysqli_fetch_array($result)){
+                                          ?>
+                                          <th><?php echo $row['user_name']?></th>
+                                                      <?php }?>
+                                                      </tr>
+                                         <input type="hidden" name="hidden" value ="1">
+                                        </tbody>
+                            </table>
+                        </div>
+                <a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Schedule" href="#">EDIT INFORMATION</a>
+              </form>
             </div>
-            </form>
           </div>
         </div>
     <!-- This is where the manager makes an account. -->
@@ -189,34 +191,36 @@
           <div class="panel-heading">Add New User</div>
           <div class="panel-body">
            <form id="#formSection" method="post" class="employeeedit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
-            <table class = "table">
-                <tr>
-                  <td>Username:</td><td><input type="text" name="User_name"></td>
-                </tr>
-                <tr>
-                  <td>Password:</td><td><input type="password" name="User_password"></td>
-                </tr>
+             <div class="TableWrap">
+                <table class = "table">
+                    <tr>
+                      <td>Username:</td><td><input type="text" name="User_name"></td>
+                    </tr>
+                    <tr>
+                      <td>Password:</td><td><input type="password" name="User_password"></td>
+                    </tr>
 
-              <tr>
-                <td>First Name</td> <td><input type="text" name="employee_fname"></td>
-              </tr>
-              <tr>
-                <td>Last Name</td> <td><input type="text" name="employee_lname"></td>
-              </tr>
-               <tr>
-                <td>Admin?</td>
-               <td> <input type="radio" name = "employee_type" value="admin">Yes</input>
-                <input type="radio" name = "employee_type" value="employee">No</input></td>
-                <input type="hidden" name="user_type" value="employee">
-              </tr>
-              <tr>
-                <td>Phone Number</td> <td><input type="text" name="employee_phone"></td>
-              </tr>
-              <tr>
-                <td>Email</td> <td><input type="email" name="User_email"></td>
-              </tr>
-              <input type = "hidden" name= "hidden2" value= "2">
-            </table>
+                  <tr>
+                    <td>First Name</td> <td><input type="text" name="employee_fname"></td>
+                  </tr>
+                  <tr>
+                    <td>Last Name</td> <td><input type="text" name="employee_lname"></td>
+                  </tr>
+                   <tr>
+                    <td>Admin?</td>
+                   <td> <input type="radio" name = "employee_type" value="admin">Yes</input>
+                    <input type="radio" name = "employee_type" value="employee">No</input></td>
+                    <input type="hidden" name="user_type" value="employee">
+                  </tr>
+                  <tr>
+                    <td>Phone Number</td> <td><input type="text" name="employee_phone"></td>
+                  </tr>
+                  <tr>
+                    <td>Email</td> <td><input type="email" name="User_email"></td>
+                  </tr>
+                  <input type = "hidden" name= "hidden2" value= "2">
+                </table>
+              </div>
            <center>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                <input type="submit" id="submitSection" class="btn btn-primary" value="Submit">
@@ -229,6 +233,7 @@
       <div class="panel panel-primary">
         <div class="panel-heading">Employee Information</div>
          <form id="#formSection" method="post" class="employeeedit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
+           <div class="TableWrap">
               <table class = "table">
                <!-- Links to our database with the information each customer enter into the following fields -->
                    <?php
@@ -259,6 +264,7 @@
               </tr>
               <?php } ?>
             </table>
+            </div>
             <a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Edit" href="#">EDIT INFORMATION</a>
           </form>
       </div>
