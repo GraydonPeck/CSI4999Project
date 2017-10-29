@@ -469,6 +469,17 @@ Table & Container
 
 
 
+.TableHeadingt {
+    background-color: #514947;
+}
+
+.TableWrap {
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: white !important;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
 .tablestyle {
     border: 1px solid black;
     border-collapse: collapse;
@@ -481,9 +492,7 @@ Table & Container
     width: 50%;
     margin: auto;
     color: black;
-
 }
-
 
 /****************************************************
 DropDown & list items
@@ -1255,4 +1264,66 @@ hr {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+/*****************************
+Videopage search function
+*****************************/
+
+#HighlightsInput {
+    background-image: url('/css/searchicon.png');
+    /* Add a search icon to input */
+    background-color: #00303f;
+    color: white;
+    background-position: 10px 12px;
+    /* Position the search icon */
+    background-repeat: no-repeat;
+    /* Do not repeat the icon image */
+    width: 100%;
+    /* Full-width */
+    font-size: 16px;
+    /* Increase font-size */
+    padding: 12px 20px 12px 40px;
+    /* Add some padding */
+    border: 1px solid;
+    /* Add a grey border */
+    margin-bottom: 12px;
+    /* Add some space below the input */
+}
+
+#HighlightTable {
+    border-collapse: collapse;
+    /* Collapse borders */
+    width: 100%;
+    /* Full-width */
+    /* border: 1px solid #514947; */
+    /* Add a grey border */
+    font-size: 18px;
+    /* Increase font-size */
+    margin-bottom: 15px;
+}
+
+#HighlightTable th,
+#HighlightTable td {
+    text-align: left;
+    /* Left-align text */
+    padding: 12px;
+    /* Add padding */
+    background-color: #766151;
+}
+
+#HighlightTable tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #766151;
+
+
+}
+
+#HighlightTable th {
+    border-bottom: 1px solid #ddd;
+}
+
+#HighlightTable tr.header,
+#HighlightTable tr:hover {
+    /* Add a grey background color to the table header and on hover */
 }
