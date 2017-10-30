@@ -2,6 +2,27 @@
 <?php
  include("dbutils.php");
  session_start();
+ if ($_POST['hidden']==1)
+{
+	    echo "Found " . count($_POST) . " elements" . "<td>";
+        var_dump($_POST);
+        add_event1 ($_POST['date'], $_POST['time'], $_POST['event'], $_POST['info'], $_POST['username']);
+        header ("Location: schedulepage.php");
+    }
+    if ($_POST['hidden2']==2)
+{
+	    echo "Found " . count($_POST) . " elements" . "<td>";
+        var_dump($_POST);
+        add_event2 ($_POST['date'], $_POST['time'], $_POST['event'], $_POST['info'], $_POST['username']);
+        header ("Location: schedulepage.php");
+    }
+    if ($_POST['hidden3']==3)
+{
+	    echo "Found " . count($_POST) . " elements" . "<td>";
+        var_dump($_POST);
+        add_event3 ($_POST['date'], $_POST['time'], $_POST['event'], $_POST['info'], $_POST['username']);
+        header ("Location: schedulepage.php");
+    }
 ?>
 <html lang="en">
 <head>
@@ -130,9 +151,9 @@
                   <div class="datepicker"></div>
                   <form method="post" action="schedulepage.php">
                     <p>Select a day: <input type="text" name="date1" id="datepicker"></p>
-    
+                     <input type="hidden" value="1" name="hidden1"/>
                     <input type="submit" value="Load Times" name="submit"/>
-    
+
                   </form>
                 </div>
         			</div>
@@ -148,8 +169,11 @@
                 while ($row = mysqli_fetch_array($result)){
                  ?>
                 <tr>
-                  <td><span class="glyphicon glyphicon-th-list"></span><?php echo "Time: " . $row['time']. " Event: " . $row['event']. " Info: " . $row['info']; ?></td>
+                  <td><span class="glyphicon glyphicon-th-list"></span><?php echo "Time: " . $row['time']. " Event: " . $row['event']. " Info: " . $row['info'];?>
                 </tr>
+                <?php }
+               if  ($_POST['hidden1']==1){
+                  ?><a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Event1" href="#">Schedule an event</a>
                 <?php } ?>
                 </table>
             </div>
@@ -166,7 +190,7 @@
               <div class="datepicker"></div>
               <form method="post" action="schedulepage.php">
                 <p>Select a day: <input type="text" name="date2" id="datepicker2"></p>
-
+                <input type="hidden" value="2" name="hidden1"/>
                 <input type="submit" value="Load Times" name="submit"/>
 
               </form>
@@ -184,8 +208,11 @@
                 while ($row = mysqli_fetch_array($result)){
                  ?>
                 <tr>
-                  <td><span class="glyphicon glyphicon-th-list"></span><?php echo "Time: " . $row['time']. " Event: " . $row['event']. " Info: " . $row['info']; ?></td>
+                  <td><span class="glyphicon glyphicon-th-list"></span><?php echo "Time: " . $row['time']. " Event: " . $row['event']. " Info: " . $row['info'];?>
                 </tr>
+                <?php }
+               if ($_POST['hidden1']==2){
+                  ?><a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Event2" href="#">Schedule an event</a>
                 <?php } ?>
                 </table>
             </div>
@@ -197,11 +224,12 @@
         <div class="panel panel-primary">
             <div class="panel-heading">Ice Three </div>
             <div class="panel-body">
+              <div id="calendar" class="col-md-6">
               <div class="calendar" class="col-md-6">
                 <div class="datepicker"></div>
               <form method="post" action="schedulepage.php">
                 <p>Select a day: <input type="text" name="date3" id="datepicker3"></p>
-
+                <input type="hidden" value="3" name="hidden1"/>
                 <input type="submit" value="Load Times" name="submit"/>
 
               </form>
@@ -216,22 +244,169 @@
                 echo $date3;
                 $sql = "SELECT * FROM rink_3_db WHERE date = '$date3'";
                 $result = mysqli_query($db, $sql);
-                while ($row = mysqli_fetch_array($result)){
+              while ($row = mysqli_fetch_array($result)){
                  ?>
                 <tr>
-                  <td><span class="glyphicon glyphicon-th-list"></span><?php echo "Time: " . $row['time']. " Event: " . $row['event']. " Info: " . $row['info']; ?></td>
+                  <td><span class="glyphicon glyphicon-th-list"></span><?php echo "Time: " . $row['time']. " Event: " . $row['event']. " Info: " . $row['info'];?>
                 </tr>
+                <?php }
+               if  ($_POST['hidden1']==3){
+                  ?><a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Event3" href="#">Schedule an event</a>
                 <?php } ?>
                 </table>
             </div>
           </div>
+          </div>
       </div>
+      <!--Event Modal1-->
+      <div class="modal fade" id="Event1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Add an event</h4>
+            </div>
+            <div class="modal-body">
+              <center>
+              <form action ="schedulepage.php" method="post">
+              <table>
+                 <tr><th>Date:</th>
+                <td><input type= "text" name="date" value="<?php echo $date1 ?>"></td></tr>
+              <tr><th>Time:</th>
+                          <td><select name ="time" class="form-control">
+                            <option disabled selected value>- select a time -</option>
+                               <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM rink_1_db WHERE date = '$date1' AND event = 'available'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = "<?php echo $row['time']?>"><?php echo $row['time']?></option>
+                           	<?php
+                          		}
+                          	?></select></td></tr>
+                          	<tr><th>Event:</th>
+                          	<td><input type= "text" name="event" value="<?php echo $row['event']?>"></td></tr>
+                          	<tr><th>Extra Info:</th>
+                          	<td><input type= "text" name="info" value="<?php echo $row['info']?>"></td></tr>
+                          	<input type="hidden" name="hidden" value ="1">
+                          	<input type="hidden" name="username" value = "<?php echo $_SESSION['login']?>">
+                      </table>
+                      </center>
+                    </div>
+                    <div class="modal-footer">
+                      <center>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                      <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
+                      </center>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      </form>
+      <!--End of event modal1-->
+      <div class="modal fade" id="Event2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Add an event</h4>
+            </div>
+            <div class="modal-body">
+              <center>
+              <form action ="schedulepage.php" method="post">
+              <table>
+                 <tr><th>Date:</th>
+                <td><input type= "text" name="date" value="<?php echo $date2 ?>"></td></tr>
+              <tr><th>Time:</th>
+                          <td><select name ="time" class="form-control">
+                            <option disabled selected value>- select a time -</option>
+                               <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM rink_2_db WHERE date = '$date2' AND event = 'available'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = "<?php echo $row['time']?>"><?php echo $row['time']?></option>
+                           	<?php
+                          		}
+                          	?></select></td></tr>
+                          	<tr><th>Event:</th>
+                          	<td><input type= "text" name="event" value="<?php echo $row['event']?>"></td></tr>
+                          	<tr><th>Extra Info:</th>
+                          	<td><input type= "text" name="info" value="<?php echo $row['info']?>"></td></tr>
+                          	<input type="hidden" name="hidden2" value ="2">
+                          	<input type="hidden" name="username" value = "<?php echo $_SESSION['login']?>">
+                      </table>
+                      </center>
+                    </div>
+                    <div class="modal-footer">
+                      <center>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                      <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
+                      </center>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      </form>
+      <!--End of event modal2-->
+      <div class="modal fade" id="Event3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Add an event</h4>
+            </div>
+            <div class="modal-body">
+              <center>
+              <form action ="schedulepage.php" method="post">
+              <table>
+                 <tr><th>Date:</th>
+                <td><input type= "text" name="date" value="<?php echo $date3 ?>"></td></tr>
+              <tr><th>Time:</th>
+                          <td><select name ="time" class="form-control">
+                            <option disabled selected value>- select a time -</option>
+                               <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM rink_3_db WHERE date = '$date3' AND event = 'available'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = "<?php echo $row['time']?>"><?php echo $row['time']?></option>
+                           	<?php
+                          		}
+                          	?></select></td></tr>
+                          	<tr><th>Event:</th>
+                          	<td><input type= "text" name="event" value="<?php echo $row['event']?>"></td></tr>
+                          	<tr><th>Extra Info:</th>
+                          	<td><input type= "text" name="info" value="<?php echo $row['info']?>"></td></tr>
+                          	<input type="hidden" name="hidden3" value ="3">
+                          	<input type="hidden" name="username" value = "<?php echo $_SESSION['login']?>">
+                      </table>
+                      </center>
+                    </div>
+                    <div class="modal-footer">
+                      <center>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                      <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
+                      </center>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      </form>
+      <!--End of event modal3-->
   </div>
-
-
-</div>
-
-
 
 
     <!-- Bootstrap core JavaScript

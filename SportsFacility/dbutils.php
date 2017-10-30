@@ -171,12 +171,22 @@
         $sql_i = "UPDATE work_schedule SET user_name = '$username' WHERE day = '$day' AND job = '$job'";
         run_update($sql_i);
 	}
-	function choosedate ($ice, $date)
+	function add_event1 ($date, $time, $event, $info, $username)
 	{
 		global $conn;
-		$sql_i = "SELECT date FROM rink_'$ice'_db WHERE date ='$date'";
+		$sql_i = "UPDATE rink_1_db SET event = '$event', info = '$info', user_name = '$username' WHERE date ='$date' AND time = '$time'";
 		run_update($sql_i);
 	}
-
-
+	function add_event2 ($date, $time, $event, $info, $username)
+	{
+		global $conn;
+		$sql_i = "UPDATE rink_2_db SET event = '$event', info = '$info' , user_name = '$username' WHERE date ='$date' AND time = '$time'";
+		run_update($sql_i);
+	}
+	function add_event3 ($date, $time, $event, $info, $username)
+	{
+		global $conn;
+		$sql_i = "UPDATE rink_3_db SET event = '$event', info = '$info', user_name = '$username' WHERE date ='$date' AND time = '$time'";
+		run_update($sql_i);
+	}
 ?>
