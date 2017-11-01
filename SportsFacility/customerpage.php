@@ -2,12 +2,19 @@
 <?php
  include("dbutils.php");
  session_start();
-     if (count($_POST))
+     if ($_POST['hidden']==1)
     {
 
 	    echo "Found " . count($_POST) . " elements" . "<td>";
         var_dump($_POST);
         edit_customer ($_POST['customer_fname'], $_POST['customer_lname'], $_POST['customer_phone'], $_POST['customer_email'],  $_POST['customer_address'], $_POST['customer_city'],  $_POST['customer_state'],  $_POST['customer_country'],  $_POST['customer_zip'], $_POST['user_name']);
+        header ("Location: customerpage.php");
+    }
+    if ($_POST['hidden1']==1)
+    {
+      echo "Found " . count($_POST) . " elements" . "<td>";
+        var_dump($_POST);
+        delete_event ($_POST['id'], $_POST['ice']);
         header ("Location: customerpage.php");
     }
 ?>
@@ -171,13 +178,13 @@
               	?>
       </table>
      <center>
+       <input type ="hidden" name = "hidden" value="1">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         <input type="submit" id="submitSection" class="btn btn-primary" value="Submit">
 </form>
 </div>
 </div>
    </center>
-
 <form id="#formSection" method="post" class="customereedit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
         <!-- This is a table style that adds a black border to the table and colors each element in the table -->
       <table class = "table table-bordered">
@@ -192,26 +199,62 @@
   while ($row = mysqli_fetch_array($result)){
 ?>
         <tr class="tablestyle">
-           <tr class="tablestyle">
+           <tr>
           <td>First Name</td> <td><?php echo $row['customer_fname']?></td>
         </tr>
         <tr>
           <td>Last Name</td> <td><?php echo $row['customer_lname']?></td>
         </tr>
         <tr>
-          <td class="tablestyle">Phone Number</td> <td><?php echo $row['customer_phone']?></td>
+          <td>Phone Number</td> <td><?php echo $row['customer_phone']?></td>
         </tr>
         <tr>
           <td>Email</td> <td><?php echo $row['customer_email']?></td>
         </tr>
         <tr>
-          <td class="tablestyle">Address</td> <td><?php echo $row['customer_address']. " " . $row['customer_city'] . ", " . $row['customer_state'] . ", " . $row['customer_country'] . ", " . $row['customer_zip']  ?></td>
+          <td>Address</td> <td><?php echo $row['customer_address']. " " . $row['customer_city'] . ", " . $row['customer_state'] . ", " . $row['customer_country'] . ", " . $row['customer_zip']  ?></td>
         </tr>
         <?php } ?>
          </table>
        <a class= "button" data-toggle="modal" data-target="#EditCust" href="#">EDIT INFORMATION</a>
      <center>
 </form>
+<form id="#formSection" method="post" class="customeredit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
+        <!-- This is a table style that adds a black border to the table and colors each element in the table -->
+      <table class = "table table-bordered">
+         <tr>
+           <th colspan="6">Your Events!</th>
+         </tr>
+         <tr>
+         <th>Date:</th><th>Time</th><th>Ice</th><th>Event</th><th>Info</th><th></th>
+         </tr>
+          <?php
+          $db = mysqli_connect("localhost","gpeck2217","","c9");
+          $username = $_SESSION['login'];
+          $sql = "(Select * FROM rink_1_db WHERE user_name = '$username')
+                  UNION
+                  (Select * FROM rink_2_db WHERE user_name = '$username')
+                  UNION
+                  (Select * FROM rink_3_db WHERE user_name = '$username')";
+          $result = mysqli_query($db, $sql);
+          while ($row = mysqli_fetch_array($result)){
+          ?>
+         <tr>
+          <td><?php echo $row['date'] ?></td>
+          <td><?php echo $row['time'] ?></td>
+          <td><?php echo $row['ice'] ?></td>
+          <td><?php echo $row['event']?></td>
+        <td><?php echo $row['info']?></td>
+        <input type ="hidden" name = "id" value="<?php echo $row['id'] ?>">
+        <input type ="hidden" name = "ice" value="<?php echo $row['ice'] ?>">
+        <input type ="hidden" name = "hidden1" value="1">
+        <td><input type="submit" id="submitSection" class="btn btn-primary" value="Delete"></td>
+        </tr>
+        <?php } ?>
+            </table>
+</form>
+</div>
+</div>
   </div>
 
 

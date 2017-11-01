@@ -2,13 +2,21 @@
 <?php
  include("dbutils.php");
  session_start();
-      if (count($_POST))
+      if ($_POST['hidden']==1)
     {
 
 	    echo "Found " . count($_POST) . " elements" . "<td>";
         var_dump($_POST);
         edit_employee ($_POST['employee_fname'], $_POST['employee_lname'], $_POST['employee_type'], $_POST['employee_phone'], $_POST['user_name']);
         edit_employee_email($_POST['user_email'], $_POST['user_name']);
+        header ("Location: employeepage.php");
+    }
+    if ($_POST['hidden2']==2)
+    {
+
+	    echo "Found " . count($_POST) . " elements" . "<td>";
+        var_dump($_POST);
+        request_day ($_POST['day'], $_POST['user_name']);
         header ("Location: employeepage.php");
     }
 ?>
@@ -121,6 +129,21 @@
           </tr>
           <?php } ?>
     </table>
+    <table>
+      <th></th><th>You're currently unavailable</th><th></th>
+      <?php
+    $db = mysqli_connect("localhost","gpeck2217","","c9");
+    $username = $_SESSION['login'];
+    $sql = "SELECT * FROM work_schedule WHERE blocked = '$username' AND job = 'proshop'";
+    $result = mysqli_query($db, $sql);
+    while ($row = mysqli_fetch_array($result)){
+      ?>
+          <tr>
+            <td></td><td><?php echo $row['day']?></td><td></td>
+          </tr>
+          <?php } ?>
+    </table>
+    <a class= "button" data-toggle="modal" data-target="#Request" href="#">Edit Availablity</a>
     </center>
     </div>
     <a class= "button btn-block btn-danger" href="servque.php">Service Queue Adminstration</a>
@@ -208,7 +231,7 @@
                     <tr>
                       <td>Email</td> <td><input type="text" name="user_email" value="<?php echo $row['user_email']?>"</td>
                     </tr>
-                    <input type = "hidden" name= "hidden" value= "2">
+                    <input type = "hidden" name= "hidden" value= "1">
                       </table>
                       </center>
                     </div>
@@ -224,6 +247,47 @@
               </div>
       </form>
   <!--end of Edit modal -->
+   <!--Schedule model -->
+    <div class="modal fade" id="Request" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Edit Availablity</h4>
+            </div>
+            <div class="modal-body">
+              <center>
+              <form action ="employeepage.php" method="post">
+              <table>
+              <tr><th>WHich day would you like to take off?</th>
+                          <th><select name = "day" class="form-control">
+                            <option disabled selected value>- select a day -</option>
+                            <option value = "monday">Monday</option>
+                            <option value = "tuesday">Tuesday</option>
+                            <option value = "wednesday">Wednesday</option>
+                            <option value = "thursday">Thursday</option>
+                            <option value = "friday">Friday</option>
+                            <option value = "saturday">Saturday</option>
+                            <option value = "sunday">Sunday</option>
+                           	</select>
+                    <input type = "hidden" name= "hidden2" value= "2">
+                    <input type = "hidden" name= "user_name" value= "<?php echo $_SESSION['login']?>">
+                      </table>
+                      </center>
+                    </div>
+                    <div class="modal-footer">
+                      <center>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                      <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
+                      </center>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      </form>
+  <!--end of schedule modal -->
 
 
 

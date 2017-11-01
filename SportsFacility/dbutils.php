@@ -168,7 +168,7 @@
 	function add_calendar ($day, $job, $username)
 	{
 		global $conn;
-        $sql_i = "UPDATE work_schedule SET user_name = '$username' WHERE day = '$day' AND job = '$job'";
+        $sql_i = "UPDATE work_schedule SET user_name = IF(blocked != '$username', '$username', user_name) WHERE day = '$day' AND job = '$job'";
         run_update($sql_i);
 	}
 	function add_event1 ($date, $time, $event, $info, $username)
@@ -188,5 +188,30 @@
 		global $conn;
 		$sql_i = "UPDATE rink_3_db SET event = '$event', info = '$info', user_name = '$username' WHERE date ='$date' AND time = '$time'";
 		run_update($sql_i);
+	}
+	function delete_event ($id, $ice)
+	{
+		if($ice=="1")
+		{
+		global $conn;
+		$sql_i = "UPDATE rink_1_db SET event = 'Available', info = 'N/A', user_name = 'NULL' WHERE id ='$id'";
+		run_update($sql_i);
+		}else if($ice=="2")
+		{
+		global $conn;
+		$sql_i = "UPDATE rink_2_db SET event = 'Available', info = 'N/A', user_name = 'NULL' WHERE id ='$id'";
+		run_update($sql_i);
+		}else if($ice=="3")
+		{
+		global $conn;
+		$sql_i = "UPDATE rink_3_db SET event = 'Available', info = 'N/A', user_name = 'NULL' WHERE id ='$id'";
+		run_update($sql_i);
+		}
+	}
+	function request_day ($day, $username)
+	{
+		global $conn;
+        $sql_i = "UPDATE work_schedule SET blocked = '$username' WHERE day = '$day'";
+        run_update($sql_i);
 	}
 ?>

@@ -14,7 +14,7 @@
 	    echo "Found " . count($_POST) . " elements" . "<td>";
         var_dump($_POST);
         add_user ($_POST['User_name'], $_POST['User_password'], $_POST['User_email'], $_POST['user_type']);
-        add_employee ($_POST['User_name'], $_POST['employee_fname'], $_POST['employee_lname'], $_POST['employee_type'], $_POST['employee_phone']);
+        add_employee ($_POST['User_name'], $_POST['employee_fname'], $_POST['employee_lname'], $_POST['employee_address'], $_POST['employee_city'],$_POST['employee_state'], $_POST['employee_country'], $_POST['employee_zip'], $_POST['employee_SSN'], $_POST['employee_DOB'], $_POST['employee_sex']);
         header ("Location: managerpage.php");
     }
     if ($_POST['hidden3']==3)
@@ -151,9 +151,9 @@
                                           ?>
                                           <th><?php echo $row['user_name']?></th>
                                                       <?php }?>
-                                                      </tr>
-                                                      <tr>
-                                                  <th>Pro Shop</th>
+                          </tr>
+                          <tr>
+                          <th>Pro Shop</th>
                              <?php
                                           $db = mysqli_connect("localhost","gpeck2217","","c9");
                                           $username = $_SESSION['login'];
@@ -163,9 +163,9 @@
                                           ?>
                                           <th><?php echo $row['user_name']?></th>
                                                       <?php }?>
-                                                      </tr>
-                                                      <tr>
-                                                  <th>Service Center</th>
+                             </tr>
+                             <tr>
+                             <th>Service Center</th>
                              <?php
                                           $db = mysqli_connect("localhost","gpeck2217","","c9");
                                           $username = $_SESSION['login'];
@@ -218,6 +218,30 @@
                   <tr>
                     <td>Email</td> <td><input type="email" name="User_email"></td>
                   </tr>
+                  <tr>
+                   <td>Address</td><td><input type="text" name="employee_address"></td>
+                    </tr>
+                    <tr>
+                      <td>City</td><td><input type="text" name="employee_city"></td>
+                    </tr>
+                  <tr>
+                    <td>State</td> <td><input type="text" name="employee_state"></td>
+                  </tr>
+                  <tr>
+                    <td>Country</td> <td><input type="text" name="employee_country"></td>
+                  </tr>
+                   <tr>
+                    <td>ZIP</td> <td><input type="text" name="employee_zip"></td>
+                  </tr>
+                  <tr>
+                    <td>SSN#</td> <td><input type="text" name="employee_SSN"></td>
+                  </tr>
+                  <tr>
+                   <td>DOB</td><td><input type="text" name="employee_DOB"></td>
+                    </tr>
+                    <tr>
+                      <td>Sex</td><td><input type="text" name="employee_sex"></td>
+                    </tr>
                   <input type = "hidden" name= "hidden2" value= "2">
                 </table>
               </div>
@@ -266,6 +290,36 @@
             </table>
             </div>
             <a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Edit" href="#">EDIT INFORMATION</a>
+          </form>
+      </div>
+            <div class="panel panel-primary">
+        <div class="panel-heading">Employee Database</div>
+         <form id="#formSection" method="post" class="employeeedit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
+           <div class="TableWrap">
+              <table class = "table">
+                <th>First Name</th><th>Last Name</th><th>Employee Type</th><th>Phone Number</th><th>Email</th><th>Address</th><th>SSN#</th><th>DOB</th><th>Sex</th>
+               <!-- Links to our database with the information each customer enter into the following fields -->
+                   <?php
+                      $db = mysqli_connect("localhost","gpeck2217","","c9");
+                      $username = $_SESSION['login'];
+                      $sql = "SELECT * FROM employee_db JOIN login_db ON employee_db.user_name = login_db.user_name";
+                      $result = mysqli_query($db, $sql);
+                      while ($row = mysqli_fetch_array($result)){
+                    ?>
+                            <tr>
+                            <td><?php echo $row['employee_fname']?></td>
+                            <td><?php echo $row['employee_lname']?></td>
+                            <td><?php echo $row['employee_type']?></td>
+                            <td><?php echo $row['employee_phone']?></td>
+                            <td><?php echo $row['user_email']?></td>
+                            <td><?php echo $row['employee_address'] ." ". $row['employee_city'] ." ". $row['employee_country']  ." ". $row['employee_zip']?></td>
+                            <td><?php echo $row['employee_SSN']?></td>
+                            <td><?php echo $row['employee_DOB']?></td>
+                            <td><?php echo $row['employee_sex']?></td>
+                            </tr>
+                            <?php } ?>
+            </table>
+            </div>
           </form>
       </div>
     </div>
