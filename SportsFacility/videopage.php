@@ -47,8 +47,9 @@
 	text-align:center;
 }
 #content {
-
+  background-color:#766151;
 	padding-bottom:100px; /* Height of the footer element */
+	opacity:0.9;
 
 }
 #footer {
@@ -156,13 +157,14 @@
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
+    background-color:#766151; /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
 }
 
 /* Modal Content */
 .modal-content {
-    background-color: #fefefe;
+    background-color: #766151;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
@@ -184,9 +186,17 @@
     cursor: pointer;
 }
 
-
 </style>
 
+<script>
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "//hm.baidu.com/hm.js?73c27e26f610eb3c9f3feb0c75b03925";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hm, s);
+})();
+</script>
 </head>
 
 <body>
@@ -347,8 +357,6 @@
   </div>
 
   <div id="Highlights" class="w3-container w3-display-container videos">
-    <span onclick="this.parentElement.style.display='none'"
-    class="w3-button w3-large w3-display-topright">&times;</span>
     <div style="margin-top:50px; width:100%;">
 	<input  type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 	</div>
@@ -419,9 +427,6 @@
 
 
     <div id="Training" class="w3-container w3-display-container videos" style="display:none">
-      <span onclick="this.parentElement.style.display='none'"
-      class="w3-button w3-large w3-display-topright">&times;</span>
-
     <div style="margin-top:50px; width:100%;">
 	<input  type="text" id="HighlightsInput" onkeyup="Highlights()" placeholder="Search for names..">
 	</div>
@@ -492,9 +497,6 @@
 
 
    <div id="Learning" class="w3-container w3-display-container videos" style="display:none">
-      <span onclick="this.parentElement.style.display='none'"
-      class="w3-button w3-large w3-display-topright">&times;</span>
-
     <div class=" content ">
 
        <div class="col-sm-12">
@@ -538,9 +540,6 @@
 
 
    <div id="Form" class="w3-container w3-display-container videos" style="display:none">
-      <span onclick="this.parentElement.style.display='none'"
-      class="w3-button w3-large w3-display-topright">&times;</span>
-
     <div class="col-sm-12">
       <form>
         <ul class="form-style-1">
@@ -573,23 +572,79 @@
 <br>
 
 
+
+
  <div id="wrapper">
 		<div id="header">
 		  <h2>Contact Infromation</h2>
 		  <hr>
 		</div>
 		<div id="content">
+
+    <div class="container">
+      <center>
+      <button id="myBtns" class="btn button7" style=" margin-right:5px;">Email</button>
+		  <button type="button" class="btn button7" style="text-align:center;" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+
+  <div id="demo" class="collapse">
+    <p>This is some text</p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </div>
+  </center>
 		</div>
+
 		<div id="footer">
+
+
 		  <center>
-		  <button type="button" class="btn button1" data-toggle="collapse" data-target="#demo">More Info</button>
-		  </center>
-		  <div id="demo" class="collapse">
-		   <p class="sansserif" style="text-align:center;">We are located at 318 Meadow Brook Rd, Rochester MI 48309</p>
-          <p class="sansserif" style="text-align:center;">Phone number: (248) 370-2100</p>
-		  </div>
-		</div>
-	</div>
+
+
+<!-- Trigger/Open The Modal -->
+
+
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form>
+        <ul class="form-style-1">
+          <li><label>Full Name <span class="required">*</span></label><input type="text" name="field1" class="field-divided" placeholder="First" />&nbsp;<input type="text" name="field2" class="field-divided" placeholder="Last" /></li>
+          <li>
+            <label>Email <span class="required">*</span></label>
+            <input type="email" name="field3" placeholder="example@gmail.com" class="field-long" />
+          </li>
+          <li>
+            <label>Subject</label>
+            <select name="field4" class="field-select">
+            <option value="Feild1">Feild1</option>
+            <option value="Feild2">Feild2</option>
+            <option value="Questions">Questions</option>
+            </select>
+          </li>
+          <li>
+            <label>Your Message <span class="required">*</span></label>
+            <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+          </li>
+          <li>
+            <input type="submit" value="Submit" />
+          </li>
+        </ul>
+      </form>
+      </center>
+  </div>
+
+</div>
+
+
+    </div>
+  </div>
 
 
 
@@ -741,7 +796,7 @@ function carousel() {
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
         document.getElementById("myBtn").style.display = "block";
     } else {
         document.getElementById("myBtn").style.display = "none";
@@ -806,6 +861,33 @@ function Highlights() {
     }
   }
 }
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtns");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
 </script>
 
 
