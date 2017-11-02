@@ -84,14 +84,14 @@ switch($_GET["action"]) {
         <li><a href="aboutpage.php">About<span class="glyphicon glyphicon-apple pull-left"></span></a><li>
       </ul>
 
-<!--Start of form where users can search -->
+<!--Start of form where users can search
       <form class="navbar-form navbar-left">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
           <button type="submit" class="button1 btn btn-default">Submit</button>
       </form>
-<!-- End of users search form -->
+End of users search form -->
 
 
     <!-- This is a dropdown menu that contains the settings for our site. Add additional information here later -->
@@ -153,6 +153,7 @@ switch($_GET["action"]) {
     </div>
   </div>
 </nav>
+
   <!--Login Modal -->
 
   <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -191,8 +192,11 @@ switch($_GET["action"]) {
   </div>
           </form>
 
-  <!-- End Login Modal -->
 
+  <!-- End Login Modal -->
+<div class="jumbotron">
+  <h1><big>Hockey<strong>Plex</strong></big></h1>
+</div>
 
 <div id="shopping-cart">
 <div class="cart-top">Shopping Cart <a id="btnEmpty" href="proshop.php?action=empty">Empty Cart</a></div>
@@ -254,7 +258,6 @@ if(isset($_SESSION["cart_item"])){
 	?>
 </div>
 
-
     <script>
     paypal.Button.render({
 
@@ -295,7 +298,6 @@ if(isset($_SESSION["cart_item"])){
 
     }, '#paypal-button');
 </script>
-
 </BODY>
 
 <!-- Bootstrap core JavaScript
