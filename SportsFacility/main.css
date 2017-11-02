@@ -922,7 +922,7 @@ Proshop Styling
 }
 
 .txt-heading {
-    padding: 15px 15px;
+    padding: 10px 5px 10px 5px;
     border-radius: 2px;
     color: #FFF;
     font-size: 14pt;
@@ -931,12 +931,12 @@ Proshop Styling
 }
 
 .cart-top {
-    padding: 15px 15px;
+    padding: 5px 5px 5px 5px;
     border-radius: 2px;
     color: #FFF;
     font-size: 14pt;
     background: #514947;
-    margin-top: 50px;
+    margin-top: 0px;
 }
 
 a.btnRemoveAction {
@@ -971,6 +971,8 @@ a.btnRemoveAction:visited {
     color: #48372F;
     margin-left: 2px;
     border-radius: 2px;
+    bottom: 0px;
+    position: relative;
 }
 
 #shopping-cart {
