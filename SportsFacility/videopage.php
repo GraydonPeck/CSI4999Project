@@ -2,15 +2,6 @@
 <?php
  include("dbutils.php");
  session_start();
-      if (count($_POST))
-    {
-
-	    echo "Found " . count($_POST) . " elements" . "<td>";
-        var_dump($_POST);
-        add_user ($_POST['User_name'], $_POST['User_password'], $_POST['User_email'], $_POST['user_type']);
-        edit_employee ($_POST['User_name'], $_POST['employee_fname'], $_POST['employee_lname'], $_POST['employee_type'], $_POST['employee_phone']);
-        header ("Location: employeepage.php");
-    }
 ?>
 <html lang="en">
 <head>
@@ -358,185 +349,184 @@ s.parentNode.insertBefore(hm, s);
 
   <div id="Highlights" class="w3-container w3-display-container videos">
     <div style="margin-top:50px; width:100%;">
-	<input  type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+	<input  type="text" id="HighlightsInput" name="videoname" onkeyup="Highlights()" placeholder="Search for names..">
 	</div>
 
-    <table id="myTable">
+ <table id="HighlightTable">
+ <thead>
   <tr class="header">
-    <th class="header" style="text-align:center;"><h1>Highlight Videos</h1></th>
+    <th style="width:40%;">Name</th>
+    <th style="width:60%;">Country</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+    <td>
+      <h3 class="containertext">Highlight Videos</h3>
 
+      <div class="fluidMedia">
 
+        <iframe  height="300px" width="45%"src="https://www.youtube.com/embed/Zf1Xc5da2cs"  frameborder="1" allowfullscreen></iframe>
+      </div>
+
+    </td>
+    <td>123</td>
   </tr>
   <tr>
-
     <td>
-		<div class="col-sm-4">
-		<center>
-		<h3 class="containertext" style="text-align:center;">Alfreds Futterkiste</h3>
-        <iframe  height="300px" width="45%" src="https://www.youtube.com/embed/Zf1Xc5da2cs"  frameborder="1" allowfullscreen></iframe>
-		</center>
-		</div>
+      <h3 class="containertext">Highlight Videos</h3>
+      <div class="fluidMedia">
 
-		<div class="col-sm-4">
-		<center>
-		<h3 class="containertext" style="text-align:center;">videos</h3>
-		<iframe  height="300px" width="45%" src="https://www.youtube.com/embed/4--iEOftLZ4" frameborder="1" allowfullscreen></iframe>
-		</center>
-		</div>
+       <iframe  height="300px" width="45%" src="https://www.youtube.com/embed/4--iEOftLZ4" frameborder="1" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td>Balance</td>
+  </tr>
+  <tr>
+    <td>
+      <h3 class="containertext">Highlight Videos</h3>
+      <div class=" fluidMedia">
 
-		<div class="col-sm-4">
-		<center>
-		<h3 class="containertext" style="text-align:center;">videos</h3>
         <iframe  height="300px" width="45%" src="https://www.youtube.com/embed/K8rt8gYAQls" frameborder="1" allowfullscreen></iframe>
-		</center>
-		</div>
-	</td>
-
-	</tr>
-
-	<tr>
-
+      </div>
+    </td>
+    <td>Quick Edge</td>
+  </tr>
+  <tr>
     <td>
-		<div class="col-sm-4">
-		<center>
-		<h3 class="containertext" style="text-align:center;">Highlight</h3>
-		<iframe  height="300" width="45%" src="https://www.youtube.com/embed/0otLHeiYeDA" frameborder="1" allowfullscreen></iframe>
-		</center>
-		</div>
+      <h3 class="containertext">Highlight Videos</h3>
+      <div class="fluidMedia">
 
-		<div class="col-sm-4">
-		<center>
-		<h3 class="containertext" style="text-align:center;">Highlight Videos</h3>
-        <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/plna4yeuPLQ" frameborder="1" allowfullscreen></iframe>
-		</center>
-		</div>
+       <iframe  height="300" width="45%" src="https://www.youtube.com/embed/0otLHeiYeDA" frameborder="1" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td>Quickness</td>
+  </tr>
+  <tr>
+    <td>
+      <h3 class="containertext">Highlight Videos</h3>
+      <div class="fluidMedia">
 
-		<div class="col-sm-4">
-		<center>
-		<h3 class="containertext" style="text-align:center;">Highlight Videos</h3>
-        <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/mosMkX_4Sok" frameborder="1" allowfullscreen></iframe>
-		</center>
-		</div>
-	</td>
-
-	</tr>
-
-
+       <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/plna4yeuPLQ" frameborder="1" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td>Quick</td>
+  </tr>
+ </tbody>
 </table>
+
 </div>
 
 
     <div id="Training" class="w3-container w3-display-container videos" style="display:none">
     <div style="margin-top:50px; width:100%;">
-	<input  type="text" id="HighlightsInput" onkeyup="Highlights()" placeholder="Search for names..">
+	<input  type="text" id="SkillInput" onkeyup="Training()" placeholder="Search for names..">
 	</div>
 
-	<table id="HighlightTable">
+
+<table id="SkillsTable">
+ <thead>
   <tr class="header">
-    <th class="header" style="text-align:center;"><h1>Skills Training Videos</h1></th>
+    <th style="width:40%;">Name</th>
+    <th style="width:60%;">Country</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+    <td>
+      <h2 class="containertext">Agility</h2>
 
+      <div class="fluidMedia">
+        <iframe src="https://www.youtube.com/embed/bUV18ftJXeY?list=PLyp8LF-3yz5AuhDDIbWrg3bhRexI3lGMX" frameborder="1" allowfullscreen></iframe>
+      </div>
 
+    </td>
+    <td>Agility</td>
   </tr>
   <tr>
-
     <td>
-		<div class="col-sm-4">
-		<center>
-		<h2 class="textcenter containertext">Elite Skills</h2>
-        <iframe  src="https://www.youtube.com/embed/oFCxzEYGtBs" frameborder="1" allowfullscreen></iframe>
-		</center>
-		</div>
-
-		<div class="col-sm-4">
-		<center>
-		<h2 class="textcenter containertext">Agility</h2>
-        <iframe  src="https://www.youtube.com/embed/bUV18ftJXeY?list=PLyp8LF-3yz5AuhDDIbWrg3bhRexI3lGMX" frameborder="1" allowfullscreen></iframe>
-		</center>
-		</div>
-
-		<div class="col-sm-4">
-		<center>
-		<h2 class="textcenter containertext">Balance</h2>
+      <h2 class="containertext">Balance</h2>
+      <div class="fluidMedia">
         <iframe  src="https://www.youtube.com/embed/mrLiOX6nIhM" frameborder="1" allowfullscreen></iframe>
-		</center>
-		</div>
-	</td>
-
-	</tr>
-
-	<tr>
-
+      </div>
+    </td>
+    <td>Balance</td>
+  </tr>
+  <tr>
     <td>
-		<div class="col-sm-4">
-		<center>
-		<h2 class=" textcenter containertext">Quick Edge</h2>
+      <h2 class="containertext">Quick Edge</h2>
+      <div class=" fluidMedia">
         <iframe  src="https://www.youtube.com/embed/MPrerhyHllA" frameborder="1" allowfullscreen></iframe>
-		</center>
-		</div>
-
-		<div class="col-sm-4">
-		<center>
-		<h2 class="textcenter containertext">Double Quickness</h2>
-		<iframe  src="https://www.youtube.com/embed/2XsQxGJ3Zw4" frameborder="1" allowfullscreen></iframe>
-		</center>
-		</div>
-
-		<div class="col-sm-4">
-		<center>
-		<h2 class=" textcenter containertext">Quick Feet</h2>
+      </div>
+    </td>
+    <td>Quick Edge</td>
+  </tr>
+  <tr>
+    <td>
+      <h2 class="containertext">Double Quickness</h2>
+      <div class="fluidMedia">
+       <iframe  src="https://www.youtube.com/embed/2XsQxGJ3Zw4" frameborder="1" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td>Quickness</td>
+  </tr>
+  <tr>
+    <td>
+      <h2 class="containertext">Quick Feet</h2>
+      <div class="fluidMedia">
         <iframe  src="https://www.youtube.com/embed/sWGRnPnj858" frameborder="1" allowfullscreen></iframe>
-		</center>
-		</div>
-	</td>
-
-	</tr>
-
-
+      </div>
+    </td>
+    <td>Quick</td>
+  </tr>
+ </tbody>
 </table>
 </div>
 
+<div id="Learning" class="w3-container w3-display-container videos" style="display:none">
+  <div style="margin-top:50px; width:100%;">
+	  <input  type="text" id="LearningInput" onkeyup="Learning()" placeholder="Search for names..">
+	</div>
 
-   <div id="Learning" class="w3-container w3-display-container videos" style="display:none">
-    <div class=" content ">
-
-       <div class="col-sm-12">
+   <table id="LearningsTable">
+ <thead>
+  <tr class="header">
+    <th style="width:40%;">Name</th>
+    <th style="width:60%;">Country</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+    <td>
       <h2 class="containertext">Skate Sharpening #1</h2>
-
+      <div class=" fluidMedia">
        <iframe  src="https://www.youtube.com/embed/ZaNEHE4UKxM" frameborder="1" allowfullscreen></iframe>
-
-    </div>
-
-    <div class="col-sm-12">
-      <h2 class="containertext">Skate Sharpening #2</h2>
-
-       <iframe  src="https://www.youtube.com/embed/G5BjMvvwYbs" frameborder="1" allowfullscreen></iframe>
-
-    </div>
-
-    <div class="col-sm-12">
-      <h2 class="containertext">Skate Sharpening #3</h2>
-
-        <iframe  src="https://www.youtube.com/embed/w3qutTbxw4E" frameborder="1" allowfullscreen></iframe>
-
-    </div>
-    </div>
-
-      <div class="col-sm-12">
-        <div id="pagination">
-          <ul class="pagination pagination-content">
-            <li><a href="#">Prev</a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">Next</a></li>
-          </ul>
-        </div>
       </div>
-  </div>
 
+    </td>
+    <td>Agility</td>
+  </tr>
+  <tr>
+    <td>
+      <h2 class="containertext">Skate Sharpening #2</h2>
+      <div class="fluidMedia">
+       <iframe  src="https://www.youtube.com/embed/G5BjMvvwYbs" frameborder="1" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td>Balance</td>
+  </tr>
+  <tr>
+    <td>
+      <h2 class="containertext">Skate Sharpening #3</h2>
+      <div class="fluidMedia">
+        <iframe  src="https://www.youtube.com/embed/w3qutTbxw4E" frameborder="1" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td>Quick Edge</td>
 
-
-    </div>
+ </tbody>
+</table>
+</div>
 
 
    <div id="Form" class="w3-container w3-display-container videos" style="display:none">
@@ -570,9 +560,6 @@ s.parentNode.insertBefore(hm, s);
 </div>
 
 <br>
-
-
-
 
  <div id="wrapper">
 		<div id="header">
@@ -728,34 +715,7 @@ for (i = 0; i < acc.length; i++) {
 }
 
 
-YUI().use(
-  'aui-pagination',
-  function(Y) {
-    var pages = Y.all('.content div');
 
-    new Y.Pagination(
-      {
-        boundingBox: '#pagination',
-        circular: false,
-        contentBox: '#pagination .pagination-content',
-        on: {
-          changeRequest: function(event) {
-            var instance = this,
-                state = event.state,
-                lastState = event.lastState;
-
-            if (lastState) {
-                pages.item(lastState.page - 1).setStyle('display', 'none');
-              }
-
-            pages.item(state.page - 1).setStyle('display', 'block');
-          }
-        },
-        page: 1
-      }
-    ).render();
-  }
-);
 
 var slideIndex = 1;
 showDivs(slideIndex);
@@ -840,27 +800,74 @@ function myFunction() {
   }
 }
 
-function Highlights() {
-  // Declare variables
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("HighlightsInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("HighlightTable");
-  tr = table.getElementsByTagName("tr");
+function filterTable(event) {
+    var filter = event.target.value.toUpperCase();
+    var rows = document.querySelector("#HighlightTable tbody").rows;
 
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
 
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
+
+    for (var i = 0; i < rows.length; i++) {
+        var firstCol = rows[i].cells[0].textContent.toUpperCase();
+        var secondCol = rows[i].cells[1].textContent.toUpperCase();
+        if (firstCol.indexOf(filter) > -1) {
+            rows[i].style.display = "";
+        } else if (secondCol.indexOf(filter) > -1){
+          rows[i].style.display = "";
+
+        } else {
+            rows[i].style.display = "none";
+        }
     }
-  }
+
 }
+
+function findTable(event) {
+    var filter = event.target.value.toUpperCase();
+    var rows = document.querySelector("#LearningsTable tbody").rows;
+
+
+
+    for (var i = 0; i < rows.length; i++) {
+        var firstCol = rows[i].cells[0].textContent.toUpperCase();
+        var secondCol = rows[i].cells[1].textContent.toUpperCase();
+        if (firstCol.indexOf(filter) > -1) {
+            rows[i].style.display = "";
+        } else if (secondCol.indexOf(filter) > -1){
+          rows[i].style.display = "";
+
+        } else {
+            rows[i].style.display = "none";
+        }
+    }
+
+}
+
+function SearchTable(event) {
+    var filter = event.target.value.toUpperCase();
+    var rows = document.querySelector("#SkillsTable tbody").rows;
+
+
+    for (var i = 0; i < rows.length; i++) {
+        var firstCol = rows[i].cells[0].textContent.toUpperCase();
+        var secondCol = rows[i].cells[1].textContent.toUpperCase();
+        if (firstCol.indexOf(filter) > -1) {
+            rows[i].style.display = "";
+        } else if (secondCol.indexOf(filter) > -1){
+          rows[i].style.display = "";
+
+        } else {
+            rows[i].style.display = "none";
+        }
+    }
+
+}
+
+document.querySelector('#HighlightsInput').addEventListener('keyup', filterTable, false);
+document.querySelector('#SkillInput').addEventListener('keyup', SearchTable, false);
+document.querySelector('#LearningInput').addEventListener('keyup', findTable, false);
+
+
+
 
 // Get the modal
 var modal = document.getElementById('myModal');
