@@ -151,7 +151,7 @@
 								<center>
 									<form action"servque.php" method="post">
 										<input type="hidden" name="serv_ID">
-										<table>
+										<table class="table DefaultTable">
 											<tr>
 												<td>First Name:</td>
 												<td><input type="text" name="cust_fname"></td>
@@ -196,7 +196,7 @@ _END;
 
 			<!-- Service Booth table -->
 
-			<div class="row">
+			<div class="row TableWrap">
 				<?php
 					require_once 'conn.php';
 					$conn = new mysqli($hn, $un, $pw, $db);
@@ -230,8 +230,8 @@ _END;
 
 					echo <<<_END
 
-					<table class="table table-striped">
-						<tr>
+					<table class="table DefaultTable">
+						<tr class="TableHeading">
 							<th>Service #</th>
 							<th>First Name</th>
 							<th>Last Name</th>
@@ -255,7 +255,7 @@ _END;
 							<td>$row[2]</td>
 							<td>$row[3]</td>
 							<td>$row[4]</td>
-							<td>$row[5]</td>							
+							<td>$row[5]</td>
 						</tr>
 
 _END;

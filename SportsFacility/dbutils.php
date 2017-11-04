@@ -169,7 +169,24 @@
 	{
 		global $conn;
         $sql_i = "UPDATE work_schedule SET user_name = IF(blocked != '$username', '$username', user_name) WHERE day = '$day' AND job = '$job'";
+        check_calendar($day, $job, $username);
         run_update($sql_i);
+	}
+	function check_calendar ($day, $job, $username)
+	{
+        global $conn;
+        $sql = "SELECT user_name FROM work_schedule where day = '$day' AND job = '$job' AND user_name = '$username'";
+        $result = mysqli_query($conn, $sql);
+        if($result > 0)
+        {
+    	$message = "right answer";
+        }
+        else{
+        $message = "wrong answer";
+        }
+		print '<script type="text/javascript">';
+		print "alert('$message')";
+		print '</script>';
 	}
 	function add_event1 ($date, $time, $event, $info, $username)
 	{

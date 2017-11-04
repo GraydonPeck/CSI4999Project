@@ -119,110 +119,117 @@
         </div>
         <div class="modal-body">
           <center>
-      <!-- This is where the customer form is located for entering additional information.  -->
-      <form id="#formSection" method="post" class="customeredit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
+            <!-- This is where the customer form is located for entering additional information.  -->
+            <form id="#formSection" method="post" class="customeredit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
+              <!-- This is a table style that adds a black border to the table and colors each element in the table -->
+            <table>
+               <tr>
+                 <th colspan="2">Information Input</th>
+               </tr>
+                       <!-- Links to our database with the information each customer enter into the following fields -->
+                           <?php
+                $db = mysqli_connect("localhost","gpeck2217","","c9");
+                $username = $_SESSION['login'];
+                $sql = "SELECT * FROM login_db WHERE user_name= '$username'";
+                $result = mysqli_query($db, $sql);
+                while ($row = mysqli_fetch_array($result)){
+                  $name = $row['user_name'];
+                            			?>
+                        <!-- End of selecting the username from the database -->
+              <input type='hidden' name='user_name' value="<?php echo $row['user_name']?>">
+                                     	<?php
+                            		}
+                          $db = mysqli_connect("localhost","gpeck2217","","c9");
+                $username = $_SESSION['login'];
+                $sql = "SELECT * FROM customer_db WHERE user_name = '$name'";
+                $result = mysqli_query($db, $sql);
+                while ($row = mysqli_fetch_array($result)){
+                  $number = $row['user_name'];
+                            			?>
+              <tr class="tablestyle">
+                <td>First Name</td> <td><input type="text" name="customer_fname" value="<?php echo $row['customer_fname']?>"></td>
+              </tr>
+              <tr>
+                <td>Last Name</td> <td><input type="text" name="customer_lname" value="<?php echo $row['customer_lname']?>"></td>
+              </tr>
+              <tr>
+                <td class="tablestyle">Phone Number</td> <td><input type="text" name="customer_phone" value="<?php echo $row['customer_phone']?>"></td>
+              </tr>
+              <tr>
+                <td>Email</td> <td><input type="email" name="customer_email" value="<?php echo $row['customer_email']?>"></td>
+              </tr>
+              <tr>
+                <td class="tablestyle">Address</td> <td><input type="text" name="customer_address" value="<?php echo $row['customer_address']?>"></td>
+              </tr>
+              <tr>
+                <td>City</td> <td><input type="text" name="customer_city" value="<?php echo $row['customer_city']?>"></td>
+              </tr>
+              <tr>
+                <td class="tablestyle">State</td> <td><input type="text" name="customer_state" value="<?php echo $row['customer_state']?>"></td>
+              </tr>
+              <tr>
+                <td>Country</td> <td><input type="text" name="customer_country" value="<?php echo $row['customer_country']?>"></td>
+              </tr>
+              <tr>
+                <td class="tablestyle">Zip</td> <td><input type="text" name="customer_zip" value="<?php echo $row['customer_zip']?>"></td>
+              </tr>
+                             	<?php
+                    		}
+                          	?>
+                  </table>
+                 <center>
+             <input type ="hidden" name = "hidden" value="1">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              <input type="submit" id="submitSection" class="btn btn-primary" value="Submit">
+              </form>
+              </div>
+          </div>
+         </center>
+       </div>
+  </div>
+  <!-- This is a customer info table -->
+    <form id="#formSection" method="post" class="customereedit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
+      <div class="TableWrap">
+          <table class="table DefaultTable">
+             <tr class="TableHeading">
+               <th colspan = "2">Your INFORMATION</th>
+             </tr>
+             <!-- Links to our database with the information each customer enter into the following fields -->
+                 <?php
+      $db = mysqli_connect("localhost","gpeck2217","","c9");
+      $sql = "SELECT * FROM customer_db WHERE user_name = '$name'";
+      $result = mysqli_query($db, $sql);
+      while ($row = mysqli_fetch_array($result)){
+    ?>
+            <tr class="tablestyle">
+               <tr>
+              <td>First Name</td> <td><?php echo $row['customer_fname']?></td>
+            </tr>
+            <tr>
+              <td>Last Name</td> <td><?php echo $row['customer_lname']?></td>
+            </tr>
+            <tr>
+              <td>Phone Number</td> <td><?php echo $row['customer_phone']?></td>
+            </tr>
+            <tr>
+              <td>Email</td> <td><?php echo $row['customer_email']?></td>
+            </tr>
+            <tr>
+              <td>Address</td> <td><?php echo $row['customer_address']. " " . $row['customer_city'] . ", " . $row['customer_state'] . ", " . $row['customer_country'] . ", " . $row['customer_zip']  ?></td>
+            </tr>
+            <?php } ?>
+             </table>
+           <a class= "button" data-toggle="modal" data-target="#EditCust" href="#">EDIT INFORMATION</a>
+         <center>
+        </div>
+    </form>
+
+    <!-- This is a customer reservation table -->
+    <form id="#formSection" method="post" class="customeredit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
+      <div class="TableWrap">
         <!-- This is a table style that adds a black border to the table and colors each element in the table -->
-      <table>
-         <tr>
-           <th colspan="2">Information Input</th>
-         </tr>
-         <!-- Links to our database with the information each customer enter into the following fields -->
-             <?php
-  $db = mysqli_connect("localhost","gpeck2217","","c9");
-  $username = $_SESSION['login'];
-  $sql = "SELECT * FROM login_db WHERE user_name= '$username'";
-  $result = mysqli_query($db, $sql);
-  while ($row = mysqli_fetch_array($result)){
-    $name = $row['user_name'];
-              			?>
-          <!-- End of selecting the username from the database -->
-<input type='hidden' name='user_name' value="<?php echo $row['user_name']?>">
-                       	<?php
-              		}
-            $db = mysqli_connect("localhost","gpeck2217","","c9");
-  $username = $_SESSION['login'];
-  $sql = "SELECT * FROM customer_db WHERE user_name = '$name'";
-  $result = mysqli_query($db, $sql);
-  while ($row = mysqli_fetch_array($result)){
-    $number = $row['user_name'];
-              			?>
-        <tr class="tablestyle">
-          <td>First Name</td> <td><input type="text" name="customer_fname" value="<?php echo $row['customer_fname']?>"></td>
-        </tr>
-        <tr>
-          <td>Last Name</td> <td><input type="text" name="customer_lname" value="<?php echo $row['customer_lname']?>"></td>
-        </tr>
-        <tr>
-          <td class="tablestyle">Phone Number</td> <td><input type="text" name="customer_phone" value="<?php echo $row['customer_phone']?>"></td>
-        </tr>
-        <tr>
-          <td>Email</td> <td><input type="email" name="customer_email" value="<?php echo $row['customer_email']?>"></td>
-        </tr>
-        <tr>
-          <td class="tablestyle">Address</td> <td><input type="text" name="customer_address" value="<?php echo $row['customer_address']?>"></td>
-        </tr>
-        <tr>
-          <td>City</td> <td><input type="text" name="customer_city" value="<?php echo $row['customer_city']?>"></td>
-        </tr>
-        <tr>
-          <td class="tablestyle">State</td> <td><input type="text" name="customer_state" value="<?php echo $row['customer_state']?>"></td>
-        </tr>
-        <tr>
-          <td>Country</td> <td><input type="text" name="customer_country" value="<?php echo $row['customer_country']?>"></td>
-        </tr>
-        <tr>
-          <td class="tablestyle">Zip</td> <td><input type="text" name="customer_zip" value="<?php echo $row['customer_zip']?>"></td>
-        </tr>
-                       	<?php
-              		}
-              	?>
-      </table>
-     <center>
-       <input type ="hidden" name = "hidden" value="1">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <input type="submit" id="submitSection" class="btn btn-primary" value="Submit">
-</form>
-</div>
-</div>
-   </center>
-<form id="#formSection" method="post" class="customereedit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
-        <!-- This is a table style that adds a black border to the table and colors each element in the table -->
-      <table class = "table table-bordered">
-         <tr>
-           <th colspan = "2">Your INFORMATION</th>
-         </tr>
-         <!-- Links to our database with the information each customer enter into the following fields -->
-             <?php
-  $db = mysqli_connect("localhost","gpeck2217","","c9");
-  $sql = "SELECT * FROM customer_db WHERE user_name = '$name'";
-  $result = mysqli_query($db, $sql);
-  while ($row = mysqli_fetch_array($result)){
-?>
-        <tr class="tablestyle">
-           <tr>
-          <td>First Name</td> <td><?php echo $row['customer_fname']?></td>
-        </tr>
-        <tr>
-          <td>Last Name</td> <td><?php echo $row['customer_lname']?></td>
-        </tr>
-        <tr>
-          <td>Phone Number</td> <td><?php echo $row['customer_phone']?></td>
-        </tr>
-        <tr>
-          <td>Email</td> <td><?php echo $row['customer_email']?></td>
-        </tr>
-        <tr>
-          <td>Address</td> <td><?php echo $row['customer_address']. " " . $row['customer_city'] . ", " . $row['customer_state'] . ", " . $row['customer_country'] . ", " . $row['customer_zip']  ?></td>
-        </tr>
-        <?php } ?>
-         </table>
-       <a class= "button" data-toggle="modal" data-target="#EditCust" href="#">EDIT INFORMATION</a>
-     <center>
-</form>
-<form id="#formSection" method="post" class="customeredit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
-        <!-- This is a table style that adds a black border to the table and colors each element in the table -->
-      <table class = "table table-bordered">
-         <tr>
+      <table class = "table DefaultTable">
+         <tr class="TableHeading">
            <th colspan="6">Your Events!</th>
          </tr>
          <tr>
@@ -252,10 +259,9 @@
         </tr>
         <?php } ?>
             </table>
-</form>
-</div>
-</div>
-  </div>
+        </div>
+    </form>
+
 
 
 <script>

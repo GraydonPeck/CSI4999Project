@@ -8,6 +8,7 @@
         var_dump($_POST);
         add_calendar ($_POST['day'], $_POST['job'], $_POST['username']);
         header ("Location: managerpage.php");
+
     }
     if ($_POST['hidden2']==2)
     {
