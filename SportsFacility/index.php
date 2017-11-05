@@ -146,13 +146,15 @@
 						$conn = new mysqli($hn, $un, $pw, $db);
 						if ($conn->connect_error) die ($conn->connect_error);
 
+
 						$query = "SELECT * FROM rink_1_db ORDER BY 'date','time'";
+
 						$result = $conn->query($query);
 						if (!$result) die ("Database access failed: " . $conn->error);
 
 						$rows = $result->num_rows;
 
-						for ($c = 0; $c <= 9; ++$c)
+						for ($c = 0; $c <= 4; ++$c)
 						{
 							$result->data_seek($c);
 							$row = $result->fetch_array(MYSQLI_NUM);
@@ -161,11 +163,28 @@
 								<div class="col-md-2 col-xs-2 subcard">
                             		<div class="panel panel-primary">
                               			<div class="panel-heading"> $row[0], $row[1] </div>
-
-                              			<div class="panel-body"> <b>$row[3]</b> <br> $row[4]</div>
-
                               			<div class="panel-body"> <b>Event: </b>$row[3] <br> <b>Info:</b> $row[4]</div>
+                            		</div>
+                      			</div>
 
+_END;
+						}
+					?>
+
+				  </div>
+				  <div class="item">
+
+				  	<?php
+						for ($c2 = 5; $c2 <= 9; ++$c2)
+						{
+							$result->data_seek($c2);
+							$row = $result->fetch_array(MYSQLI_NUM);
+
+							echo <<<_END
+								<div class="col-md-2 col-xs-2 subcard">
+                            		<div class="panel panel-primary">
+                              			<div class="panel-heading"> $row[0], $row[1] </div>
+                              			<div class="panel-body"> <b>Event: </b>$row[3] <br> <b>Info:</b> $row[4]</div>
                             		</div>
                       			</div>
 
@@ -174,7 +193,7 @@ _END;
 
 					?>
 
-
+				  </div>
 <!--
 	These do not run on php
 
