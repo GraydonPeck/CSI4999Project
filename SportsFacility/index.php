@@ -155,7 +155,7 @@
 
 						$rows = $result->num_rows;
 
-						for ($c = 0; $c <= 4; ++$c)
+						for ($c = 0; $c <= 5; ++$c)
 						{
 							$result->data_seek($c);
 							$row = $result->fetch_array(MYSQLI_NUM);
@@ -176,7 +176,7 @@ _END;
 				  <div class="item">
 
 				  	<?php
-						for ($c2 = 5; $c2 <= 9; ++$c2)
+						for ($c2 = 6; $c2 <= 10; ++$c2)
 						{
 							$result->data_seek($c2);
 							$row = $result->fetch_array(MYSQLI_NUM);
