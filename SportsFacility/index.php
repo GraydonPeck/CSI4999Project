@@ -139,6 +139,41 @@
           <div class="carousel fdi-Carousel slide" id="eventCarousel" data-interval="0">
               <div class="carousel-inner onebyone-carosel">
                   <div class="item active">
+<<<<<<< HEAD
+=======
+
+                  	<?php
+                  		require_once 'conn.php';
+						$conn = new mysqli($hn, $un, $pw, $db);
+						if ($conn->connect_error) die ($conn->connect_error);
+
+						$query = "SELECT * FROM rink_1_db ORDER BY FIELD('time')";
+						$result = $conn->query($query);
+						if (!$result) die ("Database access failed: " . $conn->error);
+
+						$rows = $result->num_rows;
+
+						for ($c = 0; $c <= 10; ++$c)
+						{
+							$result->data_seek($c);
+							$row = $result->fetch_array(MYSQLI_NUM);
+
+							echo <<<_END
+								<div class="col-md-2 col-xs-2 subcard">
+                            		<div class="panel panel-primary">
+                              			<div class="panel-heading"> $row[0], $row[1] </div>
+                              			<div class="panel-body"> <h3>$row[3]</h3> <br> $row[4]</div>
+                            		</div>
+                      			</div>
+
+_END;
+						}
+
+					?>
+
+
+<!--
+>>>>>>> ColinN
                       <div class="col-md-2 col-xs-2 subcard">
                             <div class="panel panel-primary">
                               <div class="panel-heading">Ice 3 9:30 </div>
@@ -215,6 +250,12 @@
                       </div>
                   </div>
 
+<<<<<<< HEAD
+=======
+-->
+
+
+>>>>>>> ColinN
               </div>
               <a class="left carousel-control" href="#eventCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
               <a class="right carousel-control" href="#eventCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
