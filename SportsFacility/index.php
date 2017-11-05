@@ -145,7 +145,7 @@
 						$conn = new mysqli($hn, $un, $pw, $db);
 						if ($conn->connect_error) die ($conn->connect_error);
 
-						$query = "SELECT * FROM rink_1_db ORDER BY FIELD('time')";
+						$query = "SELECT * FROM rink_1_db ORDER BY 'time'";
 						$result = $conn->query($query);
 						if (!$result) die ("Database access failed: " . $conn->error);
 
