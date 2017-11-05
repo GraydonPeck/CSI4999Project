@@ -135,6 +135,7 @@
       <h1><center><big>Hockey<strong>Plex</strong></big></center></h1>
     </div>
     <!-- Schedule Carousel -->
+    <center>
     <div id="myCarousel" class="carousel fdi-Carousel slide">
           <div class="carousel fdi-Carousel slide" id="eventCarousel" data-interval="0">
               <div class="carousel-inner onebyone-carosel">
@@ -283,7 +284,7 @@ _END;
           </div>
           <!--/carousel-inner-->
       </div><!--/schedulecarousel-->
-
+    </center>
     </div>
     <!--/Floorplan-->
     <div class="col-md-12" style="padding-top:15px">
