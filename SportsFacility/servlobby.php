@@ -133,7 +133,7 @@
 
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
+				<div class="TableWrap">
 					<center>
 						<?php
 							header('refresh: 5');
@@ -148,8 +148,8 @@
 							$rows = $result->num_rows;
 
 							echo <<<_END
-								<table class="table table-striped">
-									<tr>
+								<table class="table DefaultTable">
+									<tr class="TableHeading">
 										<th>Service #</th>
 										<th>First Name</th>
 										<th>Last Name</th>

@@ -325,7 +325,7 @@ _END;
 							</td>
 
 							<td>
-								<form action="servque.php" method="post">
+								<form action="servque.php" method="post" style="margin:0px; padding:0px;">
 							<input type="hidden" name="delete" value="yes">
 							<input type="hidden" name="serv_ID" value="$row[0]">
 							<center><button class="btn btn-primary" type="submit" value="REMOVE"><span class="glyphicon glyphicon-remove"></span></button></center></form>
