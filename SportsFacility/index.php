@@ -152,7 +152,7 @@
 
 						$rows = $result->num_rows;
 
-						for ($c = 0; $c <= 10; ++$c)
+						for ($c = 0; $c <= 9; ++$c)
 						{
 							$result->data_seek($c);
 							$row = $result->fetch_array(MYSQLI_NUM);
@@ -161,7 +161,11 @@
 								<div class="col-md-2 col-xs-2 subcard">
                             		<div class="panel panel-primary">
                               			<div class="panel-heading"> $row[0], $row[1] </div>
+<<<<<<< HEAD
                               			<div class="panel-body"> <b>$row[3]</b> <br> $row[4]</div>
+=======
+                              			<div class="panel-body"> <b>Event: </b>$row[3] <br> <b>Info:</b> $row[4]</div>
+>>>>>>> ColinN
                             		</div>
                       			</div>
 
@@ -172,6 +176,12 @@ _END;
 
 
 <!--
+<<<<<<< HEAD
+>>>>>>> ColinN
+=======
+	These do not run on php
+
+	
 >>>>>>> ColinN
                       <div class="col-md-2 col-xs-2 subcard">
                             <div class="panel panel-primary">
