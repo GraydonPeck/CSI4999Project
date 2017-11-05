@@ -161,11 +161,11 @@
 								<div class="col-md-2 col-xs-2 subcard">
                             		<div class="panel panel-primary">
                               			<div class="panel-heading"> $row[0], $row[1] </div>
-<<<<<<< HEAD
+
                               			<div class="panel-body"> <b>$row[3]</b> <br> $row[4]</div>
-=======
+
                               			<div class="panel-body"> <b>Event: </b>$row[3] <br> <b>Info:</b> $row[4]</div>
->>>>>>> ColinN
+
                             		</div>
                       			</div>
 
@@ -176,13 +176,9 @@ _END;
 
 
 <!--
-<<<<<<< HEAD
->>>>>>> ColinN
-=======
 	These do not run on php
 
 	
->>>>>>> ColinN
                       <div class="col-md-2 col-xs-2 subcard">
                             <div class="panel panel-primary">
                               <div class="panel-heading">Ice 3 9:30 </div>
