@@ -176,7 +176,7 @@ _END;
 				  <div class="item">
 
 				  	<?php
-						for ($c2 = 6; $c2 <= 10; ++$c2)
+						for ($c2 = 6; $c2 <= 11; ++$c2)
 						{
 							$result->data_seek($c2);
 							$row = $result->fetch_array(MYSQLI_NUM);
