@@ -146,7 +146,11 @@
 						$conn = new mysqli($hn, $un, $pw, $db);
 						if ($conn->connect_error) die ($conn->connect_error);
 
+<<<<<<< HEAD
 						$query = "SELECT * FROM rink_1_db ORDER BY 'date','time'";
+=======
+						$query = "SELECT * FROM rink_1_db ORDER BY 'time'";
+>>>>>>> 788fca72d1af13c8ff6d912f3c12faa35b1f2bde
 						$result = $conn->query($query);
 						if (!$result) die ("Database access failed: " . $conn->error);
 
@@ -161,11 +165,15 @@
 								<div class="col-md-2 col-xs-2 subcard">
                             		<div class="panel panel-primary">
                               			<div class="panel-heading"> $row[0], $row[1] </div>
+<<<<<<< HEAD
 
                               			<div class="panel-body"> <b>$row[3]</b> <br> $row[4]</div>
 
                               			<div class="panel-body"> <b>Event: </b>$row[3] <br> <b>Info:</b> $row[4]</div>
 
+=======
+                              			<div class="panel-body"> <b>Event: </b>$row[3] <br> <b>Info:</b> $row[4]</div>
+>>>>>>> 788fca72d1af13c8ff6d912f3c12faa35b1f2bde
                             		</div>
                       			</div>
 
