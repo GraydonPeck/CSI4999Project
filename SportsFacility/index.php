@@ -139,15 +139,14 @@
           <div class="carousel fdi-Carousel slide" id="eventCarousel" data-interval="0">
               <div class="carousel-inner onebyone-carosel">
                   <div class="item active">
-<<<<<<< HEAD
-=======
+
 
                   	<?php
                   		require_once 'conn.php';
 						$conn = new mysqli($hn, $un, $pw, $db);
 						if ($conn->connect_error) die ($conn->connect_error);
 
-						$query = "SELECT * FROM rink_1_db ORDER BY FIELD('time')";
+						$query = "SELECT * FROM rink_1_db ORDER BY 'time'";
 						$result = $conn->query($query);
 						if (!$result) die ("Database access failed: " . $conn->error);
 
@@ -250,12 +249,9 @@ _END;
                       </div>
                   </div>
 
-<<<<<<< HEAD
-=======
 -->
 
 
->>>>>>> ColinN
               </div>
               <a class="left carousel-control" href="#eventCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
               <a class="right carousel-control" href="#eventCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
