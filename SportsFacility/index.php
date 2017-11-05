@@ -146,7 +146,7 @@
 						$conn = new mysqli($hn, $un, $pw, $db);
 						if ($conn->connect_error) die ($conn->connect_error);
 
-						$query = "SELECT * FROM rink_1_db ORDER BY 'time'";
+						$query = "SELECT * FROM rink_1_db ORDER BY 'date','time'";
 						$result = $conn->query($query);
 						if (!$result) die ("Database access failed: " . $conn->error);
 
@@ -161,7 +161,7 @@
 								<div class="col-md-2 col-xs-2 subcard">
                             		<div class="panel panel-primary">
                               			<div class="panel-heading"> $row[0], $row[1] </div>
-                              			<div class="panel-body"> <h3>$row[3]</h3> <br> $row[4]</div>
+                              			<div class="panel-body"> <b>$row[3]</b> <br> $row[4]</div>
                             		</div>
                       			</div>
 
