@@ -1167,6 +1167,7 @@ Video Page Style
 
 .w3-display-container mySlides {
     height: 300px;
+    width: 100%;
 }
 
 .containertext {
