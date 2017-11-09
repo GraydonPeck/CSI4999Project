@@ -12,6 +12,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
+
+
   <title>HockeyPlex Employee</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -26,156 +28,39 @@
   <link rel="stylesheet" type="text/css" href="main.css">
    <link rel="stylesheet" href="https://alloyui.com/pagination/css/basic.css" />
 
+
 <style>
-  #wrapper {
-	min-height:100%;
-	position:relative;
-}
-#header {
-	background:#766151;
-	padding:10px;
-	opacity:0.9;
-	text-align:center;
-}
-#content {
-  background-color:#766151;
-	padding-bottom:100px; /* Height of the footer element */
-	opacity:0.9;
+ @media(max-width:424px) {
+    .w3-bar {
+    background-color: #00303f;
+    color: white;
+    font-size: 14px;
 
 }
-#footer {
-	background:#766151;
-	width:100%;
-	height:100px;
-	position:absolute;
-	bottom:0;
-	left:0;
-  opacity:0.9;
+
+.w3-container {
+    background-color: #766151;
+    height: 675px;
+    overflow: auto;
+
+
+
 }
-.width{
+
+.w3-display-container mySlides {
+    height: 300px;
+}
+
+.containertext {
+    color: white;
+    text-align: left;
+}
+
+w3-bar-item{
   width:100%;
 }
-
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  border: none;
-  outline: none;
-  background-color: #555;
-  color: white;
-  cursor: pointer;
-  padding: 15px;
-  opacity: 0.5;
-  border-radius: 10px;
 }
 
-#myBtn:hover {
-  background-color: blue;
-}
-
-#myInput {
-    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
-	background-color: #00303f;
-	color:white;
-    background-position: 10px 12px; /* Position the search icon */
-    background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 100%; /* Full-width */
-    font-size: 16px; /* Increase font-size */
-    padding: 12px 20px 12px 40px; /* Add some padding */
-    border: 1px solid ; /* Add a grey border */
-    margin-bottom: 12px; /* Add some space below the input */
-}
-
-#myTable {
-    border-collapse: collapse; /* Collapse borders */
-    width: 100%; /* Full-width */
-    /* border: 1px solid #514947; */ /* Add a grey border */
-    font-size: 18px; /* Increase font-size */
-
-	margin-bottom:15px;
-}
-
-#myTable th, #myTable td {
-    text-align: left; /* Left-align text */
-    padding: 12px; /* Add padding */
-	background-color:#766151;
-}
-
-#myTable tr {
-    /* Add a bottom border to all table rows */
-     border-bottom: 1px solid #766151;
-
-
-}
-#myTable th{
-	border-bottom: 1px solid #ddd;
-}
-
-#myTable tr.header, #myTable tr:hover {
-    /* Add a grey background color to the table header and on hover */
-
-}
-
-.header{
-
-	font-size:20px;
-	text-align:center;
-	color:white;
-}
-
-.text {
-   position:  absolute;
-   top: 0;
-   left: 0;
-   bottom: 0;
-   right: 0;
-   text-align: center;
-   font-size: 20px;
-   color: white;
-}
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color:#766151; /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-
-}
-
-/* Modal Content */
-.modal-content {
-    background-color: #766151;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-/* The Close Button */
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
 
 </style>
 
@@ -212,7 +97,7 @@ s.parentNode.insertBefore(hm, s);
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">ProShop</span><span class="caret"></span> <span class="glyphicon glyphicon-piggy-bank pull-left"></span></a>
         <ul class="dropdown-menu">
 			       <li class="dropdown-header">Proshop</li>
-			         <li><a href="proshop.php">Proshop <span class="badge pull-left"></span></a></li>
+			         <li><a href="proshop.php" style="">Proshop <span class="badge pull-left"></span></a></li>
                <li><a href="servcust.php">Service Center<span class="badge pull-left"></span></a></li>
                 </ul>
                 </li>
@@ -225,23 +110,7 @@ s.parentNode.insertBefore(hm, s);
 
     <!-- This is a dropdown menu that contains the settings for our site. Add additional information here later -->
         <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a id="myTrigger" href="#" class="dropdown-toggle" data-toggle="dropdown">Settings</span><span class="caret"></span> <span class="glyphicon glyphicon-cog pull-left"></span></a>
-             <ul class="dropdown-menu">
-			         <li class="dropdown-header">Options</li>
-			           <li><a href="#">Messages <span class="badge pull-left"> 42 </span></a></li>
-                 <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-left"></span></a></li>
-                 <li><a href="#"> Help <span class="glyphicon glyphicon-flag pull-left"></span></a></li>
-                 <li class="divider"></li>
-                 <li class="dropdown-header">Navigation</li>
-                 <li><a href="#">Profile<span class="glyphicon glyphicon-user pull-left"></span></a></li>
 
-      <!-- End of settings dropdown -->
-
-
-
-          </ul>
-      </li>
     <!--End of setting dropdown menu -->
 
          <ul class="nav navbar-nav navbar-right">
@@ -283,7 +152,7 @@ s.parentNode.insertBefore(hm, s);
   </div>
 </nav>
 
-<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
 
 <div class="jumbotron">
   <h1><big>Hockey<strong>Plex</strong></big></h1>
@@ -291,130 +160,161 @@ s.parentNode.insertBefore(hm, s);
 
 
 
-<div class="w3-content w3-display-container" style="max-width:1750px;" >
 
 
-<div class="w3-display-container mySlides">
-  <img src="./img/513607201.jpg" style="width:100%; height:300px;">
 
-</div>
+<div class="w3-content w3-display-container" style="max-width:100%;" >
 
-<div class="w3-display-container mySlides">
-  <img src="./img/standrew_spot.jpg" style="width:100%; height:300px;">
+  <img class="mySlides" src="./img/513607201.jpg" style="background-size:cover; width:100%; height:300px ">
 
-</div>
+  <img class="mySlides" src="./img/standrew_spot.jpg" style="background-size:contain; width:100%; height:300px ">
+  <img class="mySlides" src="./img/maxresdefault.jpg" style="background-size:contain; width:100%; height:300px  ">
+  <img class="mySlides" src="./img/shea-rink.jpg" style="background-size:contain; width:100%; height:300px ">
 
-<div class="w3-display-container mySlides">
-  <img src="./img/maxresdefault.jpg" style="width:100%; height:300px;">
-
-</div>
-
-<div class="w3-display-container mySlides">
-  <img src="./img/shea-rink.jpg" style="width:100%; height:300px;">
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
 
 </div>
 
 
-<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
-<button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
 
-</div>
+<br>
 
-</div>
 <div class="container-fluid">
-  <div>
-    <div class="double col-sm-4">
-      <h3 class="textcenter">Highlights</h3>
-      <hr>
-      <p>Customers or employees will be able to watch. This section is where you will watch the best highlights.</p>
-    </div>
-     <div class="double col-sm-4">
-      <h3 class="textcenter">Skills</h3>
-      <hr>
-      <p>Customers or employees will be able to learn new skills with some skating tips.</p>
-    </div>
-    <div class="double col-sm-4">
-    <h3 class="textcenter">Employee Training</h3>
-    <hr>
-    <p>Only for when employees are signed in. Will allow employees to touch up on skills for sharpen ice skates.</p>
-    </div>
-  </div>
 
-  <div class="w3-bar">
+
+
+
+  <?php
+  $username= $_SESSION['login'];
+   $customer = check_login_type($username);
+    if ($customer)
+    {?>
+    <div class="w3-bar">
     <button class="w3-bar-item w3-button tablink w3-black" onclick="videotab(event,'Highlights')">Highlights</button>
     <button class="w3-bar-item w3-button tablink" onclick="videotab(event,'Training')"> Skills Training</button>
-    <button class="w3-bar-item w3-button tablink" onclick="videotab(event,'Learning')">Employee Training</button>
-    <button class="w3-bar-item w3-button tablink" onclick="videotab(event,'Form')">Email Form</button>
-  </div>
+    </div>
+    <?php } else { ?>
+    <div class="w3-bar">
+    <button class="w3-bar-item w3-button tablink w3-black" onclick="videotab(event,'Highlights')">Highlights</button>
+    <button class="w3-bar-item w3-button tablink" onclick="videotab(event,'Training')"> Skills Training</button>
+     <button class="w3-bar-item w3-button tablink" onclick="videotab(event,'Learning')">Employee Training</button>
+    </div>
+    <?php } ?>
+
+
 
   <div id="Highlights" class="w3-container w3-display-container videos">
     <div style="margin-top:50px; width:100%;">
-	<input  type="text" id="HighlightsInput" name="videoname" onkeyup="Highlights()" placeholder="Search for names..">
-	</div>
+	    <input  type="text" id="HighlightsInput" name="videoname" onkeyup="Highlights()" placeholder="Search for names..">
+	  </div>
 
- <table id="HighlightTable">
- <thead>
-  <tr class="header">
-    <th style="width:40%;">Name</th>
-    <th style="width:60%;">Country</th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-    <td>
-      <h3 class="containertext">Highlight Videos</h3>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <table id="HighlightTable">
+     <thead>
+      <tr class="header">
+        <th style="width:40%;">Name</th>
+        <th style="width:60%;">Description</th>
+      </tr>
+     </thead>
+  <tbody>
+    <tr>
+      <td>
+        <h3 class="containertext">Break Aways</h3>
+        <div class="fluidMedia">
+          <iframe  height="300px" width="45%"src="https://www.youtube.com/embed/Zf1Xc5da2cs"  frameborder="1" allowfullscreen></iframe>
+        </div>
+      </td>
 
-      <div class="fluidMedia">
-
-        <iframe  height="300px" width="45%"src="https://www.youtube.com/embed/Zf1Xc5da2cs"  frameborder="1" allowfullscreen></iframe>
-      </div>
-
-    </td>
-    <td>123</td>
-  </tr>
-  <tr>
-    <td>
-      <h3 class="containertext">Highlight Videos</h3>
-      <div class="fluidMedia">
-
-       <iframe  height="300px" width="45%" src="https://www.youtube.com/embed/4--iEOftLZ4" frameborder="1" allowfullscreen></iframe>
-      </div>
-    </td>
-    <td>Balance</td>
-  </tr>
-  <tr>
-    <td>
-      <h3 class="containertext">Highlight Videos</h3>
-      <div class=" fluidMedia">
-
-        <iframe  height="300px" width="45%" src="https://www.youtube.com/embed/K8rt8gYAQls" frameborder="1" allowfullscreen></iframe>
-      </div>
-    </td>
-    <td>Quick Edge</td>
-  </tr>
-  <tr>
-    <td>
-      <h3 class="containertext">Highlight Videos</h3>
-      <div class="fluidMedia">
-
-       <iframe  height="300" width="45%" src="https://www.youtube.com/embed/0otLHeiYeDA" frameborder="1" allowfullscreen></iframe>
-      </div>
-    </td>
-    <td>Quickness</td>
-  </tr>
-  <tr>
-    <td>
-      <h3 class="containertext">Highlight Videos</h3>
-      <div class="fluidMedia">
-
-       <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/plna4yeuPLQ" frameborder="1" allowfullscreen></iframe>
-      </div>
-    </td>
-    <td>Quick</td>
-  </tr>
- </tbody>
+      <td>
+        <p>Overtime: Watch the best overtime moments for week one. See amazing shoots and moves from the best players.
+        Enjoy the greatest highlight moments for week 1.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="containertext">Best Games</h3>
+        <div class="fluidMedia">
+         <iframe  height="300px" width="45%" src="https://www.youtube.com/embed/4--iEOftLZ4" frameborder="1" allowfullscreen></iframe>
+        </div>
+      </td>
+      <td>
+        <p>Best Ever: Watch the clips of the best games played on the planet.
+        You will be watching teams with amazing saves, shots and buzzer beater shots.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="containertext">Golie Goals</h3>
+        <div class=" fluidMedia">
+          <iframe  height="300px" width="45%" src="https://www.youtube.com/embed/K8rt8gYAQls" frameborder="1" allowfullscreen></iframe>
+        </div>
+      </td>
+      <td>
+        <p>Best Goals: Watch the amazing shots from top noch goalies.
+        They will skate down the ice and show their amazing talent with great capturable shots.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="containertext">Best Dangles | Snipes | Passes</h3>
+        <div class="fluidMedia">
+         <iframe  height="300" width="45%" src="https://www.youtube.com/embed/0otLHeiYeDA" frameborder="1" allowfullscreen></iframe>
+        </div>
+      </td>
+      <td>
+        <p>Dangles/Snipes/Passes: The players will showcase the best ever passes on the ice.
+        This includes the best sniped shots from afar and also the best moves to get pass both the goalie and defenders.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="containertext">History Goalie Saves</h3>
+        <div class="fluidMedia">
+         <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/plna4yeuPLQ" frameborder="1" allowfullscreen></iframe>
+        </div>
+      </td>
+      <td>
+        <p>Saved Shots: Watch the most amazing golies save incrediable shots. The coolest saved shots in history.</p>
+      </td>
+    </tr>
+     <tr>
+      <td>
+        <h3 class="containertext">Hockey Hits</h3>
+        <div class="fluidMedia">
+         <iframe height="300px" width="50%" src="https://www.youtube.com/embed/v9EtLGwrJ58" frameborder="1" gesture="media" allowfullscreen></iframe>
+        </div>
+      </td>
+      <td>
+        <p>Biggest Hits: Watch players ram into eachother creating a cool effect.
+        Biggest hockey hits results in a little bit of blood (sometimes).</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="containertext">Game Highlights</h3>
+        <div class="fluidMedia">
+         <iframe height="300px" width="50%" src="https://www.youtube.com/embed/1h2ZaktT3tI" frameborder="1" gesture="media" allowfullscreen></iframe>
+        </div>
+      </td>
+      <td>
+        <p>College Game: Watch the highlights from the game between Notre Dame vs. Boston College.
+        See the teams battling it out on the Ice.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="containertext">Pavel Datsyuk</h3>
+        <div class="fluidMedia">
+         <iframe height="300px" width="50%" src="https://www.youtube.com/embed/dXT2m6sgbIM" frameborder="1" gesture="media" allowfullscreen></iframe>
+        </div>
+      </td>
+      <td>
+        <p>Game Highlights: Watch this amazing player on the Detroit Red Wings play.</p>
+      </td>
+    </tr>
+  </tbody>
 </table>
-
 </div>
 
 
@@ -527,43 +427,13 @@ s.parentNode.insertBefore(hm, s);
  </tbody>
 </table>
 </div>
-
-
-   <div id="Form" class="w3-container w3-display-container videos" style="display:none">
-    <div class="col-sm-12">
-      <form>
-        <ul class="form-style-1">
-          <li><label>Full Name <span class="required">*</span></label><input type="text" name="field1" class="field-divided" placeholder="First" />&nbsp;<input type="text" name="field2" class="field-divided" placeholder="Last" /></li>
-          <li>
-            <label>Email <span class="required">*</span></label>
-            <input type="email" name="field3" placeholder="example@gmail.com" class="field-long" />
-          </li>
-          <li>
-            <label>Subject</label>
-            <select name="field4" class="field-select">
-            <option value="Feild1">Feild1</option>
-            <option value="Feild2">Feild2</option>
-            <option value="Questions">Questions</option>
-            </select>
-          </li>
-          <li>
-            <label>Your Message <span class="required">*</span></label>
-            <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
-          </li>
-          <li>
-            <input type="submit" value="Submit" />
-          </li>
-        </ul>
-      </form>
-    </div>
-  </div>
 </div>
 
 <br>
 
  <div id="wrapper">
 		<div id="header">
-		  <h2>Contact Infromation</h2>
+		  <h2>Contact Information</h2>
 		  <hr>
 		</div>
 		<div id="content">
@@ -571,21 +441,21 @@ s.parentNode.insertBefore(hm, s);
     <div class="container">
       <center>
       <button id="myBtns" class="btn button7" style=" margin-right:5px;">Email</button>
-		  <button type="button" class="btn button7" style="text-align:center;" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+		  <button onclick="location.href='aboutpage.php#comment1';" class="button button1" style="text-align:center;" action="#aboutpage.php" >Comment</button>
 
-  <div id="demo" class="collapse">
-    <p>This is some text</p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </div>
+
   </center>
 		</div>
 
 		<div id="footer">
-
-
 		  <center>
+      <p>We are located at 318 Meadow Brook Rd, Rochester MI 48309</p>
+      <p>Phone number: (248) 370-2100</p>
+      </center>
+    </div>
+  </div>
+</div>
+
 
 
 <!-- Trigger/Open The Modal -->
@@ -600,30 +470,55 @@ s.parentNode.insertBefore(hm, s);
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <form>
-        <ul class="form-style-1">
-          <li><label>Full Name <span class="required">*</span></label><input type="text" name="field1" class="field-divided" placeholder="First" />&nbsp;<input type="text" name="field2" class="field-divided" placeholder="Last" /></li>
-          <li>
-            <label>Email <span class="required">*</span></label>
-            <input type="email" name="field3" placeholder="example@gmail.com" class="field-long" />
-          </li>
-          <li>
-            <label>Subject</label>
-            <select name="field4" class="field-select">
-            <option value="Feild1">Feild1</option>
-            <option value="Feild2">Feild2</option>
-            <option value="Questions">Questions</option>
-            </select>
-          </li>
-          <li>
-            <label>Your Message <span class="required">*</span></label>
-            <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
-          </li>
-          <li>
-            <input type="submit" value="Submit" />
-          </li>
-        </ul>
-      </form>
+    <form name="contactform" method="post" action="send_form_email.php">
+<table width="450px">
+<tr>
+ <td valign="top">
+  <label for="first_name">First Name *</label>
+ </td>
+ <td valign="top">
+  <input  type="text" name="first_name" maxlength="50" size="30">
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  <label for="last_name">Last Name *</label>
+ </td>
+ <td valign="top">
+  <input  type="text" name="last_name" maxlength="50" size="30">
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  <label for="email">Email Address *</label>
+ </td>
+ <td valign="top">
+  <input  type="text" name="email" maxlength="80" size="30">
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  <label for="telephone">Telephone Number</label>
+ </td>
+ <td valign="top">
+  <input  type="text" name="telephone" maxlength="30" size="30">
+ </td>
+</tr>
+<tr>
+ <td valign="top">
+  <label for="comments">Comments *</label>
+ </td>
+ <td valign="top">
+  <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+ </td>
+</tr>
+<tr>
+ <td colspan="2" style="text-align:center">
+  <input type="submit" value="Submit">   <a href="http://www.freecontactform.com/email_form.php">Email Form</a>
+ </td>
+</tr>
+</table>
+</form>
       </center>
   </div>
 
@@ -894,6 +789,8 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+
 
 </script>
 
