@@ -227,8 +227,8 @@ s.parentNode.insertBefore(hm, s);
       </td>
 
       <td>
-        <p>Overtime: Watch the best overtime moments for week one. See amazing shoots and moves from the best players.
-        Enjoy the greatest highlight moments for week 1.</p>
+        <p>Overtime: The NHL Official YouTube channel is the home of the best hockey highlights, features, interviews and vintage videos.
+        Check out the goals, saves, hits, bloopers and classic moments. Watch some playlists. Relive the action of your favorite NHL teams and players.</p>
       </td>
     </tr>
     <tr>
@@ -239,8 +239,10 @@ s.parentNode.insertBefore(hm, s);
         </div>
       </td>
       <td>
-        <p>Best Ever: Watch the clips of the best games played on the planet.
-        You will be watching teams with amazing saves, shots and buzzer beater shots.</p>
+        <p>Best Ever:  Los Angeles Kings Win The 2014 Stanley Cup - Alec Martinez Double Overtime Goal Martinez wins the Stanley Cup for Kings in 2OT 2013 Chicago Blackhawks - Two Goals In 17 Seconds To Win The Stanley Cup Blackhawks strike twice in 17 seconds 6/24/13 Last 2 Minutes Of Game. Game #6 SCF.
+        Chicago 3 Boston 2. Chicago Wins The Stanley Cup. 6/24/13 dave bolland brian bickell goal stanley cup finals Tom Wilson Hit on Brayden Schenn (12/17/13) Tom Wilson Hit/Charging on Brayden Schenn.
+        Philadelphia Flyers vs Washington Capitals. NHL Hockey (12/17/13) 14 Minutes of Pissed Off Goalies Lundqvist makes a twirling blocker save New York Rangers goalie Henrik Lundqvist makes an acrobatic blocker save as he knocks out a puck headed for the net to keep the Canadiens off the board.
+        Granlund dives to score OT winner in mid-air Top 10 - Hockey Coaches Gone Wild Top 10 - NHL Goalie Saves  Top 10 NHL Non-Goalie Saves (HD) Top 10 Unlikely Hockey Moments Of All-Time</p>
       </td>
     </tr>
     <tr>
@@ -263,8 +265,18 @@ s.parentNode.insertBefore(hm, s);
         </div>
       </td>
       <td>
-        <p>Dangles/Snipes/Passes: The players will showcase the best ever passes on the ice.
-        This includes the best sniped shots from afar and also the best moves to get pass both the goalie and defenders.</p>
+        <p>Dangles/Snipes/Passes:Taylor Hall - Columbus Blue Jackets
+          Jordan Eberle - Calgary Flames
+          Kyle Wellwood - Edmonton Oilers
+          Ryan Nuget-Hopkins - Nashville Predators
+          Claude Giroux - Washington Capitals
+          Jonathan Toews - Colorado Avalanche
+          Evgeni Malkin - New Jersey Devils
+          Zach Parise - Chicago Blackhawks
+          Thomas Vanek - Washington Capitals
+          Dave Bolland - Nashville Predators
+          Evgeni Malkin - Tampa Bay Lightning
+        </p>
       </td>
     </tr>
     <tr>
@@ -275,7 +287,7 @@ s.parentNode.insertBefore(hm, s);
         </div>
       </td>
       <td>
-        <p>Saved Shots: Watch the most amazing golies save incrediable shots. The coolest saved shots in history.</p>
+        <p>Saved Shots:these are pure reflexes that the players have honed by practicing for years and years and it sure looks unbelievable.</p>
       </td>
     </tr>
      <tr>
@@ -286,8 +298,7 @@ s.parentNode.insertBefore(hm, s);
         </div>
       </td>
       <td>
-        <p>Biggest Hits: Watch players ram into eachother creating a cool effect.
-        Biggest hockey hits results in a little bit of blood (sometimes).</p>
+        <p>Biggest Hits: Watch players get destroyed by one another</p>
       </td>
     </tr>
     <tr>
@@ -310,7 +321,74 @@ s.parentNode.insertBefore(hm, s);
         </div>
       </td>
       <td>
-        <p>Game Highlights: Watch this amazing player on the Detroit Red Wings play.</p>
+        <p>Game Highlights: also known as The Magic Man[1] is a Russian professional ice hockey player and captain for SKA Saint Petersburg of the Kontinental Hockey League (KHL).
+        From 2001 to 2016, he played for the Detroit Red Wings of the National Hockey League (NHL).</p>
+      </td>
+    </tr>
+     <tr>
+      <td>
+        <h3 class="containertext">Celebrations</h3>
+        <div class="fluidMedia">
+         <iframe height="300px" width="50%" src="https://www.youtube.com/embed/vTNNntrU9dA" frameborder="1" gesture="media" allowfullscreen></iframe>
+        </div>
+      </td>
+      <td>
+        <p>Best Celebrations: Some of the best celebrations around the National Hockey League.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="containertext">Fear In Hockey</h3>
+        <div class="fluidMedia">
+         <iframe height="300px" width="50%" src="https://www.youtube.com/embed/nngFtLXextE" frameborder="0" gesture="media" allowfullscreen></iframe>
+        </div>
+      </td>
+      <td>
+        <p>Feared Players: Who are some of the most feared players in today's NHL? Today, we take a look at a few!</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="containertext">Hardest Hits</h3>
+        <div class="fluidMedia">
+         <iframe height="300px" width="50%" src="https://www.youtube.com/embed/lr4rG6fJiuU" frameborder="0" gesture="media" allowfullscreen></iframe>
+        </div>
+      </td>
+      <td>
+        <p>Biggest Hits: 10 hardest hits in the nhl</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="containertext">Golie Slashes</h3>
+        <div class="fluidMedia">
+         <iframe height="300px" width="50%" src="https://www.youtube.com/embed/gYGrQ7JdnK4" frameborder="0" gesture="media" allowfullscreen></iframe>
+        </div>
+      </td>
+      <td>
+        <p>Golies Cheap Hits: The 5 Dirtiest Goalie slashes of all time!</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="containertext">Best Suspensions</h3>
+        <div class="fluidMedia">
+         <iframe height="300px" width="50%" src="https://www.youtube.com/embed/zzyCWViee-A" frameborder="0" gesture="media" allowfullscreen></iframe>
+        </div>
+      </td>
+      <td>
+        <p>Dirtiest suspensions: We've seen some pretty reckless plays in NHL history, here are the ones which garnered the biggest suspensions.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="containertext">Creative Moves</h3>
+        <div class="fluidMedia">
+         <iframe height="300px" width="50%" src="https://www.youtube.com/embed/0GC34H2GDY8" frameborder="0" gesture="media" allowfullscreen></iframe>
+        </div>
+      </td>
+      <td>
+        <p>Shootout Moves: The Top 10 on SportsCenter of the most creative moves during shootout.</p>
       </td>
     </tr>
   </tbody>
@@ -341,7 +419,8 @@ s.parentNode.insertBefore(hm, s);
       </div>
 
     </td>
-    <td>Agility</td>
+    <td>Agility:Player skates around the circle always facing the line in the corner constantly exchanging passes.  When the player going around the circle gets to the top of the circle, he does a 360 around the tire, keeps the puck on his forehand, underhandles and shoots to score.
+    Works on: agility skating, passing, receiving, give and go's, shooting, scoring</td>
   </tr>
   <tr>
     <td>
@@ -350,7 +429,7 @@ s.parentNode.insertBefore(hm, s);
         <iframe  src="https://www.youtube.com/embed/mrLiOX6nIhM" frameborder="1" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Balance</td>
+    <td>Skating: Balance and Agility, Edge Control, Starting And Stopping</td>
   </tr>
   <tr>
     <td>
@@ -359,7 +438,7 @@ s.parentNode.insertBefore(hm, s);
         <iframe  src="https://www.youtube.com/embed/MPrerhyHllA" frameborder="1" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Quick Edge</td>
+    <td>Routines: This week's feature is Mountain High Hockey. This is a quick edge work routine that you can perform before practice.</td>
   </tr>
   <tr>
     <td>
@@ -368,7 +447,8 @@ s.parentNode.insertBefore(hm, s);
        <iframe  src="https://www.youtube.com/embed/2XsQxGJ3Zw4" frameborder="1" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Quickness</td>
+    <td>Quickness: PK Subban of the Montreal Canadiens  posts a hockey drill to his website www.pksubban.com monthly.
+    This month's drill features a skating skill drill for defensemen.</td>
   </tr>
   <tr>
     <td>
@@ -377,7 +457,83 @@ s.parentNode.insertBefore(hm, s);
         <iframe  src="https://www.youtube.com/embed/sWGRnPnj858" frameborder="1" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Quick</td>
+    <td>Quick: Improve on your skating skills from learning these different drills.</td>
+  </tr>
+  <tr>
+    <td>
+      <h2 class="containertext">Skating Drill</h2>
+      <div class="fluidMedia">
+        <iframe  src="https://www.youtube.com/embed/_dIos9cGHZo" frameborder="0" gesture="media" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td>Power Skating: Simple and effective hockey skating drill to work on transitioning from forwards to backwards and vice versa.</td>
+  </tr>
+  <tr>
+    <td>
+      <h2 class="containertext">Hockey Drills</h2>
+      <div class="fluidMedia">
+        <iframe  src="https://www.youtube.com/embed/RrgSn7L8fGE" frameborder="0" gesture="media" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td>Progression Hockey Drills: 6 technical progressions off a very simple weave skating hockey drill.
+    Use our complete season of practice plans and add creative progressions like these to even the simplest hockey drills.</td>
+  </tr>
+  <tr>
+    <td>
+      <h2 class="containertext">Hockey Drills</h2>
+      <div class="fluidMedia">
+        <iframe src="https://www.youtube.com/embed/85GCr8YXYSw" frameborder="0" gesture="media" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td>Camp Drills: July 13, 2011.  Clips from Washington Capitals development camp morning drills.</td>
+  </tr>
+  <tr>
+    <td>
+      <h2 class="containertext">Evgeni Malkin's</h2>
+      <div class="fluidMedia">
+        <iframe  src="https://www.youtube.com/embed/orU7Gm05nzQ" frameborder="0" gesture="media" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td>Unique Training: Evgeni Malkin continues his summer workouts while training in Russia.</td>
+  </tr>
+  <tr>
+    <td>
+      <h2 class="containertext">Skating</h2>
+      <div class="fluidMedia">
+       <iframe  src="https://www.youtube.com/embed/Y-JiEENlPlI" frameborder="0" gesture="media" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td>Quick Feet Cross Over: Hockey drills from Hockey Canada's DrillHub.</td>
+  </tr>
+  <tr>
+    <td>
+      <h2 class="containertext">Derek Popke</h2>
+      <div class="fluidMedia">
+      <iframe src="https://www.youtube.com/embed/LPK6xq2kto0" frameborder="0" gesture="media" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td>Underrated Skating Skill:Thanks to Derek Popke, Kevin Bieksa, and Ben Chiarot for inviting me out to their pre-season skate.
+    In this video Derek Popke shares a quick tip for improving skating with 3 drills to improve the outside edge. </td>
+  </tr>
+  <tr>
+    <td>
+      <h2 class="containertext">Improving Acceleration</h2>
+      <div class="fluidMedia">
+     <iframe src="https://www.youtube.com/embed/p9_cuf4pt6g" frameborder="0" gesture="media" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td>Hockey Acceleration: In this video we give you a number of tips to improve your skating and acceleration.
+    First I talk about a few things that you might be doing wrong that could be slowing you down on the ice, then I give you some great skating drills to help improve skating speed</td>
+  </tr>
+  <tr>
+    <td>
+      <h2 class="containertext">Improving Acceleration</h2>
+      <div class="fluidMedia">
+     <iframe src="https://www.youtube.com/embed/p9_cuf4pt6g" frameborder="0" gesture="media" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td>Hockey Acceleration: In this video we give you a number of tips to improve your skating and acceleration.
+    First I talk about a few things that you might be doing wrong that could be slowing you down on the ice, then I give you some great skating drills to help improve skating speed</td>
   </tr>
  </tbody>
 </table>
