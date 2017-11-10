@@ -108,8 +108,6 @@
 </nav>
 <div class="jumbotron">
   <h1><big>Hockey<strong>Plex</strong></big></h1>
-  <h2>This is the Employee page</h2>
-  <p>This is where the employee enters other information.</p>
 </div>
 
   <div class="col-md-8"  style="padding-top:10px;">
