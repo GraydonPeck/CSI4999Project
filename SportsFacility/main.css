@@ -1689,3 +1689,38 @@ Videopage search function
 #myTable tr:hover {
     /* Add a grey background color to the table header and on hover */
 }
+
+/*********************************
+Video container Special
+*********************************/
+
+@media(max-width:424px) {
+    .w3-bar {
+        background-color: #00303f;
+        color: white;
+        font-size: 14px;
+
+    }
+
+    .w3-container {
+        background-color: #766151;
+        height: 675px;
+        overflow: auto;
+
+
+
+    }
+
+    .w3-display-container mySlides {
+        height: 300px;
+    }
+
+    .containertext {
+        color: white;
+        text-align: left;
+    }
+
+    w3-bar-item {
+        width: 100%;
+    }
+}
