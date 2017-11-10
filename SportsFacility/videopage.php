@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <?php
  include("dbutils.php");
@@ -30,36 +31,7 @@
 
 
 <style>
- @media(max-width:424px) {
-    .w3-bar {
-    background-color: #00303f;
-    color: white;
-    font-size: 14px;
 
-}
-
-.w3-container {
-    background-color: #766151;
-    height: 675px;
-    overflow: auto;
-
-
-
-}
-
-.w3-display-container mySlides {
-    height: 300px;
-}
-
-.containertext {
-    color: white;
-    text-align: left;
-}
-
-w3-bar-item{
-  width:100%;
-}
-}
 
 
 </style>
@@ -92,15 +64,30 @@ s.parentNode.insertBefore(hm, s);
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home<span class="glyphicon glyphicon-home pull-left"></span></button></a></li>
+        <?php if(isset($_SESSION['loggedin'])){ ?>
         <li><a href="schedulepage.php">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
-        <li class="dropdown">
+         <?php }else{ ?>
+         <li><a href="main.php">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
+         <?php }
+         if(isset($_SESSION['loggedin'])){ ?>
+          <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">ProShop</span><span class="caret"></span> <span class="glyphicon glyphicon-piggy-bank pull-left"></span></a>
         <ul class="dropdown-menu">
 			       <li class="dropdown-header">Proshop</li>
-			         <li><a href="proshop.php" style="">Proshop <span class="badge pull-left"></span></a></li>
+			         <li><a href="proshop.php">Proshop <span class="badge pull-left"></span></a></li>
                <li><a href="servcust.php">Service Center<span class="badge pull-left"></span></a></li>
                 </ul>
                 </li>
+        <?php }else{ ?>
+         <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">ProShop</span><span class="caret"></span> <span class="glyphicon glyphicon-piggy-bank pull-left"></span></a>
+        <ul class="dropdown-menu">
+			       <li class="dropdown-header">Proshop</li>
+			         <li><a href="main.php">Proshop <span class="badge pull-left"></span></a></li>
+               <li><a href="servcust.php">Service Center<span class="glyphicon glyphicon-stats pull-left"></span></a></li>
+                </ul>
+                </li>
+         <?php } ?>
         <li><a href="videopage.php">Video's<span class="glyphicon glyphicon-facetime-video pull-left"></span></a></li>
         <li><a href="aboutpage.php">About<span class="glyphicon glyphicon-apple pull-left"></span></a><li>
       </ul>
@@ -190,6 +177,7 @@ s.parentNode.insertBefore(hm, s);
    $customer = check_login_type($username);
     if ($customer)
     {?>
+
     <div class="w3-bar">
     <button class="w3-bar-item w3-button tablink w3-black" onclick="videotab(event,'Highlights')">Highlights</button>
     <button class="w3-bar-item w3-button tablink" onclick="videotab(event,'Training')"> Skills Training</button>
@@ -202,14 +190,15 @@ s.parentNode.insertBefore(hm, s);
     </div>
     <?php } ?>
 
-
+<!-- Button used for going to the top of the page -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <!-- End of Button -->
 
   <div id="Highlights" class="w3-container w3-display-container videos">
     <div style="margin-top:50px; width:100%;">
 	    <input  type="text" id="HighlightsInput" name="videoname" onkeyup="Highlights()" placeholder="Search for names..">
 	  </div>
 
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <table id="HighlightTable">
      <thead>
       <tr class="header">
@@ -222,7 +211,7 @@ s.parentNode.insertBefore(hm, s);
       <td>
         <h3 class="containertext">Break Aways</h3>
         <div class="fluidMedia">
-          <iframe  height="300px" width="45%"src="https://www.youtube.com/embed/Zf1Xc5da2cs"  frameborder="1" allowfullscreen></iframe>
+          <iframe  height="300px" width="50%"src="https://www.youtube.com/embed/Zf1Xc5da2cs"  frameborder="1" allowfullscreen></iframe>
         </div>
       </td>
 
@@ -235,7 +224,7 @@ s.parentNode.insertBefore(hm, s);
       <td>
         <h3 class="containertext">Best Games</h3>
         <div class="fluidMedia">
-         <iframe  height="300px" width="45%" src="https://www.youtube.com/embed/4--iEOftLZ4" frameborder="1" allowfullscreen></iframe>
+         <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/4--iEOftLZ4" frameborder="1" allowfullscreen></iframe>
         </div>
       </td>
       <td>
@@ -249,7 +238,7 @@ s.parentNode.insertBefore(hm, s);
       <td>
         <h3 class="containertext">Golie Goals</h3>
         <div class=" fluidMedia">
-          <iframe  height="300px" width="45%" src="https://www.youtube.com/embed/K8rt8gYAQls" frameborder="1" allowfullscreen></iframe>
+          <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/K8rt8gYAQls" frameborder="1" allowfullscreen></iframe>
         </div>
       </td>
       <td>
@@ -261,7 +250,7 @@ s.parentNode.insertBefore(hm, s);
       <td>
         <h3 class="containertext">Best Dangles | Snipes | Passes</h3>
         <div class="fluidMedia">
-         <iframe  height="300" width="45%" src="https://www.youtube.com/embed/0otLHeiYeDA" frameborder="1" allowfullscreen></iframe>
+         <iframe  height="300" width="50%" src="https://www.youtube.com/embed/0otLHeiYeDA" frameborder="1" allowfullscreen></iframe>
         </div>
       </td>
       <td>
@@ -340,7 +329,7 @@ s.parentNode.insertBefore(hm, s);
       <td>
         <h3 class="containertext">Fear In Hockey</h3>
         <div class="fluidMedia">
-         <iframe height="300px" width="50%" src="https://www.youtube.com/embed/nngFtLXextE" frameborder="0" gesture="media" allowfullscreen></iframe>
+         <iframe height="300px" width="50%" src="https://www.youtube.com/embed/nngFtLXextE" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
       </td>
       <td>
@@ -351,7 +340,7 @@ s.parentNode.insertBefore(hm, s);
       <td>
         <h3 class="containertext">Hardest Hits</h3>
         <div class="fluidMedia">
-         <iframe height="300px" width="50%" src="https://www.youtube.com/embed/lr4rG6fJiuU" frameborder="0" gesture="media" allowfullscreen></iframe>
+         <iframe height="300px" width="50%" src="https://www.youtube.com/embed/lr4rG6fJiuU" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
       </td>
       <td>
@@ -362,7 +351,7 @@ s.parentNode.insertBefore(hm, s);
       <td>
         <h3 class="containertext">Golie Slashes</h3>
         <div class="fluidMedia">
-         <iframe height="300px" width="50%" src="https://www.youtube.com/embed/gYGrQ7JdnK4" frameborder="0" gesture="media" allowfullscreen></iframe>
+         <iframe height="300px" width="50%" src="https://www.youtube.com/embed/gYGrQ7JdnK4" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
       </td>
       <td>
@@ -373,7 +362,7 @@ s.parentNode.insertBefore(hm, s);
       <td>
         <h3 class="containertext">Best Suspensions</h3>
         <div class="fluidMedia">
-         <iframe height="300px" width="50%" src="https://www.youtube.com/embed/zzyCWViee-A" frameborder="0" gesture="media" allowfullscreen></iframe>
+         <iframe height="300px" width="50%" src="https://www.youtube.com/embed/zzyCWViee-A" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
       </td>
       <td>
@@ -384,7 +373,7 @@ s.parentNode.insertBefore(hm, s);
       <td>
         <h3 class="containertext">Creative Moves</h3>
         <div class="fluidMedia">
-         <iframe height="300px" width="50%" src="https://www.youtube.com/embed/0GC34H2GDY8" frameborder="0" gesture="media" allowfullscreen></iframe>
+         <iframe height="300px" width="50%" src="https://www.youtube.com/embed/0GC34H2GDY8" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
       </td>
       <td>
@@ -406,7 +395,7 @@ s.parentNode.insertBefore(hm, s);
  <thead>
   <tr class="header">
     <th style="width:40%;">Name</th>
-    <th style="width:60%;">Country</th>
+    <th style="width:60%;">Description</th>
   </tr>
  </thead>
  <tbody>
@@ -527,13 +516,30 @@ s.parentNode.insertBefore(hm, s);
   </tr>
   <tr>
     <td>
-      <h2 class="containertext">Improving Acceleration</h2>
+      <h2 class="containertext">Improving Shot</h2>
       <div class="fluidMedia">
-     <iframe src="https://www.youtube.com/embed/p9_cuf4pt6g" frameborder="0" gesture="media" allowfullscreen></iframe>
+     <iframe  src="https://www.youtube.com/embed/JygtOYUHyqQ" frameborder="0" gesture="media" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Hockey Acceleration: In this video we give you a number of tips to improve your skating and acceleration.
-    First I talk about a few things that you might be doing wrong that could be slowing you down on the ice, then I give you some great skating drills to help improve skating speed</td>
+    <td>Harder Shot: Leason for improving your shot.</td>
+  </tr>
+  <tr>
+    <td>
+      <h2 class="containertext">Secret Drill</h2>
+      <div class="fluidMedia">
+     <iframe  src="https://www.youtube.com/embed/YjeYdJDjWoc" frameborder="0" gesture="media" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td>Slap Shot: The secret drill that will give you a wicked hard slap shot.</td>
+  </tr>
+  <tr>
+    <td>
+      <h2 class="containertext">Fast Hands</h2>
+      <div class="fluidMedia">
+     <iframe src="https://www.youtube.com/embed/S1JPEgbChvI" frameborder="0" gesture="media" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td>Quick Hands: Develop Soft, Smooth, Fast, Precise Hockey Hands</td>
   </tr>
  </tbody>
 </table>
@@ -548,7 +554,7 @@ s.parentNode.insertBefore(hm, s);
  <thead>
   <tr class="header">
     <th style="width:40%;">Name</th>
-    <th style="width:60%;">Country</th>
+    <th style="width:60%;">Description</th>
   </tr>
  </thead>
  <tbody>
@@ -579,7 +585,54 @@ s.parentNode.insertBefore(hm, s);
       </div>
     </td>
     <td>Quick Edge</td>
-
+  </tr>
+   <tr>
+    <td>
+      <h2 class="containertext">Upselling</h2>
+      <div class="fluidMedia">
+        <iframe src="https://www.youtube.com/embed/V54Nn3x4azM" frameborder="0" gesture="media" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td>Sales Training: Upselling sales training tips on how to sell more to increase your average order size when selling.  Learn the four step method for upsetting product.  Learn how to provide different options to the customer to get them to increase their order size.  I'll also talk about the contrast rule, endowment effect, law of consistency and how buyers take mental ownership when considering a purchase.  Upselling or Cross Selling is key when you want to make sure you don't leave money on the table when selling.
+    these sales tips will help you almost immediately. </td>
+  </tr>
+  <tr>
+    <td>
+      <h2 class="containertext">Attitude</h2>
+      <div class="fluidMedia">
+        <iframe src="https://www.youtube.com/embed/F_a5b3XYdv8" frameborder="0" gesture="media" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td>Power of Attitude: Workplace Training & Motivation Video </td>
+  </tr>
+  <tr>
+    <td>
+      <h2 class="containertext">Respect</h2>
+      <div class="fluidMedia">
+       <iframe src="https://www.youtube.com/embed/y4YJCuiPy-U" frameborder="0" gesture="media" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td> Workplace Respect: (Violence, Bullying and Harassment) </td>
+  </tr>
+  <tr>
+    <td>
+      <h2 class="containertext">In this Together</h2>
+      <div class="fluidMedia">
+       <iframe  src="https://www.youtube.com/embed/gfYTh1Y6Kws" frameborder="0" gesture="media" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td> Harassment Training: The In This Together training video presents an engaging look at harassment and respect in the workplace.
+    Seven front line employees from a variety of businesses speak directly to their peers as they lay out the issues of respect and harassment head on.</td>
+  </tr>
+  <tr>
+    <td>
+      <h2 class="containertext">Make it Safe</h2>
+      <div class="fluidMedia">
+       <iframe  src="https://www.youtube.com/embed/SVfRPWHEOy4" frameborder="0" gesture="media" allowfullscreen></iframe>
+      </div>
+    </td>
+    <td> Food Safety: All people involved with preparation of food for the commercial or retail market need a sound understanding of the food safety risks associated with their specific products and, importantly, how to control these risks.</td>
+  </tr>
  </tbody>
 </table>
 </div>
@@ -587,102 +640,31 @@ s.parentNode.insertBefore(hm, s);
 
 <br>
 
- <div id="wrapper">
+  <div id="wrapper">
 		<div id="header">
-		  <h2>Contact Information</h2>
+		  <h2>Contact Infromation</h2>
 		  <hr>
 		</div>
 		<div id="content">
 
     <div class="container">
       <center>
-      <button id="myBtns" class="btn button7" style=" margin-right:5px;">Email</button>
-		  <button onclick="location.href='aboutpage.php#comment1';" class="button button1" style="text-align:center;" action="#aboutpage.php" >Comment</button>
+      <button onclick="location.href = 'aboutpage.php#comment1';" id="myButton" class="button button1" >Comment</button>
+		  <button type="button" class="btn button7" style="text-align:center;" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
 
-
+  <div id="demo" class="collapse">
+    <p>This is some text</p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </div>
   </center>
 		</div>
 
 		<div id="footer">
-		  <center>
-      <p>We are located at 318 Meadow Brook Rd, Rochester MI 48309</p>
-      <p>Phone number: (248) 370-2100</p>
-      </center>
     </div>
   </div>
 </div>
-
-
-
-<!-- Trigger/Open The Modal -->
-
-
-
-
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <form name="contactform" method="post" action="send_form_email.php">
-<table width="450px">
-<tr>
- <td valign="top">
-  <label for="first_name">First Name *</label>
- </td>
- <td valign="top">
-  <input  type="text" name="first_name" maxlength="50" size="30">
- </td>
-</tr>
-<tr>
- <td valign="top">
-  <label for="last_name">Last Name *</label>
- </td>
- <td valign="top">
-  <input  type="text" name="last_name" maxlength="50" size="30">
- </td>
-</tr>
-<tr>
- <td valign="top">
-  <label for="email">Email Address *</label>
- </td>
- <td valign="top">
-  <input  type="text" name="email" maxlength="80" size="30">
- </td>
-</tr>
-<tr>
- <td valign="top">
-  <label for="telephone">Telephone Number</label>
- </td>
- <td valign="top">
-  <input  type="text" name="telephone" maxlength="30" size="30">
- </td>
-</tr>
-<tr>
- <td valign="top">
-  <label for="comments">Comments *</label>
- </td>
- <td valign="top">
-  <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
- </td>
-</tr>
-<tr>
- <td colspan="2" style="text-align:center">
-  <input type="submit" value="Submit">   <a href="http://www.freecontactform.com/email_form.php">Email Form</a>
- </td>
-</tr>
-</table>
-</form>
-      </center>
-  </div>
-
-</div>
-
-
-    </div>
-  </div>
 
 
 
