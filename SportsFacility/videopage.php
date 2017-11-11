@@ -33,6 +33,13 @@
 <style>
 
 
+.fluidMedia td {
+    position: absolute;
+
+    width: 100%;
+    height: 300px;
+    overflow:auto;
+}
 
 </style>
 
@@ -227,7 +234,7 @@ s.parentNode.insertBefore(hm, s);
          <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/4--iEOftLZ4" frameborder="1" allowfullscreen></iframe>
         </div>
       </td>
-      <td>
+      <td class="fluidMedia">
         <p>Best Ever:  Los Angeles Kings Win The 2014 Stanley Cup - Alec Martinez Double Overtime Goal Martinez wins the Stanley Cup for Kings in 2OT 2013 Chicago Blackhawks - Two Goals In 17 Seconds To Win The Stanley Cup Blackhawks strike twice in 17 seconds 6/24/13 Last 2 Minutes Of Game. Game #6 SCF.
         Chicago 3 Boston 2. Chicago Wins The Stanley Cup. 6/24/13 dave bolland brian bickell goal stanley cup finals Tom Wilson Hit on Brayden Schenn (12/17/13) Tom Wilson Hit/Charging on Brayden Schenn.
         Philadelphia Flyers vs Washington Capitals. NHL Hockey (12/17/13) 14 Minutes of Pissed Off Goalies Lundqvist makes a twirling blocker save New York Rangers goalie Henrik Lundqvist makes an acrobatic blocker save as he knocks out a puck headed for the net to keep the Canadiens off the board.

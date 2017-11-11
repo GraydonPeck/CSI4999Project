@@ -146,18 +146,17 @@
       <div class="panel panel-primary">
           <div class="panel-heading">Ice One </div>
           <div class="panel-body">
-            <div id="calendar" class="col-md-6">
+            <div class="col-md-6">
                   <div class="calendar" class="col-md-6">
                   <div class="datepicker"></div>
                   <form method="post" action="schedulepage.php">
                     <p>Select a day: <input type="text" name="date1" id="datepicker"></p>
                      <input type="hidden" value="1" name="hidden1"/>
                     <input type="submit" value="Load Times" name="submit"/>
-
                   </form>
                 </div>
         			</div>
-        			<div id="ScheduleTimes" class="col-md-4">
+        			<div class="col-md-6 ScheduleList">
         			  <table>
         			  <?php
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
@@ -169,7 +168,7 @@
                 while ($row = mysqli_fetch_array($result)){
                  ?>
                 <tr>
-                  <td><span class="glyphicon glyphicon-th-list"></span><?php echo "Time: " . $row['time']. " Event: " . $row['event']. " Info: " . $row['info'];?>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo "Time: " . $row['time']. " Event: " . $row['event']. " Info: " . $row['info'];?>
                 </tr>
                 <?php }
                if  ($_POST['hidden1']==1){
@@ -185,7 +184,7 @@
       <div class="panel panel-primary">
           <div class="panel-heading">Ice Two </div>
           <div class="panel-body">
-            <div id="calendar" class="col-md-6">
+            <div class="col-md-6">
               <div class="calendar" class="col-md-6">
               <div class="datepicker"></div>
               <form method="post" action="schedulepage.php">
@@ -196,7 +195,7 @@
               </form>
             </div>
         			</div>
-        			<div id="ScheduleTimes" class="col-md-4">
+        			<div class="col-md-6">
         			  <table>
         			  <?php
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
@@ -208,7 +207,7 @@
                 while ($row = mysqli_fetch_array($result)){
                  ?>
                 <tr>
-                  <td><span class="glyphicon glyphicon-th-list"></span><?php echo "Time: " . $row['time']. " Event: " . $row['event']. " Info: " . $row['info'];?>
+                  <td  style="font-size:18px;padding-left:15px;"><?php echo "Time: " . $row['time']. " Event: " . $row['event']. " Info: " . $row['info'];?>
                 </tr>
                 <?php }
                if ($_POST['hidden1']==2){
@@ -224,7 +223,7 @@
         <div class="panel panel-primary">
             <div class="panel-heading">Ice Three </div>
             <div class="panel-body">
-              <div id="calendar" class="col-md-6">
+              <div class="col-md-6">
               <div class="calendar" class="col-md-6">
                 <div class="datepicker"></div>
               <form method="post" action="schedulepage.php">
@@ -235,7 +234,7 @@
               </form>
             </div>
         			</div>
-        			<div id="ScheduleTimes" class="col-md-4">
+        			<div  class="col-md-6">
         			  <table>
         			  <?php
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
@@ -247,7 +246,7 @@
               while ($row = mysqli_fetch_array($result)){
                  ?>
                 <tr>
-                  <td><span class="glyphicon glyphicon-th-list"></span><?php echo "Time: " . $row['time']. " Event: " . $row['event']. " Info: " . $row['info'];?>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo "Time: " . $row['time']. " Event: " . $row['event']. " Info: " . $row['info'];?>
                 </tr>
                 <?php }
                if  ($_POST['hidden1']==3){
@@ -280,7 +279,15 @@
                                <?php
                             $db = mysqli_connect("localhost","gpeck2217","","c9");
                             $username = $_SESSION['login'];
+                             $customer = check_login_type($username);
+                             if ($customer)
+                            {
                             $sql = "SELECT * FROM rink_1_db WHERE date = '$date1' AND event = 'available'";
+                            }
+                            else
+                            {
+                            $sql = "SELECT * FROM rink_1_db WHERE date = '$date1'";
+                            }
                             $result = mysqli_query($db, $sql);
                             while ($row = mysqli_fetch_array($result)){
                 		        	?>
@@ -329,7 +336,15 @@
                                <?php
                             $db = mysqli_connect("localhost","gpeck2217","","c9");
                             $username = $_SESSION['login'];
+                             $customer = check_login_type($username);
+                             if ($customer)
+                            {
                             $sql = "SELECT * FROM rink_2_db WHERE date = '$date2' AND event = 'available'";
+                            }
+                            else
+                            {
+                            $sql = "SELECT * FROM rink_2_db WHERE date = '$date2'";
+                            }
                             $result = mysqli_query($db, $sql);
                             while ($row = mysqli_fetch_array($result)){
                 		        	?>
@@ -378,7 +393,15 @@
                                <?php
                             $db = mysqli_connect("localhost","gpeck2217","","c9");
                             $username = $_SESSION['login'];
+                            $customer = check_login_type($username);
+                             if ($customer)
+                            {
                             $sql = "SELECT * FROM rink_3_db WHERE date = '$date3' AND event = 'available'";
+                            }
+                            else
+                            {
+                            $sql = "SELECT * FROM rink_3_db WHERE date = '$date3'";
+                            }
                             $result = mysqli_query($db, $sql);
                             while ($row = mysqli_fetch_array($result)){
                 		        	?>

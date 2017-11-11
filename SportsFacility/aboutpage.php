@@ -2,13 +2,13 @@
 <?php
  include("dbutils.php");
  session_start();
-  if ($_POST['hidden']==1)
-    {
-	    echo "Found " . count($_POST) . " elements" . "<td>";
-        var_dump($_POST);
-         $username = $_POST['username'];
-         header ("Location: aboutpage.php");
-    }
+if ($_POST['hidden']==1)
+        {
+	echo "Found " . count($_POST) . " elements" . "<td>";
+    var_dump($_POST);
+    add_comment ($_POST['name'], $_POST['comment']);
+     header ("Location: aboutpage.php");
+        }
 ?>
 <html>
     <head>
@@ -211,17 +211,29 @@
                           <p>Saturday 6AM-12AM</p>
                     </div>
                   </div>
+                  <h1 id="comment1">Comment Section</h1>
                   <form id="#formSection" method="post" class="customercomment-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
-                    Name: <input type="text" name="name" value="<?php echo $name;?>"><br>
-                    Comment: <input type="text" name="comment" value="<?php echo $comment;?>"><br>
+                    Name: <input type="text" name="name" value="<?php echo $_SESSION['login']?>"><br>
+                    Comment: <input type="text" name="comment" value=""><br>
                     <input type="hidden" name ="hidden" value ="1">
                     <button type="submit" class="btn btn-primary" value="comment">Submit</button>
                     </form>
                     <br>
-                    <?php echo $name;
-                    echo "<br>";
-                    echo $email;
-                    echo "<br>"; ?>
+               <table class = "table">
+                    <?php
+                      $db = mysqli_connect("localhost","gpeck2217","","c9");
+                      $sql = "SELECT * FROM forum";
+                      $result = mysqli_query($db, $sql);
+                      while ($row = mysqli_fetch_array($result)){
+                    ?>
+                            <tr>
+                              <td>Poster:</td> <td><?php echo $row['name']?></td>
+                            </tr>
+                            <tr>
+                              <td>Comment</td> <td><?php echo $row['comment']?></td>
+                            </tr>
+                            <?php } ?>
+                </table>
             </div>
       </div>
 

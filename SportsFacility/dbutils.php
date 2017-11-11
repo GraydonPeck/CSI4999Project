@@ -231,4 +231,10 @@
         $sql_i = "UPDATE work_schedule SET blocked = '$username' WHERE day = '$day'";
         run_update($sql_i);
 	}
+	function add_comment($name, $comment)
+	{
+		global $conn;
+		$sql_i = "INSERT INTO forum(name,comment) VALUES('$name','$comment')";
+		run_update($sql_i);
+	}
 ?>
