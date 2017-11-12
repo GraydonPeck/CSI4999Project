@@ -32,14 +32,86 @@
 
 <style>
 
-
-.fluidMedia td {
-    position: absolute;
-
-    width: 100%;
-    height: 300px;
-    overflow:auto;
+@media (max-width:500px){
+.fluidMedia {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
 }
+
+.fluidMedia p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+}
+
+
+@media (min-width:300px){
+  .custom {
+    height:195px;
+    overflow:auto;
+    margin-top:15px;
+
+
+  }
+  ::-webkit-scrollbar-thumb:vertical:hover{
+  background: #514947;
+  border-radius: 50px;
+  }
+}
+
+@media (max-width:1000px){
+  .custom{
+    height:195px;
+
+    overflow:auto;
+    margin-top:15px;
+
+
+  }
+  ::-webkit-scrollbar-thumb:vertical:hover{
+  background: #514947;
+  border-radius: 50px;
+  }
+}
+
+/* Turn on custom 8px wide scrollbar */
+::-webkit-scrollbar {
+  width: 8px; /* 1px wider than Lion. */
+  /* This is more usable for users trying to click it. */
+  background-color: rgba(0,0,0,0);
+  border-radius: 50px;
+}
+/* hover effect for both scrollbar area, and scrollbar 'thumb' */
+::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0.09);
+}
+
+/* The scrollbar 'thumb' ...that marque oval shape in a scrollbar */
+::-webkit-scrollbar-thumb:vertical {
+  /* This is the EXACT color of Mac OS scrollbars.
+     Yes, I pulled out digital color meter */
+  background: #514947;
+  border-radius: 50px;
+}
+/* The scrollbar 'thumb' ...that marque oval shape in a scrollbar */
+::-webkit-scrollbar-thumb:vertical:hover {
+  /* This is the EXACT color of Mac OS scrollbars.
+     Yes, I pulled out digital color meter */
+  background: rgba(0,0,0,0.5);
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:vertical:active {
+  background: rgba(0,0,0,0.61); /* Some darker color when you click it */
+  border-radius: 50px;
+}
+
 
 </style>
 
@@ -223,9 +295,11 @@ s.parentNode.insertBefore(hm, s);
       </td>
 
       <td>
-        <p>Overtime: The NHL Official YouTube channel is the home of the best hockey highlights, features, interviews and vintage videos.
-        Check out the goals, saves, hits, bloopers and classic moments. Watch some playlists. Relive the action of your favorite NHL teams and players.</p>
+        <div class="custom">
+          <p class="video">Overtime: The NHL Official YouTube channel is the home of the best hockey highlights, features, interviews and vintage videos.
+          Check out the goals, saves, hits, bloopers and classic moments. Watch some playlists. Relive the action of your favorite NHL teams and players.</p>
       </td>
+        </div>
     </tr>
     <tr>
       <td>
@@ -234,11 +308,12 @@ s.parentNode.insertBefore(hm, s);
          <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/4--iEOftLZ4" frameborder="1" allowfullscreen></iframe>
         </div>
       </td>
-      <td class="fluidMedia">
-        <p>Best Ever:  Los Angeles Kings Win The 2014 Stanley Cup - Alec Martinez Double Overtime Goal Martinez wins the Stanley Cup for Kings in 2OT 2013 Chicago Blackhawks - Two Goals In 17 Seconds To Win The Stanley Cup Blackhawks strike twice in 17 seconds 6/24/13 Last 2 Minutes Of Game. Game #6 SCF.
-        Chicago 3 Boston 2. Chicago Wins The Stanley Cup. 6/24/13 dave bolland brian bickell goal stanley cup finals Tom Wilson Hit on Brayden Schenn (12/17/13) Tom Wilson Hit/Charging on Brayden Schenn.
-        Philadelphia Flyers vs Washington Capitals. NHL Hockey (12/17/13) 14 Minutes of Pissed Off Goalies Lundqvist makes a twirling blocker save New York Rangers goalie Henrik Lundqvist makes an acrobatic blocker save as he knocks out a puck headed for the net to keep the Canadiens off the board.
-        Granlund dives to score OT winner in mid-air Top 10 - Hockey Coaches Gone Wild Top 10 - NHL Goalie Saves  Top 10 NHL Non-Goalie Saves (HD) Top 10 Unlikely Hockey Moments Of All-Time</p>
+      <td>
+        <div class="custom">
+          <p class="video">Best Ever:  Los Angeles Kings Win The 2014 Stanley Cup - Alec Martinez Double Overtime Goal Martinez wins the Stanley Cup for Kings in 2OT 2013 Chicago Blackhawks - Two Goals In 17 Seconds To Win The Stanley Cup Blackhawks strike twice in 17 seconds 6/24/13 Last 2 Minutes Of Game. Game #6 SCF.
+          Chicago 3 Boston 2. Chicago Wins The Stanley Cup. 6/24/13 dave bolland brian bickell goal stanley cup finals Tom Wilson Hit on Brayden Schenn (12/17/13) Tom Wilson Hit/Charging on Brayden Schenn. Watch more of the highlights.
+          </p>
+        </div>
       </td>
     </tr>
     <tr>
@@ -249,8 +324,10 @@ s.parentNode.insertBefore(hm, s);
         </div>
       </td>
       <td>
-        <p>Best Goals: Watch the amazing shots from top noch goalies.
-        They will skate down the ice and show their amazing talent with great capturable shots.</p>
+        <div class="custom">
+          <p class="video">Best Goals: Watch the amazing shots from top noch goalies.
+          They will skate down the ice and show their amazing talent with great capturable shots.</p>
+        </div>
       </td>
     </tr>
     <tr>
@@ -261,18 +338,20 @@ s.parentNode.insertBefore(hm, s);
         </div>
       </td>
       <td>
-        <p>Dangles/Snipes/Passes:Taylor Hall - Columbus Blue Jackets
-          Jordan Eberle - Calgary Flames
-          Kyle Wellwood - Edmonton Oilers
-          Ryan Nuget-Hopkins - Nashville Predators
-          Claude Giroux - Washington Capitals
-          Jonathan Toews - Colorado Avalanche
-          Evgeni Malkin - New Jersey Devils
-          Zach Parise - Chicago Blackhawks
-          Thomas Vanek - Washington Capitals
-          Dave Bolland - Nashville Predators
-          Evgeni Malkin - Tampa Bay Lightning
-        </p>
+        <div class="custom">
+          <p class="video">Dangles/Snipes/Passes:Taylor Hall - Columbus Blue Jackets
+            Jordan Eberle - Calgary Flames
+            Kyle Wellwood - Edmonton Oilers
+            Ryan Nuget-Hopkins - Nashville Predators
+            Claude Giroux - Washington Capitals
+            Jonathan Toews - Colorado Avalanche
+            Evgeni Malkin - New Jersey Devils
+            Zach Parise - Chicago Blackhawks
+            Thomas Vanek - Washington Capitals
+            Dave Bolland - Nashville Predators
+            Evgeni Malkin - Tampa Bay Lightning
+          </p>
+        </div>
       </td>
     </tr>
     <tr>
@@ -283,7 +362,9 @@ s.parentNode.insertBefore(hm, s);
         </div>
       </td>
       <td>
-        <p>Saved Shots:these are pure reflexes that the players have honed by practicing for years and years and it sure looks unbelievable.</p>
+        <div class="custom">
+          <p class="video">Saved Shots:these are pure reflexes that the players have honed by practicing for years and years and it sure looks unbelievable.</p>
+        </div>
       </td>
     </tr>
      <tr>
@@ -294,7 +375,9 @@ s.parentNode.insertBefore(hm, s);
         </div>
       </td>
       <td>
-        <p>Biggest Hits: Watch players get destroyed by one another</p>
+        <div class="custom">
+          <p class="video">Biggest Hits: Watch players get destroyed by one another</p>
+        </div>
       </td>
     </tr>
     <tr>
@@ -305,8 +388,10 @@ s.parentNode.insertBefore(hm, s);
         </div>
       </td>
       <td>
-        <p>College Game: Watch the highlights from the game between Notre Dame vs. Boston College.
-        See the teams battling it out on the Ice.</p>
+        <div class="custom">
+          <p class="video">College Game: Watch the highlights from the game between Notre Dame vs. Boston College.
+          See the teams battling it out on the Ice.</p>
+        </div>
       </td>
     </tr>
     <tr>
@@ -317,8 +402,10 @@ s.parentNode.insertBefore(hm, s);
         </div>
       </td>
       <td>
-        <p>Game Highlights: also known as The Magic Man[1] is a Russian professional ice hockey player and captain for SKA Saint Petersburg of the Kontinental Hockey League (KHL).
-        From 2001 to 2016, he played for the Detroit Red Wings of the National Hockey League (NHL).</p>
+        <div class="custom">
+          <p class="video">Game Highlights: also known as The Magic Man[1] is a Russian professional ice hockey player and captain for SKA Saint Petersburg of the Kontinental Hockey League (KHL).
+          From 2001 to 2016, he played for the Detroit Red Wings of the National Hockey League (NHL).</p>
+        </div>
       </td>
     </tr>
      <tr>
@@ -329,7 +416,9 @@ s.parentNode.insertBefore(hm, s);
         </div>
       </td>
       <td>
-        <p>Best Celebrations: Some of the best celebrations around the National Hockey League.</p>
+        <div class="custom">
+          <p class="video">Best Celebrations: Some of the best celebrations around the National Hockey League.</p>
+        </div>
       </td>
     </tr>
     <tr>
@@ -340,7 +429,9 @@ s.parentNode.insertBefore(hm, s);
         </div>
       </td>
       <td>
-        <p>Feared Players: Who are some of the most feared players in today's NHL? Today, we take a look at a few!</p>
+        <div class="custom">
+          <p class="video">Feared Players: Who are some of the most feared players in today's NHL? Today, we take a look at a few!</p>
+        </div>
       </td>
     </tr>
     <tr>
@@ -351,7 +442,9 @@ s.parentNode.insertBefore(hm, s);
         </div>
       </td>
       <td>
-        <p>Biggest Hits: 10 hardest hits in the nhl</p>
+        <div class="custom">
+          <p class="video">Biggest Hits: 10 hardest hits in the nhl</p>
+        </div>
       </td>
     </tr>
     <tr>
@@ -362,7 +455,9 @@ s.parentNode.insertBefore(hm, s);
         </div>
       </td>
       <td>
-        <p>Golies Cheap Hits: The 5 Dirtiest Goalie slashes of all time!</p>
+        <div class="custom">
+          <p class="video">Golies Cheap Hits: The 5 Dirtiest Goalie slashes of all time!</p>
+        </div>
       </td>
     </tr>
     <tr>
@@ -373,7 +468,9 @@ s.parentNode.insertBefore(hm, s);
         </div>
       </td>
       <td>
-        <p>Dirtiest suspensions: We've seen some pretty reckless plays in NHL history, here are the ones which garnered the biggest suspensions.</p>
+        <div class="custom">
+          <p class="video">Dirtiest suspensions: We've seen some pretty reckless plays in NHL history, here are the ones which garnered the biggest suspensions.</p>
+        </div>
       </td>
     </tr>
     <tr>
@@ -384,7 +481,9 @@ s.parentNode.insertBefore(hm, s);
         </div>
       </td>
       <td>
-        <p>Shootout Moves: The Top 10 on SportsCenter of the most creative moves during shootout.</p>
+        <div class="custom">
+          <p class="video">Shootout Moves: The Top 10 on SportsCenter of the most creative moves during shootout.</p>
+        </div>
       </td>
     </tr>
   </tbody>
@@ -411,142 +510,202 @@ s.parentNode.insertBefore(hm, s);
       <h2 class="containertext">Agility</h2>
 
       <div class="fluidMedia">
-        <iframe src="https://www.youtube.com/embed/bUV18ftJXeY?list=PLyp8LF-3yz5AuhDDIbWrg3bhRexI3lGMX" frameborder="1" allowfullscreen></iframe>
+        <iframe height="300px" width="50%" src="https://www.youtube.com/embed/bUV18ftJXeY?list=PLyp8LF-3yz5AuhDDIbWrg3bhRexI3lGMX" frameborder="1" allowfullscreen></iframe>
       </div>
 
     </td>
-    <td>Agility:Player skates around the circle always facing the line in the corner constantly exchanging passes.  When the player going around the circle gets to the top of the circle, he does a 360 around the tire, keeps the puck on his forehand, underhandles and shoots to score.
-    Works on: agility skating, passing, receiving, give and go's, shooting, scoring</td>
+    <td>
+      <div class="custom">
+        <p class="video">Agility:Player skates around the circle always facing the line in the corner constantly exchanging passes.  When the player going around the circle gets to the top of the circle, he does a 360 around the tire, keeps the puck on his forehand, underhandles and shoots to score.
+        Works on: agility skating, passing, receiving, give and go's, shooting, scoring</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">Balance</h2>
       <div class="fluidMedia">
-        <iframe  src="https://www.youtube.com/embed/mrLiOX6nIhM" frameborder="1" allowfullscreen></iframe>
+        <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/mrLiOX6nIhM" frameborder="1" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Skating: Balance and Agility, Edge Control, Starting And Stopping</td>
+    <td>
+      <div>
+        <p class="video">Skating: Balance and Agility, Edge Control, Starting And Stopping</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">Quick Edge</h2>
       <div class=" fluidMedia">
-        <iframe  src="https://www.youtube.com/embed/MPrerhyHllA" frameborder="1" allowfullscreen></iframe>
+        <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/MPrerhyHllA" frameborder="1" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Routines: This week's feature is Mountain High Hockey. This is a quick edge work routine that you can perform before practice.</td>
+    <td>
+      <div class="custom">
+        <p class="video">Routines: This week's feature is Mountain High Hockey. This is a quick edge work routine that you can perform before practice.</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">Double Quickness</h2>
       <div class="fluidMedia">
-       <iframe  src="https://www.youtube.com/embed/2XsQxGJ3Zw4" frameborder="1" allowfullscreen></iframe>
+       <iframe height="300px" width="50%" src="https://www.youtube.com/embed/2XsQxGJ3Zw4" frameborder="1" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Quickness: PK Subban of the Montreal Canadiens  posts a hockey drill to his website www.pksubban.com monthly.
-    This month's drill features a skating skill drill for defensemen.</td>
+    <td>
+      <div class="custom">
+        <p class="video">Quickness: PK Subban of the Montreal Canadiens  posts a hockey drill to his website www.pksubban.com monthly.
+        This month's drill features a skating skill drill for defensemen.</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">Quick Feet</h2>
       <div class="fluidMedia">
-        <iframe  src="https://www.youtube.com/embed/sWGRnPnj858" frameborder="1" allowfullscreen></iframe>
+        <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/sWGRnPnj858" frameborder="1" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Quick: Improve on your skating skills from learning these different drills.</td>
+    <td>
+      <div class="custom">
+        <p class="video">Quick: Improve on your skating skills from learning these different drills.</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">Skating Drill</h2>
       <div class="fluidMedia">
-        <iframe  src="https://www.youtube.com/embed/_dIos9cGHZo" frameborder="0" gesture="media" allowfullscreen></iframe>
+        <iframe height="300px" width="50%" src="https://www.youtube.com/embed/_dIos9cGHZo" frameborder="1" gesture="media" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Power Skating: Simple and effective hockey skating drill to work on transitioning from forwards to backwards and vice versa.</td>
+    <td>
+      <div class="custom">
+        <p class="video">Power Skating: Simple and effective hockey skating drill to work on transitioning from forwards to backwards and vice versa.</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">Hockey Drills</h2>
       <div class="fluidMedia">
-        <iframe  src="https://www.youtube.com/embed/RrgSn7L8fGE" frameborder="0" gesture="media" allowfullscreen></iframe>
+        <iframe height="300px" width="50%" src="https://www.youtube.com/embed/RrgSn7L8fGE" frameborder="1" gesture="media" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Progression Hockey Drills: 6 technical progressions off a very simple weave skating hockey drill.
-    Use our complete season of practice plans and add creative progressions like these to even the simplest hockey drills.</td>
+    <td>
+      <div class="custom">
+        <p class="video">Progression Hockey Drills: 6 technical progressions off a very simple weave skating hockey drill.
+        Use our complete season of practice plans and add creative progressions like these to even the simplest hockey drills.</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">Hockey Drills</h2>
       <div class="fluidMedia">
-        <iframe src="https://www.youtube.com/embed/85GCr8YXYSw" frameborder="0" gesture="media" allowfullscreen></iframe>
+        <iframe height="300px" width="50%" src="https://www.youtube.com/embed/85GCr8YXYSw" frameborder="1" gesture="media" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Camp Drills: July 13, 2011.  Clips from Washington Capitals development camp morning drills.</td>
+    <td>
+      <div class="custom">
+        <p class="video">Camp Drills: July 13, 2011.  Clips from Washington Capitals development camp morning drills.</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">Evgeni Malkin's</h2>
       <div class="fluidMedia">
-        <iframe  src="https://www.youtube.com/embed/orU7Gm05nzQ" frameborder="0" gesture="media" allowfullscreen></iframe>
+        <iframe height="300px" width="50%"  src="https://www.youtube.com/embed/orU7Gm05nzQ" frameborder="1" gesture="media" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Unique Training: Evgeni Malkin continues his summer workouts while training in Russia.</td>
+    <td>
+      <div class="custom">
+        <p class="video">Unique Training: Evgeni Malkin continues his summer workouts while training in Russia.</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">Skating</h2>
       <div class="fluidMedia">
-       <iframe  src="https://www.youtube.com/embed/Y-JiEENlPlI" frameborder="0" gesture="media" allowfullscreen></iframe>
+       <iframe height="300px" width="50%" src="https://www.youtube.com/embed/Y-JiEENlPlI" frameborder="1" gesture="media" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Quick Feet Cross Over: Hockey drills from Hockey Canada's DrillHub.</td>
+    <td>
+      <div class="custom">
+        <p class="video">Quick Feet Cross Over: Hockey drills from Hockey Canada's DrillHub.</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">Derek Popke</h2>
       <div class="fluidMedia">
-      <iframe src="https://www.youtube.com/embed/LPK6xq2kto0" frameborder="0" gesture="media" allowfullscreen></iframe>
+      <iframe height="300px" width="50%" src="https://www.youtube.com/embed/LPK6xq2kto0" frameborder="1" gesture="media" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Underrated Skating Skill:Thanks to Derek Popke, Kevin Bieksa, and Ben Chiarot for inviting me out to their pre-season skate.
-    In this video Derek Popke shares a quick tip for improving skating with 3 drills to improve the outside edge. </td>
+    <td>
+      <div class="custom">
+        <p class="video">Underrated Skating Skill:Thanks to Derek Popke, Kevin Bieksa, and Ben Chiarot for inviting me out to their pre-season skate.
+        In this video Derek Popke shares a quick tip for improving skating with 3 drills to improve the outside edge.</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">Improving Acceleration</h2>
       <div class="fluidMedia">
-     <iframe src="https://www.youtube.com/embed/p9_cuf4pt6g" frameborder="0" gesture="media" allowfullscreen></iframe>
+     <iframe height="300px" width="50%" src="https://www.youtube.com/embed/p9_cuf4pt6g" frameborder="1" gesture="media" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Hockey Acceleration: In this video we give you a number of tips to improve your skating and acceleration.
-    First I talk about a few things that you might be doing wrong that could be slowing you down on the ice, then I give you some great skating drills to help improve skating speed</td>
+    <td>
+      <div class="custom">
+        <p class="video">Hockey Acceleration: In this video we give you a number of tips to improve your skating and acceleration.
+        First I talk about a few things that you might be doing wrong that could be slowing you down on the ice, then I give you some great skating drills to help improve skating speed.</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">Improving Shot</h2>
       <div class="fluidMedia">
-     <iframe  src="https://www.youtube.com/embed/JygtOYUHyqQ" frameborder="0" gesture="media" allowfullscreen></iframe>
+     <iframe height="300px" width="50%" src="https://www.youtube.com/embed/JygtOYUHyqQ" frameborder="1" gesture="media" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Harder Shot: Leason for improving your shot.</td>
+    <td>
+      <div class="custom">
+        <p class="video">Harder Shot: Leason for improving your shot.</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">Secret Drill</h2>
       <div class="fluidMedia">
-     <iframe  src="https://www.youtube.com/embed/YjeYdJDjWoc" frameborder="0" gesture="media" allowfullscreen></iframe>
+     <iframe height="300px" width="50%" src="https://www.youtube.com/embed/YjeYdJDjWoc" frameborder="1" gesture="media" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Slap Shot: The secret drill that will give you a wicked hard slap shot.</td>
+    <td>
+      <div class="custom">
+        <p class="video">Slap Shot: The secret drill that will give you a wicked hard slap shot.</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">Fast Hands</h2>
       <div class="fluidMedia">
-     <iframe src="https://www.youtube.com/embed/S1JPEgbChvI" frameborder="0" gesture="media" allowfullscreen></iframe>
+     <iframe height="300px" width="50%" src="https://www.youtube.com/embed/S1JPEgbChvI" frameborder="1" gesture="media" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Quick Hands: Develop Soft, Smooth, Fast, Precise Hockey Hands</td>
+    <td>
+      <div class="custom">
+        <p class="video">Quick Hands: Develop Soft, Smooth, Fast, Precise Hockey Hands.</p>
+      </div>
+    </td>
   </tr>
  </tbody>
 </table>
@@ -569,76 +728,108 @@ s.parentNode.insertBefore(hm, s);
     <td>
       <h2 class="containertext">Skate Sharpening #1</h2>
       <div class=" fluidMedia">
-       <iframe  src="https://www.youtube.com/embed/ZaNEHE4UKxM" frameborder="1" allowfullscreen></iframe>
+       <iframe height="300px" width="50%" src="https://www.youtube.com/embed/ZaNEHE4UKxM" frameborder="1" allowfullscreen></iframe>
       </div>
 
     </td>
-    <td>Agility</td>
+    <td>
+      <div class="custom">
+        <p class="video">Agility</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">Skate Sharpening #2</h2>
       <div class="fluidMedia">
-       <iframe  src="https://www.youtube.com/embed/G5BjMvvwYbs" frameborder="1" allowfullscreen></iframe>
+       <iframe height="300px" width="50%" src="https://www.youtube.com/embed/G5BjMvvwYbs" frameborder="1" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Balance</td>
+    <td>
+      <div class="custom">
+        <p class="video">Balance</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">Skate Sharpening #3</h2>
       <div class="fluidMedia">
-        <iframe  src="https://www.youtube.com/embed/w3qutTbxw4E" frameborder="1" allowfullscreen></iframe>
+        <iframe height="300px" width="50%" src="https://www.youtube.com/embed/w3qutTbxw4E" frameborder="1" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Quick Edge</td>
+    <td>
+      <div class="custom">
+        <p class="video">Quick Edge</p>
+      </div>
+    </td>
   </tr>
    <tr>
     <td>
       <h2 class="containertext">Upselling</h2>
       <div class="fluidMedia">
-        <iframe src="https://www.youtube.com/embed/V54Nn3x4azM" frameborder="0" gesture="media" allowfullscreen></iframe>
+        <iframe height="300px" width="50%" src="https://www.youtube.com/embed/V54Nn3x4azM" frameborder="0" gesture="media" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Sales Training: Upselling sales training tips on how to sell more to increase your average order size when selling.  Learn the four step method for upsetting product.  Learn how to provide different options to the customer to get them to increase their order size.  I'll also talk about the contrast rule, endowment effect, law of consistency and how buyers take mental ownership when considering a purchase.  Upselling or Cross Selling is key when you want to make sure you don't leave money on the table when selling.
-    these sales tips will help you almost immediately. </td>
+    <td>
+      <div class="custom">
+        <p class="video">Sales Training: Upselling sales training tips on how to sell more to increase your average order size when selling.  Learn the four step method for upsetting product.  Learn how to provide different options to the customer to get them to increase their order size.  I'll also talk about the contrast rule, endowment effect, law of consistency and how buyers take mental ownership when considering a purchase.  Upselling or Cross Selling is key when you want to make sure you don't leave money on the table when selling.
+        these sales tips will help you almost immediately.</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">Attitude</h2>
       <div class="fluidMedia">
-        <iframe src="https://www.youtube.com/embed/F_a5b3XYdv8" frameborder="0" gesture="media" allowfullscreen></iframe>
+        <iframe height="300px" width="50%" src="https://www.youtube.com/embed/F_a5b3XYdv8" frameborder="0" gesture="media" allowfullscreen></iframe>
       </div>
     </td>
-    <td>Power of Attitude: Workplace Training & Motivation Video </td>
+    <td>
+      <div class="custom">
+        <p class="video">Power of Attitude: Workplace Training & Motivation Video.</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">Respect</h2>
       <div class="fluidMedia">
-       <iframe src="https://www.youtube.com/embed/y4YJCuiPy-U" frameborder="0" gesture="media" allowfullscreen></iframe>
+       <iframe height="300px" width="50%" src="https://www.youtube.com/embed/y4YJCuiPy-U" frameborder="0" gesture="media" allowfullscreen></iframe>
       </div>
     </td>
-    <td> Workplace Respect: (Violence, Bullying and Harassment) </td>
+    <td>
+      <div class="custom">
+       <p class="video">Workplace Respect: (Violence, Bullying and Harassment).</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">In this Together</h2>
       <div class="fluidMedia">
-       <iframe  src="https://www.youtube.com/embed/gfYTh1Y6Kws" frameborder="0" gesture="media" allowfullscreen></iframe>
+       <iframe height="300px" width="50%"  src="https://www.youtube.com/embed/gfYTh1Y6Kws" frameborder="0" gesture="media" allowfullscreen></iframe>
       </div>
     </td>
-    <td> Harassment Training: The In This Together training video presents an engaging look at harassment and respect in the workplace.
-    Seven front line employees from a variety of businesses speak directly to their peers as they lay out the issues of respect and harassment head on.</td>
+    <td>
+      <div class="custom">
+        <p class="video">Harassment Training: The In This Together training video presents an engaging look at harassment and respect in the workplace.
+        Seven front line employees from a variety of businesses speak directly to their peers as they lay out the issues of respect and harassment head on.</p>
+      </div>
+    </td>
   </tr>
   <tr>
     <td>
       <h2 class="containertext">Make it Safe</h2>
       <div class="fluidMedia">
-       <iframe  src="https://www.youtube.com/embed/SVfRPWHEOy4" frameborder="0" gesture="media" allowfullscreen></iframe>
+       <iframe height="300px" width="50%" src="https://www.youtube.com/embed/SVfRPWHEOy4" frameborder="0" gesture="media" allowfullscreen></iframe>
       </div>
     </td>
-    <td> Food Safety: All people involved with preparation of food for the commercial or retail market need a sound understanding of the food safety risks associated with their specific products and, importantly, how to control these risks.</td>
+    <td>
+      <div class="custom">
+        <p class="video">Food Safety: All people involved with preparation of food for the commercial or retail market need a sound understanding of the food safety risks associated with their specific products and, importantly, how to control these risks.</p>
+      </div>
+    </td>
   </tr>
  </tbody>
 </table>
@@ -935,6 +1126,9 @@ window.onclick = function(event) {
     }
 }
 
+$(function(){
+   $(".myscrollingdiv").jScrollPane();
+});
 
 
 </script>
