@@ -22,6 +22,10 @@ if ($_POST['hidden']==1)
             background-color: #514947;
             color: white;
         }
+        #commentsection {
+          text-align: left;
+        }
+
     </style>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -211,15 +215,15 @@ if ($_POST['hidden']==1)
                           <p>Saturday 6AM-12AM</p>
                     </div>
                   </div>
+                  <div id="commentsection">
                   <h1 id="comment1">Comment Section</h1>
                   <form id="#formSection" method="post" class="customercomment-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
-                    Name: <input type="text" name="name" value="<?php echo $_SESSION['login']?>"><br>
-                    Comment: <input type="text" name="comment" value=""><br>
+                    Name: <input type="text" name="name" value="<?php echo $_SESSION['login']?>">
+                    Comment: <input type="text" name="comment" value="">
                     <input type="hidden" name ="hidden" value ="1">
                     <button type="submit" class="btn btn-primary" value="comment">Submit</button>
                     </form>
-                    <br>
-               <table class = "table">
+               <table class = "table ForumTable">
                     <?php
                       $db = mysqli_connect("localhost","gpeck2217","","c9");
                       $sql = "SELECT * FROM forum";
@@ -234,6 +238,7 @@ if ($_POST['hidden']==1)
                             </tr>
                             <?php } ?>
                 </table>
+                </div>
             </div>
       </div>
 
