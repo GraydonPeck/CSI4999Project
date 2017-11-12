@@ -117,6 +117,14 @@ map area {
 }
 
 /****************************************************
+ABOUT PAGE
+****************************************************/
+
+.ForumTable tr:nth-of-type(2n) {
+    border-bottom: 8px solid;
+}
+
+/****************************************************
 SCHEDULE PAGE
 ****************************************************/
 
@@ -387,6 +395,12 @@ h1 {
 p.sansserif {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
+}
+
+p.video {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 20px;
 }
 
 p.normal {
@@ -1726,4 +1740,48 @@ Video container Special
     w3-bar-item {
         width: 100%;
     }
+}
+
+/**************************
+Scroll bar
+**************************/
+
+/* Turn on custom 8px wide scrollbar */
+
+::-webkit-scrollbar {
+    width: 8px;
+    /* 1px wider than Lion. */
+    /* This is more usable for users trying to click it. */
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 50px;
+}
+
+/* hover effect for both scrollbar area, and scrollbar 'thumb' */
+
+::-webkit-scrollbar {
+    background-color: rgba(0, 0, 0, 0.09);
+}
+
+/* The scrollbar 'thumb' ...that marque oval shape in a scrollbar */
+
+::-webkit-scrollbar-thumb:vertical {
+    /* This is the EXACT color of Mac OS scrollbars.
+     Yes, I pulled out digital color meter */
+    background: #514947;
+    border-radius: 50px;
+}
+
+/* The scrollbar 'thumb' ...that marque oval shape in a scrollbar */
+
+::-webkit-scrollbar-thumb:vertical:hover {
+    /* This is the EXACT color of Mac OS scrollbars.
+     Yes, I pulled out digital color meter */
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(0, 0, 0, 0.61);
+    /* Some darker color when you click it */
+    border-radius: 50px;
 }
