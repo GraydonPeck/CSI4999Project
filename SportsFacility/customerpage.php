@@ -188,7 +188,7 @@
        </div>
   </div>
   <!-- This is a customer info table -->
-    <form id="#formSection" method="post" class="customereedit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
+    <form id="#formSection" style="padding:0px;ev method="post" class="customereedit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
       <div class="TableWrap">
           <table class="table DefaultTable">
              <tr class="TableHeading">
@@ -225,7 +225,7 @@
     </form>
 
     <!-- This is a customer reservation table -->
-    <form id="#formSection" method="post" class="customeredit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
+    <form id="#formSection" style="padding:0px;" method="post" class="customeredit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
       <div class="TableWrap">
         <!-- This is a table style that adds a black border to the table and colors each element in the table -->
       <table class = "table DefaultTable">
