@@ -489,7 +489,6 @@ Table & Container
     color: white;
 }
 
-
 .TableWrap {
     border: 1px solid;
     border-radius: 5px;
@@ -1784,4 +1783,37 @@ Scroll bar
     background: rgba(0, 0, 0, 0.61);
     /* Some darker color when you click it */
     border-radius: 50px;
+}
+
+/*******************************
+Tabbed container scroll
+********************************/
+
+@media (min-width:300px) {
+    .custom {
+        height: 195px;
+        overflow: auto;
+        margin-top: 15px;
+
+
+    }
+    ::-webkit-scrollbar-thumb:vertical:hover {
+        background: #514947;
+        border-radius: 50px;
+    }
+}
+
+@media (max-width:1000px) {
+    .custom {
+        height: 195px;
+
+        overflow: auto;
+        margin-top: 15px;
+
+
+    }
+    ::-webkit-scrollbar-thumb:vertical:hover {
+        background: #514947;
+        border-radius: 50px;
+    }
 }
