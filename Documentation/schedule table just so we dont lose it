@@ -1,0 +1,359 @@
+<div class="container" style="padding-top:10px;">
+<div class = "col-md-12">
+<!--Timesheet table -->
+  <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h1 class="panel-title"><big>Timesheet</big></h1>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-body"  style="overflow: auto;">
+              <form id="#formSection" method="post" class="" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
+              <table class="table" style="overflow: hidden;">
+
+                <tr>
+                          <th></th>
+                          <th>Monday</th>
+                          <th>Tuesday</th>
+                          <th>Wednesday</th>
+                          <th>Thursday</th>
+                          <th>Friday</th>
+                          <th>Saturday</th>
+                          <th>Sunday</th>
+                      </tr>
+                  <tbody>
+                      <tr>
+                          <th>Concessions</th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                             <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                             while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = "<?php echo $row['user_name']?>"><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?>
+                          	</select>
+                          	<input type="hidden" name="entry_id[]" value="10">
+                          </th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                            <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?>
+                          	</select>
+                		        	 <input type="hidden" name="entry_id[]" value="11">
+                          </th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                            <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?>
+                          	</select>
+                		        	 <input type="hidden" name="entry_id[]" value="12">
+                          </th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                             <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?>
+                          	</select>
+                		        	 <input type="hidden" name="entry_id[]" value="13">
+                          </th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                             <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                           while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+                		        	 <input type= "hidden" name="entry_id[]" value="14">
+                          </th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                             <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                           while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+                		        	 <input type="hidden" name="entry_id[]" value="15">
+                          </th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                             <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+                		        	 <input type="hidden" name="entry_id[]" value="16">
+                          </th>
+                      </tr>
+                      <tr>
+                          <th>Pro Shop</th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                             <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+                		        	 <input type="hidden" name="entry_id[]" value="17">
+                          </th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                             <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                           while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+                		        	 <input type="hidden" name="entry_id[]" value="18">
+                          </th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                             <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+                		        	 <input type="hidden" name="entry_id[]" value="19">
+                          </th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                              <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+                		        	 <input type="hidden" name="entry_id[]" value="20">
+                          </th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                               <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+                		        	 <input type="hidden" name="entry_id[]" value="21">
+                          </th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                              <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+                		        	 <input type="hidden" name="entry_id[]" value="22">
+                          </th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                              <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+                		        	 <input type="hidden" name="entry_id[]" value="23">
+                          </th>
+                      </tr>
+                      <tr>
+                          <th>Service Center</th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                               <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+                		        	 <input type="hidden" name="entry_id[]" value="24">
+                          </th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                              <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+                		        	 <input type="hidden" name="entry_id[]" value="25">
+                          </th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                               <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+                		        	 <input type="hidden" name="entry_id[]" value="26">
+                          </th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                               <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+                		        	 <input type="hidden" name="entry_id[]" value="27">
+                          </th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                               <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+                		        	 <input type="hidden" name="entry_id[]" value="28">
+                          </th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                               <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+                		        	 <input type="hidden" name="entry_id[]" value="29">
+                          </th>
+                          <th><select name = "user_name[]" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                               <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = "<?php echo $row['user_name']?>"><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+                          <input type="hidden" name="entry_id[]" value="9">
+                          </th>
+                      </tr>
+                      <input type="hidden" name="hidden" value ="5">
+                  </tbody>
+              </table>
+              <input type="submit" id="submitSection" class="btn btn-primary" name= "submit" value="Submit">
+            </div>
+            </form>
+          </div>
+        </div>
