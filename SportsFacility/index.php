@@ -236,11 +236,11 @@ _END;
       </map>
       <br>
       <br>
-      <div>
-      <h2>Featured Video</h2>
-      <iframe  height="300px" width="45%"src="https://www.youtube.com/embed/3CpZ_AydX8s"  frameborder="1" allowfullscreen style="float:left;margin-right:20px;margin-bottom:20px;"></iframe>
-      <p>This weekend check out a college match up between the Oakland Golden Grizzlies and the UDM Titans. The game will be the inaugual college game held here at HockeyPlex. This game will be the first meeting for these rivals in the 2017 season so get ready for an exhilarating game. Admission will be $5 and the puck drops on Ice 1 at 8:00pm. We'll be filming the whole game, as well as all of our college games so you can catch them here later! In the mean time enjoy our featured video of the week.</p>
-      <p>In this video you will see the Central Michigan Chippewas defeating Oakland University 8-4 for CMU's first win in program history vs. the Grizzlies. Both Dalton Sutherland and Nathan Allgaier had hat tricks, and Riley Morgan took home his 7th win of the season. CMU improves to 11-4 on the season, and Oakland looks to get back on the grind and pick up a home win for their first game on campus. Check back here next week for a new featured video and feel free to leave a video request on our About page in the comments section. </p>
+      <div class="panel panel-primary">
+        <h2>Featured Video</h2>
+        <iframe  height="300px" width="45%"src="https://www.youtube.com/embed/3CpZ_AydX8s"  frameborder="1" allowfullscreen style="float:left;margin-right:20px;margin-bottom:20px;"></iframe>
+        <p>This weekend check out a college match up between the Oakland Golden Grizzlies and the UDM Titans. The game will be the inaugual college game held here at HockeyPlex. This game will be the first meeting for these rivals in the 2017 season so get ready for an exhilarating game. Admission will be $5 and the puck drops on Ice 1 at 8:00pm. We'll be filming the whole game, as well as all of our college games so you can catch them here later! In the mean time enjoy our featured video of the week.</p>
+        <p>In this video you will see the Central Michigan Chippewas defeating Oakland University 8-4 for CMU's first win in program history vs. the Grizzlies. Both Dalton Sutherland and Nathan Allgaier had hat tricks, and Riley Morgan took home his 7th win of the season. CMU improves to 11-4 on the season, and Oakland looks to get back on the grind and pick up a home win for their first game on campus. Check back here next week for a new featured video and feel free to leave a video request on our About page in the comments section. </p>
       </div>
       </div>
       <div class="col-md-3" style="padding-top:15px">

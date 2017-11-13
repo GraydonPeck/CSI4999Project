@@ -116,7 +116,6 @@
 </nav>
 <div class="jumbotron">
   <h1><big>Hockey<strong>Plex</strong></big></h1>
-  <center><h2>This is the Manger page</h2></center>
 </div>
 <div class="container" style="padding-top:10px;">
 <div class = "col-md-12">
@@ -127,7 +126,7 @@
                 <div class="clearfix"></div>
             </div>
             <div class="panel-body"  >
-              <form id="#formSection" method="post"  style="margin:15px; " data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
+              <form id="#formSection" method="post"  style="margin:15px;padding:0px; " data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
                 <div class="TableWrap" >
                   <table class="table"  style="overflow: hidden;">
                      <tr class="TableHeading">
@@ -191,7 +190,7 @@
         <div class="panel panel-primary">
           <div class="panel-heading">Add New User</div>
           <div class="panel-body">
-           <form id="#formSection" method="post" class="employeeedit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
+           <form style="padding:0px;" id="#formSection" method="post" class="employeeedit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
              <div class="TableWrap">
                 <table class = "table">
                     <tr>
@@ -241,7 +240,7 @@
                    <td>DOB</td><td><input type="text" name="employee_DOB"></td>
                     </tr>
                     <tr>
-                      <td>Sex</td><td><input type="text" name="employee_sex"></td>
+                      <td>Gender</td><td><input type="text" name="employee_sex"></td>
                     </tr>
                   <input type = "hidden" name= "hidden2" value= "2">
                 </table>
@@ -257,7 +256,7 @@
     <div class= "col-md-6">
       <div class="panel panel-primary">
         <div class="panel-heading">Employee Information</div>
-         <form id="#formSection" method="post" class="employeeedit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
+         <form style="padding:0px;" id="#formSection" method="post" class="employeeedit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
            <div class="TableWrap">
               <table class = "table">
                <!-- Links to our database with the information each customer enter into the following fields -->
@@ -290,7 +289,7 @@
               <?php } ?>
             </table>
             </div>
-            <a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Edit" href="#">EDIT INFORMATION</a>
+            <a style="margin:0px; margin-top:5px;" class= "button btn-block btn-danger" data-toggle="modal" data-target="#Edit" href="#">EDIT INFORMATION</a>
           </form>
       </div>
             <div class="panel panel-primary">
