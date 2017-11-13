@@ -1817,3 +1817,23 @@ Tabbed container scroll
         border-radius: 50px;
     }
 }
+
+/********************************
+Caption Display
+********************************/
+
+.w3-display-topleft {
+    background-color: #766151;
+    color: #FEE202;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+.w3-display-topright {
+    background-color: #766151;
+    color: #FEE202;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.9;
+}
