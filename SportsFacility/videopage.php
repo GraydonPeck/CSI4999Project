@@ -32,6 +32,28 @@
 
 <style>
 
+.w3-display-topleft{
+  background-color:#766151;
+  color:#FEE202;
+  font-size:20px;
+  font-weight:bold;
+  opacity:0.9;
+}
+.w3-display-topright{
+  background-color:#766151;
+  color:#FEE202;
+  font-size:20px;
+  font-weight:bold;
+  opacity:0.9;
+}
+@media(max-width:2000px){
+img{
+  max-width:100%;
+
+  height:auto;
+
+}
+}
 @media (max-width:500px){
 .fluidMedia {
     position: relative;
@@ -225,40 +247,40 @@ s.parentNode.insertBefore(hm, s);
 </div>
 
 <!--This is where user will enter the image they want to display in the carosel at top of page-->
-<div class="w3-content w3-display-container" style="max-width:100%;" >
+<div class="w3-content w3-display-container" style="max-width:2500px; ">
   <div class="w3-display-container mySlides">
-    <img src="./img/abandoned-ice-hockey-rink-b.gif" style="background-size:cover; width:100%; height:300px ">
-    <div class="w3-display-bottomleft w3-padding-16 w3-black">
+    <img src="./img/abandoned-ice-hockey-rink-b1_edited-1.jpg" width="2500px" height="300px" >
+    <div class="w3-display-topright">
       Retro Hockey Rink!
     </div>
   </div>
   <div class="w3-display-container mySlides">
-    <img  src="./img/shea-rink_redu.gif" style="background-size:contain; width:100%; height:300px ">
-    <div class="w3-display-bottomleft w3-padding-16 w3-black">
+    <img  src="./img/shea-rink_redu.jpg" width="2500px" height="300px">
+    <div class="w3-display-topleft" style="background-color:#766151;">
       Shea Hockey Rink!
     </div>
   </div>
   <div class="w3-display-container mySlides">
-    <img  src="./img/maxresdefault.gif" style="background-size:contain; width:100%; height:300px">
-    <div class="w3-display-bottomleft w3-padding-16 w3-black">
+    <img  src="./img/maxresdefault_redu.jpg"  width="2500px" height="300px">
+    <div class="w3-display-topleft">
       MineCraft Rink!
     </div>
   </div>
   <div class="w3-display-container mySlides">
-    <img src="./img/513607201.gif" style="background-size:contain; width:100%; height:300px">
-    <div class="w3-display-bottomleft w3-padding-16 w3-black">
+    <img src="./img/513607201_redu.jpg" width="2500px" height="300px">
+    <div class="w3-display-topright">
      Hockey Rink!
     </div>
   </div>
   <div class="w3-display-container mySlides">
-    <img src="./img/GW4OCOVG2VGGLFAQUGRTB3IA2U.gif" style="background-size:contain; width:100%; height:300px">
-    <div class="w3-display-bottomleft w3-padding-16 w3-black">
+    <img src="./img/GW4OCOVG2VGGLFAQUGRTB3IA2U_redu.jpg" width="2500px" height="300px">
+    <div class="w3-display-topleft">
     Hockey Rink!
     </div>
   </div>
   <div class="w3-display-container mySlides">
-    <img  src="./img/icerink4.gif" style="background-size:contain; width:100%; height:300px">
-    <div class="w3-display-bottomleft w3-padding-16 w3-black">
+    <img  src="./img/icerink4_redu.jpg" width="2500px" height="300px">
+    <div class="w3-display-topright">
     Hockey Rink!
     </div>
   </div>
@@ -861,26 +883,36 @@ s.parentNode.insertBefore(hm, s);
 
   <div id="wrapper">
 		<div id="header">
+
 		  <h2>Contact Infromation</h2>
+
 		  <hr>
 		</div>
 		<div id="content">
 
+
+
     <div class="container">
       <center>
-      <button onclick="location.href = 'aboutpage.php#comment1';" id="myButton" class="button button1" >Comment</button>
-		  <button type="button" class="btn button7" style="text-align:center;" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+<button type="button" class="button button1" data-toggle="collapse" data-target="#demo">Emails</button>
+  <button onclick="location.href = 'aboutpage.php#comment1';" id="myButton" class="button button1" >Comment</button>
 
   <div id="demo" class="collapse">
-    <p>This is some text</p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    <div class="container">
+      <div class="panel panel-primary" style="width:300px;">
+      Email:mpdegraeve@oakland.edu
+      </div>
+    </div>
+
   </div>
   </center>
 		</div>
 
 		<div id="footer">
+		  <center>
+		  <p>We are located at 318 Meadow Brook Rd, Rochester MI 48309</p>
+  <p>Phone number: (248) 370-2100</p>
+      </center>
     </div>
   </div>
 </div>
