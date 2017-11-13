@@ -224,25 +224,46 @@ s.parentNode.insertBefore(hm, s);
   <h1><big>Hockey<strong>Plex</strong></big></h1>
 </div>
 
-
-
-
-
-
+<!--This is where user will enter the image they want to display in the carosel at top of page-->
 <div class="w3-content w3-display-container" style="max-width:100%;" >
-
-  <img class="mySlides" src="./img/513607201.jpg" style="background-size:cover; width:100%; height:300px ">
-
-  <img class="mySlides" src="./img/standrew_spot.jpg" style="background-size:contain; width:100%; height:300px ">
-  <img class="mySlides" src="./img/maxresdefault.jpg" style="background-size:contain; width:100%; height:300px  ">
-  <img class="mySlides" src="./img/shea-rink.jpg" style="background-size:contain; width:100%; height:300px ">
-
-  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-
+  <div class="w3-display-container mySlides">
+    <img src="./img/abandoned-ice-hockey-rink-b.gif" style="background-size:cover; width:100%; height:300px ">
+    <div class="w3-display-bottomleft w3-padding-16 w3-black">
+      Retro Hockey Rink!
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+    <img  src="./img/shea-rink_redu.gif" style="background-size:contain; width:100%; height:300px ">
+    <div class="w3-display-bottomleft w3-padding-16 w3-black">
+      Shea Hockey Rink!
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+    <img  src="./img/maxresdefault.gif" style="background-size:contain; width:100%; height:300px">
+    <div class="w3-display-bottomleft w3-padding-16 w3-black">
+      MineCraft Rink!
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+    <img src="./img/513607201.gif" style="background-size:contain; width:100%; height:300px">
+    <div class="w3-display-bottomleft w3-padding-16 w3-black">
+     Hockey Rink!
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+    <img src="./img/GW4OCOVG2VGGLFAQUGRTB3IA2U.gif" style="background-size:contain; width:100%; height:300px">
+    <div class="w3-display-bottomleft w3-padding-16 w3-black">
+    Hockey Rink!
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+    <img  src="./img/icerink4.gif" style="background-size:contain; width:100%; height:300px">
+    <div class="w3-display-bottomleft w3-padding-16 w3-black">
+    Hockey Rink!
+    </div>
+  </div>
 </div>
-
-
+<!-- End of carosel-->
 
 <br>
 
@@ -1130,6 +1151,9 @@ $(function(){
    $(".myscrollingdiv").jScrollPane();
 });
 
+   document.getElementById("myButton").onclick = function () {
+        location.href = "aboutpage.php#comment1";
+    };
 
 </script>
 
