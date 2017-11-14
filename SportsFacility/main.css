@@ -1774,6 +1774,13 @@ Scroll bar
     border-radius: 50px;
 }
 
+::-webkit-scrollbar-thumb:horizontal {
+    /* This is the EXACT color of Mac OS scrollbars.
+     Yes, I pulled out digital color meter */
+    background: #514947;
+    border-radius: 50px;
+}
+
 /* The scrollbar 'thumb' ...that marque oval shape in a scrollbar */
 
 ::-webkit-scrollbar-thumb:vertical:hover {
