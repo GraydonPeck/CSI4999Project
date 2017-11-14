@@ -32,20 +32,7 @@
 
 <style>
 
-.w3-display-topleft{
-  background-color:#766151;
-  color:#FEE202;
-  font-size:20px;
-  font-weight:bold;
-  opacity:0.9;
-}
-.w3-display-topright{
-  background-color:#766151;
-  color:#FEE202;
-  font-size:20px;
-  font-weight:bold;
-  opacity:0.9;
-}
+
 @media(max-width:2000px){
 img{
   max-width:100%;
@@ -250,39 +237,21 @@ s.parentNode.insertBefore(hm, s);
 <div class="w3-content w3-display-container" style="max-width:2500px; ">
   <div class="w3-display-container mySlides">
     <img src="./img/abandoned-ice-hockey-rink-b1_edited-1.jpg" width="2500px" height="300px" >
-    <div class="w3-display-topright">
-      Retro Hockey Rink!
-    </div>
   </div>
   <div class="w3-display-container mySlides">
     <img  src="./img/shea-rink_redu.jpg" width="2500px" height="300px">
-    <div class="w3-display-topleft" style="background-color:#766151;">
-      Shea Hockey Rink!
-    </div>
   </div>
   <div class="w3-display-container mySlides">
     <img  src="./img/maxresdefault_redu.jpg"  width="2500px" height="300px">
-    <div class="w3-display-topleft">
-      MineCraft Rink!
-    </div>
   </div>
   <div class="w3-display-container mySlides">
     <img src="./img/513607201_redu.jpg" width="2500px" height="300px">
-    <div class="w3-display-topright">
-     Hockey Rink!
-    </div>
   </div>
   <div class="w3-display-container mySlides">
     <img src="./img/GW4OCOVG2VGGLFAQUGRTB3IA2U_redu.jpg" width="2500px" height="300px">
-    <div class="w3-display-topleft">
-    Hockey Rink!
-    </div>
   </div>
   <div class="w3-display-container mySlides">
     <img  src="./img/icerink4_redu.jpg" width="2500px" height="300px">
-    <div class="w3-display-topright">
-    Hockey Rink!
-    </div>
   </div>
 </div>
 <!-- End of carosel-->
@@ -297,8 +266,7 @@ s.parentNode.insertBefore(hm, s);
   <?php
   $username= $_SESSION['login'];
    $customer = check_login_type($username);
-    if ($customer)
-    {?>
+    if ($customer) { ?>
 
     <div class="w3-bar">
     <button class="w3-bar-item w3-button tablink w3-black" onclick="videotab(event,'Highlights')">Highlights</button>
@@ -318,7 +286,7 @@ s.parentNode.insertBefore(hm, s);
 
   <div id="Highlights" class="w3-container w3-display-container videos">
     <div style="margin-top:50px; width:100%;">
-	    <input  type="text" id="HighlightsInput" name="videoname" onkeyup="Highlights()" placeholder="Search for names..">
+	    <input type="text" id="HighlightsInput" name="videoname" onkeyup="Highlights()" placeholder="Search for videos.." >
 	  </div>
 
     <table id="HighlightTable">
@@ -331,7 +299,7 @@ s.parentNode.insertBefore(hm, s);
   <tbody>
     <tr>
       <td>
-        <h3 class="containertext">Break Aways</h3>
+        <h2 class="containertext">Break Aways</h2>
         <div class="fluidMedia">
           <iframe  height="300px" width="50%"src="https://www.youtube.com/embed/Zf1Xc5da2cs"  frameborder="1" allowfullscreen></iframe>
         </div>
@@ -346,7 +314,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Best Games</h3>
+        <h2 class="containertext">Best Games</h2>
         <div class="fluidMedia">
          <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/4--iEOftLZ4" frameborder="1" allowfullscreen></iframe>
         </div>
@@ -361,7 +329,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Golie Goals</h3>
+        <h2 class="containertext">Golie Goals</h2>
         <div class=" fluidMedia">
           <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/K8rt8gYAQls" frameborder="1" allowfullscreen></iframe>
         </div>
@@ -375,7 +343,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Best Dangles | Snipes | Passes</h3>
+        <h2 class="containertext">Best Dangles | Snipes | Passes</h2>
         <div class="fluidMedia">
          <iframe  height="300" width="50%" src="https://www.youtube.com/embed/0otLHeiYeDA" frameborder="1" allowfullscreen></iframe>
         </div>
@@ -399,7 +367,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">History Goalie Saves</h3>
+        <h2 class="containertext">History Goalie Saves</h2>
         <div class="fluidMedia">
          <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/plna4yeuPLQ" frameborder="1" allowfullscreen></iframe>
         </div>
@@ -412,7 +380,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
      <tr>
       <td>
-        <h3 class="containertext">Hockey Hits</h3>
+        <h2 class="containertext">Hockey Hits</h2>
         <div class="fluidMedia">
          <iframe height="300px" width="50%" src="https://www.youtube.com/embed/v9EtLGwrJ58" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
@@ -425,7 +393,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Game Highlights</h3>
+        <h2 class="containertext">Game Highlights</h2>
         <div class="fluidMedia">
          <iframe height="300px" width="50%" src="https://www.youtube.com/embed/1h2ZaktT3tI" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
@@ -439,7 +407,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Pavel Datsyuk</h3>
+        <h2 class="containertext">Pavel Datsyuk</h2>
         <div class="fluidMedia">
          <iframe height="300px" width="50%" src="https://www.youtube.com/embed/dXT2m6sgbIM" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
@@ -453,7 +421,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
      <tr>
       <td>
-        <h3 class="containertext">Celebrations</h3>
+        <h2 class="containertext">Celebrations</h2>
         <div class="fluidMedia">
          <iframe height="300px" width="50%" src="https://www.youtube.com/embed/vTNNntrU9dA" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
@@ -466,7 +434,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Fear In Hockey</h3>
+        <h2 class="containertext">Fear In Hockey</h2>
         <div class="fluidMedia">
          <iframe height="300px" width="50%" src="https://www.youtube.com/embed/nngFtLXextE" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
@@ -479,7 +447,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Hardest Hits</h3>
+        <h2 class="containertext">Hardest Hits</h2>
         <div class="fluidMedia">
          <iframe height="300px" width="50%" src="https://www.youtube.com/embed/lr4rG6fJiuU" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
@@ -492,7 +460,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Golie Slashes</h3>
+        <h2 class="containertext">Golie Slashes</h2>
         <div class="fluidMedia">
          <iframe height="300px" width="50%" src="https://www.youtube.com/embed/gYGrQ7JdnK4" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
@@ -505,7 +473,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Best Suspensions</h3>
+        <h2 class="containertext">Best Suspensions</h2>
         <div class="fluidMedia">
          <iframe height="300px" width="50%" src="https://www.youtube.com/embed/zzyCWViee-A" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
@@ -518,7 +486,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Creative Moves</h3>
+        <h2 class="containertext">Creative Moves</h2>
         <div class="fluidMedia">
          <iframe height="300px" width="50%" src="https://www.youtube.com/embed/0GC34H2GDY8" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
@@ -536,7 +504,7 @@ s.parentNode.insertBefore(hm, s);
 
     <div id="Training" class="w3-container w3-display-container videos" style="display:none">
     <div style="margin-top:50px; width:100%;">
-	<input  type="text" id="SkillInput" onkeyup="Training()" placeholder="Search for names..">
+	<input  type="text" id="SkillInput" onkeyup="Training()" placeholder="Search for videos..">
 	</div>
 
 
@@ -753,10 +721,13 @@ s.parentNode.insertBefore(hm, s);
  </tbody>
 </table>
 </div>
-
+<?php
+  $username= $_SESSION['login'];
+   $customer = check_login_type($username);
+    if (!$customer) { ?>
 <div id="Learning" class="w3-container w3-display-container videos" style="display:none">
   <div style="margin-top:50px; width:100%;">
-	  <input  type="text" id="LearningInput" onkeyup="Learning()" placeholder="Search for names..">
+	  <input  type="text" id="LearningInput" onkeyup="Learning()" placeholder="Search for videos..">
 	</div>
 
    <table id="LearningsTable">
@@ -877,6 +848,7 @@ s.parentNode.insertBefore(hm, s);
  </tbody>
 </table>
 </div>
+<?php } ?>
 </div>
 
 <br>
@@ -884,9 +856,9 @@ s.parentNode.insertBefore(hm, s);
   <div id="wrapper">
 		<div id="header">
 
-		  <h2>Contact Infromation</h2>
+		  <h2>Contact Information</h2>
 
-		  <hr>
+		  <hr class="style-seven">
 		</div>
 		<div id="content">
 
@@ -894,24 +866,16 @@ s.parentNode.insertBefore(hm, s);
 
     <div class="container">
       <center>
-<button type="button" class="button button1" data-toggle="collapse" data-target="#demo">Emails</button>
-  <button onclick="location.href = 'aboutpage.php#comment1';" id="myButton" class="button button1" >Comment</button>
-
-  <div id="demo" class="collapse">
-    <div class="container">
-      <div class="panel panel-primary" style="width:300px;">
-      Email:mpdegraeve@oakland.edu
-      </div>
-    </div>
-
-  </div>
+  <button onclick="location.href = 'aboutpage.php#comment1';" id="myButton" class="button button1" >Message Us</button>  </div>
   </center>
 		</div>
 
 		<div id="footer">
 		  <center>
-		  <p>We are located at 318 Meadow Brook Rd, Rochester MI 48309</p>
-  <p>Phone number: (248) 370-2100</p>
+
+		    <p class="sansserif"><strong>Address:</strong> <i>318 Meadow Brook Rd, Rochester MI 48309</i></p>
+        <p class="sansserif"><strong>Phone Number:</strong><i> (248) 370-2100</i></p>
+        <p class="sansserif"><strong>Email: </strong><i>mpdegraeve@oakland.edu</i></p>
       </center>
     </div>
   </div>
@@ -1040,7 +1004,7 @@ function carousel() {
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-    if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+    if (document.body.scrollTop > 650 || document.documentElement.scrollTop > 650) {
         document.getElementById("myBtn").style.display = "block";
     } else {
         document.getElementById("myBtn").style.display = "none";
