@@ -32,6 +32,15 @@
 
 <style>
 
+
+@media(max-width:2000px){
+img{
+  max-width:100%;
+
+  height:auto;
+
+}
+}
 @media (max-width:500px){
 .fluidMedia {
     position: relative;
@@ -225,42 +234,24 @@ s.parentNode.insertBefore(hm, s);
 </div>
 
 <!--This is where user will enter the image they want to display in the carosel at top of page-->
-<div class="w3-content w3-display-container" style="max-width:100%;" >
+<div class="w3-content w3-display-container" style="max-width:2500px; ">
   <div class="w3-display-container mySlides">
-    <img src="./img/abandoned-ice-hockey-rink-b.gif" style="background-size:cover; width:100%; height:300px ">
-    <div class="w3-display-bottomleft w3-padding-16 w3-black">
-      Retro Hockey Rink!
-    </div>
+    <img src="./img/abandoned-ice-hockey-rink-b1_edited-1.jpg" width="2500px" height="300px" >
   </div>
   <div class="w3-display-container mySlides">
-    <img  src="./img/shea-rink_redu.gif" style="background-size:contain; width:100%; height:300px ">
-    <div class="w3-display-bottomleft w3-padding-16 w3-black">
-      Shea Hockey Rink!
-    </div>
+    <img  src="./img/shea-rink_redu.jpg" width="2500px" height="300px">
   </div>
   <div class="w3-display-container mySlides">
-    <img  src="./img/maxresdefault.gif" style="background-size:contain; width:100%; height:300px">
-    <div class="w3-display-bottomleft w3-padding-16 w3-black">
-      MineCraft Rink!
-    </div>
+    <img  src="./img/maxresdefault_redu.jpg"  width="2500px" height="300px">
   </div>
   <div class="w3-display-container mySlides">
-    <img src="./img/513607201.gif" style="background-size:contain; width:100%; height:300px">
-    <div class="w3-display-bottomleft w3-padding-16 w3-black">
-     Hockey Rink!
-    </div>
+    <img src="./img/513607201_redu.jpg" width="2500px" height="300px">
   </div>
   <div class="w3-display-container mySlides">
-    <img src="./img/GW4OCOVG2VGGLFAQUGRTB3IA2U.gif" style="background-size:contain; width:100%; height:300px">
-    <div class="w3-display-bottomleft w3-padding-16 w3-black">
-    Hockey Rink!
-    </div>
+    <img src="./img/GW4OCOVG2VGGLFAQUGRTB3IA2U_redu.jpg" width="2500px" height="300px">
   </div>
   <div class="w3-display-container mySlides">
-    <img  src="./img/icerink4.gif" style="background-size:contain; width:100%; height:300px">
-    <div class="w3-display-bottomleft w3-padding-16 w3-black">
-    Hockey Rink!
-    </div>
+    <img  src="./img/icerink4_redu.jpg" width="2500px" height="300px">
   </div>
 </div>
 <!-- End of carosel-->
@@ -275,8 +266,7 @@ s.parentNode.insertBefore(hm, s);
   <?php
   $username= $_SESSION['login'];
    $customer = check_login_type($username);
-    if ($customer)
-    {?>
+    if ($customer) { ?>
 
     <div class="w3-bar">
     <button class="w3-bar-item w3-button tablink w3-black" onclick="videotab(event,'Highlights')">Highlights</button>
@@ -296,7 +286,7 @@ s.parentNode.insertBefore(hm, s);
 
   <div id="Highlights" class="w3-container w3-display-container videos">
     <div style="margin-top:50px; width:100%;">
-	    <input  type="text" id="HighlightsInput" name="videoname" onkeyup="Highlights()" placeholder="Search for names..">
+	    <input type="text" id="HighlightsInput" name="videoname" onkeyup="Highlights()" placeholder="Search for videos.." >
 	  </div>
 
     <table id="HighlightTable">
@@ -309,7 +299,7 @@ s.parentNode.insertBefore(hm, s);
   <tbody>
     <tr>
       <td>
-        <h3 class="containertext">Break Aways</h3>
+        <h2 class="containertext">Break Aways</h2>
         <div class="fluidMedia">
           <iframe  height="300px" width="50%"src="https://www.youtube.com/embed/Zf1Xc5da2cs"  frameborder="1" allowfullscreen></iframe>
         </div>
@@ -324,7 +314,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Best Games</h3>
+        <h2 class="containertext">Best Games</h2>
         <div class="fluidMedia">
          <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/4--iEOftLZ4" frameborder="1" allowfullscreen></iframe>
         </div>
@@ -339,7 +329,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Golie Goals</h3>
+        <h2 class="containertext">Golie Goals</h2>
         <div class=" fluidMedia">
           <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/K8rt8gYAQls" frameborder="1" allowfullscreen></iframe>
         </div>
@@ -353,7 +343,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Best Dangles | Snipes | Passes</h3>
+        <h2 class="containertext">Best Dangles | Snipes | Passes</h2>
         <div class="fluidMedia">
          <iframe  height="300" width="50%" src="https://www.youtube.com/embed/0otLHeiYeDA" frameborder="1" allowfullscreen></iframe>
         </div>
@@ -377,7 +367,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">History Goalie Saves</h3>
+        <h2 class="containertext">History Goalie Saves</h2>
         <div class="fluidMedia">
          <iframe  height="300px" width="50%" src="https://www.youtube.com/embed/plna4yeuPLQ" frameborder="1" allowfullscreen></iframe>
         </div>
@@ -390,7 +380,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
      <tr>
       <td>
-        <h3 class="containertext">Hockey Hits</h3>
+        <h2 class="containertext">Hockey Hits</h2>
         <div class="fluidMedia">
          <iframe height="300px" width="50%" src="https://www.youtube.com/embed/v9EtLGwrJ58" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
@@ -403,7 +393,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Game Highlights</h3>
+        <h2 class="containertext">Game Highlights</h2>
         <div class="fluidMedia">
          <iframe height="300px" width="50%" src="https://www.youtube.com/embed/1h2ZaktT3tI" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
@@ -417,7 +407,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Pavel Datsyuk</h3>
+        <h2 class="containertext">Pavel Datsyuk</h2>
         <div class="fluidMedia">
          <iframe height="300px" width="50%" src="https://www.youtube.com/embed/dXT2m6sgbIM" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
@@ -431,7 +421,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
      <tr>
       <td>
-        <h3 class="containertext">Celebrations</h3>
+        <h2 class="containertext">Celebrations</h2>
         <div class="fluidMedia">
          <iframe height="300px" width="50%" src="https://www.youtube.com/embed/vTNNntrU9dA" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
@@ -444,7 +434,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Fear In Hockey</h3>
+        <h2 class="containertext">Fear In Hockey</h2>
         <div class="fluidMedia">
          <iframe height="300px" width="50%" src="https://www.youtube.com/embed/nngFtLXextE" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
@@ -457,7 +447,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Hardest Hits</h3>
+        <h2 class="containertext">Hardest Hits</h2>
         <div class="fluidMedia">
          <iframe height="300px" width="50%" src="https://www.youtube.com/embed/lr4rG6fJiuU" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
@@ -470,7 +460,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Golie Slashes</h3>
+        <h2 class="containertext">Golie Slashes</h2>
         <div class="fluidMedia">
          <iframe height="300px" width="50%" src="https://www.youtube.com/embed/gYGrQ7JdnK4" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
@@ -483,7 +473,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Best Suspensions</h3>
+        <h2 class="containertext">Best Suspensions</h2>
         <div class="fluidMedia">
          <iframe height="300px" width="50%" src="https://www.youtube.com/embed/zzyCWViee-A" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
@@ -496,7 +486,7 @@ s.parentNode.insertBefore(hm, s);
     </tr>
     <tr>
       <td>
-        <h3 class="containertext">Creative Moves</h3>
+        <h2 class="containertext">Creative Moves</h2>
         <div class="fluidMedia">
          <iframe height="300px" width="50%" src="https://www.youtube.com/embed/0GC34H2GDY8" frameborder="1" gesture="media" allowfullscreen></iframe>
         </div>
@@ -514,7 +504,7 @@ s.parentNode.insertBefore(hm, s);
 
     <div id="Training" class="w3-container w3-display-container videos" style="display:none">
     <div style="margin-top:50px; width:100%;">
-	<input  type="text" id="SkillInput" onkeyup="Training()" placeholder="Search for names..">
+	<input  type="text" id="SkillInput" onkeyup="Training()" placeholder="Search for videos..">
 	</div>
 
 
@@ -731,10 +721,13 @@ s.parentNode.insertBefore(hm, s);
  </tbody>
 </table>
 </div>
-
+<?php
+  $username= $_SESSION['login'];
+   $customer = check_login_type($username);
+    if (!$customer) { ?>
 <div id="Learning" class="w3-container w3-display-container videos" style="display:none">
   <div style="margin-top:50px; width:100%;">
-	  <input  type="text" id="LearningInput" onkeyup="Learning()" placeholder="Search for names..">
+	  <input  type="text" id="LearningInput" onkeyup="Learning()" placeholder="Search for videos..">
 	</div>
 
    <table id="LearningsTable">
@@ -855,32 +848,35 @@ s.parentNode.insertBefore(hm, s);
  </tbody>
 </table>
 </div>
+<?php } ?>
 </div>
 
 <br>
 
   <div id="wrapper">
 		<div id="header">
-		  <h2>Contact Infromation</h2>
-		  <hr>
+
+		  <h2>Contact Information</h2>
+
+		  <hr class="style-seven">
 		</div>
 		<div id="content">
 
+
+
     <div class="container">
       <center>
-      <button onclick="location.href = 'aboutpage.php#comment1';" id="myButton" class="button button1" >Comment</button>
-		  <button type="button" class="btn button7" style="text-align:center;" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
-
-  <div id="demo" class="collapse">
-    <p>This is some text</p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </div>
+  <button onclick="location.href = 'aboutpage.php#comment1';" id="myButton" class="button button1" >Message Us</button>  </div>
   </center>
 		</div>
 
 		<div id="footer">
+		  <center>
+
+		    <p class="sansserif"><strong>Address:</strong> <i>318 Meadow Brook Rd, Rochester MI 48309</i></p>
+        <p class="sansserif"><strong>Phone Number:</strong><i> (248) 370-2100</i></p>
+        <p class="sansserif"><strong>Email: </strong><i>mpdegraeve@oakland.edu</i></p>
+      </center>
     </div>
   </div>
 </div>
@@ -1008,7 +1004,7 @@ function carousel() {
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-    if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+    if (document.body.scrollTop > 650 || document.documentElement.scrollTop > 650) {
         document.getElementById("myBtn").style.display = "block";
     } else {
         document.getElementById("myBtn").style.display = "none";
