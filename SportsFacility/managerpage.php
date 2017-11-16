@@ -189,7 +189,7 @@
       <div class = "col-md-6">
         <div class="panel panel-primary">
           <div class="panel-heading">Add New User</div>
-          <div class="panel-body">
+          <div class="panel-body" style="max-height: 240pt; overflow-y: scroll;">
            <form style="padding:0px;" id="#formSection" method="post" class="employeeedit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
              <div class="TableWrap">
                 <table class = "table">
@@ -292,9 +292,11 @@
             <a style="margin:0px; margin-top:5px;" class= "button btn-block btn-danger" data-toggle="modal" data-target="#Edit" href="#">EDIT INFORMATION</a>
           </form>
       </div>
+      </div>
+      <div class = "col-md-12">
             <div class="panel panel-primary">
         <div class="panel-heading">Employee Database</div>
-         <form id="#formSection" method="post" class="employeeedit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
+        <div class="panel-body" style="max-height: 240pt; overflow-y: scroll;">
            <div class="TableWrap">
               <table class = "table">
                 <th>First Name</th><th>Last Name</th><th>Employee Type</th><th>Phone Number</th><th>Email</th><th>Address</th><th>SSN#</th><th>DOB</th><th>Sex</th>
@@ -320,7 +322,7 @@
                             <?php } ?>
             </table>
             </div>
-          </form>
+      </div>
       </div>
     </div>
     <!--Edit model -->

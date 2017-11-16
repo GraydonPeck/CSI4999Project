@@ -157,7 +157,10 @@
                 </div>
         			</div>
         			<div class="col-md-6 ScheduleList">
-        			  <table>
+        			  <table class = "table">
+        			  <th>Time</th>
+                <th>Event</th>
+                <th>Info</th>
         			  <?php
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
                 $username = $_SESSION['login'];
@@ -168,7 +171,9 @@
                 while ($row = mysqli_fetch_array($result)){
                  ?>
                 <tr>
-                  <td style="font-size:18px;padding-left:15px;"><?php echo "Time: " . $row['time']. " Event: " . $row['event']. " Info: " . $row['info'];?>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['time'];?>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['event'];?>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['info'];?>
                 </tr>
                 <?php }
                if  ($_POST['hidden1']==1){
@@ -196,7 +201,10 @@
             </div>
         			</div>
         			<div class="col-md-6">
-        			  <table>
+        			  <table class = "table">
+        			   <th>Time</th>
+                <th>Event</th>
+                <th>Info</th>
         			  <?php
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
                 $username = $_SESSION['login'];
@@ -207,7 +215,9 @@
                 while ($row = mysqli_fetch_array($result)){
                  ?>
                 <tr>
-                  <td  style="font-size:18px;padding-left:15px;"><?php echo "Time: " . $row['time']. " Event: " . $row['event']. " Info: " . $row['info'];?>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['time'];?>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['event'];?>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['info'];?>
                 </tr>
                 <?php }
                if ($_POST['hidden1']==2){
@@ -235,7 +245,10 @@
             </div>
         			</div>
         			<div  class="col-md-6">
-        			  <table>
+        			  <table class = "table">
+        			   <th>Time</th>
+                <th>Event</th>
+                <th>Info</th>
         			  <?php
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
                 $username = $_SESSION['login'];
@@ -246,7 +259,9 @@
               while ($row = mysqli_fetch_array($result)){
                  ?>
                 <tr>
-                  <td style="font-size:18px;padding-left:15px;"><?php echo "Time: " . $row['time']. " Event: " . $row['event']. " Info: " . $row['info'];?>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['time'];?>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['event'];?>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['info'];?>
                 </tr>
                 <?php }
                if  ($_POST['hidden1']==3){

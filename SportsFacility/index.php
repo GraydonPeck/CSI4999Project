@@ -2,13 +2,6 @@
 <?php
  include("dbutils.php");
  session_start();
-  if ($_POST['hidden']==1)
-{
-	    echo "Found " . count($_POST) . " elements" . "<td>";
-        var_dump($_POST);
-        add_event1 ($_POST['date'], $_POST['time'], $_POST['event'], $_POST['info'], $_POST['username']);
-        header ("Location: schedulepage.php");
-    }
  $username = $_POST['username'];
 ?>
 <html lang="en">
@@ -19,6 +12,8 @@
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <meta name="description" content="">
   <meta name="author" content="">
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
     <script src="script.js"></script>
 
   <title>HockeyPlex Home</title>
@@ -29,7 +24,6 @@
   <!-- <script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
   <script type = "text/javascript" src = "chk.js"></script>
   <link rel="stylesheet" type="text/css" href="main.css">
-
 
 </head>
 
@@ -149,15 +143,13 @@
     <div class="jumbotron">
       <h1><center><big>Hockey<strong>Plex</strong></big></center></h1>
     </div>
+    </div>
     <!-- Schedule Carousel -->
 
-    <div id="myCarousel" class="carousel fdi-Carousel slide">
-          <div class="carousel fdi-Carousel slide" id="eventCarousel" data-interval="0">
-              <div class="carousel-inner onebyone-carosel">
-                  <div class="item active">
-
-
-                  	<?php
+    <div id="myCarousel" class="carousel slide">
+          <div class="carousel slide" id="eventCarousel">
+              <div class="carousel-inner">
+        	<?php
                   		require_once 'conn.php';
 						$conn = new mysqli($hn, $un, $pw, $db);
 						if ($conn->connect_error) die ($conn->connect_error);
@@ -167,72 +159,60 @@
                       UNION
                       (SELECT * FROM `rink_2_db` WHERE date = '12/01/2017' AND event != 'Available')
                       UNION
-                      (SELECT * FROM `rink_3_db` WHERE date = '12/01/2017' AND event != 'Available')
-                      ORDER BY time";
+                      (SELECT * FROM `rink_3_db` WHERE date = '12/01/2017' AND event != 'Available')";
 
 						$result = $conn->query($query);
 						if (!$result) die ("Database access failed: " . $conn->error);
 
 						$rows = $result->num_rows;
 
-						for ($c = 0; $c <= 5; ++$c)
+						for ($c = 0; $c <= $rows; ++$c)
 						{
 							$result->data_seek($c);
 							$row = $result->fetch_array(MYSQLI_NUM);
-
+              if($c==0){
 							echo <<<_END
+							  <div class="item active">
 								<div class="col-md-2 col-xs-2 subcard">
                             		<div class="panel panel-primary">
                               			<div class="panel-heading"> Rink: $row[2] $row[1] </div>
-                              			<div class="panel-body"> <b>Event: </b>$row[3] <br> <b>Info:</b> $row[4]</div>
+                              			<div class="panel-body" style="max-height: 55pt;"> <b>Event: </b>$row[3] <br> <b>Info:</b> $row[4]</div>
                             		</div>
+                      			</div>
                       			</div>
 
 _END;
-						}
-					?>
-
-				  </div>
-				  <div class="item">
-
-				  	<?php
-						for ($c2 = 6; $c2 <= $row; ++$c2)
-						{
-							$result->data_seek($c2);
-							$row = $result->fetch_array(MYSQLI_NUM);
-
-							echo <<<_END
+						}else{
+						  echo <<<_END
+						  <div class="item">
 								<div class="col-md-2 col-xs-2 subcard">
                             		<div class="panel panel-primary">
-                              			<div class="panel-heading">Rink: $row[2] $row[1]  </div>
-                              			<div class="panel-body"> <b>Event: </b>$row[3] <br> <b>Info:</b> $row[4]</div>
+                              			<div class="panel-heading"> Rink: $row[2] $row[1] </div>
+                              			<div class="panel-body" style="max-height: 55pt;"> <b>Event: </b>$row[3] <br> <b>Info:</b> $row[4]</div>
                             		</div>
                       			</div>
-
+                      			</div>
 _END;
 						}
-
+						}
 					?>
-
-				  </div>
-
 
               </div>
               <a class="left carousel-control" href="#eventCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
               <a class="right carousel-control" href="#eventCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
           </div>
+          </div>
           <!--/carousel-inner-->
       </div><!--/schedulecarousel-->
-    </div>
     <div class="col-md-3" style="padding-top:15px">
     </div>
     <!--/Floorplan-->
     <div class="col-md-6" style="padding-top:15px">
       <img src="img/floorplan.jpg" alt="Floor Plan" class="center-block img-rounded map" hidefocus="true" usemap="#FloorMap">
       <map name="FloorMap" id="Map">
-        <area alt="" title="" data-toggle="modal" href="#" data-target="#ScheduleModal" shape="poly" coords="381,36,378,323,563,323,565,35" />
-        <area alt="" title="" data-toggle="modal" href="#" data-target="#ScheduleModal" shape="poly" coords="270,178,270,46,33,46,33,146,42,154,45,180" />
-        <area alt="" title="" data-toggle="modal" href="#" data-target="#ScheduleModal" shape="poly" coords="45,183,273,183,270,315,34,314,31,215" />
+        <area alt="" title="" data-toggle="modal" href="#" data-target="#ScheduleModal1" shape="poly" coords="381,36,378,323,563,323,565,35" />
+        <area alt="" title="" data-toggle="modal" href="#" data-target="#ScheduleModal2" shape="poly" coords="270,178,270,46,33,46,33,146,42,154,45,180" />
+        <area alt="" title="" data-toggle="modal" href="#" data-target="#ScheduleModal3" shape="poly" coords="45,183,273,183,270,315,34,314,31,215" />
       </map>
       <br>
       <br>
@@ -320,7 +300,7 @@ _END;
 
   <!-- End Invalid Password Modal -->
  <!--Floor Plan Modal -->
-   <div class="modal fade" id="ScheduleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+   <div class="modal fade" id="ScheduleModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -331,57 +311,146 @@ _END;
         </div>
         <div class="modal-body">
 <center>
-              <form action ="schedulepage.php" method="post">
-              <table>
-                 <tr><th>Date:</th>
-                <td><input type= "text" name="date" value="12/01/2017"></td></tr>
-              <tr><th>Time:</th>
-                          <td><select name ="time" class="form-control">
-                            <option disabled selected value>- select a time -</option>
-                               <?php
-                            $db = mysqli_connect("localhost","gpeck2217","","c9");
-                            $username = $_SESSION['login'];
-                             $customer = check_login_type($username);
-                             if ($customer)
-                            {
-                            $sql = "SELECT * FROM rink_1_db WHERE date = '12/01/2017' AND event = 'available'";
-                            }
-                            else
-                            {
-                            $sql = "SELECT * FROM rink_1_db WHERE date = '12/01/2017'";
-                            }
-                            $result = mysqli_query($db, $sql);
-                            while ($row = mysqli_fetch_array($result)){
-                		        	?>
-                            <option value = "<?php echo $row['time']?>"><?php echo $row['time']?></option>
-                           	<?php
-                          		}
-                          	?></select></td></tr>
-                          	<tr><th>Event:</th>
-                          	<td><input type= "text" name="event" value="<?php echo $row['event']?>"></td></tr>
-                          	<tr><th>Extra Info:</th>
-                          	<td><input type= "text" name="info" value="<?php echo $row['info']?>"></td></tr>
-                          	<input type="hidden" name="hidden" value ="1">
-                          	<input type="hidden" name="username" value = "<?php echo $_SESSION['login']?>">
-                      </table>
+              <table class= "table">
+                <th>Time</th>
+                <th>Event</th>
+                <th>Info</th>
+                <?php
+                $db = mysqli_connect("localhost","gpeck2217","","c9");
+                 $sql = "SELECT * FROM rink_1_db WHERE date = '12/01/2017' ";
+                $result = mysqli_query($db, $sql);
+                while ($row = mysqli_fetch_array($result)){
+                 ?>
+                <tr>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['time'];?>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['event'];?>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['info'];?>
+                </tr>
+                <?php } ?>
+                </table>
                       </center>
         </div>
-        <div class="modal-footer">
-          <center>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-          <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
-          </center>
+      </div>
+    </div>
+  </div>
+     <div class="modal fade" id="ScheduleModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Rink 2</h4>
+        </div>
+        <div class="modal-body">
+<center>
+              <table class = "table">
+                <th>Time</th>
+                <th>Event</th>
+                <th>Info</th>
+                <?php
+                $db = mysqli_connect("localhost","gpeck2217","","c9");
+                 $sql = "SELECT * FROM rink_2_db WHERE date = '12/01/2017' ";
+                $result = mysqli_query($db, $sql);
+                while ($row = mysqli_fetch_array($result)){
+                 ?>
+                <tr>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['time'];?>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['event'];?>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['info'];?>
+                </tr>
+                <?php } ?>
+                </table>
+                      </center>
+        </div>
+      </div>
+    </div>
+  </div>
+     <div class="modal fade" id="ScheduleModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Rink 3</h4>
+        </div>
+        <div class="modal-body">
+<center>
+              <table class= "table">
+                <th>Time</th>
+                <th>Event</th>
+                <th>Info</th>
+                <?php
+                $db = mysqli_connect("localhost","gpeck2217","","c9");
+                 $sql = "SELECT * FROM rink_3_db WHERE date = '12/01/2017' ";
+                $result = mysqli_query($db, $sql);
+                while ($row = mysqli_fetch_array($result)){
+                 ?>
+                <tr>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['time'];?>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['event'];?>
+                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['info'];?>
+                </tr>
+                <?php } ?>
+                </table>
+                      </center>
         </div>
       </div>
     </div>
   </div>
   <!-- End Login Modal -->
+<script>
+$(document).ready(function () {
+$('#eventCarousel').carousel({
+  interval: 10000;
+})
 
+$('.carousel .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+
+  if (next.next().length>0) {
+    next.next().children(':first-child').clone().appendTo($(this));
+  }
+  else {
+  	$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+  }
+});
+</script>
+<style>
+  /* override position and transform in 3.3.x */
+.carousel-inner .item.left.active {
+  transform: translateX(-33%);
+}
+.carousel-inner .item.right.active {
+  transform: translateX(33%);
+}
+
+.carousel-inner .item.next {
+  transform: translateX(33%)
+}
+.carousel-inner .item.prev {
+  transform: translateX(-33%)
+}
+
+.carousel-inner .item.right,
+.carousel-inner .item.left {
+  transform: translateX(0);
+}
+
+
+.carousel-control.left,.carousel-control.right {background-image:none;}
+</style>
   </body>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="../../dist/js/bootstrap.min.js"></script>
