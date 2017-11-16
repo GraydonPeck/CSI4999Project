@@ -1,0 +1,68 @@
+User Account Info Management
+
+https://www.w3schools.com/php/php_mysql_update.asp
+
+To to have users update their profiles, we need the page to recognize the users ID after login (perhaps a session variable by userId),
+From there the use an update statement to update to that users ID. which will post to database.
+
+
+
+
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record: " . $conn->error;
+}
+
+$conn->close();
+?>
+
+
+
+http://phpsec.org/projects/guide/4.html
+
+
+something like this
+
+
+if(mysqli_num_rows($loginResult) == 1)
+		{
+			session_start();
+			$_SESSION['auth'] = 'true';       ----------> instead of 'auth', have it generate a new name based on the userID i.e. ($USERID)
+			header('location: mainpage.php');  // Replace mainpage.php with the actual users homepage
+		}
+
+
+Then for the update profile page
+
+session_start();
+  if(!$_SESSION['$USERID']) == $userid
+  {
+    header('location: index.php');
+  }
+
+then it can update like 
+
+"UPDATE MyGuests SET lastname='Doe' WHERE id=$USERID";
+
+
+
+
+
+
+
