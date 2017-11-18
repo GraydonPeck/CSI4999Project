@@ -186,6 +186,7 @@
           </div>
          </center>
        </div>
+
   </div>
   <!-- This is a customer info table -->
     <form id="#formSection" style="padding:0px;ev method="post" class="customereedit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
@@ -261,6 +262,34 @@
             </table>
         </div>
     </form>
+
+ <div id="wrapper">
+		<div id="header">
+
+		  <h2>Contact Information</h2>
+
+		  <hr class="style-seven">
+		</div>
+		<div id="content">
+
+
+
+    <div class="container">
+      <center>
+  <button onclick="location.href = 'aboutpage.php#comment1';" id="myButton" class="button button1" >Message Us</button>  </div>
+  </center>
+		</div>
+
+		<div id="footer">
+		  <center>
+
+		    <p class="sansserif"><strong>Address:</strong> <i>318 Meadow Brook Rd, Rochester MI 48309</i></p>
+        <p class="sansserif"><strong>Phone Number:</strong><i> (248) 370-2100</i></p>
+        <p class="sansserif"><strong>Email: </strong><i>mpdegraeve@oakland.edu</i></p>
+      </center>
+    </div>
+  </div>
+</div>
 
 
 

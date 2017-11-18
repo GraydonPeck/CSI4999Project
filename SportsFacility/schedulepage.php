@@ -4,6 +4,7 @@
  session_start();
  if ($_POST['hidden']==1)
 {
+      do_alert("We will contact you via email shortly with your confirmation.");
 	    echo "Found " . count($_POST) . " elements" . "<td>";
         var_dump($_POST);
         add_event1 ($_POST['date'], $_POST['time'], $_POST['event'], $_POST['info'], $_POST['username']);
@@ -158,9 +159,6 @@
         			</div>
         			<div class="col-md-6 ScheduleList">
         			  <table class = "table">
-        			  <th>Time</th>
-                <th>Event</th>
-                <th>Info</th>
         			  <?php
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
                 $username = $_SESSION['login'];
@@ -168,6 +166,14 @@
                 echo $date1;
                 $sql = "SELECT * FROM rink_1_db WHERE date = '$date1'";
                 $result = mysqli_query($db, $sql);
+                if  ($_POST['hidden1']==1){
+                if (mysqli_fetch_array($result)!=0)
+                {
+                 ?>
+                  <th>Time</th>
+                <th>Event</th>
+                <th>Info</th>
+                <?php
                 while ($row = mysqli_fetch_array($result)){
                  ?>
                 <tr>
@@ -176,9 +182,11 @@
                   <td style="font-size:18px;padding-left:15px;"><?php echo $row['info'];?>
                 </tr>
                 <?php }
-               if  ($_POST['hidden1']==1){
                   ?><a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Event1" href="#">Schedule an event</a>
-                <?php } ?>
+                <?php } else{
+                ?>
+                <p>We do not have this far planned out yet please check again later</p>
+                <?php }} ?>
                 </table>
             </div>
           </div>
@@ -202,9 +210,6 @@
         			</div>
         			<div class="col-md-6">
         			  <table class = "table">
-        			   <th>Time</th>
-                <th>Event</th>
-                <th>Info</th>
         			  <?php
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
                 $username = $_SESSION['login'];
@@ -212,6 +217,14 @@
                 echo $date2;
                 $sql = "SELECT * FROM rink_2_db WHERE date = '$date2'";
                 $result = mysqli_query($db, $sql);
+                if ($_POST['hidden1']==2){
+                if (mysqli_fetch_array($result)!=0)
+                {
+                                      ?>
+                <th>Time</th>
+                <th>Event</th>
+                <th>Info</th>
+                <?php
                 while ($row = mysqli_fetch_array($result)){
                  ?>
                 <tr>
@@ -220,14 +233,17 @@
                   <td style="font-size:18px;padding-left:15px;"><?php echo $row['info'];?>
                 </tr>
                 <?php }
-               if ($_POST['hidden1']==2){
                   ?><a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Event2" href="#">Schedule an event</a>
-                <?php } ?>
+                <?php  } else{
+                ?>
+                <p>We do not have this far planned out yet please check again later</p>
+                <?php }} ?>
                 </table>
             </div>
           </div>
       </div>
   </div>
+
 
   <div class="col-md-12">
         <div class="panel panel-primary">
@@ -246,9 +262,6 @@
         			</div>
         			<div  class="col-md-6">
         			  <table class = "table">
-        			   <th>Time</th>
-                <th>Event</th>
-                <th>Info</th>
         			  <?php
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
                 $username = $_SESSION['login'];
@@ -256,6 +269,14 @@
                 echo $date3;
                 $sql = "SELECT * FROM rink_3_db WHERE date = '$date3'";
                 $result = mysqli_query($db, $sql);
+                if ($_POST['hidden1']==3){
+                if (mysqli_fetch_array($result)!=0)
+                {
+                                      ?>
+                <th>Time</th>
+                <th>Event</th>
+                <th>Info</th>
+                <?php
               while ($row = mysqli_fetch_array($result)){
                  ?>
                 <tr>
@@ -264,14 +285,20 @@
                   <td style="font-size:18px;padding-left:15px;"><?php echo $row['info'];?>
                 </tr>
                 <?php }
-               if  ($_POST['hidden1']==3){
                   ?><a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Event3" href="#">Schedule an event</a>
-                <?php } ?>
+                <?php  } else{
+                ?>
+                <p>We do not have this far planned out yet please check again later</p>
+                <?php }} ?>
                 </table>
             </div>
           </div>
-          </div>
+
+        </div>
       </div>
+
+
+
       <!--Event Modal1-->
       <div class="modal fade" id="Event1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -329,6 +356,8 @@
                 </div>
               </div>
       </form>
+
+
       <!--End of event modal1-->
       <div class="modal fade" id="Event2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -384,6 +413,7 @@
                     </div>
                   </div>
                 </div>
+
               </div>
       </form>
       <!--End of event modal2-->
@@ -444,14 +474,17 @@
               </div>
       </form>
       <!--End of event modal3-->
+
   </div>
+
+
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
       <script>
         $( function() {
           $( "#datepicker" ).datepicker();
@@ -459,10 +492,10 @@
           $( "#datepicker3" ).datepicker();
         } );
       </script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- <script src="../../dist/js/bootstrap.min.js"></script> -->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
     <script src="script.js"></script>
 
 

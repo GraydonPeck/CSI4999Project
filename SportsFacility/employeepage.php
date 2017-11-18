@@ -112,9 +112,9 @@
 
   <div class="col-md-8"  style="padding-top:10px;">
     <div class="panel panel-primary">
+      <div class="panel-heading">This Weeks Schedule</div>
       <center>
       <table>
-      <th>This Weeks Schedule</th>
       <?php
     $db = mysqli_connect("localhost","gpeck2217","","c9");
     $username = $_SESSION['login'];
@@ -146,6 +146,8 @@
     </div>
     <a class= "button btn-block btn-danger" href="servque.php">Service Queue Adminstration</a>
   </div>
+
+
 
   <!--end of Edit modal -->
    <div class= "col-md-4" style="padding-top:10px;">
@@ -185,7 +187,14 @@
             <a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Edit" href="#">EDIT INFORMATION</a>
           </form>
       </div>
-    </div>
+
+      </div>
+
+
+
+
+
+
     <!--Edit model -->
     <div class="modal fade" id="Edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -243,8 +252,12 @@
                   </div>
                 </div>
               </div>
+
       </form>
+
   <!--end of Edit modal -->
+
+
    <!--Schedule model -->
     <div class="modal fade" id="Request" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -282,10 +295,17 @@
                       </center>
                     </div>
                   </div>
+
                 </div>
+
               </div>
       </form>
+
+
+
   <!--end of schedule modal -->
+
+
 
 
 

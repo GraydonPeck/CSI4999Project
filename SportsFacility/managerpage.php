@@ -324,7 +324,10 @@
             </div>
       </div>
       </div>
+
     </div>
+
+
     <!--Edit model -->
     <div class="modal fade" id="Edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">

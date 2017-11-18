@@ -258,6 +258,7 @@ if(isset($_SESSION["cart_item"])){
 	?>
 </div>
 
+
     <script>
     paypal.Button.render({
 

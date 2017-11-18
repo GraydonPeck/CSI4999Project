@@ -237,4 +237,8 @@
 		$sql_i = "INSERT INTO forum(name,comment) VALUES('$name','$comment')";
 		run_update($sql_i);
 	}
+	function do_alert($msg)
+{
+  echo '<script type="text/javascript">alert("' . $msg . '"); </script>';
+}
 ?>

@@ -117,7 +117,7 @@ if ($_POST['hidden']==1)
               <?php if(isset($_SESSION['loggedin'])){ ?>
               <li  data-toggle="modal"> <a href="logout.php">Logout<span class="glyphicon glyphicon-user pull-left"></span></a></li>
               <?php }else{ ?>
-              <li  data-toggle="modal" data-target="#Login"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-left"></span></a></li>
+              <li  data-toggle="modal" data-target="#login-modal"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-left"></span></a></li>
               <?php } ?>
             <!-- End Trigger-->
 
@@ -149,45 +149,23 @@ if ($_POST['hidden']==1)
 </nav>
 
 <!--Login Modal -->
-
-  <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h4 class="modal-title" id="myModalLabel">Login</h4>
-        </div>
-        <div class="modal-body">
-
-          <center>
-          <form action = "checklogin.php" method="post">
-                                <input type="hidden" name="User_number">
-          <table>
-          <tr>
-          <td>Username:</td>     <td><input type="text" name="username"></td>
-          </tr>
-          <tr>
-          <td>Password:</td>     <td><input type="password" name="passwd"></td>
-          </tr>
-          </table>
-
-          </center>
-        </div>
-        <div class="modal-footer">
-          <center>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-          <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
-          </center>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      	  <div class="modal-dialog">
+  				<div class="loginmodal-container">
+  					<h1>Login to Your Account</h1><br>
+  				  <form action = "checklogin.php" method="post">
+  				    <input type="hidden" name="User_number">
+  					<input type="text" name="username" placeholder="Username">
+  					<input type="password" name="passwd" placeholder="Password">
+  					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+  				  </form>
+  				</div>
+  			</div>
+  		  </div>
 
 
   <!-- End Login Modal -->
+
 <div class="jumbotron">
   <center><h1><big>Hockey<strong>Plex</strong></big></h1></center>
 
@@ -216,37 +194,59 @@ if ($_POST['hidden']==1)
                     </div>
                   </div>
                   <div id="commentsection">
-                  <h1 id="comment1">Comment Section</h1>
                   <form id="#formSection" method="post" class="customercomment-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
-                    Name: <input type="text" name="name" value="<?php echo $_SESSION['login']?>">
-                    Comment: <input type="text" name="comment" value="">
+                     <h1 id="comment1">Message Board</h1>
+                    Name <input type="text" name="name" value="<?php echo $_SESSION['login']?>">
+                    Comment <input type="text" name="comment" value="">
                     <input type="hidden" name ="hidden" value ="1">
                     <button type="submit" class="btn btn-primary" value="comment">Submit</button>
-                    </form>
                <table class = "table ForumTable">
+                 <tr>
+                              <th>User</th><th style= "text-align: center;">Comment</th>
+                              </tr>
                     <?php
                       $db = mysqli_connect("localhost","gpeck2217","","c9");
-                      $sql = "SELECT * FROM forum";
+                      $sql = "SELECT * FROM forum ORDER BY 'id' DESC";
                       $result = mysqli_query($db, $sql);
                       while ($row = mysqli_fetch_array($result)){
                     ?>
-                            <tr>
-                              <td>Poster:</td> <td><?php echo $row['name']?></td>
-                            </tr>
-                            <tr>
-                              <td>Comment</td> <td><?php echo $row['comment']?></td>
+                              <tr>
+                            <td><?php echo $row['name']?></td>
+                            <td><?php echo $row['comment']?></td>
                             </tr>
                             <?php } ?>
                 </table>
+                </form>
                 </div>
             </div>
       </div>
 
-      <div class="footer">
-        <p>Contact us</p>
-          <p>We are located at 318 Meadow Brook Rd, Rochester MI 48309</p>
-          <p>Phone number: (248) 370-2100</p>
-      </div>
+      <div id="wrapper">
+		<div id="header">
+
+		  <h2>Contact Information</h2>
+
+		  <hr class="style-seven">
+		</div>
+		<div id="content">
+
+
+
+    <div class="container">
+      <center>
+  <button onclick="location.href = 'aboutpage.php#comment1';" id="myButton" class="button button1" >Message Us</button>  </div>
+  </center>
+		</div>
+
+		<div id="footer">
+		  <center>
+
+		    <p class="sansserif"><strong>Address:</strong> <i>318 Meadow Brook Rd, Rochester MI 48309</i></p>
+        <p class="sansserif"><strong>Phone Number:</strong><i> (248) 370-2100</i></p>
+        <p class="sansserif"><strong>Email: </strong><i>mpdegraeve@oakland.edu</i></p>
+      </center>
+    </div>
+  </div>
     </body>
 
 

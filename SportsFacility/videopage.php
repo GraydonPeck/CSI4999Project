@@ -196,7 +196,7 @@ s.parentNode.insertBefore(hm, s);
               <?php if(isset($_SESSION['loggedin'])){ ?>
               <li  data-toggle="modal"> <a href="logout.php">Logout<span class="glyphicon glyphicon-user pull-left"></span></a></li>
               <?php }else{ ?>
-              <li  data-toggle="modal" data-target="#Login"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-left"></span></a></li>
+              <li  data-toggle="modal" data-target="#login-modal"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-left"></span></a></li>
               <?php } ?>
             <!-- End Trigger-->
 
@@ -884,48 +884,27 @@ s.parentNode.insertBefore(hm, s);
 
 
 <!--Login Modal -->
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      	  <div class="modal-dialog">
+  				<div class="loginmodal-container">
+  					<h1>Login to Your Account</h1><br>
+  				  <form action = "checklogin.php" method="post">
+  				    <input type="hidden" name="User_number">
+  					<input type="text" name="username" placeholder="Username">
+  					<input type="password" name="passwd" placeholder="Password">
+  					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+  				  </form>
+  				</div>
+  			</div>
+  		  </div>
 
-  <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h4 class="modal-title" id="myModalLabel">Login</h4>
-        </div>
-        <div class="modal-body">
 
-          <center>
-          <form action = "checklogin.php" method="post">
-                                <input type="hidden" name="User_number">
-          <table>
-          <tr>
-          <td>Username:</td>     <td><input type="text" name="username"></td>
-          </tr>
-          <tr>
-          <td>Password:</td>     <td><input type="password" name="passwd"></td>
-          </tr>
-          </table>
-
-          </center>
-        </div>
-        <div class="modal-footer">
-          <center>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-          <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
-          </center>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <!-- End Login Modal -->
 
 
 
 
 </body>
-  <!-- End Login Modal -->
 <script>
 function videotab(evt, cityName) {
   var i, x, tablinks;
