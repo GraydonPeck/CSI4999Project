@@ -340,9 +340,11 @@ _END;
         <div class="modal-body">
 <center>
               <table class= "table">
+                <tr >
                 <th>Time</th>
                 <th>Event</th>
                 <th>Info</th>
+                </tr>
                 <?php
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
                  $sql = "SELECT * FROM rink_1_db WHERE date = '12/01/2017' ";

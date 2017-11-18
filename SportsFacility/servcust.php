@@ -22,6 +22,23 @@
 	</head>
 
 	<body>
+		<!--Login Modal -->
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      	  <div class="modal-dialog">
+  				<div class="loginmodal-container">
+  					<h1>Login to Your Account</h1><br>
+  				  <form action = "checklogin.php" method="post">
+  				    <input type="hidden" name="User_number">
+  					<input type="text" name="username" placeholder="Username">
+  					<input type="password" name="passwd" placeholder="Password">
+  					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+  				  </form>
+  				</div>
+  			</div>
+  		  </div>
+
+
+  <!-- End Login Modal -->
 <<<<<<< HEAD
 		<nav class="navbar navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="197">
   <div class="container-fluid">
@@ -94,7 +111,7 @@
               <?php if(isset($_SESSION['loggedin'])){ ?>
               <li  data-toggle="modal"> <a href="logout.php">Logout<span class="glyphicon glyphicon-user pull-left"></span></a></li>
               <?php }else{ ?>
-              <li  data-toggle="modal" data-target="#Login"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-left"></span></a></li>
+              <li  data-toggle="modal" data-target="#login-modal"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-left"></span></a></li>
               <?php } ?>
             <!-- End Trigger-->
 

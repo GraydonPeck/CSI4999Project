@@ -246,8 +246,8 @@
                 </table>
               </div>
            <center>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-               <input type="submit" id="submitSection" class="btn btn-primary" value="Submit">
+                <button type="button" class="button" data-dismiss="modal">Cancel</button>
+               <input type="submit" id="submitSection" class="button" value="Submit">
            <center>
          </form>
         </div>
