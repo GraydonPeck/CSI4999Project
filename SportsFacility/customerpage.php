@@ -110,22 +110,12 @@
        <center>
 <div class="modal fade" id="EditCust" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h4 class="modal-title" id="myModalLabel">Edit User Information</h4>
-        </div>
-        <div class="modal-body">
+      <div class="Defaultmodal-container">
+        <h1>Edit User Information</h1>
           <center>
             <!-- This is where the customer form is located for entering additional information.  -->
             <form id="#formSection" method="post" class="customeredit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
               <!-- This is a table style that adds a black border to the table and colors each element in the table -->
-            <table>
-               <tr>
-                 <th colspan="2">Information Input</th>
-               </tr>
                        <!-- Links to our database with the information each customer enter into the following fields -->
                            <?php
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
@@ -146,45 +136,23 @@
                 while ($row = mysqli_fetch_array($result)){
                   $number = $row['user_name'];
                             			?>
-              <tr class="tablestyle">
-                <td>First Name</td> <td><input type="text" name="customer_fname" value="<?php echo $row['customer_fname']?>"></td>
-              </tr>
-              <tr>
-                <td>Last Name</td> <td><input type="text" name="customer_lname" value="<?php echo $row['customer_lname']?>"></td>
-              </tr>
-              <tr>
-                <td class="tablestyle">Phone Number</td> <td><input type="text" name="customer_phone" value="<?php echo $row['customer_phone']?>"></td>
-              </tr>
-              <tr>
-                <td>Email</td> <td><input type="email" name="customer_email" value="<?php echo $row['customer_email']?>"></td>
-              </tr>
-              <tr>
-                <td class="tablestyle">Address</td> <td><input type="text" name="customer_address" value="<?php echo $row['customer_address']?>"></td>
-              </tr>
-              <tr>
-                <td>City</td> <td><input type="text" name="customer_city" value="<?php echo $row['customer_city']?>"></td>
-              </tr>
-              <tr>
-                <td class="tablestyle">State</td> <td><input type="text" name="customer_state" value="<?php echo $row['customer_state']?>"></td>
-              </tr>
-              <tr>
-                <td>Country</td> <td><input type="text" name="customer_country" value="<?php echo $row['customer_country']?>"></td>
-              </tr>
-              <tr>
-                <td class="tablestyle">Zip</td> <td><input type="text" name="customer_zip" value="<?php echo $row['customer_zip']?>"></td>
-              </tr>
+              <input type="text" name="customer_fname" value="<?php echo $row['customer_fname']?>">
+              <input type="text" name="customer_lname" value="<?php echo $row['customer_lname']?>">
+              <input type="text" name="customer_phone" value="<?php echo $row['customer_phone']?>">
+              <input type="text" name="customer_email" value="<?php echo $row['customer_email']?>">
+              <input type="text" name="customer_address" value="<?php echo $row['customer_address']?>">
+              <input type="text" name="customer_city" value="<?php echo $row['customer_city']?>">
+              <input type="text" name="customer_state" value="<?php echo $row['customer_state']?>">
+              <input type="text" name="customer_country" value="<?php echo $row['customer_country']?>">
+              <input type="text" name="customer_zip" value="<?php echo $row['customer_zip']?>">
+
                              	<?php
                     		}
                           	?>
-                  </table>
-                 <center>
              <input type ="hidden" name = "hidden" value="1">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-              <input type="submit" id="submitSection" class="btn btn-primary" value="Submit">
+                <input type="submit" class="login loginmodal-submit" value="Submit">
               </form>
-              </div>
           </div>
-         </center>
        </div>
 
   </div>

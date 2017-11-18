@@ -149,7 +149,7 @@
 
 
 
-  <!--end of Edit modal -->
+
    <div class= "col-md-4" style="padding-top:10px;">
       <div class="panel panel-primary">
         <div class="panel-heading">Employee Information</div>
@@ -198,17 +198,9 @@
     <!--Edit model -->
     <div class="modal fade" id="Edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <h4 class="modal-title" id="myModalLabel">Edit User Information</h4>
-            </div>
-            <div class="modal-body">
-              <center>
+          <div class="Defaultmodal-container">
+  					<h1>Edit User Information</h1>
               <form action ="employeepage.php" method="post">
-              <table>
              <?php
               $db = mysqli_connect("localhost","gpeck2217","","c9");
               $username = $_SESSION['login'];
@@ -217,17 +209,11 @@
               while ($row = mysqli_fetch_array($result)){
             ?>
 
-                      <tr>
-                      <td>First Name</td> <td><input type="text" name="employee_fname" value="<?php echo $row['employee_fname']?>"></td>
-                    </tr>
-                    <tr>
-                      <td>Last Name</td> <td><input type="text" name="employee_lname" value="<?php echo $row['employee_lname']?>"></td>
-                    </tr>
+                     <input type="text" name="employee_fname" value="<?php echo $row['employee_fname']?>">
+                    <input type="text" name="employee_lname" value="<?php echo $row['employee_lname']?>">
                     <input type="hidden" name= "employee_type" value="<?php echo $row['employee_type']?>">
-                      <tr>
-                      <td>Phone Number</td> <td><input type="text" name="employee_phone" value="<?php echo $row['employee_phone']?>"></td>
-                    </tr>
-                     <input type="hidden" name= "user_name" value="<?php echo $row['user_name']?>">
+                    <input type="text" name="employee_phone" value="<?php echo $row['employee_phone']?>">
+                    <input type="hidden" name= "user_name" value="<?php echo $row['user_name']?>">
                      <?php }
               $db = mysqli_connect("localhost","gpeck2217","","c9");
               $username = $_SESSION['login'];
@@ -235,25 +221,18 @@
               $result = mysqli_query($db, $sql);
               while ($row = mysqli_fetch_array($result)){
                 ?>
-                    <tr>
-                      <td>Email</td> <td><input type="text" name="user_email" value="<?php echo $row['user_email']?>"</td>
-                    </tr>
+                    <input type="text" name="user_email" value="<?php echo $row['user_email']?>"</td>
                     <input type = "hidden" name= "hidden" value= "1">
-                      </table>
-                      </center>
-                    </div>
-                    <div class="modal-footer">
-                      <center>
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                      <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
-                      </center>
+
+                    <input type="submit" class="login loginmodal-submit" value="Submit">
                       <?php } ?>
+                       </form>
                     </div>
                   </div>
                 </div>
               </div>
 
-      </form>
+
 
   <!--end of Edit modal -->
 
@@ -261,19 +240,10 @@
    <!--Schedule model -->
     <div class="modal fade" id="Request" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <h4 class="modal-title" id="myModalLabel">Edit Availablity</h4>
-            </div>
-            <div class="modal-body">
-              <center>
+          <div class="Defaultmodal-container">
+  					<h1>Which day would you like to request off</h1>
               <form action ="employeepage.php" method="post">
-              <table>
-              <tr><th>WHich day would you like to take off?</th>
-                          <th><select name = "day" class="form-control">
+                         <select name = "day" class="form-control">
                             <option disabled selected value>- select a day -</option>
                             <option value = "monday">Monday</option>
                             <option value = "tuesday">Tuesday</option>
@@ -285,21 +255,16 @@
                            	</select>
                     <input type = "hidden" name= "hidden2" value= "2">
                     <input type = "hidden" name= "user_name" value= "<?php echo $_SESSION['login']?>">
-                      </table>
-                      </center>
-                    </div>
                     <div class="modal-footer">
-                      <center>
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                      <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
-                      </center>
+                      <input type="submit" class="login loginmodal-submit" value="Submit">
+                      </form>
                     </div>
                   </div>
 
                 </div>
 
               </div>
-      </form>
+
 
 
 

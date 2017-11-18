@@ -332,8 +332,7 @@
     <div class="modal fade" id="Edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
           <div class="Defaultmodal-container">
-  					<h1>Edit User Information</h1><br>
-              <center>
+  					<h1>Edit User Information</h1>
               <form action ="managerpage.php" method="post">
              <?php
               $db = mysqli_connect("localhost","gpeck2217","","c9");
@@ -369,19 +368,11 @@
      <!--Schedule model -->
     <div class="modal fade" id="Schedule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <h4 class="modal-title" id="myModalLabel">Edit Schedule</h4>
-            </div>
-            <div class="modal-body">
-              <center>
+          <div class="modal-dialog" role="document">
+          <div class="Defaultmodal-container">
+  					<h1>Edit Schedule</h1>
               <form action ="managerpage.php" method="post">
-              <table>
-              <tr><th>Employee</th>
-                          <th><select name = "username" class="form-control">
+              <select name = "username" class="form-control">
                             <option disabled selected value>- select an employee -</option>
                                <?php
                             $db = mysqli_connect("localhost","gpeck2217","","c9");
@@ -394,8 +385,8 @@
                            	<?php
                           		}
                           	?></select>
-              <tr><th>Position</th>
-                          <th><select name = "job" class="form-control">
+
+                          <select name = "job" class="form-control">
                             <option disabled selected value>- select a position -</option>
                                <?php
                             $db = mysqli_connect("localhost","gpeck2217","","c9");
@@ -408,8 +399,7 @@
                            	<?php
                           		}
                           	?></select>
-                          	<tr><th>Day</th>
-                          <th><select name = "day" class="form-control">
+                          <select name = "day" class="form-control">
                             <option disabled selected value>- select a day -</option>
                                <?php
                             $db = mysqli_connect("localhost","gpeck2217","","c9");
@@ -424,19 +414,13 @@
                           	?></select>
 
                     <input type = "hidden" name= "hidden" value= "1">
-                      </table>
-                      </center>
-                    </div>
-                    <div class="modal-footer">
-                      <center>
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                      <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
-                      </center>
+                    <input type="submit" class="login loginmodal-submit" value="Submit">
+                     </form>
                     </div>
                   </div>
                 </div>
               </div>
-      </form>
+
   <!--end of Edit modal -->
  </body>
     <!-- Bootstrap core JavaScript
