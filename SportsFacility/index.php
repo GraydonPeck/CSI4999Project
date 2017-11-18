@@ -330,17 +330,12 @@ _END;
  <!--Floor Plan Modal -->
    <div class="modal fade" id="ScheduleModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h4 class="modal-title" id="myModalLabel">Rink 1</h4>
-        </div>
+      <div class="Defaultmodal-container">
+        <h1>Rink 1</h1><br>
         <div class="modal-body">
 <center>
               <table class= "table">
-                <tr >
+                <tr>
                 <th>Time</th>
                 <th>Event</th>
                 <th>Info</th>
@@ -365,13 +360,8 @@ _END;
   </div>
      <div class="modal fade" id="ScheduleModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h4 class="modal-title" id="myModalLabel">Rink 2</h4>
-        </div>
+      <div class="Defaultmodal-container">
+        <h1>Rink 2</h1><br>
         <div class="modal-body">
 <center>
               <table class = "table">
@@ -399,13 +389,8 @@ _END;
 
      <div class="modal fade" id="ScheduleModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h4 class="modal-title" id="myModalLabel">Rink 3</h4>
-        </div>
+      <div class="Defaultmodal-container">
+        <h1>Rink 3</h1><br>
         <div class="modal-body">
 <center>
               <table class= "table">
