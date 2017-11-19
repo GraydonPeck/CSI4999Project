@@ -302,21 +302,15 @@
       <!--Event Modal1-->
       <div class="modal fade" id="Event1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <h4 class="modal-title" id="myModalLabel">Add an event</h4>
-            </div>
-            <div class="modal-body">
+          <div class="Defaultmodal-container">
+  					<h1>Schedule an event</h1>
               <center>
               <form action ="schedulepage.php" method="post">
               <table>
                  <tr><th>Date:</th>
                 <td><input type= "text" name="date" value="<?php echo $date1 ?>"></td></tr>
               <tr><th>Time:</th>
-                          <td><select name ="time" class="form-control">
+                          <td><label class="custom-select"><select name ="time" class="form-control">
                             <option disabled selected value>- select a time -</option>
                                <?php
                             $db = mysqli_connect("localhost","gpeck2217","","c9");
@@ -336,7 +330,7 @@
                             <option value = "<?php echo $row['time']?>"><?php echo $row['time']?></option>
                            	<?php
                           		}
-                          	?></select></td></tr>
+                          	?></select></label></td></tr>
                           	<tr><th>Event:</th>
                           	<td><input type= "text" name="event" value="<?php echo $row['event']?>"></td></tr>
                           	<tr><th>Extra Info:</th>
@@ -345,12 +339,8 @@
                           	<input type="hidden" name="username" value = "<?php echo $_SESSION['login']?>">
                       </table>
                       </center>
+                    <input type="submit" class="login loginmodal-submit" value="Submit">
                     </div>
-                    <div class="modal-footer">
-                      <center>
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                      <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
-                      </center>
                     </div>
                   </div>
                 </div>
@@ -361,21 +351,15 @@
       <!--End of event modal1-->
       <div class="modal fade" id="Event2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <h4 class="modal-title" id="myModalLabel">Add an event</h4>
-            </div>
-            <div class="modal-body">
+          <div class="Defaultmodal-container">
+  					<h1>Schedule an event</h1>
               <center>
               <form action ="schedulepage.php" method="post">
               <table>
                  <tr><th>Date:</th>
                 <td><input type= "text" name="date" value="<?php echo $date2 ?>"></td></tr>
               <tr><th>Time:</th>
-                          <td><select name ="time" class="form-control">
+                          <td><label class="custom-select"><select name ="time" class="form-control">
                             <option disabled selected value>- select a time -</option>
                                <?php
                             $db = mysqli_connect("localhost","gpeck2217","","c9");
@@ -395,7 +379,7 @@
                             <option value = "<?php echo $row['time']?>"><?php echo $row['time']?></option>
                            	<?php
                           		}
-                          	?></select></td></tr>
+                          	?></select></label></td></tr>
                           	<tr><th>Event:</th>
                           	<td><input type= "text" name="event" value="<?php echo $row['event']?>"></td></tr>
                           	<tr><th>Extra Info:</th>
@@ -403,37 +387,25 @@
                           	<input type="hidden" name="hidden2" value ="2">
                           	<input type="hidden" name="username" value = "<?php echo $_SESSION['login']?>">
                       </table>
-                      </center>
-                    </div>
-                    <div class="modal-footer">
-                      <center>
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                      <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
-                      </center>
+                      </form>
+                    <input type="submit" class="login loginmodal-submit" value="Submit">
                     </div>
                   </div>
                 </div>
 
-              </div>
-      </form>
+
       <!--End of event modal2-->
       <div class="modal fade" id="Event3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <h4 class="modal-title" id="myModalLabel">Add an event</h4>
-            </div>
-            <div class="modal-body">
+          <<div class="Defaultmodal-container">
+  					<h1>Schedule an event</h1>
               <center>
               <form action ="schedulepage.php" method="post">
               <table>
                  <tr><th>Date:</th>
                 <td><input type= "text" name="date" value="<?php echo $date3 ?>"></td></tr>
               <tr><th>Time:</th>
-                          <td><select name ="time" class="form-control">
+                          <td><label class="custom-select"><select name ="time" class="form-control">
                             <option disabled selected value>- select a time -</option>
                                <?php
                             $db = mysqli_connect("localhost","gpeck2217","","c9");
@@ -453,7 +425,7 @@
                             <option value = "<?php echo $row['time']?>"><?php echo $row['time']?></option>
                            	<?php
                           		}
-                          	?></select></td></tr>
+                          	?></select></label></td></tr>
                           	<tr><th>Event:</th>
                           	<td><input type= "text" name="event" value="<?php echo $row['event']?>"></td></tr>
                           	<tr><th>Extra Info:</th>
@@ -462,12 +434,7 @@
                           	<input type="hidden" name="username" value = "<?php echo $_SESSION['login']?>">
                       </table>
                       </center>
-                    </div>
-                    <div class="modal-footer">
-                      <center>
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                      <button type="submit" class="btn btn-primary" value="ADD RECORD">Submit</button>
-                      </center>
+                      <input type="submit" class="login loginmodal-submit" value="Submit">
                     </div>
                   </div>
                 </div>

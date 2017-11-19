@@ -132,26 +132,20 @@
 
 				<!-- Trigger New Guest Modal -->
 
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#NewUserModal"> New Guest </button>
+				<button type="button" class="button" data-toggle="modal" data-target="#NewUserModal"> New Guest </button>
 
 				<!-- New Guest Modal -->
 
 				<div class="modal fade" id="NewUserModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 					<div class="modal-dialog" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-								<h4 class="modal-title" id="myModalLabel">New Guest</h4>
-							</div>
-							<div class="modal-body">
+						<div class="Defaultmodal-container">
+  							<h1>New Guest</h1>
 								<?php
 									echo <<<_END
-								<center>
 									<form action"servque.php" method="post">
 										<input type="hidden" name="serv_ID">
-										<table>
+										<center>
+										<table class="table DefaultTable">
 											<tr>
 												<td>First Name:</td>
 												<td><input type="text" name="cust_fname"></td>
@@ -167,27 +161,22 @@
 											<tr>
 												<td>Service:</td>
 												<td>
-													<select name="service">
+													<label class="custom-select"><select name="service">
 														<option value="eyelets">eyelets</option>
 														<option value="7/16">7/16</option>
 														<option value="1/2">1/2</option>
 														<option value="9/16">9/16</option>
-													</select>
+													</select></label
 												</td>
 											</tr>
 										</table>
 										<input type="hidden" name="serv_progress" value="Waiting">
-								</center>
-							</div>
-							<div class="modal-footer">
-								<center>
-									<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-									<button type="submit" class="btn btn-primary" value="Submit">Submit</button>
-								</center>
+										</center>
+								<input type="submit" class="login loginmodal-submit" value="Submit">
+
 									</form>
 _END;
 								?>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -290,30 +279,22 @@ _END;
 
 								<div class="modal fade" id="UpdateModal{$row[0]}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 									<div class="modal-dialog" role="document">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-													<span aria-hidden="true">&times;</span>
-												</button>
-												<h4 class="modal-title" id="myModalLabel">Update Record</h4>
-											</div>
-											<div class="modal-body">
+										<div class="Defaultmodal-container">
+	  										<h1>Update Record</h1>
 												<center>
 												<form action="servque.php" method="post">
 													<br>
 
-													<select name="serv_progress">
+													<label class="custom-select"><select name="serv_progress">
 														<option value=""> </option>
 														<option value="In Progress">In Progress</option>
 														<option value="Completed">Completed</option>
-													</select>
+													</select></label>
 
 													<input type="hidden" name="update" value="$row[0]">
 													<input type="hidden" name="serv_ID" value="$row[0]">
 
-													<br><br>
-													<input type="submit" value="UPDATE">
-													<br><br>
+														<input type="submit" class="login loginmodal-submit" value="UPDATE">
 												</form>
 												</center>
 								      		</div>

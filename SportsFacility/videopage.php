@@ -233,28 +233,7 @@ s.parentNode.insertBefore(hm, s);
   <h1><big>Hockey<strong>Plex</strong></big></h1>
 </div>
 
-<!--This is where user will enter the image they want to display in the carosel at top of page-->
-<div class="w3-content w3-display-container" style="max-width:2500px; ">
-  <div class="w3-display-container mySlides">
-    <img src="./img/abandoned-ice-hockey-rink-b1_edited-1.jpg" width="2500px" height="300px" >
-  </div>
-  <div class="w3-display-container mySlides">
-    <img  src="./img/shea-rink_redu.jpg" width="2500px" height="300px">
-  </div>
-  <div class="w3-display-container mySlides">
-    <img  src="./img/maxresdefault_redu.jpg"  width="2500px" height="300px">
-  </div>
-  <div class="w3-display-container mySlides">
-    <img src="./img/513607201_redu.jpg" width="2500px" height="300px">
-  </div>
-  <div class="w3-display-container mySlides">
-    <img src="./img/GW4OCOVG2VGGLFAQUGRTB3IA2U_redu.jpg" width="2500px" height="300px">
-  </div>
-  <div class="w3-display-container mySlides">
-    <img  src="./img/icerink4_redu.jpg" width="2500px" height="300px">
-  </div>
-</div>
-<!-- End of carosel-->
+
 
 <br>
 

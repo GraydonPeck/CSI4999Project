@@ -368,7 +368,6 @@
      <!--Schedule model -->
     <div class="modal fade" id="Schedule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
-          <div class="modal-dialog" role="document">
           <div class="Defaultmodal-container">
   					<h1>Edit Schedule</h1>
               <form action ="managerpage.php" method="post">
@@ -421,7 +420,6 @@
                     <input type = "hidden" name= "hidden" value= "1">
                     <input type="submit" class="login loginmodal-submit" value="Submit">
                      </form>
-                    </div>
                   </div>
                 </div>
               </div>

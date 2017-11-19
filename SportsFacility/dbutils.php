@@ -46,6 +46,7 @@
 
         run_update($sql_i);
 	}
+
 	function edit_customer ($customer_fname, $customer_lname, $customer_phone, $customer_email, $customer_address, $customer_city, $customer_state, $customer_country, $customer_zip, $user_name)
 	{
 		global $conn;

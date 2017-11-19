@@ -59,7 +59,9 @@
   js = d.createElement(s); js.id = id;
   js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=24254366782';
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));
+
+</script>
   <!-- This allows the navbar to stay positioned at the top of the screen on scroll -->
 <nav class="navbar navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="197">
   <div class="container-fluid">
@@ -215,7 +217,7 @@ _END;
 
       <img src="img/floorplan.jpg" alt="Floor Plan" class="center-block img-rounded map" hidefocus="true" usemap="#FloorMap">
       <map name="FloorMap" id="Map">
-        <area alt="" title="" data-toggle="modal" href="#" data-target="#ScheduleModal1" shape="poly" coords="381,36,378,323,563,323,565,35" />
+        <area alt="" title="" data-toggle="modal" id="IceRink1" href="#" data-target="#ScheduleModal1" shape="poly" coords="381,36,378,323,563,323,565,35" />
         <area alt="" title="" data-toggle="modal" href="#" data-target="#ScheduleModal2" shape="poly" coords="270,178,270,46,33,46,33,146,42,154,45,180" />
         <area alt="" title="" data-toggle="modal" href="#" data-target="#ScheduleModal3" shape="poly" coords="45,183,273,183,270,315,34,314,31,215" />
       </map>
@@ -477,6 +479,7 @@ $('.carousel .item').each(function(){
         slidesToScroll:1
         });
       };
+
 
     //# sourceURL=pen.js
     </script>
