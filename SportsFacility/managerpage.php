@@ -145,11 +145,11 @@
                              <?php
                                           $db = mysqli_connect("localhost","gpeck2217","","c9");
                                           $username = $_SESSION['login'];
-                                          $sql = "SELECT * FROM work_schedule WHERE job = 'concessions'";
+                                          $sql = "SELECT * FROM work_schedule JOIN employee_db ON  'user_name' =  'user_name' WHERE job =  'concessions' AND work_schedule.user_name = employee_db.user_name ORDER BY id";
                                           $result = mysqli_query($db, $sql);
                                           while ($row = mysqli_fetch_array($result)){
                                           ?>
-                                          <th><?php echo $row['user_name']?></th>
+                                          <th><?php echo $row['employee_fname']. " " . $row['employee_lname']?></th>
                                                       <?php }?>
                           </tr>
                           <tr>
@@ -157,11 +157,11 @@
                              <?php
                                           $db = mysqli_connect("localhost","gpeck2217","","c9");
                                           $username = $_SESSION['login'];
-                                          $sql = "SELECT * FROM work_schedule WHERE job = 'ProShop'";
+                                          $sql = "SELECT * FROM work_schedule JOIN employee_db ON  'user_name' =  'user_name' WHERE job =  'Proshop' AND work_schedule.user_name = employee_db.user_name ORDER BY id";
                                           $result = mysqli_query($db, $sql);
                                           while ($row = mysqli_fetch_array($result)){
                                           ?>
-                                          <th><?php echo $row['user_name']?></th>
+                                          <th><?php echo $row['employee_fname']. " " . $row['employee_lname']?></th>
                                                       <?php }?>
                              </tr>
                              <tr>
@@ -169,11 +169,11 @@
                              <?php
                                           $db = mysqli_connect("localhost","gpeck2217","","c9");
                                           $username = $_SESSION['login'];
-                                          $sql = "SELECT * FROM work_schedule WHERE job = 'ServiceCenter'";
+                                          $sql = "SELECT * FROM work_schedule JOIN employee_db ON  'user_name' =  'user_name' WHERE job =  'ServiceCenter' AND work_schedule.user_name = employee_db.user_name ORDER BY id";
                                           $result = mysqli_query($db, $sql);
                                           while ($row = mysqli_fetch_array($result)){
                                           ?>
-                                          <th><?php echo $row['user_name']?></th>
+                                          <th><?php echo $row['employee_fname']. " " . $row['employee_lname']?></th>
                                                       <?php }?>
                                                       </tr>
                                          <input type="hidden" name="hidden" value ="1">
@@ -372,20 +372,22 @@
           <div class="Defaultmodal-container">
   					<h1>Edit Schedule</h1>
               <form action ="managerpage.php" method="post">
-              <select name = "username" class="form-control">
-                            <option disabled selected value>- select an employee -</option>
-                               <?php
-                            $db = mysqli_connect("localhost","gpeck2217","","c9");
-                            $username = $_SESSION['login'];
-                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
-                            $result = mysqli_query($db, $sql);
-                            while ($row = mysqli_fetch_array($result)){
-                		        	?>
-                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
-                           	<?php
-                          		}
-                          	?></select>
-
+                <label class="custom-select">
+                  <select name = "username" class="form-control">
+                                <option disabled selected value>- select an employee -</option>
+                                   <?php
+                                $db = mysqli_connect("localhost","gpeck2217","","c9");
+                                $username = $_SESSION['login'];
+                                $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                                $result = mysqli_query($db, $sql);
+                                while ($row = mysqli_fetch_array($result)){
+                    		        	?>
+                                <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                               	<?php
+                              		}
+                              	?></select>
+                  </label>
+                  <label class="custom-select">
                           <select name = "job" class="form-control">
                             <option disabled selected value>- select a position -</option>
                                <?php
@@ -399,6 +401,8 @@
                            	<?php
                           		}
                           	?></select>
+                          	</label>
+                    <label class="custom-select">
                           <select name = "day" class="form-control">
                             <option disabled selected value>- select a day -</option>
                                <?php
@@ -412,6 +416,7 @@
                            	<?php
                           		}
                           	?></select>
+                          	</label>
 
                     <input type = "hidden" name= "hidden" value= "1">
                     <input type="submit" class="login loginmodal-submit" value="Submit">

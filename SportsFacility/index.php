@@ -21,11 +21,8 @@
 
   <!-- slider carousel -->
 
-
   <link rel='stylesheet prefetch' href='https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css'>
   <link rel='stylesheet prefetch' href='https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick-theme.css'>
-
-
 
 
   <!--<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
@@ -33,7 +30,6 @@
   <script type = "text/javascript" src = "chk.js"></script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" type="text/css" href="main.css">
-
 
 
 <!-- slider carousel-->
@@ -52,7 +48,6 @@
       margin: auto;
     }
   </style>
-
 
 </head>
 
@@ -121,17 +116,13 @@
                <li class="dropdown-header">Navigation</li>
                <li><a href="#">Profile<span class="glyphicon glyphicon-user pull-left"></span></a></li>
 
-      <!-- End of settings dropdown -->
-
-
+    <!-- End of settings dropdown -->
 
           </ul>
       </li>
     <!--End of setting dropdown menu -->
 
          <ul class="nav navbar-nav navbar-right">
-
-
 
             <!-- Trigger Login Modal -->
               <?php if(isset($_SESSION['loggedin'])){ ?>
@@ -140,7 +131,6 @@
               <li  data-toggle="modal" data-target="#login-modal"> <a href="#">Login<span class="glyphicon glyphicon-lock pull-left"></span></a></li>
               <?php } ?>
             <!-- End Trigger-->
-
            <!-- Username display -->
        <?php
        $username= $_SESSION['login'];
@@ -173,8 +163,6 @@
       <h1><center><big>Hockey<strong>Plex</strong></big></center></h1>
     </div>
     </div>
-
-
 
 <!-- Colin -->
 <!-- Slick Carousel -->
@@ -215,11 +203,6 @@ _END;
           ?>
 
       </div>
-
-
-
-
-
 
 
 
