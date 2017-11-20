@@ -25,6 +25,10 @@ if ($_POST['hidden']==1)
         #commentsection {
           text-align: left;
         }
+        #aboutstyle{
+            background-color: #766151;
+            color: white;
+        }
 
     </style>
   <meta charset="utf-8">
@@ -172,7 +176,7 @@ if ($_POST['hidden']==1)
 
 </div>
             <div class="container" style="padding-top:10px;">
-              <div class="panel panel-primary">
+              <div class="panel panel-primary" id="aboutstyle">
                 <h1>About Us</h1>
                     <div class="col-md-12">
 
@@ -206,7 +210,7 @@ if ($_POST['hidden']==1)
                               </tr>
                     <?php
                       $db = mysqli_connect("localhost","gpeck2217","","c9");
-                      $sql = "SELECT * FROM forum ORDER BY 'id' DESC";
+                      $sql = "SELECT * FROM forum ORDER BY id DESC";
                       $result = mysqli_query($db, $sql);
                       while ($row = mysqli_fetch_array($result)){
                     ?>
