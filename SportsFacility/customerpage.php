@@ -67,18 +67,7 @@
       </ul>
       <!-- This is a dropdown menu that contains the settings for our site. Add additional information here later -->
         <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings</span><span class="caret"></span> <span class="glyphicon glyphicon-cog pull-left"></span></a>
-           <ul class="dropdown-menu">
-			       <li class="dropdown-header">Options</li>
-			       <li><a href="#">Messages <span class="badge pull-left"> 42 </span></a></li>
-             <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-left"></span></a></li>
-             <li><a href="#"> Help <span class="glyphicon glyphicon-flag pull-left"></span></a></li>
-             <li class="divider"></li>
-             <li class="dropdown-header">Navigation</li>
-             <li><a href="#">Profile<span class="glyphicon glyphicon-user pull-left"></span></a></li>
-            </ul>
-          </li>
+
 
       <!-- End of settings dropdown -->
 
@@ -231,34 +220,33 @@
         </div>
     </form>
 
- <div id="wrapper">
-		<div id="header">
+<!-- <div id="wrapper">-->
+<!--		<div id="header">-->
 
-		  <h2>Contact Information</h2>
+<!--		  <h2>Contact Information</h2>-->
 
-		  <hr class="style-seven">
-		</div>
-		<div id="content">
+<!--		  <hr class="style-seven">-->
+<!--		</div>-->
+<!--		<div id="content">-->
 
 
 
-    <div class="container">
-      <center>
-  <button onclick="location.href = 'aboutpage.php#comment1';" id="myButton" class="button button1" >Message Us</button>  </div>
-  </center>
-		</div>
+<!--    <div class="container">-->
+<!--      <center>-->
+<!--  <button onclick="location.href = 'aboutpage.php#comment1';" id="myButton" class="button button1" >Message Us</button>  </div>-->
+<!--  </center>-->
+<!--		</div>-->
 
-		<div id="footer">
-		  <center>
+<!--		<div id="footer">-->
+<!--		  <center>-->
 
-		    <p class="sansserif"><strong>Address:</strong> <i>318 Meadow Brook Rd, Rochester MI 48309</i></p>
-        <p class="sansserif"><strong>Phone Number:</strong><i> (248) 370-2100</i></p>
-        <p class="sansserif"><strong>Email: </strong><i>mpdegraeve@oakland.edu</i></p>
-      </center>
-    </div>
-  </div>
-</div>
-
+<!--		    <p class="sansserif"><strong>Address:</strong> <i>318 Meadow Brook Rd, Rochester MI 48309</i></p>-->
+<!--        <p class="sansserif"><strong>Phone Number:</strong><i> (248) 370-2100</i></p>-->
+<!--        <p class="sansserif"><strong>Email: </strong><i>mpdegraeve@oakland.edu</i></p>-->
+<!--      </center>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 
 
 <script>

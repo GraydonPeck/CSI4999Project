@@ -59,9 +59,7 @@
   js = d.createElement(s); js.id = id;
   js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=24254366782';
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
-</script>
+}(document, 'script', 'facebook-jssdk'));</script>
   <!-- This allows the navbar to stay positioned at the top of the screen on scroll -->
 <nav class="navbar navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="197">
   <div class="container-fluid">
@@ -107,22 +105,6 @@
 
 	    <!-- This is a dropdown menu that contains the settings for our site. Add additional information here later -->
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings</span><span class="caret"></span> <span class="glyphicon glyphicon-cog pull-left"></span></a>
-           <ul class="dropdown-menu">
-			       <li class="dropdown-header">Options</li>
-			         <li><a href="#">Messages <span class="badge pull-left"> 42 </span></a></li>
-               <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-left"></span></a></li>
-               <li><a href="#"> Help <span class="glyphicon glyphicon-flag pull-left"></span></a></li>
-               <li class="divider"></li>
-               <li class="dropdown-header">Navigation</li>
-               <li><a href="#">Profile<span class="glyphicon glyphicon-user pull-left"></span></a></li>
-
-    <!-- End of settings dropdown -->
-
-          </ul>
-      </li>
-    <!--End of setting dropdown menu -->
 
          <ul class="nav navbar-nav navbar-right">
 
@@ -217,7 +199,7 @@ _END;
 
       <img src="img/floorplan.jpg" alt="Floor Plan" class="center-block img-rounded map" hidefocus="true" usemap="#FloorMap">
       <map name="FloorMap" id="Map">
-        <area alt="" title="" data-toggle="modal" id="IceRink1" href="#" data-target="#ScheduleModal1" shape="poly" coords="381,36,378,323,563,323,565,35" />
+        <area alt="" title="" data-toggle="modal" href="#" data-target="#ScheduleModal1" shape="poly" coords="381,36,378,323,563,323,565,35" />
         <area alt="" title="" data-toggle="modal" href="#" data-target="#ScheduleModal2" shape="poly" coords="270,178,270,46,33,46,33,146,42,154,45,180" />
         <area alt="" title="" data-toggle="modal" href="#" data-target="#ScheduleModal3" shape="poly" coords="45,183,273,183,270,315,34,314,31,215" />
       </map>
@@ -479,7 +461,6 @@ $('.carousel .item').each(function(){
         slidesToScroll:1
         });
       };
-
 
     //# sourceURL=pen.js
     </script>

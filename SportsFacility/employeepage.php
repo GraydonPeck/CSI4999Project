@@ -70,20 +70,7 @@
       </ul>
       <!-- This is a dropdown menu that contains the settings for our site. Add additional information here later -->
         <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings</span><span class="caret"></span> <span class="glyphicon glyphicon-cog pull-left"></span></a>
-           <ul class="dropdown-menu">
-			       <li class="dropdown-header">Options</li>
-			       <li><a href="#">Messages <span class="badge pull-left"> 42 </span></a></li>
-             <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-left"></span></a></li>
-             <li><a href="#"> Help <span class="glyphicon glyphicon-flag pull-left"></span></a></li>
-             <li class="divider"></li>
-             <li class="dropdown-header">Navigation</li>
-             <li><a href="#">Profile<span class="glyphicon glyphicon-user pull-left"></span></a></li>
-            </ul>
-          </li>
 
-      <!-- End of settings dropdown -->
 
         <!-- Trigger Login Modal -->
               <?php if(isset($_SESSION['loggedin'])){ ?>

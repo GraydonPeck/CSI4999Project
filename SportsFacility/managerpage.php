@@ -78,20 +78,6 @@
       </ul>
       <!-- This is a dropdown menu that contains the settings for our site. Add additional information here later -->
         <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings</span><span class="caret"></span> <span class="glyphicon glyphicon-cog pull-left"></span></a>
-           <ul class="dropdown-menu">
-			       <li class="dropdown-header">Options</li>
-			       <li><a href="#">Messages <span class="badge pull-left"> 42 </span></a></li>
-             <li><a href="#">User stats <span class="glyphicon glyphicon-stats pull-left"></span></a></li>
-             <li><a href="#"> Help <span class="glyphicon glyphicon-flag pull-left"></span></a></li>
-             <li class="divider"></li>
-             <li class="dropdown-header">Navigation</li>
-             <li><a href="#">Profile<span class="glyphicon glyphicon-user pull-left"></span></a></li>
-            </ul>
-          </li>
-
-      <!-- End of settings dropdown -->
 
         <!-- Trigger Login Modal -->
               <?php if(isset($_SESSION['loggedin'])){ ?>
@@ -368,25 +354,24 @@
      <!--Schedule model -->
     <div class="modal fade" id="Schedule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
+          <div class="modal-dialog" role="document">
           <div class="Defaultmodal-container">
   					<h1>Edit Schedule</h1>
               <form action ="managerpage.php" method="post">
-                <label class="custom-select">
-                  <select name = "username" class="form-control">
-                                <option disabled selected value>- select an employee -</option>
-                                   <?php
-                                $db = mysqli_connect("localhost","gpeck2217","","c9");
-                                $username = $_SESSION['login'];
-                                $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
-                                $result = mysqli_query($db, $sql);
-                                while ($row = mysqli_fetch_array($result)){
-                    		        	?>
-                                <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
-                               	<?php
-                              		}
-                              	?></select>
-                  </label>
-                  <label class="custom-select">
+              <select name = "username" class="form-control">
+                            <option disabled selected value>- select an employee -</option>
+                               <?php
+                            $db = mysqli_connect("localhost","gpeck2217","","c9");
+                            $username = $_SESSION['login'];
+                            $sql = "SELECT * FROM employee_db WHERE employee_type = 'employee'";
+                            $result = mysqli_query($db, $sql);
+                            while ($row = mysqli_fetch_array($result)){
+                		        	?>
+                            <option value = <?php echo $row['user_name']?>><?php echo $row['employee_fname'] . " " . $row['employee_lname']?></option>
+                           	<?php
+                          		}
+                          	?></select>
+
                           <select name = "job" class="form-control">
                             <option disabled selected value>- select a position -</option>
                                <?php
@@ -400,8 +385,6 @@
                            	<?php
                           		}
                           	?></select>
-                          	</label>
-                    <label class="custom-select">
                           <select name = "day" class="form-control">
                             <option disabled selected value>- select a day -</option>
                                <?php
@@ -415,11 +398,11 @@
                            	<?php
                           		}
                           	?></select>
-                          	</label>
 
                     <input type = "hidden" name= "hidden" value= "1">
                     <input type="submit" class="login loginmodal-submit" value="Submit">
                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
