@@ -15,6 +15,3 @@ function setBind() {
 	});
 }
 
-$('#myModal').on('hidden.bs.modal', function() {
-	location.reload(true);
-});

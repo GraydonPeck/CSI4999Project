@@ -130,22 +130,20 @@
           <div class="panel-heading">Ice One </div>
           <div class="panel-body">
             <div class="col-md-6">
-                  <div class="calendar" class="col-md-6">
                   <div class="datepicker"></div>
                   <form method="post" action="schedulepage.php">
-                    <p>Select a day: <input type="text" name="date1" id="datepicker"></p>
+                    <p>Select a day: <input type="text" id="datepicker" name="date1"></p>
                      <input type="hidden" value="1" name="hidden1"/>
                     <input type="submit" value="Load Times" name="submit"/>
                   </form>
-                </div>
-        			</div>
-        			<div class="col-md-6 ScheduleList">
+            </div>
+            <div class="col-md-6">
         			  <table class = "table">
         			  <?php
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
                 $username = $_SESSION['login'];
                 $date1 = $_POST['date1'];
-                echo $date1;
+                echo "<center><h3> ". $date1 . "</h3></center>";
                 $sql = "SELECT * FROM rink_1_db WHERE date = '$date1'";
                 $result = mysqli_query($db, $sql);
                 if  ($_POST['hidden1']==1){
@@ -159,18 +157,20 @@
                 while ($row = mysqli_fetch_array($result)){
                  ?>
                 <tr>
-                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['time'];?>
-                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['event'];?>
-                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['info'];?>
+                  <td style="font-size:12px;font-weight:bold;padding-left:15px;"><?php echo $row['time'];?>
+                  <td style="font-size:12px;font-weight:bold;padding-left:15px;"><?php echo $row['event'];?>
+                  <td style="font-size:12px;font-weight:bold;padding-left:15px;"><?php echo $row['info'];?>
                 </tr>
                 <?php }
                   ?><a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Event1" href="#">Schedule an event</a>
                 <?php } else{
                 ?>
+                <center>
                 <p>We do not have this far planned out yet please check again later</p>
+                </center>
                 <?php }} ?>
                 </table>
-            </div>
+              </div>
           </div>
       </div>
   </div>
@@ -180,7 +180,6 @@
           <div class="panel-heading">Ice Two </div>
           <div class="panel-body">
             <div class="col-md-6">
-              <div class="calendar" class="col-md-6">
               <div class="datepicker"></div>
               <form method="post" action="schedulepage.php">
                 <p>Select a day: <input type="text" name="date2" id="datepicker2"></p>
@@ -188,15 +187,15 @@
                 <input type="submit" value="Load Times" name="submit"/>
 
               </form>
-            </div>
         			</div>
         			<div class="col-md-6">
+        			  <div >
         			  <table class = "table">
         			  <?php
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
                 $username = $_SESSION['login'];
                 $date2 = $_POST['date2'];
-                echo $date2;
+                echo "<center><h3> ". $date2 . "</h3></center>";
                 $sql = "SELECT * FROM rink_2_db WHERE date = '$date2'";
                 $result = mysqli_query($db, $sql);
                 if ($_POST['hidden1']==2){
@@ -210,18 +209,21 @@
                 while ($row = mysqli_fetch_array($result)){
                  ?>
                 <tr>
-                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['time'];?>
-                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['event'];?>
-                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['info'];?>
+                  <td style="font-size:12px;font-weight:bold;padding-left:15px;"><?php echo $row['time'];?>
+                  <td style="font-size:12px;font-weight:bold;padding-left:15px;"><?php echo $row['event'];?>
+                  <td style="font-size:12px;font-weight:bold;padding-left:15px;"><?php echo $row['info'];?>
                 </tr>
                 <?php }
                   ?><a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Event2" href="#">Schedule an event</a>
                 <?php  } else{
                 ?>
+                <center>
                 <p>We do not have this far planned out yet please check again later</p>
+                </center>
                 <?php }} ?>
                 </table>
             </div>
+          </div>
           </div>
       </div>
   </div>
@@ -232,7 +234,6 @@
             <div class="panel-heading">Ice Three </div>
             <div class="panel-body">
               <div class="col-md-6">
-              <div class="calendar" class="col-md-6">
                 <div class="datepicker"></div>
               <form method="post" action="schedulepage.php">
                 <p>Select a day: <input type="text" name="date3" id="datepicker3"></p>
@@ -240,15 +241,14 @@
                 <input type="submit" value="Load Times" name="submit"/>
 
               </form>
-            </div>
-        			</div>
-        			<div  class="col-md-6">
+        			  </div>
+        			  <div class="col-md-6">
         			  <table class = "table">
         			  <?php
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
                 $username = $_SESSION['login'];
                 $date3 = $_POST['date3'];
-                echo $date3;
+                echo "<center><h3> ". $date3 . "</h3></center>";
                 $sql = "SELECT * FROM rink_3_db WHERE date = '$date3'";
                 $result = mysqli_query($db, $sql);
                 if ($_POST['hidden1']==3){
@@ -262,20 +262,21 @@
               while ($row = mysqli_fetch_array($result)){
                  ?>
                 <tr>
-                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['time'];?>
-                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['event'];?>
-                  <td style="font-size:18px;padding-left:15px;"><?php echo $row['info'];?>
+                  <td style="font-size:12px;font-weight:bold;padding-left:15px;"><?php echo $row['time'];?>
+                  <td style="font-size:12px;font-weight:bold;padding-left:15px;"><?php echo $row['event'];?>
+                  <td style="font-size:12px;font-weight:bold;padding-left:15px;"><?php echo $row['info'];?>
                 </tr>
                 <?php }
                   ?><a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Event3" href="#">Schedule an event</a>
                 <?php  } else{
                 ?>
+                <center>
                 <p>We do not have this far planned out yet please check again later</p>
+                </center>
                 <?php }} ?>
                 </table>
-            </div>
           </div>
-
+        </div>
         </div>
       </div>
 
@@ -325,8 +326,6 @@
                     </div>
                     </div>
                   </div>
-                </div>
-              </div>
       </form>
 
 
@@ -369,8 +368,8 @@
                           	<input type="hidden" name="hidden2" value ="2">
                           	<input type="hidden" name="username" value = "<?php echo $_SESSION['login']?>">
                       </table>
-                      </form>
                     <input type="submit" class="login loginmodal-submit" value="Submit">
+                      </form>
                     </div>
                   </div>
                 </div>
@@ -379,7 +378,7 @@
       <!--End of event modal2-->
       <div class="modal fade" id="Event3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
-          <<div class="Defaultmodal-container">
+          <div class="Defaultmodal-container">
   					<h1>Schedule an event</h1>
               <center>
               <form action ="schedulepage.php" method="post">
@@ -420,7 +419,6 @@
                     </div>
                   </div>
                 </div>
-              </div>
       </form>
       <!--End of event modal3-->
 
@@ -440,6 +438,7 @@
           $( "#datepicker2" ).datepicker();
           $( "#datepicker3" ).datepicker();
         } );
+
       </script>
     <!-- <script src="../../dist/js/bootstrap.min.js"></script> -->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

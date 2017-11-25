@@ -149,9 +149,9 @@
     <form id="#formSection" style="padding:0px;ev method="post" class="customereedit-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
       <div class="TableWrap">
           <table class="table DefaultTable">
-             <tr class="TableHeading">
+             <thead class="TableHeading">
                <th colspan = "2">Your INFORMATION</th>
-             </tr>
+             </thead>
              <!-- Links to our database with the information each customer enter into the following fields -->
                  <?php
       $db = mysqli_connect("localhost","gpeck2217","","c9");
@@ -187,9 +187,9 @@
       <div class="TableWrap">
         <!-- This is a table style that adds a black border to the table and colors each element in the table -->
       <table class = "table DefaultTable">
-         <tr class="TableHeading">
+         <thead class="TableHeading">
            <th colspan="6">Your Events!</th>
-         </tr>
+         </thead>
          <tr>
          <th>Date:</th><th>Time</th><th>Ice</th><th>Event</th><th>Info</th><th></th>
          </tr>

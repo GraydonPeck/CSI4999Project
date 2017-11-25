@@ -240,7 +240,7 @@ _END;
 					echo <<<_END
 
 					<table class="table DefaultTable">
-						<tr class="TableHeading">
+						<thead class="TableHeading">
 							<th>Service #</th>
 							<th>First Name</th>
 							<th>Last Name</th>
@@ -249,7 +249,7 @@ _END;
 							<th>Progress</th>
 							<th><center>Update</center></th>
 							<th><center>Remove</center></th>
-						</tr>
+						</thead>
 
 _END;
 

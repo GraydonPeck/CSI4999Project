@@ -149,14 +149,14 @@
 
 							echo <<<_END
 								<table class="table DefaultTable">
-									<tr class="TableHeading">
+									<thead class="TableHeading">
 										<th>Service #</th>
 										<th>First Name</th>
 										<th>Last Name</th>
 										<th>Skate</th>
 										<th>Service</th>
 										<th>Progress</th>
-									</tr>
+									</thead>
 _END;
 
 							for ($j = 0; $j < $rows; ++$j)

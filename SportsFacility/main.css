@@ -67,6 +67,7 @@ label.custom-select select {
     padding: 0 8px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
+    -webkit-border-radius: 0px;
 }
 
 

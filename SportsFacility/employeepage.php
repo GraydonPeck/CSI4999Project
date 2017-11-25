@@ -101,7 +101,7 @@
     <div class="panel panel-primary">
       <div class="panel-heading">This Weeks Schedule</div>
       <center>
-      <table>
+      <table class="table">
       <?php
     $db = mysqli_connect("localhost","gpeck2217","","c9");
     $username = $_SESSION['login'];
@@ -114,7 +114,7 @@
           </tr>
           <?php } ?>
     </table>
-    <table>
+    <table >
       <th></th><th>You're currently unavailable</th><th></th>
       <?php
     $db = mysqli_connect("localhost","gpeck2217","","c9");
@@ -230,7 +230,7 @@
           <div class="Defaultmodal-container">
   					<h1>Which day would you like to request off</h1>
               <form action ="employeepage.php" method="post">
-                         <select name = "day" class="form-control">
+                        <label class="custom-select"> <select name = "day" class="form-control">
                             <option disabled selected value>- select a day -</option>
                             <option value = "monday">Monday</option>
                             <option value = "tuesday">Tuesday</option>
@@ -239,13 +239,11 @@
                             <option value = "friday">Friday</option>
                             <option value = "saturday">Saturday</option>
                             <option value = "sunday">Sunday</option>
-                           	</select>
+                           	</select></label>
                     <input type = "hidden" name= "hidden2" value= "2">
                     <input type = "hidden" name= "user_name" value= "<?php echo $_SESSION['login']?>">
-                    <div class="modal-footer">
-                      <input type="submit" class="login loginmodal-submit" value="Submit">
+                    <input type="submit" class="login loginmodal-submit" value="Submit">
                       </form>
-                    </div>
                   </div>
 
                 </div>
