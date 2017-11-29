@@ -28,6 +28,7 @@ function validateName(UserName) {
         return true;
     else
         return false;
+
 }
 
 function validateName(Password) {
@@ -36,4 +37,6 @@ function validateName(Password) {
         return true;
     else
         return false;
+
 }
+

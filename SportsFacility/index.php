@@ -3,6 +3,11 @@
  include("dbutils.php");
  session_start();
  $username = $_POST['username'];
+ if ($_SESSION['bad'])
+ {
+   echo "<script> alert('Username or Password incorrect please try again.');</script>";
+   $_SESSION['bad'] = False;
+ }
 ?>
 <html lang="en">
 <head>
@@ -39,17 +44,28 @@
       margin: auto;
       text-align: center;
       padding: 15px;
+      background-color:#30302F;
+      opacity:.9;
     }
     .slider .parent-slide {
       padding: 1px;
     }
     .slider img {
       display: block;
+
       margin: auto;
     }
+
+    .panelstyle{
+      background-color:#766151;
+      color:white;
+      padding:5px;
+    }
+
   </style>
 
 </head>
+
 
 <body>
   <div id="fb-root"></div>
@@ -148,6 +164,10 @@
     </div>
     </div>
 
+    <!-- Button used for going to the top of the page -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <!-- End of Button -->
+
 <!-- Colin -->
 <!-- Slick Carousel -->
 
@@ -206,11 +226,12 @@ _END;
       <br>
       <br>
 
-      <div class="panel panel-primary">
-        <h2>Featured Video</h2>
-        <iframe  height="250px" width="75%"src="https://www.youtube.com/embed/3CpZ_AydX8s"  frameborder="1" allowfullscreen style="float:left;margin-right:20px;margin-bottom:20px;"></iframe>
-        <p>This weekend check out a college match up between the Oakland Golden Grizzlies and the UDM Titans. The game will be the inaugual college game held here at HockeyPlex. This game will be the first meeting for these rivals in the 2017 season so get ready for an exhilarating game. Admission will be $5 and the puck drops on Ice 1 at 8:00pm. We'll be filming the whole game, as well as all of our college games so you can catch them here later! In the mean time enjoy our featured video of the week.</p>
-        <p>In this video you will see the Central Michigan Chippewas defeating Oakland University 8-4 for CMU's first win in program history vs. the Grizzlies. Both Dalton Sutherland and Nathan Allgaier had hat tricks, and Riley Morgan took home his 7th win of the season. CMU improves to 11-4 on the season, and Oakland looks to get back on the grind and pick up a home win for their first game on campus. Check back here next week for a new featured video and feel free to leave a video request on our About page in the comments section. </p>
+      <div class="panel panel-primary panelstyle">
+        <h2 style="text-align:center;">Featured Video</h2>
+        <hr class="style-seven">
+        <iframe  height="250px" width="75%"src="https://www.youtube.com/embed/3CpZ_AydX8s"  frameborder="1" allowfullscreen style="float:left;margin-bottom:20px;margin-right:20px; padding:15px;"></iframe>
+        <p class="home">This weekend check out a college match up between the Oakland Golden Grizzlies and the UDM Titans. The game will be the inaugual college game held here at HockeyPlex. This game will be the first meeting for these rivals in the 2017 season so get ready for an exhilarating game. Admission will be $5 and the puck drops on Ice 1 at 8:00pm. We'll be filming the whole game, as well as all of our college games so you can catch them here later! In the mean time enjoy our featured video of the week.</p>
+        <p class="home">In this video you will see the Central Michigan Chippewas defeating Oakland University 8-4 for CMU's first win in program history vs. the Grizzlies. Both Dalton Sutherland and Nathan Allgaier had hat tricks, and Riley Morgan took home his 7th win of the season. CMU improves to 11-4 on the season, and Oakland looks to get back on the grind and pick up a home win for their first game on campus. Check back here next week for a new featured video and feel free to leave a video request on our About page in the comments section. </p>
       </div>
      </div>
 
@@ -250,15 +271,18 @@ _END;
 
   <!--Login Modal -->
   <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-      	  <div class="modal-dialog">
-  				<div class="loginmodal-container">
+      	  <div   class="modal-dialog">
+  				<div   class="loginmodal-container">
   					<h1>Login to Your Account</h1><br>
-  				  <form action = "checklogin.php" method="post">
+  					<div id="error"></div>
+    				  <form id="error"  action = "checklogin.php" method="post" onsubmit="return check();">
   				    <input type="hidden" name="User_number">
-  					<input type="text" name="username" placeholder="Username">
-  					<input type="password" name="passwd" placeholder="Password">
-  					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+  					<input  type="text" id="username" name="username" placeholder="Username" required>
+  					<input  type="password" name="passwd" placeholder="Password" id="password" required >
+  					<input  id="login" type="submit" name="login" class="login loginmodal-submit" value="Login" >
   				  </form>
+
+
   				</div>
   			</div>
   		  </div>
@@ -433,7 +457,105 @@ $('.carousel .item').each(function(){
 .carousel-control.left,.carousel-control.right {background-image:none;}
 
 </style>
+<script>
+/*if(errors) {
+  var messages ='The following has occured:\n' + errors;
+  $('#login-modal').find('.loginmodal-container input').text(messages);
+  $('#login-modal').modal(show);
+}
+*/
+function myFunction(){
+parent.alert('this is stupid');
+}
 
+$(document).ready(function(){
+  $('#alertbox').click(function(){
+    $("#error").html("enter valid username");
+      $('#loginmodal').modal("show");
+    });
+  });
+
+function check(){
+
+var retstatus = check_login ($username, $passwd, $msg);
+  if(retstatus){
+    alert("Successfully logged in! Enjoy what HockeyPlex has to offer.");
+
+    return true;
+  }
+
+
+
+  else{
+      alert("invalid username or password");
+      return false;
+  }
+}
+
+/*
+function validation(){
+var username = document.getElementById("username").value;
+var password = document.getElementById("password").value;
+if ( username == "employee1"  && password == "employee1" ){
+alert ("Login successfully");
+window.location = "checklogin.php"; // Redirecting to other page.
+return false;
+}
+else{
+
+alert("username or password invalid");
+
+return false;
+}
+}
+*/
+
+var attempt = 3; // Variable to count number of attempts.
+// Below function Executes on click of login button.
+function validate(){
+var username = document.getElementById("username").value;
+var password = document.getElementById("password").value;
+if ( username == "employee1" && password == "employee1"){
+alert ("Login successfully");
+window.location = "checklogin.php"; // Redirecting to other page.
+return false;
+}
+else{
+attempt --;// Decrementing by one.
+alert("You have left "+attempt+" attempt;");
+// Disabling fields after 3 attempts.
+if( attempt == 0){
+document.getElementById("username").disabled = true;
+document.getElementById("password").disabled = true;
+document.getElementById("submit").disabled = true;
+return false;
+}
+}
+}
+
+// When the user scrolls down 800px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
 
 
     <!-- Bootstrap core JavaScript

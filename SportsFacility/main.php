@@ -83,6 +83,11 @@
   </div>
 </nav>
 <!--end of the creation of the nav bar element -->
+
+<!-- Button used for going to the top of the page -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <!-- End of Button -->
+
   <div class="intro-section">
     <div class="container info">
       <h1><big>Hockey<strong>Plex</strong></big></h1>
@@ -122,7 +127,30 @@
 
 
   <!-- End Login Modal -->
+<script>
+    // When the user scrolls down 700px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
 
+function scrollFunction() {
+    if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
 
 
 </body>

@@ -2,13 +2,17 @@
 <?php
  include("dbutils.php");
  session_start();
+  if (!$_SESSION['available'])
+ {
+   echo "<script> alert('This employee is unavailable please select a different employee');</script>";
+   $_SESSION['available'] = True;
+ }
        if ($_POST['hidden']==1)
     {
        echo "Found " . count($_POST) . " elements" . "<td>";
         var_dump($_POST);
         add_calendar ($_POST['day'], $_POST['job'], $_POST['username']);
         header ("Location: managerpage.php");
-
     }
     if ($_POST['hidden2']==2)
     {
@@ -111,6 +115,12 @@
                 <div class="clearfix"></div>
             </div>
             <div class="panel-body"  >
+        <?php
+        if ($pass)
+        {
+          echo "<p>Not valid</p>";
+        }
+        ?>
               <form id="#formSection" method="post"  style="margin:15px;padding:0px; " data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
                 <div class="TableWrap" >
                   <table class="table"  style="overflow: hidden;">

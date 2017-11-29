@@ -154,9 +154,10 @@ if ($_POST['hidden']==1)
 
 <div class="jumbotron">
   <center><h1><big>Hockey<strong>Plex</strong></big></h1></center>
-
-
 </div>
+<!-- Button used for going to the top of the page -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+ <!-- End of Button -->
             <div class="container" style="padding-top:10px;">
               <div class="panel panel-primary" id="aboutstyle">
                 <h1>About Us</h1>
@@ -234,7 +235,30 @@ if ($_POST['hidden']==1)
     </div>
   </div>
     </body>
+<script>
+    // When the user scrolls down 700px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
 
+function scrollFunction() {
+    if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
 
      <!-- Bootstrap core JavaScript
     ================================================== -->

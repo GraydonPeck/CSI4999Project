@@ -169,43 +169,53 @@
 	function add_calendar ($day, $job, $username)
 	{
 		global $conn;
-        $sql_i = "UPDATE work_schedule SET user_name = IF(blocked != '$username', '$username', user_name) WHERE day = '$day' AND job = '$job'";
-        check_calendar($day, $job, $username);
-        run_update($sql_i);
+		$_SESSION['available']= True;
+		$sql = "Select blocked FROM work_schedule WHERE day = '$day' and job = '$job'";
+		$result = $conn->query($sql);
+		if ($result->num_rows == 1) {
+			$row = $result->fetch_assoc();
+			$dbpass = $row["blocked"];
+
+			if ($dbpass != $username)
+			{
+				$sql_i = "UPDATE work_schedule SET user_name = '$username' WHERE day = '$day' AND job = '$job'";
+        		run_update($sql_i);
+			}else{
+				$_SESSION['available']= False;
+			}
+		}
 	}
 	function check_calendar ($day, $job, $username)
 	{
         global $conn;
+        $_SESSION['available'] = True;
         $sql = "SELECT user_name FROM work_schedule where day = '$day' AND job = '$job' AND user_name = '$username'";
         $result = mysqli_query($conn, $sql);
-        if($result > 0)
+        if (empty($result))
         {
-    	$message = "right answer";
+    	$_SESSION['available'] = False;
         }
-        else{
-        $message = "wrong answer";
-        }
-		print '<script type="text/javascript">';
-		print "alert('$message')";
-		print '</script>';
 	}
 	function add_event1 ($date, $time, $event, $info, $username)
 	{
 		global $conn;
 		$sql_i = "UPDATE rink_1_db SET event = '$event', info = '$info', user_name = '$username' WHERE date ='$date' AND time = '$time'";
 		run_update($sql_i);
+		$_SESSION['event'] = True;
 	}
 	function add_event2 ($date, $time, $event, $info, $username)
 	{
 		global $conn;
 		$sql_i = "UPDATE rink_2_db SET event = '$event', info = '$info' , user_name = '$username' WHERE date ='$date' AND time = '$time'";
 		run_update($sql_i);
+		$_SESSION['event'] = True;
 	}
 	function add_event3 ($date, $time, $event, $info, $username)
 	{
 		global $conn;
 		$sql_i = "UPDATE rink_3_db SET event = '$event', info = '$info', user_name = '$username' WHERE date ='$date' AND time = '$time'";
 		run_update($sql_i);
+		$_SESSION['event'] = True;
 	}
 	function delete_event ($id, $ice)
 	{

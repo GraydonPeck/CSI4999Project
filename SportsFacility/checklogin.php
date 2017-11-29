@@ -2,7 +2,7 @@
     include "dbutils.php";
     session_start();
     $_SESSION['loggedin'] = False;
-
+	$_SESSION['bad'] = False;
 	$username = $_POST['username'];
 	$passwd = $_POST['passwd'];
 	$number = $_POST['User_number'];
@@ -18,6 +18,8 @@
 	$_SESSION['login'] = $username;
 	$_SESSION['user_number'] = $number;
 	$_SESSION['loggedin'] = True;
+	$_SESSION['bad'] = False;
+	$_SESSION['event'] = False;
 	$customer = check_login_type($username);
 	if ($customer)
 	{
@@ -26,6 +28,7 @@
 	$admin = check_admin($username);
 	if ($admin)
 	{
+	$_SESSION['available'] = True;
 	$goto= "Location: managerpage.php";
 	}else {
 	$goto= "Location: employeepage.php";
@@ -35,9 +38,7 @@
     	$ref = getenv("HTTP_REFERER");
         $_SESSION['login'] = '';
         $_SESSION['loggedin'] = NULL;
-        //echo "<script language='javascript'> alert('Incorrect Password'); </script>";
-    	$goto = "Location: index.php#invalidPassword";
+    	$goto = "Location: index.php";
+    	$_SESSION['bad'] = True;
     }
-	header($goto);
-
-?>
+	header($goto); ?>

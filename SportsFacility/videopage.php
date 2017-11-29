@@ -19,7 +19,7 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-  <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+   <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
   <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
   <script type = "text/javascript" src = "chk.js"></script>
   <!-- referencing an external style sheet. -->
@@ -979,11 +979,11 @@ function carousel() {
 }
 
 
-// When the user scrolls down 20px from the top of the document, show the button
+// When the user scrolls down 800px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-    if (document.body.scrollTop > 650 || document.documentElement.scrollTop > 650) {
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
         document.getElementById("myBtn").style.display = "block";
     } else {
         document.getElementById("myBtn").style.display = "none";

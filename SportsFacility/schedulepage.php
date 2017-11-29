@@ -2,9 +2,14 @@
 <?php
  include("dbutils.php");
  session_start();
+  if ($_SESSION['event'])
+ {
+   echo "<script> alert('Thank you for booking an event! We will contact you shortly to confirm.');</script>";
+   $_SESSION['event'] = False;
+ }
  if ($_POST['hidden']==1)
 {
-      do_alert("We will contact you via email shortly with your confirmation.");
+
 	    echo "Found " . count($_POST) . " elements" . "<td>";
         var_dump($_POST);
         add_event1 ($_POST['date'], $_POST['time'], $_POST['event'], $_POST['info'], $_POST['username']);
@@ -124,29 +129,31 @@
 
 
   </div>
+  <!-- Button used for going to the top of the page -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <!-- End of Button -->
 
   <div class="col-md-6" style="padding-top:10px;">
       <div class="panel panel-primary">
           <div class="panel-heading">Ice One </div>
           <div class="panel-body">
-            <div class="col-md-6">
                   <div class="datepicker"></div>
                   <form method="post" action="schedulepage.php">
                     <p>Select a day: <input type="text" id="datepicker" name="date1"></p>
                      <input type="hidden" value="1" name="hidden1"/>
                     <input type="submit" value="Load Times" name="submit"/>
                   </form>
-            </div>
-            <div class="col-md-6">
+                </div>
+        			  <div class="TableWrap">
         			  <table class = "table">
         			  <?php
+        			  if  ($_POST['hidden1']==1){
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
                 $username = $_SESSION['login'];
                 $date1 = $_POST['date1'];
                 echo "<center><h3> ". $date1 . "</h3></center>";
                 $sql = "SELECT * FROM rink_1_db WHERE date = '$date1'";
                 $result = mysqli_query($db, $sql);
-                if  ($_POST['hidden1']==1){
                 if (mysqli_fetch_array($result)!=0)
                 {
                  ?>
@@ -168,9 +175,33 @@
                 <center>
                 <p>We do not have this far planned out yet please check again later</p>
                 </center>
-                <?php }} ?>
+                <?php }}else
+                {
+                  $db = mysqli_connect("localhost","gpeck2217","","c9");
+                $username = $_SESSION['login'];
+                $date1 = "12/01/2017";
+                echo "<center><h3> ". $date1 . "</h3></center>";
+                $sql = "SELECT * FROM rink_1_db WHERE date = '$date1'";
+                $result = mysqli_query($db, $sql);
+                if (mysqli_fetch_array($result)!=0)
+                {
+                 ?>
+                  <th>Time</th>
+                <th>Event</th>
+                <th>Info</th>
+                <?php
+                while ($row = mysqli_fetch_array($result)){
+                 ?>
+                <tr>
+                  <td style="font-size:12px;font-weight:bold;padding-left:15px;"><?php echo $row['time'];?>
+                  <td style="font-size:12px;font-weight:bold;padding-left:15px;"><?php echo $row['event'];?>
+                  <td style="font-size:12px;font-weight:bold;padding-left:15px;"><?php echo $row['info'];?>
+                </tr>
+                <?php }
+                  ?><a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Event1" href="#">Schedule an event</a>
+                <?php }}?>
                 </table>
-              </div>
+          </div>
           </div>
       </div>
   </div>
@@ -179,30 +210,27 @@
       <div class="panel panel-primary">
           <div class="panel-heading">Ice Two </div>
           <div class="panel-body">
-            <div class="col-md-6">
-              <div class="datepicker"></div>
-              <form method="post" action="schedulepage.php">
-                <p>Select a day: <input type="text" name="date2" id="datepicker2"></p>
-                <input type="hidden" value="2" name="hidden1"/>
-                <input type="submit" value="Load Times" name="submit"/>
-
-              </form>
-        			</div>
-        			<div class="col-md-6">
-        			  <div >
+                  <div class="datepicker"></div>
+                  <form method="post" action="schedulepage.php">
+                    <p>Select a day: <input type="text" id="datepicker" name="date1"></p>
+                     <input type="hidden" value="1" name="hidden1"/>
+                    <input type="submit" value="Load Times" name="submit"/>
+                  </form>
+                </div>
+        			  <div class="TableWrap">
         			  <table class = "table">
         			  <?php
+        			  if  ($_POST['hidden1']==2){
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
                 $username = $_SESSION['login'];
                 $date2 = $_POST['date2'];
                 echo "<center><h3> ". $date2 . "</h3></center>";
                 $sql = "SELECT * FROM rink_2_db WHERE date = '$date2'";
                 $result = mysqli_query($db, $sql);
-                if ($_POST['hidden1']==2){
                 if (mysqli_fetch_array($result)!=0)
                 {
-                                      ?>
-                <th>Time</th>
+                 ?>
+                  <th>Time</th>
                 <th>Event</th>
                 <th>Info</th>
                 <?php
@@ -215,25 +243,47 @@
                 </tr>
                 <?php }
                   ?><a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Event2" href="#">Schedule an event</a>
-                <?php  } else{
+                <?php } else{
                 ?>
                 <center>
                 <p>We do not have this far planned out yet please check again later</p>
                 </center>
-                <?php }} ?>
+                <?php }}else
+                {
+                  $db = mysqli_connect("localhost","gpeck2217","","c9");
+                $username = $_SESSION['login'];
+                $date2 = "12/01/2017";
+                echo "<center><h3> ". $date2 . "</h3></center>";
+                $sql = "SELECT * FROM rink_2_db WHERE date = '$date2'";
+                $result = mysqli_query($db, $sql);
+                if (mysqli_fetch_array($result)!=0)
+                {
+                 ?>
+                  <th>Time</th>
+                <th>Event</th>
+                <th>Info</th>
+                <?php
+                while ($row = mysqli_fetch_array($result)){
+                 ?>
+                <tr>
+                  <td style="font-size:12px;font-weight:bold;padding-left:15px;"><?php echo $row['time'];?>
+                  <td style="font-size:12px;font-weight:bold;padding-left:15px;"><?php echo $row['event'];?>
+                  <td style="font-size:12px;font-weight:bold;padding-left:15px;"><?php echo $row['info'];?>
+                </tr>
+                <?php }
+                  ?><a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Event2" href="#">Schedule an event</a>
+                <?php }}?>
                 </table>
-            </div>
           </div>
           </div>
       </div>
   </div>
 
-
   <div class="col-md-12">
         <div class="panel panel-primary">
             <div class="panel-heading">Ice Three </div>
             <div class="panel-body">
-              <div class="col-md-6">
+              <div class="calendar" class="col-md-6">
                 <div class="datepicker"></div>
               <form method="post" action="schedulepage.php">
                 <p>Select a day: <input type="text" name="date3" id="datepicker3"></p>
@@ -241,20 +291,19 @@
                 <input type="submit" value="Load Times" name="submit"/>
 
               </form>
-        			  </div>
-        			  <div class="col-md-6">
+        			  <div class="TableWrap">
         			  <table class = "table">
         			  <?php
+        			  if ($_POST['hidden1']==3){
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
                 $username = $_SESSION['login'];
                 $date3 = $_POST['date3'];
                 echo "<center><h3> ". $date3 . "</h3></center>";
                 $sql = "SELECT * FROM rink_3_db WHERE date = '$date3'";
                 $result = mysqli_query($db, $sql);
-                if ($_POST['hidden1']==3){
                 if (mysqli_fetch_array($result)!=0)
                 {
-                                      ?>
+                ?>
                 <th>Time</th>
                 <th>Event</th>
                 <th>Info</th>
@@ -273,12 +322,42 @@
                 <center>
                 <p>We do not have this far planned out yet please check again later</p>
                 </center>
-                <?php }} ?>
+                <?php }} else{
+                  $db = mysqli_connect("localhost","gpeck2217","","c9");
+                $username = $_SESSION['login'];
+                $date3 = "12/01/2017";
+                echo "<center><h3> ". $date3 . "</h3></center>";
+                $sql = "SELECT * FROM rink_3_db WHERE date = '$date3'";
+                $result = mysqli_query($db, $sql);
+                if (mysqli_fetch_array($result)!=0)
+                {
+                ?>
+                <th>Time</th>
+                <th>Event</th>
+                <th>Info</th>
+                <?php
+              while ($row = mysqli_fetch_array($result)){
+                 ?>
+                <tr>
+                  <td style="font-size:12px;font-weight:bold;padding-left:15px;"><?php echo $row['time'];?>
+                  <td style="font-size:12px;font-weight:bold;padding-left:15px;"><?php echo $row['event'];?>
+                  <td style="font-size:12px;font-weight:bold;padding-left:15px;"><?php echo $row['info'];?>
+                </tr>
+                <?php }
+                  ?><a class= "button btn-block btn-danger" data-toggle="modal" data-target="#Event3" href="#">Schedule an event</a>
+                <?php  }}
+                ?>
                 </table>
           </div>
+</div>
         </div>
-        </div>
+
+
       </div>
+
+
+
+
 
 
 
@@ -422,9 +501,61 @@
       </form>
       <!--End of event modal3-->
 
+<div id="wrapper" style="width:100%;">
+		<div id="header">
+
+		  <h2>Contact Information</h2>
+
+		  <hr class="style-seven">
+		</div>
+		<div id="content">
+
+
+
+    <div class="container">
+      <center>
+  <button onclick="location.href = 'aboutpage.php#comment1';" id="myButton" class="button button1" >Message Us</button>  </div>
+  </center>
+		</div>
+
+		<div id="footer">
+		  <center>
+
+		    <p class="sansserif"><strong>Address:</strong> <i>318 Meadow Brook Rd, Rochester MI 48309</i></p>
+        <p class="sansserif"><strong>Phone Number:</strong><i> (248) 370-2100</i></p>
+        <p class="sansserif"><strong>Email: </strong><i>mpdegraeve@oakland.edu</i></p>
+      </center>
+    </div>
   </div>
+</div>
+  </div>
+</div>
 
 
+<script>
+     // When the user scrolls down 700px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
 
 
     <!-- Bootstrap core JavaScript

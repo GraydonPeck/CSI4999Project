@@ -565,6 +565,13 @@ p.sansserif {
     font-size: 14px;
 }
 
+p.home {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
 p.video {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
