@@ -266,13 +266,13 @@ s.parentNode.insertBefore(hm, s);
   <?php
   $username= $_SESSION['login'];
    $customer = check_login_type($username);
-    if ($customer) { ?>
+    if ($customer || !$_SESSION['loggedin']) { ?>
 
     <div class="w3-bar">
     <button class="w3-bar-item w3-button tablink w3-black" onclick="videotab(event,'Highlights')">Highlights</button>
     <button class="w3-bar-item w3-button tablink" onclick="videotab(event,'Training')"> Skills Training</button>
     </div>
-    <?php } else { ?>
+    <?php } else{ ?>
     <div class="w3-bar">
     <button class="w3-bar-item w3-button tablink w3-black" onclick="videotab(event,'Highlights')">Highlights</button>
     <button class="w3-bar-item w3-button tablink" onclick="videotab(event,'Training')"> Skills Training</button>
@@ -890,8 +890,8 @@ s.parentNode.insertBefore(hm, s);
   					<h1>Login to Your Account</h1><br>
   				  <form action = "checklogin.php" method="post">
   				    <input type="hidden" name="User_number">
-  					<input type="text" name="username" placeholder="Username">
-  					<input type="password" name="passwd" placeholder="Password">
+  					<input type="text" name="username" placeholder="Username" required>
+  					<input type="password" name="passwd" placeholder="Password" required>
   					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
   				  </form>
   				</div>

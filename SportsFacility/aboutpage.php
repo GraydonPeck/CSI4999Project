@@ -28,6 +28,7 @@ if ($_POST['hidden']==1)
         #aboutstyle{
             background-color: #766151;
             color: white;
+            font-size: 16px;
         }
 
     </style>
@@ -141,8 +142,8 @@ if ($_POST['hidden']==1)
   					<h1>Login to Your Account</h1><br>
   				  <form action = "checklogin.php" method="post">
   				    <input type="hidden" name="User_number">
-  					<input type="text" name="username" placeholder="Username">
-  					<input type="password" name="passwd" placeholder="Password">
+  					<input type="text" name="username" placeholder="Username" required>
+  					<input type="password" name="passwd" placeholder="Password" required>
   					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
   				  </form>
   				</div>
@@ -161,6 +162,7 @@ if ($_POST['hidden']==1)
             <div class="container" style="padding-top:10px;">
               <div class="panel panel-primary" id="aboutstyle">
                 <h1>About Us</h1>
+                <hr class="style-seven" style="width:80%; margin-left:auto; margin-right:auto;">
                     <div class="col-md-12">
 
                         <h2>How we came to be ...</h2>
@@ -183,11 +185,12 @@ if ($_POST['hidden']==1)
                   <div id="commentsection">
                   <form id="#formSection" method="post" class="customercomment-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
                      <h1 id="comment1">Message Board</h1>
-                    Name <input type="text" name="name" value="<?php echo $_SESSION['login']?>">
-                    Comment <input type="text" name="comment" value="">
+                     <hr class="style-seven">
+                    Name<input type="text" name="name" value="<?php echo $_SESSION['login']?>" style="color:black; padding:5px; margin:5px 5px 5px 5px">
+                    Comment <input type="text" name="comment" value="" style="color:black; padding:5px 5px 5px 5px;">
                     <input type="hidden" name ="hidden" value ="1">
-                    <button type="submit" class="btn btn-primary" value="comment">Submit</button>
-               <table class = "table ForumTable">
+                    <button type="submit" class="button button1" value="comment">Submit</button>
+               <table class = "table ">
                  <tr>
                               <th>User</th><th style= "text-align: center;">Comment</th>
                               </tr>
