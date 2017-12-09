@@ -16,6 +16,11 @@
         add_customer($_POST['User_name']);
         header ("Location: main.php");
     }
+if ($_SESSION['redirect'])
+{
+    echo "<script> alert('Please sign in to view this content.');</script>";
+    $_SESSION['redirect'] = False;
+}
 ?>
 
 <html lang="en">
@@ -96,13 +101,12 @@
   <div class="intro-section">
     <div class="container info">
       <h1><big>Hockey<strong>Plex</strong></big></h1>
-      <p><a class="button cta" href="#signup-section" role="button">Get started today</a></p>
+      <p><a class="button cta" href="#submitSection" role="button">Get started today</a></p>
     </div>
   </div>
 
   <div id="signup-section">
-    <div class="col-md-8" style="margin: 0 auto;float: none;background: rgba(0, 0, 0, 0.7);">
-    <h1 class="singuptitle" >Sign Up Here</h1>
+    <h1 class="singuptitle">Sign Up Here</h1>
     <form id="#formSection" method="post" class="signup-form" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit= "return valid()">
 
 
@@ -114,7 +118,6 @@
         <input type="submit" id="submitSection" class="login loginmodal-submit" value="Submit">
         </center>
     </form>
-    </div>
   </div>
 
   <!--Login Modal -->

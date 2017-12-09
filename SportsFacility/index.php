@@ -8,6 +8,9 @@
    echo "<script> alert('Username or Password incorrect please try again.');</script>";
    $_SESSION['bad'] = False;
  }
+ function redirect(){
+   echo "<script> alert('Please login to view this content');</script>";
+ }
 ?>
 <html lang="en">
 <head>
@@ -44,6 +47,7 @@
       margin: auto;
       text-align: center;
       padding: 15px;
+      background-color:#514947;
       opacity:.9;
     }
     .slider .parent-slide {
@@ -56,7 +60,7 @@
     }
 
     .panelstyle{
-      background-color:#766151;
+      background-color:#514947;
       color:white;
       padding:5px;
     }
@@ -93,7 +97,8 @@
         <li><a href="schedulepage.php">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
          <?php }else{ ?>
          <li><a href="main.php">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
-         <?php }
+         <?php $_SESSION[redirect]=True;
+          }
          if(isset($_SESSION['loggedin'])){ ?>
           <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">ProShop</span><span class="caret"></span> <span class="glyphicon glyphicon-piggy-bank pull-left"></span></a>
@@ -109,6 +114,7 @@
         <ul class="dropdown-menu">
 			       <li class="dropdown-header">Proshop</li>
 			         <li><a href="main.php">Proshop <span class="badge pull-left"></span></a></li>
+			         <?php $_SESSION[redirect]=True; ?>
                <li><a href="servcust.php">Service Center<span class="glyphicon glyphicon-stats pull-left"></span></a></li>
                 </ul>
                 </li>
@@ -169,7 +175,7 @@
 
 <!-- Colin -->
 <!-- Slick Carousel -->
-<div class="container-fluid" style="height:200px;">
+<div class="container-fluid" style="background-color:#514947;height:200px;">
       <div class="slider" style="margin-top:15px;">
 
           <?php
@@ -252,7 +258,7 @@ _END;
 
     <div class="container">
       <center>
-  <button onclick="location.href = 'aboutpage.php#comment1';" id="myButton" class="button button1" >Message Us</button>  </div>
+  <button onclick="location.href = 'aboutpage.php#comment1';" id="myButton" class="button" >Message Us</button>  </div>
   </center>
 		</div>
 

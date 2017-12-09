@@ -156,7 +156,8 @@ s.parentNode.insertBefore(hm, s);
         <li><a href="schedulepage.php">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
          <?php }else{ ?>
          <li><a href="main.php">Schedule<span class="glyphicon glyphicon-list-alt pull-left"></span></a></li>
-         <?php }
+         <?php $_SESSION[redirect]=True;
+          }
          if(isset($_SESSION['loggedin'])){ ?>
           <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">ProShop</span><span class="caret"></span> <span class="glyphicon glyphicon-piggy-bank pull-left"></span></a>
@@ -172,6 +173,7 @@ s.parentNode.insertBefore(hm, s);
         <ul class="dropdown-menu">
 			       <li class="dropdown-header">Proshop</li>
 			         <li><a href="main.php">Proshop <span class="badge pull-left"></span></a></li>
+			         <?php $_SESSION[redirect]=True; ?>
                <li><a href="servcust.php">Service Center<span class="glyphicon glyphicon-stats pull-left"></span></a></li>
                 </ul>
                 </li>

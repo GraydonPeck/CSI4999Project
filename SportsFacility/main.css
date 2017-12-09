@@ -1490,7 +1490,7 @@ hr {
 }
 
 #header {
-    background: #766151;
+    background: #514947;
     padding: 10px;
     color: white;
 
@@ -1498,13 +1498,13 @@ hr {
 }
 
 #content {
-    background-color: #766151;
+    background-color: #514947;
     padding-bottom: 100px;
     /* Height of the footer element */
 }
 
 #footer {
-    background: #766151;
+    background: #514947;
     width: 100%;
     height: 100px;
     text-align: center;
