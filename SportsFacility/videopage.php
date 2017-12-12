@@ -750,7 +750,7 @@ s.parentNode.insertBefore(hm, s);
     </td>
     <td>
       <div class="custom">
-        <p class="video">Agility</p>
+        <p class="video">Basic steps for properly sharpen skates.</p>
       </div>
     </td>
   </tr>
@@ -763,7 +763,7 @@ s.parentNode.insertBefore(hm, s);
     </td>
     <td>
       <div class="custom">
-        <p class="video">Balance</p>
+        <p class="video">Learn how to properly sharpen skates, so our customers will be provided with the best service(s).</p>
       </div>
     </td>
   </tr>

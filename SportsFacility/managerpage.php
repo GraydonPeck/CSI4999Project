@@ -19,7 +19,7 @@
 	    echo "Found " . count($_POST) . " elements" . "<td>";
         var_dump($_POST);
         add_user ($_POST['User_name'], $_POST['User_password'], $_POST['User_email'], $_POST['user_type']);
-        add_employee ($_POST['User_name'], $_POST['employee_fname'], $_POST['employee_lname'], $_POST['employee_address'], $_POST['employee_city'],$_POST['employee_state'], $_POST['employee_country'], $_POST['employee_zip'], $_POST['employee_SSN'], $_POST['employee_DOB'], $_POST['employee_sex']);
+        add_employee ($_POST['User_name'], $_POST['employee_fname'], $_POST['employee_lname'], $_POST['employee_type'], $_POST['employee_phone'], $_POST['employee_address'], $_POST['employee_city'], $_POST['employee_state'], $_POST['employee_country'], $_POST['employee_zip'], $_POST['employee_SSN'], $_POST['employee_DOB'], $_POST['employee_sex']);
         header ("Location: managerpage.php");
     }
     if ($_POST['hidden3']==3)
@@ -27,7 +27,7 @@
 
 	    echo "Found " . count($_POST) . " elements" . "<td>";
         var_dump($_POST);
-        edit_employee ($_POST['employee_fname'], $_POST['employee_lname'], $_POST['employee_type'], $_POST['employee_phone'], $_POST['user_name']);
+        edit_employee ($_POST['employee_fname'], $_POST['employee_lname'], $_POST['employee_type'], $_POST['employee_phone'], $_POST['user_name'], $_POST['employee_address'], $_POST['employee_city'],$_POST['employee_state'], $_POST['employee_country'], $_POST['employee_zip'], $_POST['employee_SSN'], $_POST['employee_DOB'], $_POST['employee_sex']);
         edit_employee_email($_POST['user_email'], $_POST['user_name']);
          header ("Location: managerpage.php");
     }

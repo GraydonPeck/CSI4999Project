@@ -177,7 +177,7 @@
                 {
                   $db = mysqli_connect("localhost","gpeck2217","","c9");
                 $username = $_SESSION['login'];
-                $date1 = "12/01/2017";
+                $date1 = "12/12/2017";
                 echo "<center><h3> ". $date1 . "</h3></center>";
                 $sql = "SELECT * FROM rink_1_db WHERE date = '$date1'";
                 $result = mysqli_query($db, $sql);
@@ -248,7 +248,7 @@
                 {
                   $db = mysqli_connect("localhost","gpeck2217","","c9");
                 $username = $_SESSION['login'];
-                $date2 = "12/01/2017";
+                $date2 = "12/12/2017";
                 echo "<center><h3> ". $date2 . "</h3></center>";
                 $sql = "SELECT * FROM rink_2_db WHERE date = '$date2'";
                 $result = mysqli_query($db, $sql);
@@ -320,7 +320,7 @@
                 <?php }} else{
                   $db = mysqli_connect("localhost","gpeck2217","","c9");
                 $username = $_SESSION['login'];
-                $date3 = "12/01/2017";
+                $date3 = "12/12/2017";
                 echo "<center><h3> ". $date3 . "</h3></center>";
                 $sql = "SELECT * FROM rink_3_db WHERE date = '$date3'";
                 $result = mysqli_query($db, $sql);
@@ -442,6 +442,7 @@
                           	<input type="hidden" name="hidden2" value ="2">
                           	<input type="hidden" name="username" value = "<?php echo $_SESSION['login']?>">
                       </table>
+                      </center>
                     <input type="submit" class="login loginmodal-submit" value="Submit">
                       </form>
                     </div>

@@ -19,6 +19,13 @@
         request_day ($_POST['day'], $_POST['user_name']);
         header ("Location: employeepage.php");
     }
+     if ($_POST['hidden1']==1)
+    {
+      echo "Found " . count($_POST) . " elements" . "<td>";
+        var_dump($_POST);
+        delete_day ($_POST['day']);
+        header ("Location: employeepage.php");
+    }
 ?>
 <html lang="en">
 <head>
@@ -115,6 +122,7 @@
           <?php } ?>
     </table>
     <table >
+       <form id="#formSection" method="post" data-animate="flipInX" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
       <th></th><th>You're currently unavailable</th><th></th>
       <?php
     $db = mysqli_connect("localhost","gpeck2217","","c9");
@@ -124,9 +132,13 @@
     while ($row = mysqli_fetch_array($result)){
       ?>
           <tr>
-            <td></td><td><?php echo $row['day']?></td><td></td>
+            <td></td><td><?php echo $row['day']?></td>
+            <input type ="hidden" name = "hidden1" value="1">
+            <input type = "hidden" name = "day" value = "<?php echo $row['day']?>">
+            <td><input type="submit" id="submitSection" class="button" value="Remove"></td>
           </tr>
           <?php } ?>
+              </form>
     </table>
     <a class= "button" data-toggle="modal" data-target="#Request" href="#">Edit Availablity</a>
     </center>

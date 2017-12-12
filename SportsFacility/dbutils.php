@@ -56,22 +56,22 @@
 
         run_update($sql_i);
 	}
-	function add_employee ($user_name, $employee_fname, $employee_lname, $employee_type, $employee_phone)
+	function add_employee ($user_name, $employee_fname, $employee_lname, $employee_type, $employee_phone, $employee_address, $employee_city, $employee_state, $employee_country, $employee_zip, $employee_SSN, $employee_DOB, $employee_sex )
 	{
 		global $conn;
 
 
-        $sql_i = "INSERT INTO employee_db(user_name, employee_fname, employee_lname, employee_type, employee_phone) VALUES " .
-                "('$user_name', '$employee_fname', '$employee_lname', '$employee_type', '$employee_phone')";
+        $sql_i = "INSERT INTO employee_db(user_name, employee_fname, employee_lname, employee_type, employee_phone, employee_address, employee_city, employee_state, employee_country, employee_zip, employee_SSN, employee_DOB, employee_sex) VALUES " .
+                "('$user_name', '$employee_fname', '$employee_lname', '$employee_type', '$employee_phone', '$employee_address','$employee_city', '$employee_state', '$employee_country','$employee_zip', '$employee_SSN','$employee_DOB','$employee_sex')";
 
         run_update($sql_i);
 	}
-	function edit_employee ($employee_fname, $employee_lname, $employee_type, $employee_phone, $user_name)
+	function edit_employee ($employee_fname, $employee_lname, $employee_type, $employee_phone, $user_name, $employee_address, $employee_city, $employee_state, $employee_country, $employee_zip, $employee_SSN, $employee_DOB, $employee_sex )
 	{
 		global $conn;
 
 
-        $sql_i = "UPDATE employee_db SET employee_fname = '$employee_fname', employee_lname = '$employee_lname', employee_type = '$employee_type', employee_phone = '$employee_phone' WHERE user_name = '$user_name'";
+        $sql_i = "UPDATE employee_db SET employee_fname = '$employee_fname', employee_lname = '$employee_lname', employee_type = '$employee_type', employee_phone = '$employee_phone', employee_address = '$employee_address', employee_city = '$employee_city', employee_state = '$employee_state', employee_country = '$employee_country', employee_zip = '$employee_zip', employee_SSN = '$employee_SSN', employee_DOB = '$employee_DOB', employee_sex = '$employee_sex' WHERE user_name = '$user_name'";
 
         run_update($sql_i);
 	}
@@ -240,6 +240,12 @@
 	{
 		global $conn;
         $sql_i = "UPDATE work_schedule SET blocked = '$username' WHERE day = '$day'";
+        run_update($sql_i);
+	}
+	function delete_day ($day)
+	{
+		global $conn;
+        $sql_i = "UPDATE work_schedule SET blocked = 'available' WHERE day = '$day'";
         run_update($sql_i);
 	}
 	function add_comment($name, $comment)

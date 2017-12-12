@@ -183,11 +183,11 @@
 						$conn = new mysqli($hn, $un, $pw, $db);
 						if ($conn->connect_error) die ($conn->connect_error);
 
-            $query = "(SELECT * FROM `rink_1_db` WHERE date = '12/01/2017' AND event != 'Available')
+            $query = "(SELECT * FROM `rink_1_db` WHERE date = '12/12/2017' AND event != 'Available')
                       UNION
-                      (SELECT * FROM `rink_2_db` WHERE date = '12/01/2017' AND event != 'Available')
+                      (SELECT * FROM `rink_2_db` WHERE date = '12/12/2017' AND event != 'Available')
                       UNION
-                      (SELECT * FROM `rink_3_db` WHERE date = '12/01/2017' AND event != 'Available')
+                      (SELECT * FROM `rink_3_db` WHERE date = '12/12/2017' AND event != 'Available')
                       ORDER BY time";
 
             $result = $conn->query($query);
@@ -338,7 +338,7 @@ _END;
                 </tr>
                 <?php
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
-                 $sql = "SELECT * FROM rink_1_db WHERE date = '12/01/2017' ";
+                 $sql = "SELECT * FROM rink_1_db WHERE date = '12/12/2017' ";
                 $result = mysqli_query($db, $sql);
                 while ($row = mysqli_fetch_array($result)){
                  ?>
@@ -366,7 +366,7 @@ _END;
                 <th>Info</th>
                 <?php
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
-                 $sql = "SELECT * FROM rink_2_db WHERE date = '12/01/2017' ";
+                 $sql = "SELECT * FROM rink_2_db WHERE date = '12/12/2017' ";
                 $result = mysqli_query($db, $sql);
                 while ($row = mysqli_fetch_array($result)){
                  ?>
@@ -395,7 +395,7 @@ _END;
                 <th>Info</th>
                 <?php
                 $db = mysqli_connect("localhost","gpeck2217","","c9");
-                 $sql = "SELECT * FROM rink_3_db WHERE date = '12/01/2017' ";
+                 $sql = "SELECT * FROM rink_3_db WHERE date = '12/12/2017' ";
                 $result = mysqli_query($db, $sql);
                 while ($row = mysqli_fetch_array($result)){
                  ?>
